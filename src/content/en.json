@@ -1,0 +1,419 @@
+{
+  "meta": {
+    "companyName": "Xinix Chemicals Manufacturing PLC",
+    "tagline": "Innovation in every drop"
+  },
+  "nav": {
+    "home": "Home",
+    "products": "Products",
+    "sustainability": "Sustainability",
+    "quality": "Quality & Compliance",
+    "about": "About",
+    "distributors": "For Distributors",
+    "contact": "Contact",
+    "requestQuote": "Request a quote"
+  },
+  "home": {
+    "seo": {
+      "title": "Disinfectant & Cleaning Chemicals Manufacturer | Xinix Ethiopia",
+      "description": "Biodegradable water, hygiene, post-harvest and industrial cleaning chemicals, made in Ethiopia on solar power. We supply across Africa.",
+      "keywords": [
+        "disinfectant manufacturer Ethiopia",
+        "cleaning chemicals manufacturer",
+        "water treatment chemical",
+        "industrial cleaning chemicals",
+        "cleaning chemicals Addis Ababa"
+      ]
+    },
+    "headline": "Disinfection and cleaning chemicals, made in Ethiopia",
+    "body": "Xinix makes biodegradable disinfection and cleaning chemicals at its own solar powered plant in Ethiopia. We supply hospitals, schools, farms, packhouses, factories and water authorities across the country, and we ship to partners across East Africa and the wider continent.",
+    "pillars": [
+      "Solar powered",
+      "Works on a zero liquid discharge basis, with no wastewater leaving the plant",
+      "Locally sourced raw materials",
+      "Registered and made to recognised quality and safety standards"
+    ],
+    "rangeTitle": "Twelve products cover four needs:",
+    "rangeItems": [
+      {
+        "title": "Water and Household",
+        "description": "Keeps drinking water safe and dependable."
+      },
+      {
+        "title": "Hygiene and Institutional",
+        "description": "Protects hands, surfaces and clinical spaces."
+      },
+      {
+        "title": "Food and Agriculture",
+        "description": "Protects produce from spoilage after harvest."
+      },
+      {
+        "title": "Industrial and Biofilm",
+        "description": "Keeps industrial pipes, tanks and machinery thoroughly clean."
+      }
+    ],
+    "exportHeadline": "From our plant to your market",
+    "exportBody": "We supply distributors across East Africa and the rest of the continent. Export partners beyond Ethiopia are already on board.",
+    "whyTitle": "Why Xinix",
+    "whyItems": [
+      "Price stability without foreign exchange exposure",
+      "Local supply from an Ethiopian plant",
+      "Solar powered production with zero liquid discharge",
+      "Biodegradable formulas made to recognised standards"
+    ],
+    "ctaHeadline": "Tell us what you need",
+    "ctaBody": "Send the product and the quantity and we will come back with a price, usually within one working day.",
+    "stats": [
+      { "value": "12", "label": "Products across four families" },
+      { "value": "100%", "label": "Solar powered production" },
+      { "value": "0", "label": "Wastewater leaving the plant" },
+      { "value": "95%", "label": "Locally sourced raw materials" }
+    ],
+    "heroBadges": ["Solar powered", "Made in Ethiopia"]
+  },
+  "categories": {
+    "water-and-household": {
+      "slug": "water-and-household",
+      "seo": {
+        "title": "Drinking Water Disinfectant & Treatment | Xinix Ethiopia",
+        "description": "Biodegradable drinking water disinfectant and tank treatment from Xinix, made in Ethiopia. For homes, schools, clinics and water points across Africa."
+      },
+      "headline": "Safe water starts with reliable disinfection",
+      "body": "Many homes, schools and clinics across the region rely on stored or borehole water, and that water needs treating before it is safe to drink. Xinix water products do that simply and affordably. They are biodegradable, made in Ethiopia, and priced to stay within reach. The range covers Drink+ for treating water at the point of use, and AquaDis Tank for cleaning and treating storage tanks and lines.",
+      "productSlugs": ["drink-plus", "aquadis-tank"]
+    },
+    "hygiene-and-institutional": {
+      "slug": "hygiene-and-institutional",
+      "seo": {
+        "title": "Surface & Hand Disinfectant Manufacturer | Xinix Ethiopia",
+        "description": "Hospital grade surface, hand and medical disinfectants from Xinix. Biodegradable, alcohol free, made in Ethiopia for clinics, schools and business across Africa."
+      },
+      "headline": "Hygiene that holds up in busy places",
+      "body": "Hospitals, schools, food businesses and transport hubs go through disinfectant in volume, and they need a supply that is dependable and gentle enough for daily use. Xinix makes a hand disinfectant, a surface disinfectant and a clinical grade product, all biodegradable and all available in practical sizes. HandDis covers hand hygiene, SurfDis cleans surfaces and equipment at a one to ten dilution, and MedDis is built for clinical settings.",
+      "productSlugs": ["handdis", "surfdis", "meddis"]
+    },
+    "food-and-agriculture": {
+      "slug": "food-and-agriculture",
+      "seo": {
+        "title": "Post-Harvest Treatment & Produce Wash | Xinix Ethiopia",
+        "description": "Post-harvest disinfection and produce wash that cut spoilage and extend shelf life. From Xinix in Ethiopia, for farms, packhouses and exporters across Africa."
+      },
+      "headline": "Less spoilage between the field and the market",
+      "body": "A large share of fruit and vegetables is lost after harvest, to fungus and microbes that take hold in storage and transit. Xinix produce products cut those losses, so growers, packhouses and exporters keep more of what they grow. VegDis washes and sanitises produce, Postharvest+ extends shelf life through the cold chain, and FungDis holds back fungal spoilage. All are biodegradable and come with clear dosing and rinse guidance.",
+      "productSlugs": ["vegdis", "postharvest-plus", "fungdis"]
+    },
+    "industrial-and-biofilm": {
+      "slug": "industrial-and-biofilm",
+      "seo": {
+        "title": "Industrial Cleaning Chemicals & Degreaser | Xinix Ethiopia",
+        "description": "Industrial degreaser, acid cleaner, system flush and biofilm removal from Xinix. Biodegradable cleaning chemicals made in Ethiopia for plants across Africa."
+      },
+      "headline": "Clean plant, fewer stoppages",
+      "body": "Pipes, tanks and machinery foul up over time, and dirty systems cost output and money. Xinix industrial products keep them running. Degrease+ cuts oil and grease, AcidX clears scale and mineral buildup, SystemFlush+ cleans lines and tanks between cycles, and BiofilmDis breaks down the biofilm that ordinary cleaning leaves behind. The range is supplied in practical sizes, with the main cleaners in twenty litre containers.",
+      "productSlugs": ["degrease-plus", "acidx", "systemflush-plus", "biofilmdis"]
+    }
+  },
+  "products": {
+    "drink-plus": {
+      "slug": "drink-plus",
+      "name": "Drink+",
+      "categorySlug": "water-and-household",
+      "seo": {
+        "title": "Drink+ | Point of Use Water Treatment | Xinix",
+        "description": "Drink+ treats drinking water at the point of use, for homes, fieldwork and travel where supply is not reliable. Biodegradable, made in Ethiopia."
+      },
+      "details": {
+        "tagline": "Clean drinking water wherever the supply is not.",
+        "usedBy": "Homes, field teams, travellers and emergency supply.",
+        "feature": "Treats water at the point of use.",
+        "packSize": "100 ml bottle.",
+        "extra": "Biodegradable formula."
+      }
+    },
+    "aquadis-tank": {
+      "slug": "aquadis-tank",
+      "name": "AquaDis Tank",
+      "categorySlug": "water-and-household",
+      "seo": {
+        "title": "AquaDis Tank | Water Tank Treatment | Xinix",
+        "description": "AquaDis Tank cleans and treats water storage tanks and lines. From Xinix, made in Ethiopia, for homes, schools and water operators. Formerly TankDis 2K."
+      },
+      "details": {
+        "tagline": "Keep stored water safe, from tank to tap.",
+        "usedBy": "Households, schools, hotels and water operators.",
+        "feature": "Cleans and treats storage tanks and lines.",
+        "packSize": "100 ml bottle.",
+        "extra": "Formerly listed as TankDis 2K."
+      }
+    },
+    "handdis": {
+      "slug": "handdis",
+      "name": "HandDis",
+      "categorySlug": "hygiene-and-institutional",
+      "seo": {
+        "title": "HandDis | Hand Disinfectant Supplier | Xinix",
+        "description": "HandDis is a biodegradable hand disinfectant for clinics, schools and workplaces. Made in Ethiopia by Xinix."
+      },
+      "details": {
+        "tagline": "Hand hygiene for places with heavy footfall.",
+        "usedBy": "Clinics, schools, offices, transport hubs and food handling.",
+        "feature": "Suited to repeated daily use.",
+        "packSize": "50 ml bottle.",
+        "extra": "Biodegradable formula."
+      }
+    },
+    "surfdis": {
+      "slug": "surfdis",
+      "name": "SurfDis",
+      "categorySlug": "hygiene-and-institutional",
+      "seo": {
+        "title": "SurfDis | Surface Disinfectant Manufacturer | Xinix",
+        "description": "SurfDis disinfects surfaces and equipment in clinical and commercial settings. Biodegradable, dilute one to ten, made in Ethiopia by Xinix."
+      },
+      "details": {
+        "tagline": "Disinfected surfaces at a one to ten dilution.",
+        "usedBy": "Hospitals, food processing, offices and public spaces.",
+        "feature": "Concentrated, dilute before use.",
+        "packSize": "500 ml bottle.",
+        "extra": "Works across many surface types."
+      }
+    },
+    "meddis": {
+      "slug": "meddis",
+      "name": "MedDis",
+      "categorySlug": "hygiene-and-institutional",
+      "seo": {
+        "title": "MedDis | Hospital Grade Disinfectant | Xinix",
+        "description": "MedDis is a clinical grade disinfectant for healthcare settings, made in Ethiopia by Xinix. Biodegradable and supplied in institutional sizes."
+      },
+      "details": {
+        "tagline": "A disinfectant built for clinical settings.",
+        "usedBy": "Hospitals, health centres and laboratories.",
+        "feature": "For use under clinical protocols.",
+        "packSize": "500 ml bottle.",
+        "extra": "Biodegradable formula."
+      }
+    },
+    "vegdis": {
+      "slug": "vegdis",
+      "name": "VegDis",
+      "categorySlug": "food-and-agriculture",
+      "seo": {
+        "title": "VegDis | Fruit and Vegetable Wash | Xinix",
+        "description": "VegDis washes and sanitises fruit and vegetables to reduce spoilage. Biodegradable, safe for produce when used as directed, made in Ethiopia."
+      },
+      "details": {
+        "tagline": "Cleaner produce, less waste.",
+        "usedBy": "Farms, packhouses, exporters and wholesalers.",
+        "feature": "Reduces spoilage organisms.",
+        "packSize": "500 ml bottle.",
+        "extra": "Rinse and pack ready."
+      }
+    },
+    "postharvest-plus": {
+      "slug": "postharvest-plus",
+      "name": "Postharvest+",
+      "categorySlug": "food-and-agriculture",
+      "seo": {
+        "title": "Postharvest+ | Post Harvest Treatment | Xinix",
+        "description": "Postharvest+ extends shelf life and controls spoilage after harvest. From Xinix in Ethiopia, for packhouses and produce exporters across the region."
+      },
+      "details": {
+        "tagline": "More days of shelf life after the field.",
+        "usedBy": "Packhouses, cold chain operators and exporters.",
+        "feature": "Controls post-harvest spoilage.",
+        "packSize": "100 ml bottle.",
+        "extra": "Supports export shelf life."
+      }
+    },
+    "fungdis": {
+      "slug": "fungdis",
+      "name": "FungDis",
+      "categorySlug": "food-and-agriculture",
+      "seo": {
+        "title": "FungDis | Fungicidal Produce Treatment | Xinix",
+        "description": "FungDis controls fungal spoilage on stored and treated produce. Biodegradable, made in Ethiopia by Xinix."
+      },
+      "details": {
+        "tagline": "Hold back fungal spoilage.",
+        "usedBy": "Packhouses, storage operators and growers.",
+        "feature": "Targets fungal spoilage.",
+        "packSize": "Two part kit, 250 ml each.",
+        "extra": "Works alongside Postharvest+."
+      }
+    },
+    "degrease-plus": {
+      "slug": "degrease-plus",
+      "name": "Degrease+",
+      "categorySlug": "industrial-and-biofilm",
+      "seo": {
+        "title": "Degrease+ | Industrial Degreaser | Xinix",
+        "description": "Degrease+ removes oil and grease from machinery and surfaces in plants and workshops. A biodegradable industrial cleaner made in Ethiopia by Xinix."
+      },
+      "details": {
+        "tagline": "Cut through grease without a harsh residue.",
+        "usedBy": "Factories, workshops, food plants and fleets.",
+        "feature": "Strong on oil and grease.",
+        "packSize": "20 litre container.",
+        "extra": "Dilutes to suit the job."
+      }
+    },
+    "acidx": {
+      "slug": "acidx",
+      "name": "AcidX",
+      "categorySlug": "industrial-and-biofilm",
+      "seo": {
+        "title": "AcidX | Acid Cleaner and Descaler | Xinix",
+        "description": "AcidX removes scale and mineral buildup from pipes, tanks and equipment. A corrosive industrial cleaner from Xinix, made in Ethiopia. Handle per safety guidance."
+      },
+      "details": {
+        "tagline": "Clear scale and mineral buildup.",
+        "usedBy": "Water systems, boilers and processing lines.",
+        "feature": "Removes scale and deposits.",
+        "packSize": "20 litre container.",
+        "extra": "Corrosive, follow the safety guidance."
+      }
+    },
+    "systemflush-plus": {
+      "slug": "systemflush-plus",
+      "name": "SystemFlush+",
+      "categorySlug": "industrial-and-biofilm",
+      "seo": {
+        "title": "SystemFlush+ | Pipe and System Flush | Xinix",
+        "description": "SystemFlush+ cleans pipes, tanks and treatment systems between cycles. A biodegradable industrial flush from Xinix, made in Ethiopia."
+      },
+      "details": {
+        "tagline": "A clean flush between production cycles.",
+        "usedBy": "Water treatment, processing plants and tank systems.",
+        "feature": "Clears lines and tanks.",
+        "packSize": "20 litre container.",
+        "extra": "Pairs with Degrease+ and AcidX."
+      }
+    },
+    "biofilmdis": {
+      "slug": "biofilmdis",
+      "name": "BiofilmDis",
+      "categorySlug": "industrial-and-biofilm",
+      "seo": {
+        "title": "BiofilmDis | Biofilm Removal | Xinix",
+        "description": "BiofilmDis breaks down and removes biofilm in pipes, tanks and water systems. Biodegradable, made in Ethiopia by Xinix, for plants and water operators."
+      },
+      "details": {
+        "tagline": "Break down biofilm where it hides.",
+        "usedBy": "Water systems, cooling lines and processing plants.",
+        "feature": "Removes established biofilm.",
+        "packSize": "Two part kit, 250 ml each.",
+        "extra": "Restores flow and hygiene."
+      }
+    }
+  },
+  "sustainability": {
+    "seo": {
+      "title": "Solar Powered, Zero Discharge Chemical Manufacturing | Xinix",
+      "description": "Xinix makes chemicals on solar power, with zero liquid discharge and biodegradable formulas. Locally sourced manufacturing in Ethiopia.",
+      "keywords": [
+        "biodegradable chemicals",
+        "solar powered manufacturing",
+        "zero liquid discharge",
+        "sustainable cleaning chemicals Africa"
+      ]
+    },
+    "headline": "Solar power, zero discharge, biodegradable",
+    "body": "The way Xinix makes its products is part of what it sells. The plant runs on off grid solar power, so production does not depend on the grid and carries no electricity bill. It works on a zero liquid discharge basis, which means no wastewater leaves the site. Reject water is reused, and the rest becomes part of the product itself.\n\nThe formulas are biodegradable, breaking down to harmless byproducts after use. Most raw materials are bought inside Ethiopia, which keeps money in the country and supply close to hand, and create local jobs. This is the story for buyers who care where their chemicals come from, and the proof for funders and partners weighing the company up."
+  },
+  "quality": {
+    "seo": {
+      "title": "Quality, Safety and Compliance | Xinix",
+      "description": "Xinix products are made to consistent quality and safety standards, with a datasheet and safety data sheet for every product to download.",
+      "keywords": [
+        "registered disinfectant manufacturer",
+        "chemical safety data sheet",
+        "quality disinfectant manufacturer Ethiopia"
+      ]
+    },
+    "headline": "Quality you can check for yourself",
+    "body": "Buyers should not have to take quality on faith. Xinix products are registered and made to recognised quality and safety standards under licence [insert licence number once issued], and every product carries a datasheet and a safety data sheet that anyone can download. Each batch is made to the same formulation and checked before it leaves the plant."
+  },
+  "about": {
+    "seo": {
+      "title": "About Xinix | Chemical Manufacturer in Ethiopia",
+      "description": "Xinix Chemicals Manufacturing PLC makes biodegradable disinfection and cleaning chemicals in Ethiopia, cutting import dependence and creating local jobs.",
+      "keywords": [
+        "chemical manufacturer Ethiopia",
+        "Ethiopian disinfectant company",
+        "local chemical production"
+      ]
+    },
+    "headline": "A local answer to imported chemicals",
+    "body": "More than half of the chemicals Ethiopia uses are imported, which leaves buyers waiting on foreign exchange, customs and shipping, and paying whatever the exchange rate decides. Xinix was built to change that for the products it makes.\n\nFrom its plant in Ethiopia, Xinix manufactures biodegradable disinfection and cleaning chemicals for water, hygiene, agriculture and industry. The materials are sourced locally, the power comes from the sun, and the products are priced to compete with imports rather than chase them. The company supplies buyers across the country and creates local jobs, with exports to East Africa and markets across the continent."
+  },
+  "distributors": {
+    "seo": {
+      "title": "Distributor and Export Partnerships | Xinix, Ethiopia",
+      "description": "Become a Xinix distributor. Biodegradable disinfection and cleaning chemicals from Ethiopia, for East Africa and markets across the continent.",
+      "keywords": [
+        "disinfectant distributor East Africa",
+        "chemical supplier Africa",
+        "biodegradable cleaning chemicals exporter",
+        "Ethiopia chemical export",
+        "East Africa distributor"
+      ]
+    },
+    "headline": "Export partnerships across Africa",
+    "body": "Xinix is set up to export. We pack for transit and have the capacity to grow with our partners. Distributors beyond Ethiopia are already supplied, and we are opening conversations across East Africa and the rest of the continent. We look for partners with reach into the segments we serve, the means to store and distribute properly, and a commitment to the market rather than a one off order."
+  },
+  "contact": {
+    "seo": {
+      "title": "Contact Xinix | Quotes and Enquiries",
+      "description": "Contact Xinix for quotes, datasheets and distributor enquiries. Email info@xinix.et or call +251 9 04 55 33 55. Office in Addis Ababa, plant in Ethiopia.",
+      "keywords": [
+        "contact Xinix",
+        "disinfectant quote Ethiopia",
+        "chemical supplier enquiry"
+      ]
+    },
+    "headline": "Tell us what you need",
+    "body": "Send the product and the quantity and we will come back with a price, usually within one working day. For datasheets, ask here or download them from the product pages.",
+    "email": "info@xinix.et",
+    "phone": "+251 9 04 55 33 55",
+    "phoneHref": "tel:+251904553355",
+    "office": "Yeka Sub-city, Woreda 08, House No. 195, Office No. 905A, Addis Ababa, Ethiopia.",
+    "plant": "Ethiopia."
+  },
+  "ui": {
+    "requestQuote": "Request a quote",
+    "browseRange": "Browse the range",
+    "exploreProducts": "Explore all twelve products",
+    "viewRange": "View range",
+    "downloadDatasheet": "Download datasheet",
+    "becomeDistributor": "Become a distributor",
+    "readStory": "Read the story",
+    "contactUs": "Contact us",
+    "sendEnquiry": "Send enquiry",
+    "formIntro": "Tell us the product and quantity, and we will send a price. Most enquiries are answered within one working day.",
+    "formFields": {
+      "name": "Name",
+      "organisation": "Organisation",
+      "contact": "Email or phone",
+      "country": "Country",
+      "need": "What you need"
+    },
+    "privacyLine": "We use your details only to answer your enquiry. We do not share them.",
+    "successMessage": "Thank you. Your enquiry is with our team, and we will reply within one working day.",
+    "errorMessage": "That did not send. Check your email or phone number and try again, or write to info@xinix.et.",
+    "notFound": "That page is not here. The page may have moved.",
+    "notFoundAction": "Browse the range or head back to the home page."
+  },
+  "trustBar": [
+    "Solar powered",
+    "Made in Ethiopia",
+    "Zero liquid discharge",
+    "Biodegradable formulas"
+  ],
+  "categoryLabels": {
+    "water-and-household": "Water and Household",
+    "hygiene-and-institutional": "Hygiene and Institutional",
+    "food-and-agriculture": "Food and Agriculture",
+    "industrial-and-biofilm": "Industrial and Biofilm"
+  }
+}

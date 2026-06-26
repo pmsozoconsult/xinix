@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+:root {
+  --deep-navy: #0e3a4b;
+  --xinix-teal: #137c87;
+  --teal-text: #0e6e7b;
+  --deep-teal: #0c4a54;
+  --drop-cyan: #18b6c7;
+  --ink: #1b2a30;
+  --paper: #f6f9fa;
+  --mist: #eaf0f2;
+  --stone: #5b6b70;
+  --line: #dce3e6;
+  --leaf-green: #3e8e5a;
+  --solar-amber: #d9952f;
+  --white: #ffffff;
+}
+
+@theme inline {
+  --color-deep-navy: var(--deep-navy);
+  --color-xinix-teal: var(--xinix-teal);
+  --color-teal-text: var(--teal-text);
+  --color-deep-teal: var(--deep-teal);
+  --color-drop-cyan: var(--drop-cyan);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-mist: var(--mist);
+  --color-stone: var(--stone);
+  --color-line: var(--line);
+  --color-leaf-green: var(--leaf-green);
+  --color-solar-amber: var(--solar-amber);
+  --font-sans: var(--font-inter);
+  --font-ethiopic: var(--font-noto-ethiopic);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--deep-navy);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+main {
+  background: var(--white);
+}
+
+html[lang="am"] body {
+  font-family: var(--font-noto-ethiopic), var(--font-inter), system-ui, sans-serif;
+}
+
+.prose-content p + p {
+  margin-top: 1rem;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--xinix-teal) 25%, transparent);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .animate-fade-in {
+    animation: fade-in 0.5s ease-out both;
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Glass surfaces — frosted edge with solid readable fill */
+.glass-dark {
+  background: rgb(14, 58, 75);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.glass-light {
+  background: rgb(255, 255, 255);
+  box-shadow:
+    0 8px 32px rgba(14, 58, 75, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+@supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
+  .glass-dark {
+    background: rgba(14, 58, 75, 0.96);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+  }
+
+  .glass-light {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+  }
+
+  .glass-blur-layer {
+    backdrop-filter: blur(12px) saturate(140%);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+  }
+}

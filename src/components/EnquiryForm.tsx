@@ -9,17 +9,29 @@ interface EnquiryFormProps {
   ui: SiteContent["ui"];
   formType?: "quote" | "distributor";
   productName?: string;
+  hideIntro?: boolean;
+  variant?: "default" | "product";
 }
+
+const fieldClass = {
+  default:
+    "mt-1.5 w-full rounded-md border border-line bg-mist px-3 py-2.5 text-ink outline-none transition focus:border-teal-text focus:ring-2 focus:ring-teal-text/20",
+  product:
+    "mt-1.5 w-full rounded-xl border border-line bg-white px-4 py-3 text-ink shadow-sm outline-none transition focus:border-xinix-teal focus:ring-2 focus:ring-xinix-teal/15",
+} as const;
 
 export function EnquiryForm({
   locale,
   ui,
   formType = "quote",
   productName,
+  hideIntro = false,
+  variant = "default",
 }: EnquiryFormProps) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">(
     "idle",
   );
+  const inputClass = fieldClass[variant];
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -50,7 +62,7 @@ export function EnquiryForm({
 
   if (status === "success") {
     return (
-      <div className="rounded-lg border border-leaf-green/30 bg-paper p-6 text-deep-navy">
+      <div className="rounded-xl border border-leaf-green/30 bg-leaf-green/5 p-6 text-deep-navy">
         {ui.successMessage}
       </div>
     );
@@ -58,39 +70,24 @@ export function EnquiryForm({
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
-      <p className="text-stone">{ui.formIntro}</p>
+      {!hideIntro && <p className="text-stone">{ui.formIntro}</p>}
 
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block text-sm font-medium text-deep-navy">
           {ui.formFields.name}
-          <input
-            required
-            name="name"
-            className="mt-1 w-full rounded-md border border-line bg-mist px-3 py-2.5 text-ink outline-none focus:border-teal-text"
-          />
+          <input required name="name" className={inputClass} />
         </label>
         <label className="block text-sm font-medium text-deep-navy">
           {ui.formFields.organisation}
-          <input
-            name="organisation"
-            className="mt-1 w-full rounded-md border border-line bg-mist px-3 py-2.5 text-ink outline-none focus:border-teal-text"
-          />
+          <input name="organisation" className={inputClass} />
         </label>
         <label className="block text-sm font-medium text-deep-navy">
           {ui.formFields.contact}
-          <input
-            required
-            name="contact"
-            className="mt-1 w-full rounded-md border border-line bg-mist px-3 py-2.5 text-ink outline-none focus:border-teal-text"
-          />
+          <input required name="contact" className={inputClass} />
         </label>
         <label className="block text-sm font-medium text-deep-navy">
           {ui.formFields.country}
-          <input
-            required
-            name="country"
-            className="mt-1 w-full rounded-md border border-line bg-mist px-3 py-2.5 text-ink outline-none focus:border-teal-text"
-          />
+          <input required name="country" className={inputClass} />
         </label>
       </div>
 
@@ -101,7 +98,7 @@ export function EnquiryForm({
           name="need"
           rows={4}
           defaultValue={productName ? `${productName}: ` : ""}
-          className="mt-1 w-full rounded-md border border-line bg-mist px-3 py-2.5 text-ink outline-none focus:border-teal-text"
+          className={inputClass}
         />
       </label>
 
@@ -113,7 +110,7 @@ export function EnquiryForm({
 
       <p className="text-xs text-stone">{ui.privacyLine}</p>
 
-      <Button type="submit" disabled={status === "loading"}>
+      <Button type="submit" disabled={status === "loading"} className="w-full sm:w-auto">
         {status === "loading" ? "…" : ui.sendEnquiry}
       </Button>
     </form>

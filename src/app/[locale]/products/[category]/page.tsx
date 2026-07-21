@@ -1,13 +1,20 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { Breadcrumbs } from "@/components/Breadcrumbs";
-import { Button } from "@/components/Button";
-import { ProductCard } from "@/components/ProductCard";
-import { PageBanner } from "@/components/sections/PageBanner";
-import { Reveal } from "@/components/motion/Reveal";
+import { CategoryHero } from "@/components/sections/CategoryHero";
+import { CategoryApplications } from "@/components/sections/CategoryApplications";
+import { ProductLineup } from "@/components/sections/ProductLineup";
+import { SiblingCategories } from "@/components/sections/SiblingCategories";
+import { ClosingCta } from "@/components/sections/ClosingCta";
 import { getCategorySlugs, getContent } from "@/lib/content";
-import { isValidLocale, localePath, type Locale } from "@/lib/i18n";
-import { categoryImages } from "@/lib/visuals";
+import { isValidLocale, type Locale } from "@/lib/i18n";
+import { type CategorySlug } from "@/lib/categories";
+
+const categoryOrder = [
+  "water-and-household",
+  "hygiene-and-institutional",
+  "food-and-agriculture",
+  "industrial-and-biofilm",
+] as const;
 
 export async function generateStaticParams() {
   const locales: Locale[] = ["en", "am"];
@@ -45,47 +52,34 @@ export default async function CategoryPage({
   const category = content.categories[categorySlug];
   if (!category) notFound();
 
-  const products = category.productSlugs.map((slug) => content.products[slug]);
+  const slug = categorySlug as CategorySlug;
+  const products = category.productSlugs.map((s) => content.products[s]);
+
+  const siblings = categoryOrder
+    .map((s, index) => ({
+      slug: s,
+      title: content.home.rangeItems[index].title,
+      description: content.home.rangeItems[index].description,
+      count: content.categories[s].productSlugs.length,
+    }))
+    .filter((item) => item.slug !== categorySlug);
 
   return (
     <>
-      <PageBanner
-        src={categoryImages[categorySlug] ?? categoryImages["water-and-household"]}
-        headline={category.headline}
-        body={category.body}
-      >
-        <Button href={localePath(locale, "/contact")}>
-          {content.ui.requestQuote}
-        </Button>
-      </PageBanner>
-
-      <section className="bg-paper py-16 sm:py-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <Breadcrumbs
-            locale={locale}
-            className="mb-8"
-            items={[
-              { label: content.nav.products, href: "/products" },
-              { label: content.categoryLabels[categorySlug] },
-            ]}
-          />
-          <Reveal>
-            <h2 className="text-2xl font-bold text-deep-navy">
-              {content.categoryLabels[categorySlug]}
-            </h2>
-          </Reveal>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {products.map((product) => (
-              <ProductCard
-                key={product.slug}
-                locale={locale}
-                product={product}
-                cta={content.ui.viewRange}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
+      <CategoryHero locale={locale} content={content} categorySlug={slug} />
+      <CategoryApplications locale={locale} categorySlug={slug} />
+      <ProductLineup
+        locale={locale}
+        categorySlug={slug}
+        products={products}
+        cta={content.ui.viewRange}
+      />
+      <SiblingCategories
+        locale={locale}
+        items={siblings}
+        cta={content.ui.viewRange}
+      />
+      <ClosingCta locale={locale} content={content} />
     </>
   );
 }

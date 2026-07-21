@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { CategoryShowcase } from "@/components/sections/CategoryShowcase";
-import { PageBanner } from "@/components/sections/PageBanner";
-import { Reveal } from "@/components/motion/Reveal";
+import { ProductsHero } from "@/components/sections/ProductsHero";
+import { CategoryGrid } from "@/components/sections/CategoryGrid";
+import { AudienceStrip } from "@/components/sections/AudienceStrip";
+import {
+  ProductIndex,
+  type ProductIndexItem,
+} from "@/components/sections/ProductIndex";
+import { ClosingCta } from "@/components/sections/ClosingCta";
 import { getContent } from "@/lib/content";
-import { isValidLocale, localePath, type Locale } from "@/lib/i18n";
-import { visuals } from "@/lib/visuals";
+import { isValidLocale, type Locale } from "@/lib/i18n";
 
 const categoryOrder = [
   "water-and-household",
@@ -23,7 +26,7 @@ export async function generateMetadata({
   if (!isValidLocale(localeParam)) return {};
   const content = getContent(localeParam);
   return {
-    title: `Products | ${content.meta.companyName}`,
+    title: `${content.nav.products} | ${content.meta.companyName}`,
     description: content.home.seo.description,
   };
 }
@@ -38,37 +41,44 @@ export default async function ProductsIndexPage({
   const locale = localeParam as Locale;
   const content = getContent(locale);
 
-  const categoryPanels = categoryOrder.map((slug, index) => ({
+  const categoryItems = categoryOrder.map((slug, index) => ({
     slug,
     title: content.home.rangeItems[index].title,
     description: content.home.rangeItems[index].description,
+    count: content.categories[slug].productSlugs.length,
+  }));
+
+  const indexProducts: ProductIndexItem[] = categoryOrder.flatMap((slug) =>
+    content.categories[slug].productSlugs.map((productSlug) => {
+      const product = content.products[productSlug];
+      return {
+        slug: product.slug,
+        name: product.name,
+        categorySlug: slug,
+        categoryLabel: content.categoryLabels[slug],
+        tagline: product.details.tagline,
+        packSize: product.details.packSize,
+      };
+    }),
+  );
+
+  const filters = categoryOrder.map((slug) => ({
+    slug,
+    label: content.categoryLabels[slug],
   }));
 
   return (
     <>
-      <PageBanner
-        src={visuals.industrial}
-        headline={content.ui.exploreProducts}
-        body={content.home.body}
-        overlay="teal"
-      />
-      <CategoryShowcase
+      <ProductsHero locale={locale} content={content} />
+      <CategoryGrid locale={locale} items={categoryItems} cta={content.ui.viewRange} />
+      <AudienceStrip locale={locale} />
+      <ProductIndex
         locale={locale}
-        title={content.home.rangeTitle}
-        panels={categoryPanels}
+        products={indexProducts}
+        filters={filters}
         cta={content.ui.viewRange}
-        exploreCta={content.ui.requestQuote}
       />
-      <section className="bg-deep-navy py-12 text-center">
-        <Reveal>
-          <Link
-            href={localePath(locale, "/contact")}
-            className="text-sm font-semibold uppercase tracking-widest text-drop-cyan hover:text-white"
-          >
-            {content.ui.requestQuote} →
-          </Link>
-        </Reveal>
-      </section>
+      <ClosingCta locale={locale} content={content} />
     </>
   );
 }

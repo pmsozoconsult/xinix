@@ -85,7 +85,7 @@ export function ProductPackVisual({
           >
             <p
               className={cn(
-                "font-bold leading-tight text-deep-navy",
+                "font-bold leading-tight text-xinix-blue",
                 isLg ? "text-base" : "text-sm",
               )}
             >

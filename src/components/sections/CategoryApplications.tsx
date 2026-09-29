@@ -90,7 +90,7 @@ export function CategoryApplications({
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
               {h.eyebrow}
             </p>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl">
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl">
               {h.title}
             </h2>
             <p className="mt-4 text-base leading-relaxed text-stone sm:text-lg">
@@ -153,7 +153,7 @@ export function CategoryApplications({
                     color?.ring,
                   )}
                 >
-                  <p className="text-lg font-semibold leading-snug text-deep-navy sm:text-xl">
+                  <p className="text-lg font-semibold leading-snug text-xinix-blue sm:text-xl">
                     {item}
                   </p>
                   <span

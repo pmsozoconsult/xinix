@@ -41,7 +41,7 @@ export function CategoryCard({
         >
           {theme && <CategoryIcon name={iconName} />}
         </div>
-        <h3 className="text-xl font-bold text-deep-navy">{title}</h3>
+        <h3 className="text-xl font-bold text-xinix-blue">{title}</h3>
         <p className="mt-3 flex-1 text-sm leading-relaxed text-stone">{description}</p>
         <Link
           href={localePath(locale, `/products/${slug}`)}

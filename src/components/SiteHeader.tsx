@@ -45,7 +45,6 @@ export function SiteHeader({ locale, content, transparent = false }: SiteHeaderP
   const isHeroOverlay = transparent && !scrolled;
   const isDarkNav = isHeroOverlay || (transparent && scrolled);
   const showGlass = transparent || scrolled;
-  const glassRounded = scrolled;
 
   return (
     <header
@@ -56,15 +55,15 @@ export function SiteHeader({ locale, content, transparent = false }: SiteHeaderP
     >
       <div
         className={cn(
-          "relative mx-auto max-w-7xl transition-all duration-500 ease-out",
-          glassRounded && "rounded-3xl",
+          "relative mx-auto max-w-7xl overflow-hidden transition-all duration-500 ease-out",
+          scrolled ? "rounded-3xl" : "rounded-b-3xl",
         )}
       >
         {showGlass && (
           <div
             className={cn(
               "pointer-events-none absolute inset-0 glass-blur-layer transition-opacity duration-500",
-              glassRounded ? "rounded-3xl" : "rounded-none",
+              scrolled ? "rounded-3xl" : "rounded-b-3xl",
               isDarkNav ? "glass-dark" : "glass-light",
             )}
             aria-hidden
@@ -75,7 +74,7 @@ export function SiteHeader({ locale, content, transparent = false }: SiteHeaderP
           className={cn(
             "relative z-10 flex items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 lg:px-8",
             scrolled && "py-2.5",
-            !showGlass && "bg-white shadow-sm",
+            !showGlass && "rounded-b-3xl bg-white shadow-sm",
           )}
         >
           <Link

@@ -100,7 +100,7 @@ export function ClosingCta({ locale, content }: ClosingCtaProps) {
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
               {t.eyebrow}
             </p>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl lg:text-5xl">
               {home.ctaHeadline}
             </h2>
             <p className="mt-5 max-w-lg text-lg leading-relaxed text-stone">{home.ctaBody}</p>

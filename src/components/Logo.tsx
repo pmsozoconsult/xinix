@@ -21,7 +21,7 @@ export function Logo({
 }: LogoProps) {
   const { icon, text } = sizes[size];
   const wordmarkClass =
-    variant === "light" ? "text-white" : "text-deep-navy";
+    variant === "light" ? "text-white" : "text-xinix-blue";
 
   return (
     <span className={cn("inline-flex items-center gap-2.5", className)}>

@@ -50,7 +50,7 @@ export function ProductIndex({ locale, products, filters, cta }: ProductIndexPro
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
             {h.eyebrow}
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl">
             {h.title}
           </h2>
         </Reveal>
@@ -109,7 +109,7 @@ export function ProductIndex({ locale, products, filters, cta }: ProductIndexPro
                     </span>
                   </div>
                   <div className="flex flex-1 flex-col p-5">
-                    <h3 className="text-lg font-bold text-deep-navy">
+                    <h3 className="text-lg font-bold text-xinix-blue">
                       {product.name}
                     </h3>
                     <p className="mt-1.5 flex-1 text-sm leading-relaxed text-stone">

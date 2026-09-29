@@ -40,7 +40,7 @@ export function PageHero({
 }) {
   return (
     <div className="max-w-3xl">
-      <h1 className="text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl lg:text-5xl">
+      <h1 className="text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl lg:text-5xl">
         {headline}
       </h1>
       {body && (

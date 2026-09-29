@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --deep-navy: #0e3a4b;
+  --deep-navy: #123a5c;
+  --xinix-blue: #287cbc;
   --xinix-teal: #137c87;
   --teal-text: #0e6e7b;
   --deep-teal: #0c4a54;
@@ -18,6 +19,7 @@
 
 @theme inline {
   --color-deep-navy: var(--deep-navy);
+  --color-xinix-blue: var(--xinix-blue);
   --color-xinix-teal: var(--xinix-teal);
   --color-teal-text: var(--teal-text);
   --color-deep-teal: var(--deep-teal);
@@ -29,7 +31,7 @@
   --color-line: var(--line);
   --color-leaf-green: var(--leaf-green);
   --color-solar-amber: var(--solar-amber);
-  --font-sans: var(--font-inter);
+  --font-sans: var(--font-maven), var(--font-inter);
   --font-ethiopic: var(--font-noto-ethiopic);
 }
 
@@ -40,7 +42,7 @@ html {
 body {
   background: var(--deep-navy);
   color: var(--ink);
-  font-family: var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-maven), var(--font-inter), system-ui, sans-serif;
   line-height: 1.6;
 }
 
@@ -49,7 +51,7 @@ main {
 }
 
 html[lang="am"] body {
-  font-family: var(--font-noto-ethiopic), var(--font-inter), system-ui, sans-serif;
+  font-family: var(--font-noto-ethiopic), var(--font-maven), var(--font-inter), system-ui, sans-serif;
 }
 
 .prose-content p + p {
@@ -57,7 +59,7 @@ html[lang="am"] body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--xinix-teal) 25%, transparent);
+  background: color-mix(in srgb, var(--xinix-blue) 25%, transparent);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -79,7 +81,7 @@ html[lang="am"] body {
 
 /* Glass surfaces — frosted edge with solid readable fill */
 .glass-dark {
-  background: rgb(14, 58, 75);
+  background: rgb(18, 58, 92);
   box-shadow:
     0 8px 32px rgba(0, 0, 0, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
@@ -88,13 +90,13 @@ html[lang="am"] body {
 .glass-light {
   background: rgb(255, 255, 255);
   box-shadow:
-    0 8px 32px rgba(14, 58, 75, 0.1),
+    0 8px 32px rgba(18, 58, 92, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
   .glass-dark {
-    background: rgba(14, 58, 75, 0.96);
+    background: rgba(18, 58, 92, 0.96);
     backdrop-filter: blur(12px) saturate(140%);
     -webkit-backdrop-filter: blur(12px) saturate(140%);
   }

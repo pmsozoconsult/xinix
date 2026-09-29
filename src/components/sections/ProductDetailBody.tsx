@@ -76,7 +76,7 @@ export function ProductDetailBody({
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
               {labels.overview}
             </p>
-            <p className="mt-4 text-2xl font-semibold leading-snug text-deep-navy sm:text-3xl">
+            <p className="mt-4 text-2xl font-semibold leading-snug text-xinix-blue sm:text-3xl">
               {details.tagline}
             </p>
             <p className="mt-4 max-w-2xl text-lg leading-relaxed text-stone">

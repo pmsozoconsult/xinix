@@ -43,7 +43,7 @@ export default async function DistributorsPage({
       </Section>
       <Section background="paper">
         <Reveal>
-          <h2 className="text-2xl font-bold text-deep-navy">
+          <h2 className="text-2xl font-bold text-xinix-blue">
             {content.ui.becomeDistributor}
           </h2>
           <div className="mt-8 max-w-2xl rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">

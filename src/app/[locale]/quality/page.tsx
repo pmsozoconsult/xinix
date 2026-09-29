@@ -42,7 +42,7 @@ export default async function QualityPage({
         <Reveal>
           <ProseBlock text={page.body} />
         </Reveal>
-        <h2 className="mt-12 text-xl font-bold text-deep-navy">
+        <h2 className="mt-12 text-xl font-bold text-xinix-blue">
           {locale === "en" ? "Product documents" : "የምርት ሰነዶች"}
         </h2>
         <ul className="mt-6 divide-y divide-line overflow-hidden rounded-2xl border border-line bg-white shadow-sm">

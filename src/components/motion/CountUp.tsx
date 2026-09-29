@@ -80,7 +80,7 @@ const cardStyles = {
     card: "border-line bg-white shadow-lg shadow-deep-navy/5 ring-1 ring-line",
     glow: "bg-xinix-teal/10 group-hover:bg-xinix-teal/15",
     icon: "bg-mist text-xinix-teal",
-    value: "text-deep-navy",
+    value: "text-xinix-blue",
     label: "text-stone",
   },
 } as const;

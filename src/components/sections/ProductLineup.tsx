@@ -44,7 +44,7 @@ export function ProductLineup({
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
             {h.eyebrow}
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl">
             {h.title}
           </h2>
         </Reveal>
@@ -67,7 +67,7 @@ export function ProductLineup({
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-deep-navy">{product.name}</h3>
+                <h3 className="text-2xl font-bold text-xinix-blue">{product.name}</h3>
                 <p className="mt-1.5 text-base leading-relaxed text-stone">
                   {product.details.tagline}
                 </p>

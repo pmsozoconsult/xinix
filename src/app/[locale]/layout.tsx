@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Noto_Sans_Ethiopic } from "next/font/google";
+import { Maven_Pro, Inter, Noto_Sans_Ethiopic } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Footer } from "@/components/Footer";
 import { HeaderShell } from "@/components/HeaderShell";
@@ -7,6 +7,12 @@ import { JsonLd } from "@/components/JsonLd";
 import { getContent } from "@/lib/content";
 import { isValidLocale, locales, type Locale } from "@/lib/i18n";
 import "../globals.css";
+
+const mavenPro = Maven_Pro({
+  subsets: ["latin"],
+  variable: "--font-maven",
+  display: "swap",
+});
 
 const inter = Inter({
   subsets: ["latin"],
@@ -61,7 +67,7 @@ export default async function LocaleLayout({
   return (
     <html
       lang={locale}
-      className={`${inter.variable} ${notoEthiopic.variable} h-full antialiased`}
+      className={`${mavenPro.variable} ${inter.variable} ${notoEthiopic.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <JsonLd locale={locale} />

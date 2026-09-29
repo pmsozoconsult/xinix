@@ -15,7 +15,7 @@ export default async function NotFound({
 
   return (
     <Section>
-      <h1 className="text-3xl font-bold text-deep-navy">404</h1>
+      <h1 className="text-3xl font-bold text-xinix-blue">404</h1>
       <p className="mt-4 max-w-xl text-stone">{content.ui.notFound}</p>
       <p className="mt-2 text-stone">{content.ui.notFoundAction}</p>
       <div className="mt-8 flex flex-wrap gap-3">

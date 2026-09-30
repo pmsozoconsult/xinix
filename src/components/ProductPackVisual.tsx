@@ -60,18 +60,20 @@ export function ProductPackVisual({
       {variant === "dark" && (
         <>
           <div className="absolute inset-0 bg-deep-navy" />
+          <div className="absolute inset-x-0 bottom-0 h-[38%] bg-gradient-to-t from-black/45 via-black/10 to-transparent" />
           <div
             className={cn(
-              "absolute left-1/2 top-[38%] h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-45 blur-3xl",
+              "absolute bottom-[11%] left-1/2 h-20 w-[72%] -translate-x-1/2 rounded-[100%] opacity-70 blur-2xl",
               color?.bg,
             )}
           />
           <div
             className={cn(
-              "absolute inset-x-8 bottom-6 h-24 rounded-[100%] blur-2xl opacity-70",
+              "absolute bottom-[13%] left-1/2 h-3.5 w-[42%] -translate-x-1/2 rounded-full opacity-90 blur-[6px]",
               color?.bg,
             )}
           />
+          <div className="absolute bottom-[12%] left-1/2 h-5 w-[48%] -translate-x-1/2 rounded-[100%] bg-black/55 blur-md" />
         </>
       )}
 
@@ -86,7 +88,7 @@ export function ProductPackVisual({
         <div
           className={cn(
             variant === "dark"
-              ? "absolute inset-2 z-10 sm:inset-4"
+              ? "absolute inset-x-3 top-3 bottom-[18%] z-10 sm:inset-x-6 sm:top-5 sm:bottom-[20%]"
               : isLg
                 ? "relative z-10 h-[88%] w-[72%] max-w-sm"
                 : variant === "shelf"
@@ -101,7 +103,7 @@ export function ProductPackVisual({
             className={cn(
               "object-contain drop-shadow-2xl",
               variant === "dark"
-                ? "object-top"
+                ? "object-bottom"
                 : variant === "shelf"
                   ? "object-bottom"
                   : "object-contain",

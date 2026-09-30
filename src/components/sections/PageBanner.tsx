@@ -1,7 +1,6 @@
 import { FullBleedSection } from "@/components/motion/ParallaxImage";
 import { Reveal } from "@/components/motion/Reveal";
 import { headerClearance, heroContentInset } from "@/lib/heroLayout";
-import { cn } from "@/lib/utils";
 
 interface PageBannerProps {
   src: string;

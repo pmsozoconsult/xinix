@@ -1,13 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import type { Locale, SiteContent } from "@/types/content";
+import type { Locale } from "@/types/content";
 import { Reveal } from "@/components/motion/Reveal";
 import { localePath } from "@/lib/i18n";
 
 interface SustainabilityAudienceProps {
   locale: Locale;
-  content: SiteContent;
 }
 
 const copy = {
@@ -55,10 +54,7 @@ function Arrow() {
   );
 }
 
-export function SustainabilityAudience({
-  locale,
-  content,
-}: SustainabilityAudienceProps) {
+export function SustainabilityAudience({ locale }: SustainabilityAudienceProps) {
   const t = copy[locale];
   const rows = [
     {

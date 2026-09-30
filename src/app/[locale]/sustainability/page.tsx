@@ -39,7 +39,7 @@ export default async function SustainabilityPage({
       <SustainabilityStory locale={locale} content={content} />
       <SustainabilityPrinciples locale={locale} />
       <SustainabilityCycle locale={locale} />
-      <SustainabilityAudience locale={locale} content={content} />
+      <SustainabilityAudience locale={locale} />
       <ClosingCta locale={locale} content={content} />
     </>
   );

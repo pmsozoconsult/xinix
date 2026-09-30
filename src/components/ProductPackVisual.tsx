@@ -39,7 +39,7 @@ export function ProductPackVisual({
     <div
       className={cn(
         "relative flex overflow-hidden",
-        variant === "color" ? "items-center justify-center" : "items-end justify-center",
+        variant === "shelf" ? "items-end justify-center" : "items-center justify-center",
         className,
       )}
     >
@@ -59,16 +59,16 @@ export function ProductPackVisual({
 
       {variant === "dark" && (
         <>
-          <div className="absolute inset-0 bg-gradient-to-b from-white/[0.06] to-white/[0.02]" />
+          <div className="absolute inset-0 bg-deep-navy" />
           <div
             className={cn(
-              "absolute left-1/2 top-[42%] h-[70%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-40 blur-3xl",
+              "absolute left-1/2 top-[38%] h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-45 blur-3xl",
               color?.bg,
             )}
           />
           <div
             className={cn(
-              "absolute inset-x-10 bottom-8 h-28 rounded-[100%] opacity-80 blur-2xl",
+              "absolute inset-x-8 bottom-6 h-24 rounded-[100%] blur-2xl opacity-70",
               color?.bg,
             )}
           />
@@ -86,13 +86,13 @@ export function ProductPackVisual({
         <div
           className={cn(
             "relative z-10",
-            isLg
-              ? variant === "dark"
-                ? "h-[96%] w-[88%] max-w-md"
-                : "h-[88%] w-[72%] max-w-sm"
-              : variant === "shelf"
-                ? "h-[92%] w-[70%]"
-                : "h-[90%] w-[75%]",
+            variant === "dark"
+              ? "absolute inset-2 sm:inset-4"
+              : isLg
+                ? "h-[88%] w-[72%] max-w-sm"
+                : variant === "shelf"
+                  ? "h-[92%] w-[70%]"
+                  : "h-[90%] w-[75%]",
           )}
         >
           <Image
@@ -101,7 +101,11 @@ export function ProductPackVisual({
             fill
             className={cn(
               "object-contain drop-shadow-2xl",
-              variant === "color" ? "object-center" : "object-bottom",
+              variant === "dark"
+                ? "object-top"
+                : variant === "shelf"
+                  ? "object-bottom"
+                  : "object-contain",
             )}
             sizes={isLg ? "(max-width: 1024px) 80vw, 28vw" : "(max-width: 640px) 50vw, 220px"}
             priority={priority}

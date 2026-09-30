@@ -101,7 +101,7 @@ export function ProductHero({
           />
         </Reveal>
 
-        <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:items-end lg:gap-14">
+        <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
           <Reveal>
             <span
               className={cn(
@@ -187,7 +187,7 @@ export function ProductHero({
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="relative mx-auto h-[22rem] w-full max-w-sm overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/40 sm:h-[24rem] lg:mx-0 lg:h-[26rem] lg:max-w-none">
+            <div className="relative aspect-square overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/40">
               <ProductPackVisual
                 slug={product.slug}
                 name={product.name}

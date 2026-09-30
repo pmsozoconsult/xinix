@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
 import { ClosingCta } from "@/components/sections/ClosingCta";
 import { QualityHero } from "@/components/sections/QualityHero";
-import { qualityDocumentGroups, QualityLibrary } from "@/components/sections/QualityLibrary";
+import { QualityLibrary } from "@/components/sections/QualityLibrary";
 import { QualityPapers } from "@/components/sections/QualityPapers";
 import { QualityRegister } from "@/components/sections/QualityRegister";
 import { QualityRelease } from "@/components/sections/QualityRelease";
 import { getContent } from "@/lib/content";
+import { qualityDocumentGroups } from "@/lib/qualityDocuments";
 import { isValidLocale, type Locale } from "@/lib/i18n";
 
 export async function generateMetadata({

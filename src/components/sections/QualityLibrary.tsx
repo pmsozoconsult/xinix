@@ -6,13 +6,6 @@ import { Reveal } from "@/components/motion/Reveal";
 import { localePath } from "@/lib/i18n";
 import { type CategorySlug } from "@/lib/categories";
 
-const categoryOrder: CategorySlug[] = [
-  "water-and-household",
-  "hygiene-and-institutional",
-  "food-and-agriculture",
-  "industrial-and-biofilm",
-];
-
 interface QualityLibraryProps {
   locale: Locale;
   content: SiteContent;
@@ -84,14 +77,4 @@ export function QualityLibrary({ locale, content, groups }: QualityLibraryProps)
       </div>
     </section>
   );
-}
-
-export function qualityDocumentGroups(content: SiteContent) {
-  return categoryOrder.map((slug) => ({
-    slug,
-    label: content.categoryLabels[slug],
-    products: content.categories[slug].productSlugs.map(
-      (productSlug) => content.products[productSlug],
-    ),
-  }));
 }

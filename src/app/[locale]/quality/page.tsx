@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import { Button } from "@/components/Button";
-import { PageBanner } from "@/components/sections/PageBanner";
-import { Reveal } from "@/components/motion/Reveal";
-import { ProseBlock, Section } from "@/components/Section";
-import { getContent, getProductSlugs } from "@/lib/content";
-import { isValidLocale, localePath, type Locale } from "@/lib/i18n";
-import { visuals } from "@/lib/visuals";
+import { ClosingCta } from "@/components/sections/ClosingCta";
+import { QualityHero } from "@/components/sections/QualityHero";
+import { qualityDocumentGroups, QualityLibrary } from "@/components/sections/QualityLibrary";
+import { QualityPapers } from "@/components/sections/QualityPapers";
+import { QualityRegister } from "@/components/sections/QualityRegister";
+import { QualityRelease } from "@/components/sections/QualityRelease";
+import { getContent } from "@/lib/content";
+import { isValidLocale, type Locale } from "@/lib/i18n";
 
 export async function generateMetadata({
   params,
@@ -32,42 +32,19 @@ export default async function QualityPage({
   if (!isValidLocale(localeParam)) return null;
   const locale = localeParam as Locale;
   const content = getContent(locale);
-  const page = content.quality;
-  const products = getProductSlugs().map((slug) => content.products[slug]);
 
   return (
     <>
-      <PageBanner src={visuals.hygiene} headline={page.headline} overlay="dark" />
-      <Section background="paper">
-        <Reveal>
-          <ProseBlock text={page.body} />
-        </Reveal>
-        <h2 className="mt-12 text-xl font-bold text-xinix-blue">
-          {locale === "en" ? "Product documents" : "የምርት ሰነዶች"}
-        </h2>
-        <ul className="mt-6 divide-y divide-line overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
-          {products.map((product) => (
-            <li
-              key={product.slug}
-              className="flex items-center justify-between gap-4 px-5 py-4 text-sm transition hover:bg-paper"
-            >
-              <span className="font-medium text-deep-navy">{product.name}</span>
-              <Link
-                href={localePath(
-                  locale,
-                  `/products/${product.categorySlug}/${product.slug}`,
-                )}
-                className="font-semibold text-teal-text hover:text-deep-teal"
-              >
-                {content.ui.downloadDatasheet}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <div className="mt-8">
-          <Button href={localePath(locale, "/contact")}>{content.ui.requestQuote}</Button>
-        </div>
-      </Section>
+      <QualityHero locale={locale} content={content} />
+      <QualityRegister locale={locale} content={content} />
+      <QualityPapers locale={locale} />
+      <QualityRelease locale={locale} />
+      <QualityLibrary
+        locale={locale}
+        content={content}
+        groups={qualityDocumentGroups(content)}
+      />
+      <ClosingCta locale={locale} content={content} />
     </>
   );
 }

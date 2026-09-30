@@ -58,10 +58,12 @@ export function ProductLineup({
             >
               <div className="relative h-48 overflow-hidden rounded-2xl sm:h-56">
                 <ProductPackVisual
+                  slug={product.slug}
                   name={product.name}
                   packSize={product.details.packSize}
                   categorySlug={categorySlug}
                   size="sm"
+                  variant="color"
                   className="h-full w-full"
                 />
               </div>

@@ -189,10 +189,12 @@ export function ProductHero({
           <Reveal delay={0.1}>
             <div className="relative aspect-square overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/40">
               <ProductPackVisual
+                slug={product.slug}
                 name={product.name}
                 packSize={details.packSize}
                 categorySlug={categorySlug}
                 size="lg"
+                variant="dark"
                 className="h-full w-full"
               />
             </div>

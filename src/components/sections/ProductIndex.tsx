@@ -90,12 +90,14 @@ export function ProductIndex({ locale, products, filters, cta }: ProductIndexPro
                   transition={{ duration: 0.3 }}
                   className="group flex flex-col overflow-hidden rounded-2xl border border-line bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg"
                 >
-                  <div className="relative h-44 overflow-hidden">
+                  <div className="relative h-52 overflow-hidden">
                     <ProductPackVisual
+                      slug={product.slug}
                       name={product.name}
                       packSize={product.packSize}
                       categorySlug={product.categorySlug}
                       size="sm"
+                      variant="shelf"
                       className="h-full w-full"
                     />
                     <span

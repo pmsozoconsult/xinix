@@ -87,7 +87,7 @@ export function ProductHero({
         aria-hidden
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pb-20 lg:pt-14">
+      <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-4 sm:px-6 lg:px-8 lg:pb-20 lg:pt-6">
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-14">
           <Reveal>
             <ProductBackNav
@@ -98,7 +98,7 @@ export function ProductHero({
 
             <span
               className={cn(
-                "mt-12 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] ring-1",
+                "mt-20 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] ring-1",
                 color?.softBg,
                 color?.text,
                 color?.ring,

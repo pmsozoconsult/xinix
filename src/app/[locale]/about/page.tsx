@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import { Button } from "@/components/Button";
-import { PageBanner } from "@/components/sections/PageBanner";
-import { Reveal } from "@/components/motion/Reveal";
-import { ProseBlock, Section } from "@/components/Section";
+import { AboutFootprint } from "@/components/sections/AboutFootprint";
+import { AboutHero } from "@/components/sections/AboutHero";
+import { AboutImportShare } from "@/components/sections/AboutImportShare";
+import { AboutPlant } from "@/components/sections/AboutPlant";
+import { AboutStory } from "@/components/sections/AboutStory";
+import { ClosingCta } from "@/components/sections/ClosingCta";
 import { getContent } from "@/lib/content";
-import { isValidLocale, localePath, type Locale } from "@/lib/i18n";
-import { visuals } from "@/lib/visuals";
+import { isValidLocale, type Locale } from "@/lib/i18n";
 
 export async function generateMetadata({
   params,
@@ -31,22 +32,15 @@ export default async function AboutPage({
   if (!isValidLocale(localeParam)) return null;
   const locale = localeParam as Locale;
   const content = getContent(locale);
-  const page = content.about;
 
   return (
     <>
-      <PageBanner src={visuals.about} headline={page.headline} overlay="navy" />
-      <Section>
-        <Reveal>
-          <ProseBlock text={page.body} />
-        </Reveal>
-        <div className="mt-10 flex flex-wrap gap-3">
-          <Button href={localePath(locale, "/products")} variant="secondary">
-            {content.ui.browseRange}
-          </Button>
-          <Button href={localePath(locale, "/contact")}>{content.ui.contactUs}</Button>
-        </div>
-      </Section>
+      <AboutHero locale={locale} content={content} />
+      <AboutImportShare locale={locale} />
+      <AboutStory locale={locale} content={content} />
+      <AboutPlant locale={locale} content={content} />
+      <AboutFootprint locale={locale} content={content} />
+      <ClosingCta locale={locale} content={content} />
     </>
   );
 }

@@ -36,7 +36,7 @@ export default async function SustainabilityPage({
 
   return (
     <>
-      <SustainabilityHero locale={locale} />
+      <SustainabilityHero locale={locale} content={content} />
       <SustainabilityPower locale={locale} />
       <SustainabilityCycle locale={locale} />
       <SustainabilityAfterUse locale={locale} />

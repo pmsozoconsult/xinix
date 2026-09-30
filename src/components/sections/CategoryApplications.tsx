@@ -105,21 +105,22 @@ export function CategoryApplications({
           </Reveal>
 
           <Stagger className="relative space-y-0">
-            <div
-              className={cn(
-                "absolute bottom-6 left-[1.65rem] top-6 hidden w-px sm:block",
-                color?.bg,
-                "opacity-25",
-              )}
-              aria-hidden
-            />
-
             {items.map((item, index) => (
               <motion.div
                 key={item}
                 variants={staggerItem}
                 className="group relative flex gap-5 pb-8 last:pb-0 sm:gap-6 sm:pb-10"
               >
+                {index < items.length - 1 && (
+                  <div
+                    className={cn(
+                      "absolute bottom-0 left-[1.75rem] top-14 hidden w-px -translate-x-1/2 sm:block",
+                      color?.bg,
+                      "opacity-25",
+                    )}
+                    aria-hidden
+                  />
+                )}
                 <div
                   className={cn(
                     "relative z-10 flex h-14 w-14 shrink-0 flex-col items-center justify-center rounded-2xl border bg-white shadow-sm transition duration-300 group-hover:shadow-md",

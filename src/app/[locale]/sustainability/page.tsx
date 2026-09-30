@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { ClosingCta } from "@/components/sections/ClosingCta";
+import { SustainabilityAfterUse } from "@/components/sections/SustainabilityAfterUse";
 import { SustainabilityAudience } from "@/components/sections/SustainabilityAudience";
 import { SustainabilityCycle } from "@/components/sections/SustainabilityCycle";
 import { SustainabilityHero } from "@/components/sections/SustainabilityHero";
-import { SustainabilityPrinciples } from "@/components/sections/SustainabilityPrinciples";
-import { SustainabilityStory } from "@/components/sections/SustainabilityStory";
+import { SustainabilityPower } from "@/components/sections/SustainabilityPower";
+import { SustainabilitySourcing } from "@/components/sections/SustainabilitySourcing";
 import { getContent } from "@/lib/content";
 import { isValidLocale, type Locale } from "@/lib/i18n";
 
@@ -35,10 +36,11 @@ export default async function SustainabilityPage({
 
   return (
     <>
-      <SustainabilityHero locale={locale} content={content} />
-      <SustainabilityStory locale={locale} content={content} />
-      <SustainabilityPrinciples locale={locale} />
+      <SustainabilityHero locale={locale} />
+      <SustainabilityPower locale={locale} />
       <SustainabilityCycle locale={locale} />
+      <SustainabilityAfterUse locale={locale} />
+      <SustainabilitySourcing locale={locale} />
       <SustainabilityAudience locale={locale} />
       <ClosingCta locale={locale} content={content} />
     </>

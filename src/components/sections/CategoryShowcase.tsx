@@ -33,7 +33,7 @@ export function CategoryShowcase({
   exploreCta,
 }: CategoryShowcaseProps) {
   return (
-    <section className="bg-deep-navy pt-8">
+    <section data-header-tone="dark" className="bg-deep-navy pt-8">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <Reveal>
           <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">

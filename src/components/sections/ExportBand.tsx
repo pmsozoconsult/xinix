@@ -40,7 +40,7 @@ export function ExportBand({
   const sectionRef = useRef<HTMLElement>(null);
 
   return (
-    <section ref={sectionRef} className="relative overflow-hidden bg-deep-navy">
+    <section ref={sectionRef} data-header-tone="dark" className="relative overflow-hidden bg-deep-navy">
       <div className="mx-auto grid max-w-7xl lg:grid-cols-5">
         <div className="relative flex flex-col justify-center px-4 py-12 sm:px-6 sm:py-14 lg:col-span-3 lg:px-8 lg:py-16 xl:pl-[max(2rem,calc((100vw-80rem)/2+2rem))]">
           <div

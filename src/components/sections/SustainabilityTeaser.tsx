@@ -34,7 +34,7 @@ export function SustainabilityTeaser({ locale, content }: SustainabilityTeaserPr
     locale === "en" ? "How we manufacture" : "እንዴት እንሠራለን";
 
   return (
-    <section className="bg-deep-navy">
+    <section data-header-tone="dark" className="bg-deep-navy">
       <div className="relative lg:min-h-[32rem]">
         <div className="relative z-10 flex flex-col justify-center px-4 py-16 sm:px-6 lg:w-1/2 lg:py-24 lg:pl-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] lg:pr-12">
           <Reveal>

@@ -52,7 +52,7 @@ export function CinematicHero({ locale, content }: CinematicHeroProps) {
   const badges = badgeMeta[locale];
 
   return (
-    <section ref={ref} className="relative min-h-[100svh] overflow-hidden">
+    <section ref={ref} data-header-tone="dark" className="relative min-h-[100svh] overflow-hidden">
       <div className="absolute inset-0 z-0 min-h-[100svh] overflow-hidden">
         <motion.div
           className="absolute inset-0"

@@ -7,7 +7,7 @@ interface TrustBarProps {
 
 export function TrustBar({ items }: TrustBarProps) {
   return (
-    <section className="border-y border-line bg-white" aria-label="Trust indicators">
+    <section data-header-tone="light" className="border-y border-line bg-white" aria-label="Trust indicators">
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-4 px-4 py-8 sm:grid-cols-4 sm:px-6 lg:px-8">
         {items.map((item, index) => (
           <div

@@ -11,7 +11,7 @@ interface StatsAtAGlanceProps {
 
 export function StatsAtAGlance({ eyebrow, headline, stats }: StatsAtAGlanceProps) {
   return (
-    <section className="relative overflow-hidden bg-paper py-20 sm:py-28">
+    <section data-header-tone="light" className="relative overflow-hidden bg-paper py-20 sm:py-28">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white via-paper to-mist/40" />
       <div
         className="pointer-events-none absolute inset-0 opacity-40"

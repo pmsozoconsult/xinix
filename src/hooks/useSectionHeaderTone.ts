@@ -5,14 +5,14 @@ import { useEffect, useState } from "react";
 export type HeaderTone = "dark" | "light";
 
 /**
- * Reads the section under the header. `dark` means a navy/teal band;
- * `light` means paper/white. The header then uses the opposite chrome.
+ * Reads the section under the header. `dark` is navy/teal imagery;
+ * `light` is paper/white. The header chrome uses the opposite.
  */
-export function useSectionHeaderTone(enabled: boolean, pathname: string): HeaderTone {
+export function useSectionHeaderTone(pathname: string): HeaderTone {
   const [tone, setTone] = useState<HeaderTone>("dark");
 
   useEffect(() => {
-    if (!enabled) return;
+    let frame = 0;
 
     const read = () => {
       const header = document.querySelector("[data-site-header]");
@@ -33,14 +33,23 @@ export function useSectionHeaderTone(enabled: boolean, pathname: string): Header
       setTone(next);
     };
 
-    read();
-    window.addEventListener("scroll", read, { passive: true });
-    window.addEventListener("resize", read);
-    return () => {
-      window.removeEventListener("scroll", read);
-      window.removeEventListener("resize", read);
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        read();
+      });
     };
-  }, [enabled, pathname]);
+
+    read();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [pathname]);
 
   return tone;
 }

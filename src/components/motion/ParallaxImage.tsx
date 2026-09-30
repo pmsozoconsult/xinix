@@ -59,7 +59,10 @@ export function FullBleedSection({
   effect = "parallax-up",
 }: FullBleedSectionProps) {
   return (
-    <section className={cn("relative flex items-center", minHeight, className)}>
+    <section
+      data-header-tone="dark"
+      className={cn("relative flex items-center", minHeight, className)}
+    >
       <ParallaxImage
         src={src}
         alt={alt}

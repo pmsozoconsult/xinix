@@ -84,7 +84,7 @@ export function WhyXinixSection({ locale, title, subtitle, whyItems }: WhyXinixS
   const t = copy[locale];
 
   return (
-    <section className="relative overflow-hidden bg-paper">
+    <section data-header-tone="light" className="relative overflow-hidden bg-paper">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white via-paper to-mist/50" />
       <div
         className="pointer-events-none absolute inset-0 opacity-30"

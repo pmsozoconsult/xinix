@@ -47,7 +47,7 @@ export function Logo({
         <ellipse cx="18" cy="28" rx="4" ry="6" fill="white" fillOpacity="0.25" />
       </svg>
       {showWordmark && (
-        <span className={cn("font-bold tracking-tight", text, wordmarkClass)}>
+        <span className={cn("font-bold tracking-tight transition-colors duration-500 ease-in-out", text, wordmarkClass)}>
           Xinix
         </span>
       )}

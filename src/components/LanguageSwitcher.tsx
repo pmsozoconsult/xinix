@@ -31,7 +31,7 @@ export function LanguageSwitcher({ locale, pathname, dark = false }: LanguageSwi
   return (
     <div
       className={cn(
-        "flex items-center gap-2 rounded-full border p-1",
+        "flex items-center gap-2 rounded-full border p-1 transition-colors duration-500 ease-in-out",
         dark
           ? "border-white/20 bg-deep-navy/60"
           : "border-line bg-mist/80",
@@ -41,7 +41,7 @@ export function LanguageSwitcher({ locale, pathname, dark = false }: LanguageSwi
     >
       <span
         className={cn(
-          "flex h-7 w-7 items-center justify-center rounded-full",
+          "flex h-7 w-7 items-center justify-center rounded-full transition-colors duration-500 ease-in-out",
           dark ? "text-white/60" : "text-stone",
         )}
       >
@@ -57,7 +57,7 @@ export function LanguageSwitcher({ locale, pathname, dark = false }: LanguageSwi
               hrefLang={option.code}
               aria-current={active ? "true" : undefined}
               className={cn(
-                "rounded-full px-2.5 py-1 text-xs font-semibold tracking-wide transition-all duration-200",
+                "rounded-full px-2.5 py-1 text-xs font-semibold tracking-wide transition-all duration-500 ease-in-out",
                 active
                   ? dark
                     ? "bg-white text-deep-navy shadow-sm"

@@ -22,6 +22,7 @@ export function Section({
   return (
     <section
       id={id}
+      data-header-tone={background === "teal" ? "dark" : "light"}
       className={cn("py-14 sm:py-20 lg:py-24", backgrounds[background], className)}
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>

@@ -15,8 +15,6 @@ import { cn } from "@/lib/utils";
 interface SiteHeaderProps {
   locale: Locale;
   content: SiteContent;
-  transparent?: boolean;
-  followSectionTone?: boolean;
 }
 
 function QuoteIcon({ className }: { className?: string }) {
@@ -33,15 +31,11 @@ function QuoteIcon({ className }: { className?: string }) {
   );
 }
 
-export function SiteHeader({
-  locale,
-  content,
-  transparent = false,
-  followSectionTone = false,
-}: SiteHeaderProps) {
+export function SiteHeader({ locale, content }: SiteHeaderProps) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
-  const sectionTone = useSectionHeaderTone(followSectionTone, pathname);
+  const sectionTone = useSectionHeaderTone(pathname);
+  const isDarkNav = sectionTone === "light";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -50,42 +44,41 @@ export function SiteHeader({
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  const isHeroOverlay = transparent && !scrolled;
-  const isDarkNav = followSectionTone
-    ? sectionTone === "light"
-    : isHeroOverlay || (transparent && scrolled);
-  const showGlass = followSectionTone || transparent || scrolled;
-
   return (
     <header
       data-site-header
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-500 ease-out",
+        "fixed top-0 z-50 w-full transition-all duration-500 ease-in-out",
         scrolled ? "px-3 pt-3 sm:px-5 lg:px-6" : "px-0 pt-0",
       )}
     >
       <div
         className={cn(
-          "relative mx-auto max-w-7xl overflow-hidden transition-all duration-500 ease-out",
+          "relative mx-auto max-w-7xl overflow-hidden transition-all duration-500 ease-in-out",
           scrolled ? "rounded-3xl" : "rounded-b-3xl",
         )}
       >
-        {showGlass && (
-          <div
-            className={cn(
-              "pointer-events-none absolute inset-0 glass-blur-layer transition-opacity duration-500",
-              scrolled ? "rounded-3xl" : "rounded-b-3xl",
-              isDarkNav ? "glass-dark" : "glass-light",
-            )}
-            aria-hidden
-          />
-        )}
+        <div
+          className={cn(
+            "pointer-events-none absolute inset-0 glass-blur-layer glass-light transition-opacity duration-500 ease-in-out",
+            scrolled ? "rounded-3xl" : "rounded-b-3xl",
+            isDarkNav ? "opacity-0" : "opacity-100",
+          )}
+          aria-hidden
+        />
+        <div
+          className={cn(
+            "pointer-events-none absolute inset-0 glass-blur-layer glass-dark transition-opacity duration-500 ease-in-out",
+            scrolled ? "rounded-3xl" : "rounded-b-3xl",
+            isDarkNav ? "opacity-100" : "opacity-0",
+          )}
+          aria-hidden
+        />
 
         <div
           className={cn(
-            "relative z-10 flex items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 lg:px-8",
+            "relative z-10 flex items-center justify-between gap-3 px-4 py-3 transition-[padding] duration-500 ease-in-out sm:gap-4 sm:px-6 lg:px-8",
             scrolled && "py-2.5",
-            !showGlass && "rounded-b-3xl bg-white shadow-sm",
           )}
         >
           <Link
@@ -98,11 +91,9 @@ export function SiteHeader({
 
           <nav
             className={cn(
-              "hidden items-center gap-0.5 rounded-2xl p-1 lg:flex",
+              "hidden items-center gap-0.5 rounded-2xl p-1 transition-colors duration-500 ease-in-out lg:flex",
               isDarkNav ? "text-white" : "text-deep-navy",
-              showGlass &&
-                scrolled &&
-                (isDarkNav ? "bg-black/20" : "bg-white/70"),
+              scrolled && (isDarkNav ? "bg-black/20" : "bg-white/70"),
             )}
             aria-label="Main"
           >
@@ -115,7 +106,7 @@ export function SiteHeader({
                   href={localePath(locale, item.href)}
                   aria-current={active ? "page" : undefined}
                   className={cn(
-                    "relative rounded-xl px-3 py-2 text-sm font-medium transition-all duration-200",
+                    "relative rounded-xl px-3 py-2 text-sm font-medium transition-all duration-500 ease-in-out",
                     active
                       ? isDarkNav
                         ? "bg-white/20 text-white"
@@ -136,7 +127,7 @@ export function SiteHeader({
             <Link
               href={localePath(locale, "/contact")}
               className={cn(
-                "group hidden items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-200 sm:inline-flex",
+                "group hidden items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out sm:inline-flex",
                 isDarkNav
                   ? "bg-white text-deep-teal shadow-md shadow-black/15 hover:bg-paper hover:shadow-lg"
                   : "bg-deep-teal text-white shadow-md shadow-deep-teal/25 hover:bg-xinix-teal hover:shadow-lg",
@@ -147,7 +138,7 @@ export function SiteHeader({
               </span>
               <span
                 className={cn(
-                  "flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-transform duration-200 group-hover:translate-x-0.5",
+                  "flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-all duration-500 ease-in-out group-hover:translate-x-0.5",
                   isDarkNav ? "bg-deep-teal/10 text-deep-teal" : "bg-white/15 text-white",
                 )}
               >

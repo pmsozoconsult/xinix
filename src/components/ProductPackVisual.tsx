@@ -15,6 +15,7 @@ interface ProductPackVisualProps {
   size?: "sm" | "lg";
   variant?: PackStage;
   className?: string;
+  priority?: boolean;
 }
 
 export function ProductPackVisual({
@@ -25,6 +26,7 @@ export function ProductPackVisual({
   size = "lg",
   variant = "color",
   className,
+  priority = false,
 }: ProductPackVisualProps) {
   const cat = categorySlug as CategorySlug;
   const theme = categoryTheme[cat];
@@ -37,7 +39,7 @@ export function ProductPackVisual({
     <div
       className={cn(
         "relative flex overflow-hidden",
-        variant === "shelf" ? "items-end justify-center" : "items-center justify-center",
+        variant === "color" ? "items-center justify-center" : "items-end justify-center",
         className,
       )}
     >
@@ -57,16 +59,16 @@ export function ProductPackVisual({
 
       {variant === "dark" && (
         <>
-          <div className="absolute inset-0 bg-deep-navy" />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/[0.06] to-white/[0.02]" />
           <div
             className={cn(
-              "absolute left-1/2 top-1/2 h-[85%] w-[85%] -translate-x-1/2 -translate-y-1/2 rounded-full blur-3xl",
-              color?.softBg,
+              "absolute left-1/2 top-[42%] h-[70%] w-[80%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-40 blur-3xl",
+              color?.bg,
             )}
           />
           <div
             className={cn(
-              "absolute inset-x-8 bottom-6 h-24 rounded-[100%] blur-2xl opacity-70",
+              "absolute inset-x-10 bottom-8 h-28 rounded-[100%] opacity-80 blur-2xl",
               color?.bg,
             )}
           />
@@ -85,7 +87,9 @@ export function ProductPackVisual({
           className={cn(
             "relative z-10",
             isLg
-              ? "h-[88%] w-[72%] max-w-sm"
+              ? variant === "dark"
+                ? "h-[96%] w-[88%] max-w-md"
+                : "h-[88%] w-[72%] max-w-sm"
               : variant === "shelf"
                 ? "h-[92%] w-[70%]"
                 : "h-[90%] w-[75%]",
@@ -97,9 +101,10 @@ export function ProductPackVisual({
             fill
             className={cn(
               "object-contain drop-shadow-2xl",
-              variant === "shelf" ? "object-bottom" : "object-contain",
+              variant === "color" ? "object-center" : "object-bottom",
             )}
             sizes={isLg ? "(max-width: 1024px) 80vw, 28vw" : "(max-width: 640px) 50vw, 220px"}
+            priority={priority}
           />
         </div>
       ) : (

@@ -6,6 +6,7 @@ import { Reveal } from "@/components/motion/Reveal";
 import { localePath } from "@/lib/i18n";
 import { categoryColor } from "@/lib/productMeta";
 import { type CategorySlug } from "@/lib/categories";
+import { headerClearance, heroContentInset } from "@/lib/heroLayout";
 import { cn } from "@/lib/utils";
 
 interface ProductHeroProps {
@@ -81,13 +82,13 @@ export function ProductHero({
   ];
 
   return (
-    <section data-header-tone="dark" className="relative overflow-hidden bg-deep-navy pt-24">
+    <section data-header-tone="dark" className={cn("relative overflow-hidden bg-deep-navy", headerClearance)}>
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(24,182,199,0.12),_transparent_55%)]"
         aria-hidden
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-4 sm:px-6 lg:px-8 lg:pb-20 lg:pt-6">
+      <div className={heroContentInset}>
         <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-14">
           <Reveal>
             <ProductBackNav

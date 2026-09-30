@@ -1,5 +1,7 @@
 import { FullBleedSection } from "@/components/motion/ParallaxImage";
 import { Reveal } from "@/components/motion/Reveal";
+import { headerClearance, heroContentInset } from "@/lib/heroLayout";
+import { cn } from "@/lib/utils";
 
 interface PageBannerProps {
   src: string;
@@ -22,9 +24,9 @@ export function PageBanner({
       alt=""
       overlay={overlay}
       minHeight="min-h-[50vh] sm:min-h-[55vh]"
-      className="pt-16"
+      className={headerClearance}
     >
-      <div className="mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 lg:px-8">
+      <div className={heroContentInset}>
         <Reveal>
           <h1 className="max-w-4xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
             {headline}

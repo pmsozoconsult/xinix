@@ -5,6 +5,8 @@ import { Reveal } from "@/components/motion/Reveal";
 import { ScrollImage } from "@/components/motion/ScrollImage";
 import { localePath } from "@/lib/i18n";
 import { visuals } from "@/lib/visuals";
+import { headerClearance } from "@/lib/heroLayout";
+import { cn } from "@/lib/utils";
 
 interface ProductsHeroProps {
   locale: Locale;
@@ -40,7 +42,13 @@ export function ProductsHero({ locale, content }: ProductsHeroProps) {
   const t = copy[locale];
 
   return (
-    <section data-header-tone="dark" className="relative flex min-h-[72vh] items-end overflow-hidden bg-deep-navy pt-24">
+    <section
+      data-header-tone="dark"
+      className={cn(
+        "relative flex min-h-[72vh] items-end overflow-hidden bg-deep-navy",
+        headerClearance,
+      )}
+    >
       <div className="absolute inset-0 z-0">
         <ScrollImage src={visuals.manufacturing} effect="zoom-out" sizes="100vw" />
       </div>

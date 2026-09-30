@@ -9,6 +9,7 @@ import { localePath } from "@/lib/i18n";
 import { categoryImages } from "@/lib/visuals";
 import { categoryTheme, type CategorySlug } from "@/lib/categories";
 import { categoryColor, productCountLabel } from "@/lib/productMeta";
+import { headerClearance, heroContentInset } from "@/lib/heroLayout";
 import { cn } from "@/lib/utils";
 
 interface CategoryHeroProps {
@@ -29,9 +30,9 @@ export function CategoryHero({ locale, content, categorySlug }: CategoryHeroProp
     | "industrial";
 
   return (
-    <section data-header-tone="dark" className="relative overflow-hidden bg-deep-navy pt-24">
+    <section data-header-tone="dark" className={cn("relative overflow-hidden bg-deep-navy", headerClearance)}>
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(24,182,199,0.12),_transparent_55%)]" />
-      <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 lg:px-8 lg:pb-20 lg:pt-16">
+      <div className={heroContentInset}>
         <Reveal>
           <ProductBackNav
             locale={locale}

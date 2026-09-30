@@ -88,24 +88,17 @@ export function ProductHero({
       />
 
       <div className="relative mx-auto max-w-7xl px-4 pb-16 pt-10 sm:px-6 lg:px-8 lg:pb-20 lg:pt-14">
-        <Reveal>
-          <ProductBackNav
-            locale={locale}
-            backHref={`/products/${categorySlug}`}
-            backLabel={label}
-            crumbs={[
-              { label: content.nav.products, href: "/products" },
-              { label, href: `/products/${categorySlug}` },
-              { label: product.name },
-            ]}
-          />
-        </Reveal>
-
-        <div className="mt-8 grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-14">
+        <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-14">
           <Reveal>
+            <ProductBackNav
+              locale={locale}
+              backHref={`/products/${categorySlug}`}
+              backLabel={label}
+            />
+
             <span
               className={cn(
-                "inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] ring-1",
+                "mt-4 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] ring-1",
                 color?.softBg,
                 color?.text,
                 color?.ring,

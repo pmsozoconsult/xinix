@@ -85,14 +85,13 @@ export function ProductPackVisual({
       {src ? (
         <div
           className={cn(
-            "relative z-10",
             variant === "dark"
-              ? "absolute inset-2 sm:inset-4"
+              ? "absolute inset-2 z-10 sm:inset-4"
               : isLg
-                ? "h-[88%] w-[72%] max-w-sm"
+                ? "relative z-10 h-[88%] w-[72%] max-w-sm"
                 : variant === "shelf"
-                  ? "h-[92%] w-[70%]"
-                  : "h-[90%] w-[75%]",
+                  ? "relative z-10 h-[92%] w-[70%]"
+                  : "relative z-10 h-[90%] w-[75%]",
           )}
         >
           <Image

@@ -68,7 +68,7 @@ export function ProductPackVisual({
           />
           <div
             className={cn(
-              "absolute inset-x-8 bottom-1 h-24 rounded-[100%] blur-2xl opacity-70",
+              "absolute inset-x-4 bottom-0 h-36 rounded-[100%] blur-3xl opacity-95",
               color?.bg,
             )}
           />

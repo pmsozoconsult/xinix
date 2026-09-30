@@ -98,7 +98,7 @@ export function ProductHero({
 
             <span
               className={cn(
-                "mt-20 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] ring-1",
+                "mt-28 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] ring-1",
                 color?.softBg,
                 color?.text,
                 color?.ring,

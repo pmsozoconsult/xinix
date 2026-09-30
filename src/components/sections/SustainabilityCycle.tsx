@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import type { Locale } from "@/types/content";
 import { Reveal, Stagger, staggerItem } from "@/components/motion/Reveal";
+import { ScrollImage } from "@/components/motion/ScrollImage";
+import { visuals } from "@/lib/visuals";
 
 interface SustainabilityCycleProps {
   locale: Locale;
@@ -13,22 +15,21 @@ const copy = {
     eyebrow: "Zero liquid discharge",
     title: "Nothing leaves the site as waste",
     body: "Water that would be dumped elsewhere is kept in the loop: reused in the process, or taken up in the product.",
-    loop: "Closed loop",
     steps: [
       {
         n: "01",
         title: "Stays on site",
-        body: "Effluent is not sent to drain or to a river. Process water never leaves the fence.",
+        body: "Effluent is not sent to drain or to a river.",
       },
       {
         n: "02",
         title: "Returned to process",
-        body: "Streams that fail a pass go back into production instead of being discarded.",
+        body: "Failed streams go back into production, not to waste.",
       },
       {
         n: "03",
         title: "Packed as product",
-        body: "Water that remains in the chemistry is filled and sold, not discharged.",
+        body: "What remains in the chemistry is filled and sold.",
       },
     ],
   },
@@ -36,12 +37,11 @@ const copy = {
     eyebrow: "ዜሮ ፈሳሽ ቆሻሻ",
     title: "ምንም ነገር እንደ ቆሻሻ ከቦታው አይወጣም",
     body: "ሌላ ቦታ የሚጣል ውሃ እዚህ በዑደት ውስጥ ይቀራል፦ በሂደቱ እንደገና ይጠቀማል ወይም በምርቱ ውስጥ ይገባል።",
-    loop: "የተዘጋ ዑደት",
     steps: [
       {
         n: "01",
         title: "በቦታው ይቀራል",
-        body: "ፍሳሽ ወደ ቧንቧ ወይም ወንዝ አይላክም። የሂደት ውሃ ከአጥሩ ውጭ አይወጣም።",
+        body: "ፍሳሽ ወደ ቧንቧ ወይም ወንዝ አይላክም።",
       },
       {
         n: "02",
@@ -51,7 +51,7 @@ const copy = {
       {
         n: "03",
         title: "እንደ ምርት ይሞላል",
-        body: "በኬሚካሉ ውስጥ የሚቀረው ውሃ ተሞልቶ ይሸጣል እንጂ አይወጣም።",
+        body: "በኬሚካሉ ውስጥ የሚቀረው ተሞልቶ ይሸጣል።",
       },
     ],
   },
@@ -61,59 +61,53 @@ export function SustainabilityCycle({ locale }: SustainabilityCycleProps) {
   const t = copy[locale];
 
   return (
-    <section data-header-tone="dark" className="relative overflow-hidden bg-deep-navy py-20 sm:py-28">
-      <div
-        className="pointer-events-none absolute -right-32 top-1/2 h-[28rem] w-[28rem] -translate-y-1/2 rounded-full border border-drop-cyan/15"
-        aria-hidden
-      />
-      <div
-        className="pointer-events-none absolute -right-16 top-1/2 h-[18rem] w-[18rem] -translate-y-1/2 rounded-full border border-drop-cyan/25"
-        aria-hidden
-      />
+    <section data-header-tone="dark" className="relative overflow-hidden bg-deep-navy">
+      <div className="absolute inset-0">
+        <ScrollImage
+          src={visuals.manufacturing}
+          effect="parallax-up"
+          intensity={0.8}
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-deep-navy/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep-navy via-deep-navy/85 to-deep-navy/45" />
+      </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
+      <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-16 lg:px-8">
+        <div>
           <Reveal>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-drop-cyan">
               {t.eyebrow}
             </p>
-            <h2 className="mt-3 max-w-xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <h2 className="mt-3 max-w-lg text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
               {t.title}
             </h2>
-            <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70 sm:text-lg">
+            <p className="mt-5 max-w-lg text-base leading-relaxed text-white/75 sm:text-lg">
               {t.body}
-            </p>
-          </Reveal>
-          <Reveal delay={0.08}>
-            <p className="font-mono text-sm font-semibold uppercase tracking-[0.28em] text-drop-cyan/80">
-              {t.loop}
             </p>
           </Reveal>
         </div>
 
-        <Stagger className="mt-14 grid gap-0 sm:grid-cols-3">
+        <Stagger className="space-y-0 rounded-3xl border border-white/15 bg-deep-navy/50 p-2 backdrop-blur-sm sm:p-3">
           {t.steps.map((step, index) => (
             <motion.article
               key={step.n}
               variants={staggerItem}
-              className="relative px-0 py-8 sm:px-8 sm:py-0 sm:first:pl-0 sm:last:pr-0"
+              className="relative flex gap-5 px-4 py-5 sm:px-5 sm:py-6"
             >
-              <p className="font-mono text-5xl font-bold leading-none text-white/10 sm:text-6xl">
+              {index < t.steps.length - 1 && (
+                <div
+                  className="absolute bottom-0 left-[2.15rem] top-16 w-px bg-drop-cyan/35"
+                  aria-hidden
+                />
+              )}
+              <span className="relative z-10 font-mono text-sm font-bold text-drop-cyan">
                 {step.n}
-              </p>
-              <div className="relative mt-6 flex items-center gap-3">
-                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-drop-cyan" />
-                {index < t.steps.length - 1 && (
-                  <span
-                    className="hidden h-px flex-1 bg-drop-cyan/40 sm:block"
-                    aria-hidden
-                  />
-                )}
+              </span>
+              <div>
+                <h3 className="text-lg font-bold text-white">{step.title}</h3>
+                <p className="mt-1.5 text-sm leading-relaxed text-white/70">{step.body}</p>
               </div>
-              <h3 className="mt-4 text-xl font-bold text-white">{step.title}</h3>
-              <p className="mt-3 max-w-xs text-sm leading-relaxed text-white/65 sm:text-base">
-                {step.body}
-              </p>
             </motion.article>
           ))}
         </Stagger>

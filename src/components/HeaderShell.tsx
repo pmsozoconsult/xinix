@@ -12,8 +12,12 @@ interface HeaderShellProps {
 
 export function HeaderShell({ locale, content }: HeaderShellProps) {
   const pathname = usePathname();
-  const isHome =
-    pathname === `/${locale}` || pathname === `/${locale}/`;
+  const base = `/${locale}`;
+  const overlayHero =
+    pathname === base ||
+    pathname === `${base}/` ||
+    pathname === `${base}/products` ||
+    pathname.startsWith(`${base}/products/`);
 
-  return <SiteHeader locale={locale} content={content} transparent={isHome} />;
+  return <SiteHeader locale={locale} content={content} transparent={overlayHero} />;
 }

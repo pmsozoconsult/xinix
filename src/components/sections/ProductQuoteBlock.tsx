@@ -90,7 +90,7 @@ export function ProductQuoteBlock({
   const { contact } = content;
 
   return (
-    <section className="bg-paper py-20 sm:py-24">
+    <section data-header-tone="light" className="bg-paper py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="overflow-hidden rounded-3xl border border-line bg-white shadow-xl shadow-deep-navy/8">

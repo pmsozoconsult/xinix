@@ -81,7 +81,7 @@ export function ProductHero({
   ];
 
   return (
-    <section className="relative overflow-hidden bg-deep-navy pt-24">
+    <section data-header-tone="dark" className="relative overflow-hidden bg-deep-navy pt-24">
       <div
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(24,182,199,0.12),_transparent_55%)]"
         aria-hidden

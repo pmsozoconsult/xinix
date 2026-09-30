@@ -38,7 +38,7 @@ export function ProductLineup({
   const color = categoryColor[categorySlug];
 
   return (
-    <section id="lineup" className="scroll-mt-24 bg-mist py-20 sm:py-24">
+    <section id="lineup" data-header-tone="light" className="scroll-mt-24 bg-mist py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">

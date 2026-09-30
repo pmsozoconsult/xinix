@@ -12,7 +12,7 @@ export function Footer({ locale, content }: FooterProps) {
   const { contact, nav } = content;
 
   return (
-    <footer className="relative mt-auto overflow-hidden bg-deep-teal text-white">
+    <footer data-header-tone="dark" className="relative mt-auto overflow-hidden bg-deep-teal text-white">
       <div className="h-px bg-gradient-to-r from-transparent via-drop-cyan/60 to-transparent" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_0%_100%,rgba(19,124,135,0.35),transparent_55%)]" />
 

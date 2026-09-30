@@ -69,7 +69,7 @@ export function ProductDetailBody({
   ];
 
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section data-header-tone="light" className="bg-white py-20 sm:py-24">
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-3 lg:gap-14 lg:px-8">
         <div className="lg:col-span-2">
           <Reveal>

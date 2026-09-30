@@ -44,7 +44,7 @@ export function ProductIndex({ locale, products, filters, cta }: ProductIndexPro
   const tabs = [{ slug: "all", label: h.all }, ...filters];
 
   return (
-    <section className="bg-white py-20 sm:py-24">
+    <section className="bg-white py-20 sm:py-24" data-header-tone="light">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">

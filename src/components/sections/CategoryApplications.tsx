@@ -66,7 +66,7 @@ export function CategoryApplications({
   const color = categoryColor[categorySlug];
 
   return (
-    <section className="relative overflow-hidden bg-paper py-20 sm:py-28">
+    <section data-header-tone="light" className="relative overflow-hidden bg-paper py-20 sm:py-28">
       <div
         className={cn(
           "pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full blur-3xl",

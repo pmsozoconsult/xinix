@@ -9,12 +9,14 @@ import { isNavActive, navItems } from "@/lib/navigation";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { Logo } from "@/components/Logo";
 import { MobileNav } from "@/components/MobileNav";
+import { useSectionHeaderTone } from "@/hooks/useSectionHeaderTone";
 import { cn } from "@/lib/utils";
 
 interface SiteHeaderProps {
   locale: Locale;
   content: SiteContent;
   transparent?: boolean;
+  followSectionTone?: boolean;
 }
 
 function QuoteIcon({ className }: { className?: string }) {
@@ -31,9 +33,15 @@ function QuoteIcon({ className }: { className?: string }) {
   );
 }
 
-export function SiteHeader({ locale, content, transparent = false }: SiteHeaderProps) {
+export function SiteHeader({
+  locale,
+  content,
+  transparent = false,
+  followSectionTone = false,
+}: SiteHeaderProps) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
+  const sectionTone = useSectionHeaderTone(followSectionTone, pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -43,11 +51,14 @@ export function SiteHeader({ locale, content, transparent = false }: SiteHeaderP
   }, []);
 
   const isHeroOverlay = transparent && !scrolled;
-  const isDarkNav = isHeroOverlay || (transparent && scrolled);
-  const showGlass = transparent || scrolled;
+  const isDarkNav = followSectionTone
+    ? sectionTone === "light"
+    : isHeroOverlay || (transparent && scrolled);
+  const showGlass = followSectionTone || transparent || scrolled;
 
   return (
     <header
+      data-site-header
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-500 ease-out",
         scrolled ? "px-3 pt-3 sm:px-5 lg:px-6" : "px-0 pt-0",

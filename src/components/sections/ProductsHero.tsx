@@ -40,7 +40,7 @@ export function ProductsHero({ locale, content }: ProductsHeroProps) {
   const t = copy[locale];
 
   return (
-    <section className="relative flex min-h-[72vh] items-end overflow-hidden bg-deep-navy pt-24">
+    <section data-header-tone="dark" className="relative flex min-h-[72vh] items-end overflow-hidden bg-deep-navy pt-24">
       <div className="absolute inset-0 z-0">
         <ScrollImage src={visuals.manufacturing} effect="zoom-out" sizes="100vw" />
       </div>

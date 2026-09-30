@@ -40,7 +40,7 @@ export function AudienceStrip({ locale }: AudienceStripProps) {
   const h = heading[locale];
 
   return (
-    <section className="relative overflow-hidden bg-paper py-20 sm:py-24">
+    <section data-header-tone="light" className="relative overflow-hidden bg-paper py-20 sm:py-24">
       <div
         className="pointer-events-none absolute inset-0 opacity-40"
         style={{

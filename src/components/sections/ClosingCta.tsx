@@ -93,7 +93,7 @@ export function ClosingCta({ locale, content }: ClosingCtaProps) {
   const t = labels[locale];
 
   return (
-    <section className="border-t border-line bg-paper">
+    <section data-header-tone="light" className="border-t border-line bg-paper">
       <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
         <div className="flex flex-col justify-center border-b border-line px-4 py-16 sm:px-6 lg:border-b-0 lg:border-r lg:py-24 lg:pl-8 lg:pr-14">
           <Reveal>

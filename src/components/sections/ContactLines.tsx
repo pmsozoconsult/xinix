@@ -10,18 +10,18 @@ interface ContactLinesProps {
 
 const copy = {
   en: {
-    eyebrow: "Direct lines",
+    eyebrow: "Reach us directly",
     email: "Email",
     phone: "Phone",
     whatsapp: "WhatsApp",
-    waHint: "Message the sales team",
+    waHint: "Message our sales team",
   },
   am: {
-    eyebrow: "ቀጥተኛ መስመሮች",
+    eyebrow: "በቀጥታ ያግኙን",
     email: "ኢሜይል",
     phone: "ስልክ",
     whatsapp: "ዋትስአፕ",
-    waHint: "የሽያጭ ቡድኑን ይጻፉ",
+    waHint: "የሽያጭ ቡድናችንን ይጻፉ",
   },
 } as const;
 

@@ -7,7 +7,9 @@ interface EnquiryPayload {
   organisation?: string;
   contact: string;
   country: string;
-  need: string;
+  need?: string;
+  products?: string;
+  region?: string;
   locale?: string;
   formType?: string;
   productName?: string;
@@ -20,7 +22,10 @@ export async function POST(request: Request) {
     if (!body.name || !body.contact || !body.country) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
-    if (body.formType !== "distributor" && !body.need) {
+    if (body.formType !== "distributor" && body.formType !== "contact" && !body.need) {
+      return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+    }
+    if (body.formType === "contact" && !body.need && !body.products) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 

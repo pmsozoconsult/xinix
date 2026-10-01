@@ -13,16 +13,24 @@ interface ContactDeskProps {
 
 const copy = {
   en: {
-    pad: "Quote pad",
-    intro: "Product and quantity first. That is enough to start a price.",
-    sheets: "Datasheets sit on each product page — or ask here and we will send them.",
-    range: "Open the range",
+    pad: "Request a quote",
+    intro: "Tell us what you need",
+    other: "Other enquiries",
+    distributor: "Want to become a distributor?",
+    distributorBody: "Visit our For Distributors page to apply.",
+    fit: "Not sure which product fits your needs?",
+    fitBody:
+      "Tell us about your application in the message field and our team will recommend a suitable product and explain its correct use.",
   },
   am: {
-    pad: "የዋጋ ሰሌዳ",
-    intro: "መጀመሪያ ምርትና መጠን። ዋጋ ለመጀመር ያ በቂ ነው።",
-    sheets: "የመረጃ ሉሆች በእያንዳንዱ የምርት ገጽ ላይ ናቸው — ወይም እዚህ ይጠይቁ እንልካለን።",
-    range: "ስብስቡን ይክፈቱ",
+    pad: "ዋጋ ይጠይቁ",
+    intro: "የሚፈልጉትን ይንገሩን",
+    other: "ሌሎች ጥያቄዎች",
+    distributor: "አከፋፋይ መሆን ይፈልጋሉ?",
+    distributorBody: "ለማመልከት የአከፋፋዮች ገጻችንን ይጎብኙ።",
+    fit: "የትኛው ምርት እንደሚስማማ እርግጠኛ አይደሉም?",
+    fitBody:
+      "ስለ አገልግሎትዎ በመልዕክት መስኩ ይንገሩን፤ ቡድናችን ተስማሚ ምርት ይመክራል፣ ትክክለኛ አጠቃቀሙንም ያብራራል።",
   },
 } as const;
 
@@ -39,16 +47,21 @@ export function ContactDesk({ locale, content }: ContactDeskProps) {
         <Reveal>
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-stone">{t.pad}</p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl">
-            {content.ui.requestQuote}
+            {t.intro}
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-stone sm:text-lg">{t.intro}</p>
-          <p className="mt-6 text-sm leading-relaxed text-stone">{t.sheets}</p>
+          <p className="mt-10 text-sm font-semibold uppercase tracking-[0.18em] text-teal-text">
+            {t.other}
+          </p>
+          <p className="mt-4 font-semibold text-deep-navy">{t.distributor}</p>
+          <p className="mt-2 text-base leading-relaxed text-stone">{t.distributorBody}</p>
           <Link
-            href={localePath(locale, "/products")}
-            className="mt-6 inline-flex text-sm font-semibold text-deep-teal hover:text-xinix-teal"
+            href={localePath(locale, "/distributors")}
+            className="mt-3 inline-flex text-sm font-semibold text-deep-teal hover:text-xinix-teal"
           >
-            {t.range} →
+            {content.nav.distributors} →
           </Link>
+          <p className="mt-8 font-semibold text-deep-navy">{t.fit}</p>
+          <p className="mt-2 text-base leading-relaxed text-stone">{t.fitBody}</p>
         </Reveal>
 
         <div className="border border-line bg-paper p-6 sm:p-10">
@@ -57,7 +70,13 @@ export function ContactDesk({ locale, content }: ContactDeskProps) {
               <span key={i} className="h-2 flex-1 bg-white ring-1 ring-line" />
             ))}
           </div>
-          <EnquiryForm locale={locale} ui={content.ui} hideIntro variant="product" />
+          <EnquiryForm
+            locale={locale}
+            ui={content.ui}
+            formType="contact"
+            hideIntro
+            variant="product"
+          />
         </div>
       </div>
     </section>

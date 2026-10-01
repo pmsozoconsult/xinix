@@ -7,7 +7,7 @@ import { Button } from "@/components/Button";
 interface EnquiryFormProps {
   locale: Locale;
   ui: SiteContent["ui"];
-  formType?: "quote" | "distributor";
+  formType?: "quote" | "distributor" | "contact";
   productName?: string;
   hideIntro?: boolean;
   variant?: "default" | "product";
@@ -91,6 +91,39 @@ const distributorCopy = {
   },
 } as const;
 
+const contactCopy = {
+  en: {
+    name: "Full name",
+    company: "Company or organisation",
+    email: "Email",
+    phone: "Phone or WhatsApp",
+    region: "Delivery location: city or region",
+    enquiryType: "Enquiry type",
+    types: ["Quote", "Distributor enquiry", "Technical question", "Other"],
+    products: "Products you need",
+    quantities: "Quantities",
+    message: "Message",
+    privacy:
+      "We use your details to respond to your enquiry and do not sell them or share them for unrelated marketing.",
+    submit: "Send enquiry",
+  },
+  am: {
+    name: "ሙሉ ስም",
+    company: "ኩባንያ ወይም ድርጅት",
+    email: "ኢሜይል",
+    phone: "ስልክ ወይም ዋትስአፕ",
+    region: "የመላኪያ ቦታ፦ ከተማ ወይም ክልል",
+    enquiryType: "የጥያቄ ዓይነት",
+    types: ["ዋጋ", "የአከፋፋይ ጥያቄ", "ቴክኒካዊ ጥያቄ", "ሌላ"],
+    products: "የሚፈልጓቸው ምርቶች",
+    quantities: "መጠኖች",
+    message: "መልዕክት",
+    privacy:
+      "ዝርዝርዎን የምንጠቀመው ጥያቄዎን ለመመለስ ነው። ለሌላ ግብይት አንሸጥም፣ አናጋራም።",
+    submit: "ጥያቄውን ይላኩ",
+  },
+} as const;
+
 export function EnquiryForm({
   locale,
   ui,
@@ -104,6 +137,7 @@ export function EnquiryForm({
   );
   const inputClass = fieldClass[variant];
   const d = distributorCopy[locale];
+  const c = contactCopy[locale];
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -124,7 +158,8 @@ export function EnquiryForm({
           formType,
           productName,
           contact: payload.email ?? payload.contact,
-          need: payload.need ?? payload.products,
+          country: payload.country ?? payload.region,
+          need: payload.need ?? payload.message ?? payload.products,
         }),
       });
 
@@ -141,6 +176,69 @@ export function EnquiryForm({
       <div className="rounded-xl border border-leaf-green/30 bg-leaf-green/5 p-6 text-deep-navy">
         {ui.successMessage}
       </div>
+    );
+  }
+
+  if (formType === "contact") {
+    return (
+      <form onSubmit={handleSubmit} className="space-y-5">
+        <div className="grid gap-4 sm:grid-cols-2">
+          <label className="block text-sm font-medium text-deep-navy">
+            {c.name}
+            <input required name="name" className={inputClass} />
+          </label>
+          <label className="block text-sm font-medium text-deep-navy">
+            {c.company}
+            <input name="organisation" className={inputClass} />
+          </label>
+          <label className="block text-sm font-medium text-deep-navy">
+            {c.email}
+            <input required type="email" name="email" className={inputClass} />
+          </label>
+          <label className="block text-sm font-medium text-deep-navy">
+            {c.phone}
+            <input required name="phone" className={inputClass} />
+          </label>
+        </div>
+        <label className="block text-sm font-medium text-deep-navy">
+          {c.region}
+          <input required name="region" className={inputClass} />
+        </label>
+        <label className="block text-sm font-medium text-deep-navy">
+          {c.enquiryType}
+          <select required name="enquiryType" className={inputClass} defaultValue="">
+            <option value="" disabled>
+              —
+            </option>
+            {c.types.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label className="block text-sm font-medium text-deep-navy">
+          {c.products}
+          <textarea required name="products" rows={3} className={inputClass} />
+        </label>
+        <label className="block text-sm font-medium text-deep-navy">
+          {c.quantities}
+          <input required name="quantities" className={inputClass} />
+        </label>
+        <label className="block text-sm font-medium text-deep-navy">
+          {c.message}
+          <textarea name="message" rows={4} className={inputClass} />
+        </label>
+        {status === "error" && (
+          <p className="text-sm text-red-700" role="alert">
+            {ui.errorMessage}
+          </p>
+        )}
+        <p className="text-xs text-stone">{c.privacy}</p>
+        <Button type="submit" disabled={status === "loading"} className="w-full sm:w-auto">
+          {status === "loading" ? "…" : c.submit}
+        </Button>
+      </form>
     );
   }
 

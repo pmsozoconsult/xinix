@@ -35,8 +35,8 @@ export default async function ContactPage({
     <>
       <ContactHero locale={locale} content={content} />
       <ContactLines locale={locale} content={content} />
-      <ContactDesk locale={locale} content={content} />
       <ContactPlaces locale={locale} content={content} />
+      <ContactDesk locale={locale} content={content} />
     </>
   );
 }

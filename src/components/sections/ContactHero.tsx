@@ -13,16 +13,20 @@ interface ContactHeroProps {
 
 const copy = {
   en: {
-    eyebrow: "Quotes and enquiries",
+    eyebrow: "Contact us",
     stamp: "1 working day",
-    stampNote: "Most prices come back in this window.",
-    cta: "Write the quote",
+    stampNote: "We aim to reply within this window.",
+    cta: "Request a quote",
+    launch:
+      "Commercial production is scheduled to begin in December 2026. Quotes and orders placed now can be planned for delivery from launch.",
   },
   am: {
-    eyebrow: "ዋጋ እና ጥያቄዎች",
+    eyebrow: "ያግኙን",
     stamp: "1 የሥራ ቀን",
-    stampNote: "አብዛኛው ዋጋ በዚህ ጊዜ ይመለሳል።",
-    cta: "ዋጋውን ይጻፉ",
+    stampNote: "በዚህ ጊዜ ውስጥ ለመመለስ እንሠራለን።",
+    cta: "ዋጋ ይጠይቁ",
+    launch:
+      "ንግድ ምርት ከታኅሣሥ 2019 ዓ.ም. እንዲጀምር ታቅዷል። አሁን የሚቀርቡ ዋጋዎችና ትዕዛዞች ከመጀመሪያው ጀምሮ ለመላክ ሊታቀዱ ይችላሉ።",
   },
 } as const;
 
@@ -43,7 +47,8 @@ export function ContactHero({ locale, content }: ContactHeroProps) {
           <h1 className="mt-4 max-w-xl text-4xl font-bold leading-[1.08] tracking-tight text-deep-navy sm:text-5xl lg:text-6xl">
             {page.headline}
           </h1>
-          <p className="mt-6 max-w-lg text-lg leading-relaxed text-stone">{page.body}</p>
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-stone">{page.body}</p>
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-stone">{t.launch}</p>
           <div className="mt-8">
             <Button href="#quote">{t.cta}</Button>
           </div>

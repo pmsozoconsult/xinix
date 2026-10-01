@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { EnquiryForm } from "@/components/EnquiryForm";
-import { PageBanner } from "@/components/sections/PageBanner";
-import { Reveal } from "@/components/motion/Reveal";
-import { ProseBlock, Section } from "@/components/Section";
+import { DistributorApply } from "@/components/sections/DistributorApply";
+import { DistributorHero } from "@/components/sections/DistributorHero";
+import { DistributorLane } from "@/components/sections/DistributorLane";
+import { DistributorManifest } from "@/components/sections/DistributorManifest";
 import { getContent } from "@/lib/content";
 import { isValidLocale, type Locale } from "@/lib/i18n";
-import { visuals } from "@/lib/visuals";
 
 export async function generateMetadata({
   params,
@@ -31,30 +30,13 @@ export default async function DistributorsPage({
   if (!isValidLocale(localeParam)) return null;
   const locale = localeParam as Locale;
   const content = getContent(locale);
-  const page = content.distributors;
 
   return (
     <>
-      <PageBanner src={visuals.export} headline={page.headline} overlay="navy" />
-      <Section>
-        <Reveal>
-          <ProseBlock text={page.body} />
-        </Reveal>
-      </Section>
-      <Section background="paper">
-        <Reveal>
-          <h2 className="text-2xl font-bold text-xinix-blue">
-            {content.ui.becomeDistributor}
-          </h2>
-          <div className="mt-8 max-w-2xl rounded-2xl border border-line bg-white p-6 shadow-sm sm:p-8">
-            <EnquiryForm
-              locale={locale}
-              ui={content.ui}
-              formType="distributor"
-            />
-          </div>
-        </Reveal>
-      </Section>
+      <DistributorHero locale={locale} content={content} />
+      <DistributorLane locale={locale} />
+      <DistributorManifest locale={locale} />
+      <DistributorApply locale={locale} content={content} />
     </>
   );
 }

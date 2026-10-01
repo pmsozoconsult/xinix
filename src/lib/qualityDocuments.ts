@@ -3,7 +3,7 @@ import type { Product, SiteContent } from "@/types/content";
 const libraryGroups: { id: string; slugs: string[] }[] = [
   {
     id: "home",
-    slugs: ["drink-plus", "handdis", "vegdis"],
+    slugs: ["drink-plus", "handdis", "purestep", "vegdis"],
   },
   {
     id: "healthcare",
@@ -15,7 +15,7 @@ const libraryGroups: { id: string; slugs: string[] }[] = [
   },
   {
     id: "food",
-    slugs: ["postharvest-plus", "fungdis"],
+    slugs: ["postharvest-plus", "fungdis", "vetdis"],
   },
   {
     id: "industry",

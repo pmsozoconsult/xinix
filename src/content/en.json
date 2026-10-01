@@ -64,12 +64,27 @@
     "ctaHeadline": "Tell us what you need",
     "ctaBody": "Send the product and the quantity and we will come back with a price, usually within one working day.",
     "stats": [
-      { "value": "12", "label": "Products across four families" },
-      { "value": "100%", "label": "Solar powered production" },
-      { "value": "0", "label": "Wastewater leaving the plant" },
-      { "value": "95%", "label": "Locally sourced raw materials" }
+      {
+        "value": "12",
+        "label": "Products across four families"
+      },
+      {
+        "value": "100%",
+        "label": "Solar powered production"
+      },
+      {
+        "value": "0",
+        "label": "Wastewater leaving the plant"
+      },
+      {
+        "value": "95%",
+        "label": "Locally sourced raw materials"
+      }
     ],
-    "heroBadges": ["Solar powered", "Made in Ethiopia"]
+    "heroBadges": [
+      "Solar powered",
+      "Made in Ethiopia"
+    ]
   },
   "categories": {
     "water-and-household": {
@@ -80,7 +95,10 @@
       },
       "headline": "Safe water starts with reliable disinfection",
       "body": "Many homes, schools and clinics across the region rely on stored or borehole water, and that water needs treating before it is safe to drink. Xinix water products do that simply and affordably. They are biodegradable, made in Ethiopia, and priced to stay within reach. The range covers Drink+ for treating water at the point of use, and AquaDis Tank for cleaning and treating storage tanks and lines.",
-      "productSlugs": ["drink-plus", "aquadis-tank"]
+      "productSlugs": [
+        "drink-plus",
+        "aquadis-tank"
+      ]
     },
     "hygiene-and-institutional": {
       "slug": "hygiene-and-institutional",
@@ -90,7 +108,12 @@
       },
       "headline": "Hygiene that holds up in busy places",
       "body": "Hospitals, schools, food businesses and transport hubs go through disinfectant in volume, and they need a supply that is dependable and gentle enough for daily use. Xinix makes a hand disinfectant, a surface disinfectant and a clinical grade product, all biodegradable and all available in practical sizes. HandDis covers hand hygiene, SurfDis cleans surfaces and equipment at a one to ten dilution, and MedDis is built for clinical settings.",
-      "productSlugs": ["handdis", "surfdis", "meddis"]
+      "productSlugs": [
+        "handdis",
+        "purestep",
+        "surfdis",
+        "meddis"
+      ]
     },
     "food-and-agriculture": {
       "slug": "food-and-agriculture",
@@ -100,7 +123,12 @@
       },
       "headline": "Less spoilage between the field and the market",
       "body": "A large share of fruit and vegetables is lost after harvest, to fungus and microbes that take hold in storage and transit. Xinix produce products cut those losses, so growers, packhouses and exporters keep more of what they grow. VegDis washes and sanitises produce, Postharvest+ extends shelf life through the cold chain, and FungDis holds back fungal spoilage. All are biodegradable and come with clear dosing and rinse guidance.",
-      "productSlugs": ["vegdis", "postharvest-plus", "fungdis"]
+      "productSlugs": [
+        "vegdis",
+        "postharvest-plus",
+        "fungdis",
+        "vetdis"
+      ]
     },
     "industrial-and-biofilm": {
       "slug": "industrial-and-biofilm",
@@ -110,7 +138,12 @@
       },
       "headline": "Clean plant, fewer stoppages",
       "body": "Pipes, tanks and machinery foul up over time, and dirty systems cost output and money. Xinix industrial products keep them running. Degrease+ cuts oil and grease, AcidX clears scale and mineral buildup, SystemFlush+ cleans lines and tanks between cycles, and BiofilmDis breaks down the biofilm that ordinary cleaning leaves behind. The range is supplied in practical sizes, with the main cleaners in twenty litre containers.",
-      "productSlugs": ["degrease-plus", "acidx", "systemflush-plus", "biofilmdis"]
+      "productSlugs": [
+        "degrease-plus",
+        "acidx",
+        "systemflush-plus",
+        "biofilmdis"
+      ]
     }
   },
   "products": {
@@ -123,11 +156,11 @@
         "description": "Drink+ treats drinking water at the point of use, for homes, fieldwork and travel where supply is not reliable. Biodegradable, made in Ethiopia."
       },
       "details": {
-        "tagline": "Clean drinking water wherever the supply is not.",
-        "usedBy": "Homes, field teams, travellers and emergency supply.",
-        "feature": "Treats water at the point of use.",
-        "packSize": "100 ml bottle.",
-        "extra": "Biodegradable formula."
+        "tagline": "A few drops make stored and collected water safer to drink, with no chlorine taste or smell. Ideal for jerrycans, water tanks and household containers.",
+        "usedBy": "Households, schools, NGOs, water kiosks and community water programmes.",
+        "feature": "Treats stored and collected water with a few drops.",
+        "packSize": "100 ml bottle",
+        "extra": "No chlorine taste or smell."
       }
     },
     "aquadis-tank": {
@@ -139,11 +172,11 @@
         "description": "AquaDis Tank cleans and treats water storage tanks and lines. From Xinix, made in Ethiopia, for homes, schools and water operators. Formerly TankDis 2K."
       },
       "details": {
-        "tagline": "Keep stored water safe, from tank to tap.",
-        "usedBy": "Households, schools, hotels and water operators.",
-        "feature": "Cleans and treats storage tanks and lines.",
-        "packSize": "100 ml bottle.",
-        "extra": "Formerly listed as TankDis 2K."
+        "tagline": "A two pack system for water storage tanks, reservoirs and distribution lines, including airport water facilities and aircraft water storage systems. The two packs are mixed on site before dosing.",
+        "usedBy": "Airlines, airports, water utilities, hotels, hospitals, apartment buildings and large institutions.",
+        "feature": "Two packs mixed on site before dosing.",
+        "packSize": "Two pack kit, mixed before use",
+        "extra": "For tanks, reservoirs, distribution lines and aviation water systems."
       }
     },
     "handdis": {
@@ -155,11 +188,11 @@
         "description": "HandDis is a biodegradable hand disinfectant for clinics, schools and workplaces. Made in Ethiopia by Xinix."
       },
       "details": {
-        "tagline": "Hand hygiene for places with heavy footfall.",
-        "usedBy": "Clinics, schools, offices, transport hubs and food handling.",
-        "feature": "Suited to repeated daily use.",
-        "packSize": "50 ml bottle.",
-        "extra": "Biodegradable formula."
+        "tagline": "Alcohol free and gentle on skin for frequent use through the day. Easy to keep in the kitchen, the car or the classroom.",
+        "usedBy": "Families, schools, clinics, offices and restaurants.",
+        "feature": "Alcohol free hand hygiene for frequent use.",
+        "packSize": "100 ml bottle",
+        "extra": "Gentle on skin."
       }
     },
     "surfdis": {
@@ -171,11 +204,11 @@
         "description": "SurfDis disinfects surfaces and equipment in clinical and commercial settings. Biodegradable, dilute one to ten, made in Ethiopia by Xinix."
       },
       "details": {
-        "tagline": "Disinfected surfaces at a one to ten dilution.",
-        "usedBy": "Hospitals, food processing, offices and public spaces.",
-        "feature": "Concentrated, dilute before use.",
-        "packSize": "500 ml bottle.",
-        "extra": "Works across many surface types."
+        "tagline": "For floors, counters, bathrooms and shared surfaces. No rinsing needed on most hard surfaces when used as directed.",
+        "usedBy": "Hotels, schools, offices, restaurants and public buildings.",
+        "feature": "Surface hygiene for everyday shared spaces.",
+        "packSize": "500 ml bottle",
+        "extra": "No rinsing needed on most hard surfaces when used as directed."
       }
     },
     "meddis": {
@@ -187,11 +220,11 @@
         "description": "MedDis is a clinical grade disinfectant for healthcare settings, made in Ethiopia by Xinix. Biodegradable and supplied in institutional sizes."
       },
       "details": {
-        "tagline": "A disinfectant built for clinical settings.",
-        "usedBy": "Hospitals, health centres and laboratories.",
-        "feature": "For use under clinical protocols.",
-        "packSize": "500 ml bottle.",
-        "extra": "Biodegradable formula."
+        "tagline": "For hygiene in patient rooms, treatment areas and laboratories. Fast acting with no harsh residue.",
+        "usedBy": "Hospitals, health centres, clinics and laboratories.",
+        "feature": "Healthcare hygiene for clinical spaces.",
+        "packSize": "500 ml bottle",
+        "extra": "Fast acting with no harsh residue."
       }
     },
     "vegdis": {
@@ -203,27 +236,27 @@
         "description": "VegDis washes and sanitises fruit and vegetables to reduce spoilage. Biodegradable, safe for produce when used as directed, made in Ethiopia."
       },
       "details": {
-        "tagline": "Cleaner produce, less waste.",
-        "usedBy": "Farms, packhouses, exporters and wholesalers.",
-        "feature": "Reduces spoilage organisms.",
-        "packSize": "500 ml bottle.",
-        "extra": "Rinse and pack ready."
+        "tagline": "Wash fruit, vegetables, meat, chicken and fish before cooking or sale. Leaves no taste or smell on food when used as directed.",
+        "usedBy": "Home kitchens, hotels, caterers, butchers, supermarkets, food processors and exporters.",
+        "feature": "Food wash for produce and meat.",
+        "packSize": "500 ml bottle",
+        "extra": "Leaves no taste or smell on food when used as directed."
       }
     },
     "postharvest-plus": {
       "slug": "postharvest-plus",
-      "name": "Postharvest+",
+      "name": "PostHarvest+",
       "categorySlug": "food-and-agriculture",
       "seo": {
         "title": "Postharvest+ | Post Harvest Treatment | Xinix",
         "description": "Postharvest+ extends shelf life and controls spoilage after harvest. From Xinix in Ethiopia, for packhouses and produce exporters across the region."
       },
       "details": {
-        "tagline": "More days of shelf life after the field.",
-        "usedBy": "Packhouses, cold chain operators and exporters.",
-        "feature": "Controls post-harvest spoilage.",
-        "packSize": "100 ml bottle.",
-        "extra": "Supports export shelf life."
+        "tagline": "A two pack treatment that keeps harvested produce clean and fresh through storage and transport. Suitable for cut flowers, spices, vegetables and fruit, and for treating the wash water used in coffee processing.",
+        "usedBy": "Flower farms, coffee washing stations, spice producers, fruit and vegetable exporters, packhouses and cold stores.",
+        "feature": "After harvest care as a two pack, mixed before use.",
+        "packSize": "Two pack kit, mixed before use",
+        "extra": "Also treats wash water used in coffee processing."
       }
     },
     "fungdis": {
@@ -235,11 +268,11 @@
         "description": "FungDis controls fungal spoilage on stored and treated produce. Biodegradable, made in Ethiopia by Xinix."
       },
       "details": {
-        "tagline": "Hold back fungal spoilage.",
-        "usedBy": "Packhouses, storage operators and growers.",
-        "feature": "Targets fungal spoilage.",
-        "packSize": "Two part kit, 250 ml each.",
-        "extra": "Works alongside Postharvest+."
+        "tagline": "A two pack treatment for greenhouses, crop stores and irrigation systems where mould and fungus can affect quality.",
+        "usedBy": "Greenhouses, flower farms, grain stores, spice stores and produce stores.",
+        "feature": "Greenhouse and storage hygiene.",
+        "packSize": "Two pack kit, mixed before use",
+        "extra": "For mould and fungus in stores and irrigation systems."
       }
     },
     "degrease-plus": {
@@ -251,11 +284,11 @@
         "description": "Degrease+ removes oil and grease from machinery and surfaces in plants and workshops. A biodegradable industrial cleaner made in Ethiopia by Xinix."
       },
       "details": {
-        "tagline": "Cut through grease without a harsh residue.",
-        "usedBy": "Factories, workshops, food plants and fleets.",
-        "feature": "Strong on oil and grease.",
-        "packSize": "20 litre container.",
-        "extra": "Dilutes to suit the job."
+        "tagline": "For heavy grease on production lines and process equipment. Part of the ProCleen industrial cleaner set.",
+        "usedBy": "Food and beverage plants, factories, workshops and maintenance teams.",
+        "feature": "Degrease+ for heavy grease.",
+        "packSize": "25 litre containers",
+        "extra": "Part of ProCleen with SystemFlush+ and AcidX."
       }
     },
     "acidx": {
@@ -267,11 +300,11 @@
         "description": "AcidX removes scale and mineral buildup from pipes, tanks and equipment. A corrosive industrial cleaner from Xinix, made in Ethiopia. Handle per safety guidance."
       },
       "details": {
-        "tagline": "Clear scale and mineral buildup.",
-        "usedBy": "Water systems, boilers and processing lines.",
-        "feature": "Removes scale and deposits.",
-        "packSize": "20 litre container.",
-        "extra": "Corrosive, follow the safety guidance."
+        "tagline": "Biodegradable descaler for production lines and process equipment. Part of the ProCleen industrial cleaner set.",
+        "usedBy": "Food and beverage plants, factories, workshops and maintenance teams.",
+        "feature": "AcidX biodegradable descaler.",
+        "packSize": "25 litre containers",
+        "extra": "Part of ProCleen with SystemFlush+ and Degrease+."
       }
     },
     "systemflush-plus": {
@@ -283,11 +316,11 @@
         "description": "SystemFlush+ cleans pipes, tanks and treatment systems between cycles. A biodegradable industrial flush from Xinix, made in Ethiopia."
       },
       "details": {
-        "tagline": "A clean flush between production cycles.",
-        "usedBy": "Water treatment, processing plants and tank systems.",
-        "feature": "Clears lines and tanks.",
-        "packSize": "20 litre container.",
-        "extra": "Pairs with Degrease+ and AcidX."
+        "tagline": "System flushing for production lines and process equipment. Part of the ProCleen industrial cleaner set.",
+        "usedBy": "Food and beverage plants, factories, workshops and maintenance teams.",
+        "feature": "SystemFlush+ for system flushing.",
+        "packSize": "25 litre containers",
+        "extra": "Part of ProCleen with AcidX and Degrease+."
       }
     },
     "biofilmdis": {
@@ -299,11 +332,43 @@
         "description": "BiofilmDis breaks down and removes biofilm in pipes, tanks and water systems. Biodegradable, made in Ethiopia by Xinix, for plants and water operators."
       },
       "details": {
-        "tagline": "Break down biofilm where it hides.",
-        "usedBy": "Water systems, cooling lines and processing plants.",
-        "feature": "Removes established biofilm.",
-        "packSize": "Two part kit, 250 ml each.",
-        "extra": "Restores flow and hygiene."
+        "tagline": "A two pack treatment that removes and prevents biofilm inside pipes, cooling towers and CIP systems, where bacteria build up out of sight and resist ordinary cleaning.",
+        "usedBy": "Breweries, dairies, bottling plants, beverage factories and industrial cooling systems.",
+        "feature": "Removes and prevents biofilm in water lines and process systems.",
+        "packSize": "Two pack kit, mixed before use",
+        "extra": "For pipes, cooling towers and CIP systems."
+      }
+    },
+    "purestep": {
+      "slug": "purestep",
+      "name": "PureStep",
+      "categorySlug": "hygiene-and-institutional",
+      "seo": {
+        "title": "PureStep | Foot Care Spray | Xinix Ethiopia",
+        "description": "PureStep foot care spray helps eliminate foot fungus and reduce odour. Made in Ethiopia by Xinix."
+      },
+      "details": {
+        "tagline": "Spray directly onto clean feet to help eliminate foot fungus and reduce odour. A simple daily routine for anyone on their feet all day.",
+        "usedBy": "Families, athletes, workers, schools and clinics.",
+        "feature": "Foot care spray for fungus and odour.",
+        "packSize": "100 ml bottle",
+        "extra": "Spray onto clean feet as part of a daily routine."
+      }
+    },
+    "vetdis": {
+      "slug": "vetdis",
+      "name": "VetDis",
+      "categorySlug": "food-and-agriculture",
+      "seo": {
+        "title": "VetDis | Animal Housing Hygiene | Xinix Ethiopia",
+        "description": "VetDis for animal housing, equipment and surfaces in contact with livestock and poultry. Made in Ethiopia by Xinix."
+      },
+      "details": {
+        "tagline": "For animal housing, equipment and surfaces in contact with livestock and poultry.",
+        "usedBy": "Poultry farms, dairy farms, livestock operations and veterinary clinics.",
+        "feature": "Animal housing hygiene.",
+        "packSize": "500 ml bottle",
+        "extra": "For equipment and surfaces in contact with livestock and poultry."
       }
     }
   },
@@ -411,9 +476,9 @@
     "Biodegradable formulas"
   ],
   "categoryLabels": {
-    "water-and-household": "Water and Household",
-    "hygiene-and-institutional": "Hygiene and Institutional",
-    "food-and-agriculture": "Food and Agriculture",
-    "industrial-and-biofilm": "Industrial and Biofilm"
+    "water-and-household": "Water systems and aviation",
+    "hygiene-and-institutional": "Healthcare and institutions",
+    "food-and-agriculture": "Food and agriculture",
+    "industrial-and-biofilm": "Food, beverage and industry"
   }
 }

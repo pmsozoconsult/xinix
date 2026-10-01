@@ -17,6 +17,8 @@ interface CategoryGridItem {
   title: string;
   description: string;
   count: number;
+  themeSlug?: CategorySlug;
+  href?: string;
 }
 
 interface CategoryGridProps {
@@ -26,8 +28,8 @@ interface CategoryGridProps {
 }
 
 const heading = {
-  en: { eyebrow: "Four families", title: "Find the range for your need" },
-  am: { eyebrow: "አራት ቤተሰቦች", title: "ለፍላጎትዎ የሚሆነውን ስብስብ ያግኙ" },
+  en: { eyebrow: "Five areas", title: "Find the range for your need" },
+  am: { eyebrow: "አምስት መስኮች", title: "ለፍላጎትዎ የሚሆነውን ስብስብ ያግኙ" },
 } as const;
 
 export function CategoryGrid({ locale, items, cta }: CategoryGridProps) {
@@ -47,7 +49,7 @@ export function CategoryGrid({ locale, items, cta }: CategoryGridProps) {
 
         <Stagger className="mt-12 grid gap-5 sm:grid-cols-2">
           {items.map((item) => {
-            const slug = item.slug as CategorySlug;
+            const slug = (item.themeSlug ?? item.slug) as CategorySlug;
             const theme = categoryTheme[slug];
             const color = categoryColor[slug];
             const iconName = theme?.icon as
@@ -55,16 +57,17 @@ export function CategoryGrid({ locale, items, cta }: CategoryGridProps) {
               | "hygiene"
               | "agriculture"
               | "industrial";
+            const href = item.href ?? localePath(locale, `/products/${item.slug}`);
 
             return (
               <motion.div key={item.slug} variants={staggerItem}>
                 <Link
-                  href={localePath(locale, `/products/${item.slug}`)}
+                  href={href}
                   className="group relative flex h-full min-h-[19rem] flex-col justify-end overflow-hidden rounded-3xl border border-white/10 p-7 transition duration-300 hover:border-white/25"
                 >
                   <div className="absolute inset-0">
                     <ScrollImage
-                      src={categoryImages[item.slug]}
+                      src={categoryImages[slug]}
                       effect="zoom-in"
                       intensity={0.6}
                       sizes="(max-width: 640px) 100vw, 50vw"

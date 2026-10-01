@@ -15,6 +15,7 @@ export interface ProductIndexItem {
   slug: string;
   name: string;
   categorySlug: string;
+  groupSlug: string;
   categoryLabel: string;
   tagline: string;
   packSize: string;
@@ -28,8 +29,8 @@ interface ProductIndexProps {
 }
 
 const heading = {
-  en: { eyebrow: "Full range", title: "All twelve products", all: "All" },
-  am: { eyebrow: "ሙሉ ስብስብ", title: "ሁሉም አሥራ ሁለት ምርቶች", all: "ሁሉም" },
+  en: { eyebrow: "Full range", title: "Every product, one job", all: "All" },
+  am: { eyebrow: "ሙሉ ስብስብ", title: "እያንዳንዱ ምርት፣ አንድ ሥራ", all: "ሁሉም" },
 } as const;
 
 export function ProductIndex({ locale, products, filters, cta }: ProductIndexProps) {
@@ -39,12 +40,12 @@ export function ProductIndex({ locale, products, filters, cta }: ProductIndexPro
   const visible =
     active === "all"
       ? products
-      : products.filter((p) => p.categorySlug === active);
+      : products.filter((p) => p.groupSlug === active);
 
   const tabs = [{ slug: "all", label: h.all }, ...filters];
 
   return (
-    <section className="bg-white py-20 sm:py-24" data-header-tone="light">
+    <section id="range" className="scroll-mt-24 bg-white py-20 sm:py-24" data-header-tone="light">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">

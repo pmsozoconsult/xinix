@@ -3,22 +3,57 @@
 import { motion } from "framer-motion";
 import type { Locale } from "@/types/content";
 import { Reveal, Stagger, staggerItem } from "@/components/motion/Reveal";
-import { audienceSectors } from "@/lib/productMeta";
 
 interface AudienceStripProps {
   locale: Locale;
 }
 
-const heading = {
+const copy = {
   en: {
-    eyebrow: "Who it's for",
-    title: "Trusted across sectors",
-    body: "From single clinics to national water authorities, Xinix supplies buyers who need a dependable, local source.",
+    eyebrow: "Why Xinix",
+    title: "Simple to choose. Made to use correctly.",
+    body: "Local production, formulas that break down after use, and a range where each product has one job.",
+    items: [
+      {
+        title: "Made in Ethiopia",
+        body: "Local production means shorter lead times, steady availability and fair pricing.",
+      },
+      {
+        title: "Kind to the environment",
+        body: "Our formulations break down after use and leave no lasting residue in water, soil or food when used as directed.",
+      },
+      {
+        title: "One product, one job",
+        body: "Each product is designed for a specific use, which makes it simple to choose and easy to use correctly.",
+      },
+      {
+        title: "Practical support",
+        body: "We help businesses and institutions with product selection, dosing and staff training.",
+      },
+    ],
   },
   am: {
-    eyebrow: "ለማን",
-    title: "በተለያዩ ዘርፎች የታመነ",
-    body: "ከአንድ ክሊኒክ እስከ አገር አቀፍ የውሃ ባለስልጣናት፣ ዚኒክስ አስተማማኝና የአገር ውስጥ አቅርቦት ለሚፈልጉ ገዢዎች ያቀርባል።",
+    eyebrow: "ለምን ዚኒክስ",
+    title: "ለመምረጥ ቀላል። በትክክል ለመጠቀም የተሠራ።",
+    body: "የአገር ውስጥ ምርት፣ ከአጠቃቀም በኋላ የሚበሰብሱ ቀመሮች፣ እና እያንዳንዱ ምርት አንድ ሥራ ያለው ስብስብ።",
+    items: [
+      {
+        title: "በኢትዮጵያ የተሠራ",
+        body: "የአገር ውስጥ ምርት አጭር የመላኪያ ጊዜ፣ የተረጋጋ አቅርቦትና ፍትሐዊ ዋጋ ማለት ነው።",
+      },
+      {
+        title: "ለአካባቢ የለዘበ",
+        body: "ቀመሮቻችን ከአጠቃቀም በኋላ ይበሰብሳሉ፤ እንደተመራ ሲውሉ በውሃ፣ በአፈር ወይም በምግብ ላይ የሚቀር ቅሪት አይተዉም።",
+      },
+      {
+        title: "አንድ ምርት፣ አንድ ሥራ",
+        body: "እያንዳንዱ ምርት ለተወሰነ አጠቃቀም የተዘጋጀ ነው፤ ይህም ለመምረጥ ቀላልና በትክክል ለመጠቀም ያቀላል።",
+      },
+      {
+        title: "ተግባራዊ ድጋፍ",
+        body: "ለንግድና ተቋማት የምርት ምርጫ፣ መጠንና የሠራተኛ ስልጠና እንረዳለን።",
+      },
+    ],
   },
 } as const;
 
@@ -37,7 +72,7 @@ function CheckMark() {
 }
 
 export function AudienceStrip({ locale }: AudienceStripProps) {
-  const h = heading[locale];
+  const h = copy[locale];
 
   return (
     <section data-header-tone="light" className="relative overflow-hidden bg-paper py-20 sm:py-24">
@@ -63,19 +98,20 @@ export function AudienceStrip({ locale }: AudienceStripProps) {
             </p>
           </Reveal>
 
-          <Stagger className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:col-span-3">
-            {audienceSectors.map((sector) => (
+          <Stagger className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:col-span-3">
+            {h.items.map((item) => (
               <motion.div
-                key={sector.en}
+                key={item.title}
                 variants={staggerItem}
-                className="flex items-center gap-3 rounded-2xl border border-line bg-white px-4 py-4 shadow-sm"
+                className="flex items-start gap-3 rounded-2xl border border-line bg-white px-4 py-4 shadow-sm"
               >
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-xinix-teal/10 text-teal-text">
+                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-xinix-teal/10 text-teal-text">
                   <CheckMark />
                 </span>
-                <span className="text-sm font-semibold text-deep-navy">
-                  {locale === "en" ? sector.en : sector.am}
-                </span>
+                <div>
+                  <p className="text-sm font-semibold text-deep-navy">{item.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-stone">{item.body}</p>
+                </div>
               </motion.div>
             ))}
           </Stagger>

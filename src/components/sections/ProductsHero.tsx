@@ -15,25 +15,25 @@ interface ProductsHeroProps {
 
 const copy = {
   en: {
-    eyebrow: "Product range",
-    headline: "Twelve products. Four applications.",
-    body: "A focused range of biodegradable disinfection and cleaning chemicals, made in Ethiopia for water, hygiene, agriculture and industry. Every product is built for dependable supply and priced to compete with imports.",
-    browse: "Browse by category",
+    eyebrow: "Products",
+    headline: "Clean water, safer food and everyday hygiene, made in Ethiopia",
+    body: "Xinix makes water treatment, food hygiene and cleaning products for homes, healthcare, farms, food businesses, aviation and industry. Every product is formulated for one clear job, breaks down naturally after use and is produced in Ethiopia for dependable supply.",
+    retailer: "Find a retailer",
     stats: [
-      { value: "12", label: "Products" },
-      { value: "4", label: "Applications" },
-      { value: "100%", label: "Biodegradable" },
+      { value: "14", label: "Products" },
+      { value: "5", label: "Areas of use" },
+      { value: "ET", label: "Made in Ethiopia" },
     ],
   },
   am: {
-    eyebrow: "የምርት ስብስብ",
-    headline: "አሥራ ሁለት ምርቶች። አራት አጠቃቀሞች።",
-    body: "በተፈጥሮ የሚበሰብሱ የማጽጃና የመበከል መከላከያ ኬሚካሎች ስብስብ፣ ለውሃ፣ ለንጽሕና፣ ለግብርናና ለኢንዱስትሪ በኢትዮጵያ የተመረቱ። እያንዳንዱ ምርት አስተማማኝ አቅርቦትን ታሳቢ አድርጎ የተሠራና ከውጭ ከሚገቡ ጋር ለመወዳደር የተመጠነ ነው።",
-    browse: "በምድብ ይመልከቱ",
+    eyebrow: "ምርቶች",
+    headline: "ንጹሕ ውሃ፣ ይበልጥ ደህንነቱ የተጠበቀ ምግብና የዕለት ንጽህና፣ በኢትዮጵያ የተሠራ",
+    body: "ዚኒክስ ለቤቶች፣ ለጤና፣ ለእርሻዎች፣ ለምግብ ንግድ፣ ለአቪዬሽንና ለኢንዱስትሪ የውሃ ሕክምና፣ የምግብ ንጽህናና የማጽዳት ምርቶችን ያመርታል። እያንዳንዱ ምርት ለአንድ ግልጽ ሥራ የተቀመረ፣ ከአጠቃቀም በኋላ በተፈጥሮ የሚበሰብስ፣ እና አስተማማኝ አቅርቦት ለማረጋገጥ በኢትዮጵያ የሚመረት ነው።",
+    retailer: "ሻጭ ያግኙ",
     stats: [
-      { value: "12", label: "ምርቶች" },
-      { value: "4", label: "አጠቃቀሞች" },
-      { value: "100%", label: "በተፈጥሮ የሚበሰብስ" },
+      { value: "14", label: "ምርቶች" },
+      { value: "5", label: "የአጠቃቀም መስኮች" },
+      { value: "ኢት", label: "በኢትዮጵያ የተሠራ" },
     ],
   },
 } as const;
@@ -68,14 +68,14 @@ export function ProductsHero({ locale, content }: ProductsHeroProps) {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="#categories" tone="onDark">
-              {t.browse}
+            <Button href={localePath(locale, "/contact")} tone="onDark">
+              {content.ui.requestQuote}
             </Button>
             <Link
               href={localePath(locale, "/contact")}
               className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/5 px-5 py-3 text-[15px] font-semibold text-white transition hover:bg-white/10"
             >
-              {content.ui.requestQuote}
+              {t.retailer}
             </Link>
           </div>
 

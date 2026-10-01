@@ -9,44 +9,64 @@ interface DistributorManifestProps {
 
 const copy = {
   en: {
-    eyebrow: "What we look for",
-    title: "The crate only moves with the right partner",
+    eyebrow: "What we provide",
+    title: "Support from the first order",
     items: [
       {
-        code: "01 REACH",
-        title: "Into the segments we serve",
-        body: "Water, hygiene, harvest, industry — not a general warehouse looking for any SKU.",
+        code: "01",
+        title: "Product training",
+        body: "Product training for your sales team.",
       },
       {
-        code: "02 STORE",
-        title: "The means to hold and move product",
-        body: "Proper storage and distribution, not a one-van trial.",
+        code: "02",
+        title: "Marketing",
+        body: "Marketing materials and product photography.",
       },
       {
-        code: "03 STAY",
-        title: "A market, not a single order",
-        body: "We grow with partners who intend to be in the territory.",
+        code: "03",
+        title: "Technical guidance",
+        body: "Technical guidance on dosing and application.",
+      },
+      {
+        code: "04",
+        title: "Supply planning",
+        body: "Supply planning based on agreed forecasts and orders.",
+      },
+      {
+        code: "05",
+        title: "Registration support",
+        body: "Technical support for product registration in export markets.",
       },
     ],
   },
   am: {
-    eyebrow: "የምንፈልገው",
-    title: "ሳጥኑ የሚንቀሳቀሰው ትክክለኛ አጋር ሲኖር ነው",
+    eyebrow: "የምንሰጠው",
+    title: "ከመጀመሪያው ትዕዛዝ ጀምሮ ድጋፍ",
     items: [
       {
-        code: "01 ደረስ",
-        title: "ወደምናገለግላቸው ክፍሎች",
-        body: "ውሃ፣ ንጽህና፣ መከር፣ ኢንዱስትሪ — ማንኛውንም ምርት የሚፈልግ መጋዘን አይደለም።",
+        code: "01",
+        title: "የምርት ስልጠና",
+        body: "ለሽያጭ ቡድንዎ የምርት ስልጠና።",
       },
       {
-        code: "02 አከማች",
-        title: "ምርትን የማቆየትና የማንቀሳቀስ አቅም",
-        body: "ትክክለኛ ማከማቻና ስርጭት፣ አንድ ቫን ሙከራ አይደለም።",
+        code: "02",
+        title: "ግብይት",
+        body: "የግብይት ቁሳቁስ እና የምርት ፎቶግራፍ።",
       },
       {
-        code: "03 ቆይ",
-        title: "ገበያ፣ አንድ ትዕዛዝ አይደለም",
-        body: "በግዛቱ ለመኖር ካሰቡ አጋሮች ጋር እናድጋለን።",
+        code: "03",
+        title: "ቴክኒካዊ መመሪያ",
+        body: "ስለ መጠንና አጠቃቀም ቴክኒካዊ መመሪያ።",
+      },
+      {
+        code: "04",
+        title: "የአቅርቦት ዕቅድ",
+        body: "በተስማማ ትንበያና ትዕዛዝ ላይ የተመሠረተ የአቅርቦት ዕቅድ።",
+      },
+      {
+        code: "05",
+        title: "የምዝገባ ድጋፍ",
+        body: "በወጪ ንግድ ገበያዎች ለምርት ምዝገባ ቴክኒካዊ ድጋፍ።",
       },
     ],
   },

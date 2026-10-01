@@ -11,23 +11,22 @@ interface DistributorApplyProps {
 
 const copy = {
   en: {
-    bill: "Waybill",
-    ref: "Partner enquiry",
+    bill: "Application",
+    ref: "Distributor",
     fromLabel: "From",
     toLabel: "To",
     from: "Your market",
-    to: "Xinix plant, Ethiopia",
-    intro:
-      "Tell us the territory, the segments you reach, and how you store. We will come back if it looks like a fit.",
+    to: "Xinix partnership team",
+    intro: "Tell us about your business",
   },
   am: {
-    bill: "የመጓጓዣ ሰነድ",
-    ref: "የአጋር ጥያቄ",
+    bill: "ማመልከቻ",
+    ref: "አከፋፋይ",
     fromLabel: "ከ",
     toLabel: "ወደ",
     from: "የእርስዎ ገበያ",
-    to: "የዚኒክስ ፋብሪካ፣ ኢትዮጵያ",
-    intro: "ግዛቱን፣ የሚደርሱባቸውን ክፍሎች፣ እና እንዴት እንደሚያከማቹ ይንገሩን። የሚስማማ ከሆነ እንመለሳለን።",
+    to: "የዚኒክስ የአጋርነት ቡድን",
+    intro: "ስለ ንግድዎ ይንገሩን",
   },
 } as const;
 
@@ -53,7 +52,7 @@ export function DistributorApply({ locale, content }: DistributorApplyProps) {
             <div className="border-b border-dashed border-line px-6 py-10 sm:px-10 lg:border-b-0 lg:border-r">
               <Reveal>
                 <h2 className="text-3xl font-bold tracking-tight text-xinix-blue">
-                  {content.ui.becomeDistributor}
+                  {t.intro}
                 </h2>
                 <dl className="mt-8 space-y-5 font-mono text-sm">
                   <div>
@@ -69,7 +68,11 @@ export function DistributorApply({ locale, content }: DistributorApplyProps) {
                     <dd className="mt-1 text-base text-deep-navy">{t.to}</dd>
                   </div>
                 </dl>
-                <p className="mt-8 max-w-sm text-base leading-relaxed text-stone">{t.intro}</p>
+                <p className="mt-8 text-sm leading-relaxed text-stone">
+                  {content.contact.email}
+                  <br />
+                  {content.contact.phone}
+                </p>
               </Reveal>
             </div>
 

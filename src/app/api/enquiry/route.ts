@@ -17,7 +17,10 @@ export async function POST(request: Request) {
   try {
     const body = (await request.json()) as EnquiryPayload;
 
-    if (!body.name || !body.contact || !body.country || !body.need) {
+    if (!body.name || !body.contact || !body.country) {
+      return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+    }
+    if (body.formType !== "distributor" && !body.need) {
       return NextResponse.json({ error: "Missing fields" }, { status: 400 });
     }
 

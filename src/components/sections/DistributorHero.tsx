@@ -4,6 +4,7 @@ import type { Locale, SiteContent } from "@/types/content";
 import { Button } from "@/components/Button";
 import { Reveal } from "@/components/motion/Reveal";
 import { ScrollImage } from "@/components/motion/ScrollImage";
+import { localePath } from "@/lib/i18n";
 import { visuals } from "@/lib/visuals";
 import { headerClearance } from "@/lib/heroLayout";
 import { cn } from "@/lib/utils";
@@ -15,14 +16,14 @@ interface DistributorHeroProps {
 
 const copy = {
   en: {
-    stencil: "Packed for transit",
-    dek: "The plant is built to ship. Partners beyond Ethiopia are already on the books, and the next conversations are East Africa and the rest of the continent.",
-    cta: "Open a conversation",
+    stencil: "For distributors",
+    dek: "Partner with an Ethiopian manufacturer of water treatment, food hygiene and cleaning products. We are building a network of wholesalers and distributors across Ethiopia and East Africa ahead of commercial production in December 2026.",
+    cta: "Apply to become a distributor",
   },
   am: {
-    stencil: "ለመጓጓዣ የታሸገ",
-    dek: "ፋብሪካው ለመላክ ተሠርቷል። ከኢትዮጵያ ውጭ ያሉ አጋሮች አሁን ይቀርባሉ፣ ቀጣዮቹ ውይይቶች ምስራቅ አፍሪካ እና አህጉሩ ናቸው።",
-    cta: "ውይይት ይክፈቱ",
+    stencil: "ለአከፋፋዮች",
+    dek: "የውሃ ሕክምና፣ የምግብ ንጽህናና ማጽጃ ምርቶች ከኢትዮጵያ አምራች ጋር ይተባበሩ። ከታኅሣሥ 2019 ዓ.ም. የንግድ ምርት በፊት በኢትዮጵያና በምስራቅ አፍሪካ የጅምላ ነጋዴዎችና አከፋፋዮች መረብ እየገነባን ነን።",
+    cta: "አከፋፋይ ለመሆን ያመልክቱ",
   },
 } as const;
 
@@ -48,9 +49,12 @@ export function DistributorHero({ locale, content }: DistributorHeroProps) {
             {content.distributors.headline}
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">{t.dek}</p>
-          <div className="mt-8">
+          <div className="mt-8 flex flex-wrap gap-3">
             <Button href="#apply" tone="onDark">
               {t.cta}
+            </Button>
+            <Button href={localePath(locale, "/products")} variant="secondary" tone="onDark">
+              {content.ui.browseRange}
             </Button>
           </div>
         </Reveal>

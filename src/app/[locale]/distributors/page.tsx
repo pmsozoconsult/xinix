@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
+import { ClosingCta } from "@/components/sections/ClosingCta";
 import { DistributorApply } from "@/components/sections/DistributorApply";
+import { DistributorFaq } from "@/components/sections/DistributorFaq";
 import { DistributorHero } from "@/components/sections/DistributorHero";
 import { DistributorLane } from "@/components/sections/DistributorLane";
 import { DistributorManifest } from "@/components/sections/DistributorManifest";
+import { DistributorMarkets } from "@/components/sections/DistributorMarkets";
+import { DistributorRange } from "@/components/sections/DistributorRange";
+import { DistributorWho } from "@/components/sections/DistributorWho";
+import { DistributorWhy } from "@/components/sections/DistributorWhy";
 import { getContent } from "@/lib/content";
 import { isValidLocale, type Locale } from "@/lib/i18n";
 
@@ -34,9 +40,15 @@ export default async function DistributorsPage({
   return (
     <>
       <DistributorHero locale={locale} content={content} />
-      <DistributorLane locale={locale} />
+      <DistributorWhy locale={locale} />
       <DistributorManifest locale={locale} />
+      <DistributorWho locale={locale} />
+      <DistributorMarkets locale={locale} />
+      <DistributorLane locale={locale} />
+      <DistributorRange locale={locale} content={content} />
       <DistributorApply locale={locale} content={content} />
+      <DistributorFaq locale={locale} />
+      <ClosingCta locale={locale} content={content} />
     </>
   );
 }

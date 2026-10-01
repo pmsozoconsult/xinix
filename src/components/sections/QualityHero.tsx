@@ -16,24 +16,26 @@ interface QualityHeroProps {
 
 const copy = {
   en: {
-    eyebrow: "Quality & compliance",
-    dek: "Buyers should not have to take quality on faith. Registration, batch checks, and documents you can open yourself.",
+    eyebrow: "Quality and safety",
+    dek: "Every Xinix product is made to an approved formula, checked before release and supported by a datasheet and a safety data sheet. You should never have to take quality on trust.",
     stats: [
-      { value: "12", label: "Products, same discipline" },
-      { value: "2", label: "Documents per SKU" },
-      { value: "1", label: "Formulation per product" },
+      { value: "14", label: "Products in the range" },
+      { value: "3", label: "Quality checks on every batch" },
+      { value: "2", label: "Documents for every product" },
     ],
-    register: "Open the register",
+    register: "View our quality steps",
+    documents: "Request product documents",
   },
   am: {
-    eyebrow: "ጥራት እና ተገዢነት",
-    dek: "ገዢዎች ጥራትን በእምነት ብቻ መቀበል የለባቸውም። ምዝገባ፣ የባች ምርመራ፣ እና እራስዎ የሚከፍቷቸው ሰነዶች።",
+    eyebrow: "ጥራት እና ደህንነት",
+    dek: "እያንዳንዱ የዚኒክስ ምርት በጸደቀ ቀመር ይመረታል፣ ከመውጣቱ በፊት ይመረመራል፣ የመረጃ ሉህና የደህንነት መረጃ ሉህም አለው። ጥራትን በእምነት ብቻ መቀበል የለብዎትም።",
     stats: [
-      { value: "12", label: "ምርቶች፣ አንድ ዲሲፕሊን" },
-      { value: "2", label: "በእያንዳንዱ ምርት ሰነድ" },
-      { value: "1", label: "በምርት አንድ ቀመር" },
+      { value: "14", label: "በስብስቡ ያሉ ምርቶች" },
+      { value: "3", label: "በእያንዳንዱ ባች የጥራት ምርመራ" },
+      { value: "2", label: "ለእያንዳንዱ ምርት ሰነዶች" },
     ],
-    register: "መዝገቡን ይክፈቱ",
+    register: "የጥራት ደረጃዎቻችንን ይመልከቱ",
+    documents: "የምርት ሰነዶችን ይጠይቁ",
   },
 } as const;
 
@@ -62,11 +64,11 @@ export function QualityHero({ locale, content }: QualityHeroProps) {
             {t.dek}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <Button href="#register" tone="onDark">
+            <Button href="#release" tone="onDark">
               {t.register}
             </Button>
             <Button href="#documents" variant="secondary" tone="onDark">
-              {content.ui.downloadDatasheet}
+              {t.documents}
             </Button>
           </div>
           <dl className="mt-12 grid max-w-xl grid-cols-3 gap-6 border-t border-white/15 pt-8">

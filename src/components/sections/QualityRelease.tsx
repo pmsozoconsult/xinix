@@ -11,24 +11,52 @@ interface QualityReleaseProps {
 
 const copy = {
   en: {
-    stamp: "Hold",
-    title: "Nothing leaves until it is checked",
-    body: "The same formulation, every batch. Release is a gate, not a hope: if a batch does not match, it does not ship.",
+    stamp: "How we check",
+    title: "Nothing leaves until it passes",
+    body: "Quality is checked at three stages, from incoming raw materials to the finished bottle. If a batch does not match its specification, it does not ship.",
     gates: [
-      { n: "01", label: "Formulated" },
-      { n: "02", label: "Checked" },
-      { n: "03", label: "Released" },
+      {
+        n: "01",
+        label: "Incoming materials",
+        detail: "Every raw material is checked before it enters production.",
+      },
+      {
+        n: "02",
+        label: "During production",
+        detail: "Samples are tested while the batch is being made.",
+      },
+      {
+        n: "03",
+        label: "Final release",
+        detail: "The finished batch is tested and approved before dispatch.",
+      },
     ],
+    water:
+      "Purified water. All formulations are made with purified water from our own borehole and reverse osmosis system, so every batch starts with the same controlled water base.",
   },
   am: {
-    stamp: "ያዝ",
-    title: "እስኪመረመር ድረስ ምንም አይወጣም",
-    body: "እያንዳንዱ ባች ተመሳሳይ ቀመር። መውጣት በር ነው እንጂ ተስፋ አይደለም፦ ባቹ ካልተዛመደ አይላክም።",
+    stamp: "እንዴት እንደምንመረምር",
+    title: "እስኪያልፍ ድረስ ምንም አይወጣም",
+    body: "ጥራት ከሚመጡ ጥሬ ዕቃዎች እስከ የተጠናቀቀው ጠርሙስ በሦስት ደረጃ ይመረመራል። ባቹ ከመግለጫው ካልተዛመደ አይላክም።",
     gates: [
-      { n: "01", label: "ተቀመረ" },
-      { n: "02", label: "ተመረመረ" },
-      { n: "03", label: "ተፈቀደ" },
+      {
+        n: "01",
+        label: "የሚመጡ ግብዓቶች",
+        detail: "እያንዳንዱ ጥሬ ዕቃ ወደ ምርት ከመግባቱ በፊት ይመረመራል።",
+      },
+      {
+        n: "02",
+        label: "በምርት ጊዜ",
+        detail: "ባቹ እየተመረተ ሳለ ናሙናዎች ይፈተናሉ።",
+      },
+      {
+        n: "03",
+        label: "የመጨረሻ ፈቃድ",
+        detail: "የተጠናቀቀው ባች ከመላኩ በፊት ይፈተናልና ይፀድቃል።",
+      },
     ],
+    water:
+      "የተጣራ ውሃ። ሁሉም ቀመሮች ከራሳችን ጉድጓድና ከሪቨርስ ኦስሞሲስ ሥርዓት በተጣራ ውሃ ይመረታሉ፤ ስለዚህ እያንዳንዱ ባች በተመሳሳይ ቁጥጥር የተደረገበት ውሃ ይጀምራል።",
   },
 } as const;
 
@@ -36,7 +64,11 @@ export function QualityRelease({ locale }: QualityReleaseProps) {
   const t = copy[locale];
 
   return (
-    <section data-header-tone="dark" className="relative overflow-hidden bg-deep-navy">
+    <section
+      id="release"
+      data-header-tone="dark"
+      className="relative overflow-hidden bg-deep-navy"
+    >
       <div className="absolute inset-0">
         <ScrollImage src={visuals.manufacturing} effect="parallax-up" sizes="100vw" />
         <div className="absolute inset-0 bg-deep-navy/82" />
@@ -63,6 +95,9 @@ export function QualityRelease({ locale }: QualityReleaseProps) {
             >
               <p className="font-mono text-sm text-white/40">{gate.n}</p>
               <p className="mt-3 text-2xl font-bold text-white">{gate.label}</p>
+              <p className="mt-2 max-w-xs text-sm leading-relaxed text-white/65">
+                {gate.detail}
+              </p>
               {index < t.gates.length - 1 && (
                 <span className="absolute right-0 top-8 hidden font-mono text-white/25 sm:block">
                   →
@@ -71,6 +106,9 @@ export function QualityRelease({ locale }: QualityReleaseProps) {
             </li>
           ))}
         </ol>
+        <p className="mt-12 max-w-2xl text-sm leading-relaxed text-white/70 sm:text-base">
+          {t.water}
+        </p>
       </div>
     </section>
   );

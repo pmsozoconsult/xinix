@@ -11,40 +11,40 @@ const copy = {
   en: {
     eyebrow: "Two documents",
     title: "Datasheet and safety data sheet",
-    body: "Each SKU carries both. They are not the same file: one describes the product for use, the other describes hazards and handling.",
+    body: "Every product is supported by two separate documents.",
     sheets: [
       {
         mark: "DS",
         title: "Datasheet",
-        body: "What the product is for, how it is used, pack size, and the claims that sit on the label.",
+        body: "What the product is for, how to use it, pack size and the claims on the label.",
       },
       {
         mark: "SDS",
         title: "Safety data sheet",
-        body: "Hazards, first aid, storage and handling — the sheet a buyer, store or clinic should keep on file.",
+        body: "Hazards, first aid, storage and safe handling. The document a store, clinic or factory should keep on file.",
       },
     ],
     pending:
-      "Files will sit on each product page once Xinix supplies them. Until then the product page states that clearly.",
+      "Both can be requested today and will be downloadable from each product page as files are added.",
   },
   am: {
     eyebrow: "ሁለት ሰነዶች",
     title: "የመረጃ ሉህ እና የደህንነት መረጃ ሉህ",
-    body: "እያንዳንዱ ምርት ሁለቱንም ይዞ ይመጣል። አንድ ፋይል አይደሉም፦ አንዱ አጠቃቀምን ይገልጻል፣ ሌላኛው አደጋንና አያያዝን።",
+    body: "እያንዳንዱ ምርት በሁለት የተለዩ ሰነዶች ይደገፋል።",
     sheets: [
       {
         mark: "DS",
         title: "የመረጃ ሉህ",
-        body: "ምርቱ ለምን እንደሚውል፣ እንዴት እንደሚጠቀም፣ መጠን፣ እና በመለያው ላይ ያሉ ቃላት።",
+        body: "ምርቱ ለምን እንደሚውል፣ እንዴት እንደሚጠቀሙበት፣ መጠን፣ እና በመለያው ላይ ያሉ ቃላት።",
       },
       {
         mark: "SDS",
         title: "የደህንነት መረጃ ሉህ",
-        body: "አደጋ፣ የመጀመሪያ እርዳታ፣ ማከማቻ እና አያያዝ — ገዢ፣ መጋዘን ወይም ክሊኒክ በፋይል ሊያቆየው የሚገባ ሉህ።",
+        body: "አደጋ፣ የመጀመሪያ እርዳታ፣ ማከማቻና ደህንነቱ የተጠበቀ አያያዝ። መጋዘን፣ ክሊኒክ ወይም ፋብሪካ በፋይል ሊያቆየው የሚገባ ሰነድ።",
       },
     ],
     pending:
-      "ፋይሎቹ ዚኒክስ ሲያቀርባቸው በእያንዳንዱ የምርት ገጽ ላይ ይቀመጣሉ። እስከዚያ ድረስ ገጹ ያንን በግልጽ ይናገራል።",
+      "ሁለቱም ዛሬ ሊጠየቁ ይችላሉ፤ ፋይሎች ሲታከሉ ከእያንዳንዱ የምርት ገጽ ይወርዳሉ።",
   },
 } as const;
 

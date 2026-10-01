@@ -37,13 +37,12 @@ export default async function QualityPage({
   return (
     <>
       <QualityHero locale={locale} content={content} />
-      <QualityRegister locale={locale} content={content} />
+      <QualityRegister locale={locale} />
       <QualityPapers locale={locale} />
       <QualityRelease locale={locale} />
       <QualityLibrary
         locale={locale}
-        content={content}
-        groups={qualityDocumentGroups(content)}
+        groups={qualityDocumentGroups(content, locale)}
       />
       <ClosingCta locale={locale} content={content} />
     </>

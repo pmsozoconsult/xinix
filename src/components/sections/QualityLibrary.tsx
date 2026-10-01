@@ -1,31 +1,31 @@
 "use client";
 
 import Link from "next/link";
-import type { Locale, Product, SiteContent } from "@/types/content";
+import type { Locale, Product } from "@/types/content";
 import { Reveal } from "@/components/motion/Reveal";
 import { localePath } from "@/lib/i18n";
-import { type CategorySlug } from "@/lib/categories";
 
 interface QualityLibraryProps {
   locale: Locale;
-  content: SiteContent;
-  groups: { slug: CategorySlug; label: string; products: Product[] }[];
+  groups: { id: string; label: string; products: Product[] }[];
 }
 
 const copy = {
   en: {
     eyebrow: "Document library",
-    title: "Find the sheet for a product",
-    hint: "Opens the product page, at the datasheet note. Files are added there when Xinix supplies them.",
+    title: "Find the documents for a product",
+    hint: "Request documents from the product page. Files are added there when they are ready to download.",
+    cta: "Request documents",
   },
   am: {
     eyebrow: "የሰነድ መዝገብ",
-    title: "የምርቱን ሉህ ያግኙ",
-    hint: "የምርት ገጹን በመረጃ ሉህ ማስታወሻ ላይ ይከፍታል። ፋይሎቹ ዚኒክስ ሲያቀርባቸው እዚያ ይታከላሉ።",
+    title: "የምርቱን ሰነዶች ያግኙ",
+    hint: "ሰነዶችን ከምርቱ ገጽ ይጠይቁ። ለማውረድ ሲዘጋጁ እዚያ ይታከላሉ።",
+    cta: "ሰነዶችን ይጠይቁ",
   },
 } as const;
 
-export function QualityLibrary({ locale, content, groups }: QualityLibraryProps) {
+export function QualityLibrary({ locale, groups }: QualityLibraryProps) {
   const t = copy[locale];
 
   return (
@@ -47,7 +47,7 @@ export function QualityLibrary({ locale, content, groups }: QualityLibraryProps)
 
         <div className="mt-12 grid gap-10 lg:grid-cols-2">
           {groups.map((group) => (
-            <Reveal key={group.slug}>
+            <Reveal key={group.id}>
               <div>
                 <h3 className="border-b border-deep-navy pb-2 font-mono text-xs font-bold uppercase tracking-[0.18em] text-deep-navy">
                   {group.label}
@@ -64,7 +64,7 @@ export function QualityLibrary({ locale, content, groups }: QualityLibraryProps)
                       >
                         <span className="font-semibold text-xinix-blue">{product.name}</span>
                         <span className="shrink-0 font-mono text-[11px] text-stone">
-                          {content.ui.downloadDatasheet}
+                          {t.cta}
                         </span>
                       </Link>
                     </li>

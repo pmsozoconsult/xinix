@@ -1,16 +1,15 @@
 "use client";
 
-import type { Locale, SiteContent } from "@/types/content";
+import type { Locale } from "@/types/content";
 import { Reveal } from "@/components/motion/Reveal";
 
 interface QualityRegisterProps {
   locale: Locale;
-  content: SiteContent;
 }
 
 const copy = {
   en: {
-    eyebrow: "The register",
+    eyebrow: "Our commitments",
     title: "What you can verify",
     colRef: "Item",
     colClaim: "What Xinix commits",
@@ -18,53 +17,36 @@ const copy = {
       {
         ref: "A",
         claim:
-          "Products are registered and made to recognised quality and safety standards.",
+          "Documents for every product. Each product has a datasheet and a safety data sheet. Both can be requested today and will be downloadable from each product page as files are added.",
       },
       {
         ref: "B",
         claim:
-          "A licence number will be published here once it is issued. Until then, treat this as pending — not as a stand-in code.",
-      },
-      {
-        ref: "C",
-        claim:
-          "Every product has a datasheet and a safety data sheet. Anyone can request or download them.",
-      },
-      {
-        ref: "D",
-        claim:
-          "Each batch is made to the same formulation and checked before it leaves the plant.",
+          "Same formula, every batch. Each product has one approved formula. Every batch follows that formula and is checked before it leaves the plant.",
       },
     ],
   },
   am: {
-    eyebrow: "መዝገብ",
+    eyebrow: "ቃላችን",
     title: "ማረጋገጥ የሚችሉት",
     colRef: "ነጥብ",
     colClaim: "ዚኒክስ የሚገባው ቃል",
     rows: [
       {
         ref: "A",
-        claim: "ምርቶች በሕጋዊነት የተመዘገቡ ሲሆኑ በታወቁ የጥራትና የደህንነት ደረጃዎች ይመረታሉ።",
+        claim:
+          "ለእያንዳንዱ ምርት ሰነዶች። እያንዳንዱ ምርት የመረጃ ሉህና የደህንነት መረጃ ሉህ አለው። ሁለቱም ዛሬ ሊጠየቁ ይችላሉ፤ ፋይሎች ሲታከሉ ከእያንዳንዱ የምርት ገጽ ይወርዳሉ።",
       },
       {
         ref: "B",
         claim:
-          "የፈቃድ ቁጥር ሲሰጥ እዚህ ይታተማል። እስከዚያ ድረስ ይህ በመጠባበቅ ላይ ነው — ምትክ ቁጥር አይደለም።",
-      },
-      {
-        ref: "C",
-        claim: "እያንዳንዱ ምርት የመረጃ ሉህና የደህንነት መረጃ ሉህ አለው። ማንኛውም ሰው መጠየቅ ወይም ማውረድ ይችላል።",
-      },
-      {
-        ref: "D",
-        claim: "እያንዳንዱ ባች በተመሳሳይ ቀመር ይመረታል፣ ከፋብሪካ ከመውጣቱ በፊት ይመረመራል።",
+          "እያንዳንዱ ባች ተመሳሳይ ቀመር። እያንዳንዱ ምርት አንድ የጸደቀ ቀመር አለው። እያንዳንዱ ባች ያንን ቀመር ይከተላል፣ ከፋብሪካ ከመውጣቱ በፊት ይመረመራል።",
       },
     ],
   },
 } as const;
 
-export function QualityRegister({ locale, content }: QualityRegisterProps) {
+export function QualityRegister({ locale }: QualityRegisterProps) {
   const t = copy[locale];
 
   return (
@@ -92,7 +74,7 @@ export function QualityRegister({ locale, content }: QualityRegisterProps) {
             {t.rows.map((row) => (
               <div
                 key={row.ref}
-                className="grid grid-cols-[4.5rem_1fr] items-baseline border-b border-line last:border-b-0 px-4 py-5 sm:px-6 sm:py-6"
+                className="grid grid-cols-[4.5rem_1fr] items-baseline border-b border-line px-4 py-5 last:border-b-0 sm:px-6 sm:py-6"
               >
                 <span className="font-mono text-sm font-bold text-xinix-teal">
                   {row.ref}
@@ -101,9 +83,6 @@ export function QualityRegister({ locale, content }: QualityRegisterProps) {
               </div>
             ))}
           </div>
-          <p className="mt-4 max-w-3xl text-sm leading-relaxed text-stone">
-            {content.quality.body}
-          </p>
         </Reveal>
       </div>
     </section>

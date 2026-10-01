@@ -9,18 +9,22 @@ interface AboutImportShareProps {
 
 const copy = {
   en: {
-    eyebrow: "The problem we were built against",
-    fraction: "½+",
-    caption: "of the chemicals Ethiopia uses are imported.",
+    eyebrow: "Dependence on imports",
+    fraction: "60%",
+    caption:
+      "of the hygiene, water treatment, post harvest and cleaning products used in Ethiopia are imported.",
     waits: ["Foreign exchange", "Customs", "Shipping"],
-    close: "Buyers wait, and pay whatever the exchange rate decides. Xinix was built to change that for the products it makes.",
+    close:
+      "Buyers wait, and pay prices set by exchange rates. Local manufacturing gives them a closer and more dependable source.",
   },
   am: {
-    eyebrow: "የተሠራንበት ችግር",
-    fraction: "½+",
-    caption: "ኢትዮጵያ ከምትጠቀምባቸው ኬሚካሎች ከግማሽ በላይ ከውጭ ይመጣል።",
+    eyebrow: "በማስመጣት ላይ ያለ ጥገኝነት",
+    fraction: "60%",
+    caption:
+      "በኢትዮጵያ ከሚውሉ የንጽህና፣ የውሃ ሕክምና፣ ከመከር በኋላና ማጽጃ ምርቶች የሚገመተው 60% ከውጭ ይመጣል።",
     waits: ["የውጭ ምንዛሬ", "ጉምሩክ", "መጓጓዣ"],
-    close: "ገዢዎች ይጠብቃሉ፣ ምንዛሬው የሚወስነውንም ይከፍላሉ። ዚኒክስ ለምናመርታቸው ምርቶች ይህንን ለመቀየር ተመሠረተ።",
+    close:
+      "ገዢዎች ይጠብቃሉ፣ በምንዛሬ የተቀመጠ ዋጋ ይከፍላሉ። የአገር ውስጥ ማምረት ቅርብና የሚታመን ምንጭ ይሰጣቸዋል።",
   },
 } as const;
 
@@ -31,7 +35,7 @@ export function AboutImportShare({ locale }: AboutImportShareProps) {
     <section
       id="import"
       data-header-tone="light"
-      className="scroll-mt-24 overflow-hidden bg-paper py-16 sm:py-24"
+      className="scroll-mt-24 overflow-hidden bg-white py-16 sm:py-24"
     >
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-6 lg:px-8">
         <Reveal>

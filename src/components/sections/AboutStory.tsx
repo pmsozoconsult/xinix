@@ -10,19 +10,26 @@ interface AboutStoryProps {
 
 export function AboutStory({ locale, content }: AboutStoryProps) {
   const paragraphs = content.about.body.split("\n\n").filter(Boolean);
-  const plantCopy = paragraphs.slice(1);
-  const leadSource = plantCopy.length > 0 ? plantCopy : paragraphs;
-  const [first, ...rest] = leadSource;
+  const [first, ...rest] = paragraphs;
   const lead = first ?? "";
   const drop = lead.charAt(0);
   const remainder = lead.slice(1);
 
   return (
-    <section data-header-tone="light" className="bg-white py-20 sm:py-28">
+    <section
+      id="company"
+      data-header-tone="light"
+      className="scroll-mt-24 bg-white py-20 sm:py-28"
+    >
       <div className="mx-auto max-w-2xl px-4 sm:px-6">
         <Reveal>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
             {locale === "en" ? "The company" : "ኩባንያው"}
+          </p>
+          <p className="mt-3 text-2xl font-bold tracking-tight text-xinix-blue sm:text-3xl">
+            {locale === "en"
+              ? "A manufacturer, not an importer"
+              : "አምራች እንጂ አስመጪ አይደለንም"}
           </p>
           <div className="mt-8 space-y-6 text-lg leading-relaxed text-deep-navy">
             <p>

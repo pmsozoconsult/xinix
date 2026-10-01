@@ -1,8 +1,11 @@
 import type { Metadata } from "next";
+import { AboutChallenges } from "@/components/sections/AboutChallenges";
 import { AboutFootprint } from "@/components/sections/AboutFootprint";
+import { AboutGoal } from "@/components/sections/AboutGoal";
 import { AboutHero } from "@/components/sections/AboutHero";
 import { AboutImportShare } from "@/components/sections/AboutImportShare";
 import { AboutPlant } from "@/components/sections/AboutPlant";
+import { AboutStand } from "@/components/sections/AboutStand";
 import { AboutStory } from "@/components/sections/AboutStory";
 import { ClosingCta } from "@/components/sections/ClosingCta";
 import { getContent } from "@/lib/content";
@@ -36,9 +39,12 @@ export default async function AboutPage({
   return (
     <>
       <AboutHero locale={locale} content={content} />
+      <AboutGoal locale={locale} />
+      <AboutChallenges locale={locale} />
       <AboutImportShare locale={locale} />
       <AboutStory locale={locale} content={content} />
-      <AboutPlant locale={locale} content={content} />
+      <AboutStand locale={locale} />
+      <AboutPlant locale={locale} />
       <AboutFootprint locale={locale} content={content} />
       <ClosingCta locale={locale} content={content} />
     </>

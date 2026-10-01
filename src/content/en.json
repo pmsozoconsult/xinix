@@ -336,16 +336,16 @@
   },
   "about": {
     "seo": {
-      "title": "About Xinix | Chemical Manufacturer in Ethiopia",
-      "description": "Xinix Chemicals Manufacturing PLC makes biodegradable disinfection and cleaning chemicals in Ethiopia, cutting import dependence and creating local jobs.",
+      "title": "About Xinix | Water, Hygiene and Cleaning Products Made in Ethiopia for Africa",
+      "description": "Xinix makes water treatment, food hygiene and cleaning products in Ethiopia for homes, institutions and industry, built on solar power and local sourcing.",
       "keywords": [
         "chemical manufacturer Ethiopia",
         "Ethiopian disinfectant company",
         "local chemical production"
       ]
     },
-    "headline": "A local answer to imported chemicals",
-    "body": "More than half of the chemicals Ethiopia uses are imported, which leaves buyers waiting on foreign exchange, customs and shipping, and paying whatever the exchange rate decides. Xinix was built to change that for the products it makes.\n\nFrom its plant in Ethiopia, Xinix manufactures biodegradable disinfection and cleaning chemicals for water, hygiene, agriculture and industry. The materials are sourced locally, the power comes from the sun, and the products are priced to compete with imports rather than chase them. The company supplies buyers across the country and creates local jobs, with exports to East Africa and markets across the continent."
+    "headline": "Local solutions to everyday challenges in Africa",
+    "body": "Xinix Chemicals Manufacturing PLC is an Ethiopian company headquartered in Addis Ababa, with its own manufacturing plant in Ethiopia. We make water treatment, food hygiene and cleaning products for homes, healthcare, agriculture, aviation and industry.\n\nCommercial production begins in December 2026, with supply across Ethiopia and export partnerships already signed in East Africa.\n\nOur formulations are built on established water treatment and hygiene technology, adapted for Ethiopian and East African conditions: warmer climates, stored water, long supply routes and working environments where products must perform reliably. Every product is made in our own plant in Ethiopia to one approved formula, with three quality checks on every batch."
   },
   "distributors": {
     "seo": {
@@ -365,7 +365,7 @@
   "contact": {
     "seo": {
       "title": "Contact Xinix | Quotes and Enquiries",
-      "description": "Contact Xinix for quotes, datasheets and distributor enquiries. Email info@xinix.et or call +251 9 04 55 33 55. Office in Addis Ababa, plant in Ethiopia.",
+      "description": "Contact Xinix for quotes, datasheets and distributor enquiries. Email contact@xinix.et or call +251 9 04 55 33 55. Office in Addis Ababa, plant in Ethiopia.",
       "keywords": [
         "contact Xinix",
         "disinfectant quote Ethiopia",
@@ -374,7 +374,7 @@
     },
     "headline": "Tell us what you need",
     "body": "Send the product and the quantity and we will come back with a price, usually within one working day. For datasheets, ask here or download them from the product pages.",
-    "email": "info@xinix.et",
+    "email": "contact@xinix.et",
     "phone": "+251 9 04 55 33 55",
     "phoneHref": "tel:+251904553355",
     "office": "Yeka Sub-city, Woreda 08, House No. 195, Office No. 905A, Addis Ababa, Ethiopia.",
@@ -400,7 +400,7 @@
     },
     "privacyLine": "We use your details only to answer your enquiry. We do not share them.",
     "successMessage": "Thank you. Your enquiry is with our team, and we will reply within one working day.",
-    "errorMessage": "That did not send. Check your email or phone number and try again, or write to info@xinix.et.",
+    "errorMessage": "That did not send. Check your email or phone number and try again, or write to contact@xinix.et.",
     "notFound": "That page is not here. The page may have moved.",
     "notFoundAction": "Browse the range or head back to the home page."
   },

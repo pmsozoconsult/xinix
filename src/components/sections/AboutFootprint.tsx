@@ -10,26 +10,32 @@ interface AboutFootprintProps {
 
 const copy = {
   en: {
-    eyebrow: "Where we sit",
-    title: "Addis, the plant, and the route out",
+    eyebrow: "Where we are",
+    title: "Addis, the plant, and the markets",
     points: [
       { label: "Head office", key: "office" as const },
-      { label: "Plant", key: "plant" as const },
+      {
+        label: "Manufacturing",
+        text: "Our own plant in Ethiopia",
+      },
       {
         label: "Markets",
-        text: "Buyers across Ethiopia, with exports into East Africa and the wider continent.",
+        text: "Supplying Ethiopia from December 2026, with export partners in East Africa",
       },
     ],
   },
   am: {
     eyebrow: "የት እንዳለን",
-    title: "አዲስ አበባ፣ ፋብሪካው፣ እና የውጭ መስመር",
+    title: "አዲስ አበባ፣ ፋብሪካው፣ እና ገበያዎቹ",
     points: [
       { label: "ዋና ቢሮ", key: "office" as const },
-      { label: "ፋብሪካ", key: "plant" as const },
+      {
+        label: "ማምረቻ",
+        text: "የራሳችን ፋብሪካ በኢትዮጵያ",
+      },
       {
         label: "ገበያዎች",
-        text: "በመላው ኢትዮጵያ ገዢዎች፣ ወደ ምስራቅ አፍሪካ እና አህጉሩ የሚወጣ ንግድ።",
+        text: "ከታህሳስ 2019 ዓ.ም. ጀምሮ ኢትዮጵያን በማቅረብ፣ በምስራቅ አፍሪካ የወጪ ንግድ አጋሮች",
       },
     ],
   },
@@ -55,8 +61,7 @@ export function AboutFootprint({ locale, content }: AboutFootprintProps) {
           <div className="mb-8 hidden h-px bg-line sm:block" aria-hidden />
           <ol className="grid gap-10 sm:grid-cols-3 sm:gap-8">
             {t.points.map((point, index) => {
-              const body =
-                "key" in point ? contact[point.key] : point.text;
+              const body = "key" in point ? contact[point.key] : point.text;
               return (
                 <li key={point.label} className="relative">
                   <span className="mb-4 hidden h-2.5 w-2.5 rounded-full bg-xinix-teal sm:block" />

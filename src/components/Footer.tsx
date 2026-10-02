@@ -18,9 +18,8 @@ export function Footer({ locale, content }: FooterProps) {
 
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 lg:grid-cols-12 lg:gap-8 lg:px-8 lg:py-16">
         <div className="lg:col-span-4">
-          <Logo variant="light" size="md" />
+          <Logo variant="light" size="lg" />
           <p className="mt-5 text-sm leading-relaxed text-white/75">{content.meta.companyName}</p>
-          <p className="mt-3 text-base italic text-drop-cyan">{content.meta.tagline}</p>
           <Link
             href={localePath(locale, "/contact")}
             className="mt-8 inline-flex rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-deep-teal transition hover:bg-paper"

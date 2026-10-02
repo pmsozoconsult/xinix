@@ -1,56 +1,38 @@
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
 interface LogoProps {
   className?: string;
-  showWordmark?: boolean;
   variant?: "default" | "light";
   size?: "sm" | "md" | "lg";
+  priority?: boolean;
 }
 
 const sizes = {
-  sm: { icon: 32, text: "text-lg" },
-  md: { icon: 40, text: "text-xl sm:text-2xl" },
-  lg: { icon: 56, text: "text-2xl sm:text-3xl" },
-};
+  sm: "h-11 w-auto",
+  md: "h-14 w-auto sm:h-16",
+  lg: "h-32 w-auto sm:h-36",
+} as const;
 
 export function Logo({
   className,
-  showWordmark = true,
   variant = "default",
   size = "md",
+  priority = false,
 }: LogoProps) {
-  const { icon, text } = sizes[size];
-  const wordmarkClass =
-    variant === "light" ? "text-white" : "text-xinix-blue";
+  const src =
+    variant === "light" ? "/brand/xinix-logo-light.png" : "/brand/xinix-logo.png";
 
   return (
-    <span className={cn("inline-flex items-center gap-2.5", className)}>
-      <svg
-        width={icon}
-        height={icon}
-        viewBox="0 0 48 48"
-        fill="none"
-        aria-hidden
-        className="shrink-0"
-      >
-        <defs>
-          <linearGradient id="xinix-droplet" x1="24" y1="4" x2="24" y2="44">
-            <stop offset="0%" stopColor="#18B6C7" />
-            <stop offset="50%" stopColor="#137C87" />
-            <stop offset="100%" stopColor="#0C4A54" />
-          </linearGradient>
-        </defs>
-        <path
-          d="M24 4C24 4 8 22 8 32a16 16 0 0 0 32 0C40 22 24 4 24 4Z"
-          fill="url(#xinix-droplet)"
-        />
-        <ellipse cx="18" cy="28" rx="4" ry="6" fill="white" fillOpacity="0.25" />
-      </svg>
-      {showWordmark && (
-        <span className={cn("font-bold tracking-tight transition-colors duration-500 ease-in-out", text, wordmarkClass)}>
-          Xinix
-        </span>
-      )}
+    <span className={cn("inline-flex items-center", className)}>
+      <Image
+        src={src}
+        alt="Xinix — Innovation in every drop"
+        width={874}
+        height={946}
+        priority={priority}
+        className={cn("max-w-none", sizes[size])}
+      />
     </span>
   );
 }

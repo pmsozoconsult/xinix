@@ -86,7 +86,7 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
             className="flex min-w-0 shrink-0 items-center gap-2"
             aria-label={content.meta.companyName}
           >
-            <Logo size="md" variant={isDarkNav ? "light" : "default"} />
+            <Logo size="md" variant={isDarkNav ? "light" : "default"} priority />
           </Link>
 
           <nav

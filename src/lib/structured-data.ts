@@ -8,6 +8,7 @@ export function organizationJsonLd(locale: Locale) {
     "@type": "Organization",
     name: content.meta.companyName,
     url: "https://www.xinix.et",
+    logo: "https://www.xinix.et/brand/xinix-logo.png",
     email: content.contact.email,
     telephone: content.contact.phone,
     address: {

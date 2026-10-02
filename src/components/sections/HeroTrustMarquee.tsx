@@ -12,7 +12,7 @@ export function HeroTrustMarquee({ items }: HeroTrustMarqueeProps) {
 
   return (
     <div
-      className="absolute inset-x-0 bottom-0 z-20 border-t border-white/15 bg-deep-navy/55 backdrop-blur-md"
+      className="absolute inset-x-0 bottom-0 z-20 border-t border-white/20 bg-white/90 backdrop-blur-md"
       aria-hidden
     >
       <div className="overflow-hidden py-3.5">
@@ -28,9 +28,9 @@ export function HeroTrustMarquee({ items }: HeroTrustMarqueeProps) {
           {(reduce ? items : loop).map((item, i) => (
             <span
               key={`${item}-${i}`}
-              className="flex shrink-0 items-center gap-10 text-xs font-semibold uppercase tracking-[0.22em] text-white/75 sm:gap-14 sm:text-sm"
+              className="flex shrink-0 items-center gap-10 text-xs font-semibold uppercase tracking-[0.22em] text-deep-navy sm:gap-14 sm:text-sm"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-solar-amber" />
+              <span className="h-1.5 w-1.5 rounded-full bg-xinix-blue" />
               {item}
             </span>
           ))}

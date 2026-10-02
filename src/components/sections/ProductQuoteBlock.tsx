@@ -48,7 +48,7 @@ function ContactPill({
       href={href}
       className="group flex min-w-0 flex-1 items-center gap-3 rounded-2xl border border-white/15 bg-white/[0.06] px-4 py-3.5 transition hover:border-white/30 hover:bg-white/10"
     >
-      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/10 text-drop-cyan">
+      <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-white/10 text-sky-band">
         {label === "Email" || label === "ኢሜይል" ? (
           <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden>
             <path
@@ -73,7 +73,7 @@ function ContactPill({
         <span className="block text-[10px] font-semibold uppercase tracking-wider text-white/50">
           {label}
         </span>
-        <span className="mt-0.5 block truncate text-sm font-medium text-white group-hover:text-drop-cyan">
+        <span className="mt-0.5 block truncate text-sm font-medium text-white group-hover:text-sky-band">
           {value}
         </span>
       </span>
@@ -97,23 +97,23 @@ export function ProductQuoteBlock({
             <div className="grid lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)]">
               <div className="relative overflow-hidden bg-deep-navy p-8 sm:p-10 lg:p-12">
                 <div
-                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(24,182,199,0.2),_transparent_55%)]"
+                  className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(43,134,199,0.35),_transparent_55%)]"
                   aria-hidden
                 />
                 <div className="relative">
-                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-drop-cyan">
+                  <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-band">
                     {labels.eyebrow}
                   </p>
                   <h2 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl">
                     {locale === "en" ? (
                       <>
                         {labels.headlinePrefix}{" "}
-                        <span className="text-drop-cyan">{productName}</span>
+                        <span className="text-sky-band">{productName}</span>
                       </>
                     ) : (
                       <>
                         {labels.headlinePrefix}
-                        <span className="text-drop-cyan">{productName}</span>
+                        <span className="text-sky-band">{productName}</span>
                         {(labels as typeof t.am).headlineSuffix}
                       </>
                     )}

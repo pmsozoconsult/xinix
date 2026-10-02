@@ -9,9 +9,9 @@ export const categoryTheme: Record<
   { accent: string; border: string; bg: string; icon: string }
 > = {
   "water-and-household": {
-    accent: "text-drop-cyan",
-    border: "border-t-drop-cyan",
-    bg: "bg-drop-cyan/10",
+    accent: "text-xinix-blue",
+    border: "border-t-xinix-blue",
+    bg: "bg-xinix-blue/10",
     icon: "water",
   },
   "hygiene-and-institutional": {

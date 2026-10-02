@@ -25,7 +25,7 @@ export default async function NotFound({
         <Button href={localePath(locale)}>{content.ui.contactUs}</Button>
       </div>
       <p className="mt-6 text-sm">
-        <Link href={localePath(locale)} className="text-teal-text hover:underline">
+        <Link href={localePath(locale)} className="text-xinix-blue hover:underline">
           ← Home
         </Link>
       </p>

@@ -75,17 +75,17 @@ export function SustainabilityTeaser({ locale }: SustainabilityTeaserProps) {
   const t = teaser[locale];
 
   return (
-    <section data-header-tone="dark" className="bg-deep-navy">
+    <section data-header-tone="light" className="bg-sky-wash">
       <div className="relative lg:min-h-[32rem]">
         <div className="relative z-10 flex flex-col justify-center px-4 py-16 sm:px-6 lg:w-1/2 lg:py-24 lg:pl-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] lg:pr-12">
           <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-leaf-green">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
               {t.eyebrow}
             </p>
-            <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl lg:text-5xl">
               {t.title}
             </h2>
-            <p className="mt-6 text-base leading-relaxed text-white/75 sm:text-lg">{t.body}</p>
+            <p className="mt-6 text-base leading-relaxed text-stone sm:text-lg">{t.body}</p>
             <div className="mt-10 flex flex-wrap gap-4">
               <Button href={localePath(locale, "/sustainability")}>{t.cta}</Button>
             </div>
@@ -98,12 +98,12 @@ export function SustainabilityTeaser({ locale }: SustainabilityTeaserProps) {
             effect="parallax-up"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/20 to-transparent lg:bg-gradient-to-r lg:from-deep-navy lg:via-deep-navy/45 lg:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-sky-wash via-sky-wash/30 to-transparent lg:bg-gradient-to-r lg:from-sky-wash lg:via-sky-wash/50 lg:to-transparent" />
         </div>
       </div>
 
-      {/* Manufacturing — visually distinct sub-section */}
-      <div className="relative border-t-4 border-drop-cyan/25 bg-deep-teal/20">
+      {/* Manufacturing — the remaining dark plant moment */}
+      <div data-header-tone="dark" className="relative border-t-4 border-xinix-blue/40 bg-deep-navy">
         <div className="absolute inset-0 overflow-hidden">
           <ScrollImage
             src={visuals.manufacturing}
@@ -111,15 +111,15 @@ export function SustainabilityTeaser({ locale }: SustainabilityTeaserProps) {
             intensity={0.85}
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-deep-navy/85" />
-          <div className="absolute inset-0 bg-gradient-to-b from-deep-navy/60 via-deep-navy/40 to-deep-navy/80" />
+          <div className="absolute inset-0 bg-deep-navy/75" />
+          <div className="absolute inset-0 bg-gradient-to-b from-xinix-blue/25 via-deep-navy/50 to-deep-navy/80" />
         </div>
 
         <div className="relative z-10 mx-auto max-w-7xl px-4 py-14 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
           <Reveal>
             <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-drop-cyan">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-sky-band">
                   {t.plantEyebrow}
                 </p>
                 <h3 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">
@@ -129,7 +129,7 @@ export function SustainabilityTeaser({ locale }: SustainabilityTeaserProps) {
             </div>
           </Reveal>
 
-          <div className="overflow-hidden rounded-3xl border border-white/15 bg-deep-teal/50 shadow-xl shadow-black/20 backdrop-blur-sm">
+          <div className="overflow-hidden rounded-3xl border border-white/15 bg-xinix-blue/20 shadow-xl shadow-black/20 backdrop-blur-sm">
             <Stagger className="grid divide-y divide-white/10 lg:grid-cols-3 lg:divide-x lg:divide-y-0">
               {t.pillars.map((pillar, index) => {
                 const { Icon, accent, ring, bar } = pillarMeta[index % pillarMeta.length];

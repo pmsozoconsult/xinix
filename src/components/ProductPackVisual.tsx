@@ -59,7 +59,7 @@ export function ProductPackVisual({
 
       {variant === "dark" && (
         <>
-          <div className="absolute inset-0 bg-deep-navy" />
+          <div className="absolute inset-0 bg-xinix-blue-deep" />
           <div
             className={cn(
               "absolute left-1/2 top-[38%] h-[70%] w-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full opacity-45 blur-3xl",

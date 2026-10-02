@@ -87,7 +87,7 @@ export function CategoryApplications({
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16 xl:grid-cols-[minmax(0,26rem)_1fr]">
           <Reveal className="lg:sticky lg:top-28 lg:self-start">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
               {h.eyebrow}
             </p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl">

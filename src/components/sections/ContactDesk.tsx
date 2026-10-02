@@ -49,14 +49,14 @@ export function ContactDesk({ locale, content }: ContactDeskProps) {
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl">
             {t.intro}
           </h2>
-          <p className="mt-10 text-sm font-semibold uppercase tracking-[0.18em] text-teal-text">
+          <p className="mt-10 text-sm font-semibold uppercase tracking-[0.18em] text-xinix-blue">
             {t.other}
           </p>
           <p className="mt-4 font-semibold text-deep-navy">{t.distributor}</p>
           <p className="mt-2 text-base leading-relaxed text-stone">{t.distributorBody}</p>
           <Link
             href={localePath(locale, "/distributors")}
-            className="mt-3 inline-flex text-sm font-semibold text-deep-teal hover:text-xinix-teal"
+            className="mt-3 inline-flex text-sm font-semibold text-xinix-blue hover:text-xinix-blue-deep"
           >
             {content.nav.distributors} →
           </Link>

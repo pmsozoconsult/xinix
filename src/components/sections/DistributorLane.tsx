@@ -77,7 +77,7 @@ export function DistributorLane({ locale }: DistributorLaneProps) {
     <section data-header-tone="light" className="bg-paper py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
           <h2 className="mt-3 max-w-xl text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl">
@@ -86,7 +86,7 @@ export function DistributorLane({ locale }: DistributorLaneProps) {
         </Reveal>
 
         <div className="mt-12 overflow-hidden border border-deep-navy/15 bg-white">
-          <div className="hidden grid-cols-[8rem_5rem_1fr] border-b border-line bg-deep-navy font-mono text-[11px] uppercase tracking-[0.18em] text-white/70 sm:grid">
+          <div className="hidden grid-cols-[8rem_5rem_1fr] border-b border-line bg-xinix-blue-deep font-mono text-[11px] uppercase tracking-[0.18em] text-white/80 sm:grid">
             <span className="px-4 py-3">{locale === "en" ? "Stage" : "ደረጃ"}</span>
             <span className="px-4 py-3">{locale === "en" ? "Code" : "ኮድ"}</span>
             <span className="px-4 py-3">{locale === "en" ? "Note" : "ማስታወሻ"}</span>

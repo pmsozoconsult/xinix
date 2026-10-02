@@ -10,7 +10,7 @@ interface SectionProps {
 const backgrounds = {
   white: "bg-white",
   paper: "bg-paper",
-  teal: "bg-deep-teal text-white",
+  teal: "bg-xinix-blue-deep text-white",
 };
 
 export function Section({

@@ -25,7 +25,7 @@ export function ProductCard({ locale, product, cta }: ProductCardProps) {
           intensity={0.7}
           sizes="(max-width: 768px) 100vw, 33vw"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-deep-navy via-xinix-blue/35 to-transparent" />
         <div className="absolute bottom-4 left-4 right-4 z-10">
           <h3 className="text-xl font-bold text-white">{product.name}</h3>
           <p className="mt-1 text-xs text-white/75">{product.details.packSize}</p>
@@ -38,7 +38,7 @@ export function ProductCard({ locale, product, cta }: ProductCardProps) {
             locale,
             `/products/${product.categorySlug}/${product.slug}`,
           )}
-          className="mt-4 inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-teal-text transition group-hover:gap-2 group-hover:text-deep-teal"
+          className="mt-4 inline-flex min-h-11 items-center gap-1 text-sm font-semibold text-xinix-blue transition group-hover:gap-2 group-hover:text-xinix-blue-deep"
         >
           {cta}
           <span aria-hidden>→</span>

@@ -41,7 +41,7 @@ export function ContactHero({ locale, content }: ContactHeroProps) {
     >
       <div className="mx-auto grid max-w-7xl items-end gap-12 px-4 pb-16 pt-6 sm:px-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:px-8 lg:pb-24 lg:pt-10">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
           <h1 className="mt-4 max-w-xl text-4xl font-bold leading-[1.08] tracking-tight text-deep-navy sm:text-5xl lg:text-6xl">
@@ -56,15 +56,15 @@ export function ContactHero({ locale, content }: ContactHeroProps) {
 
         <Reveal delay={0.08}>
           <div className="relative mx-auto w-full max-w-sm">
-            <div className="absolute -right-3 -top-3 h-full w-full rounded-sm bg-drop-cyan/20" aria-hidden />
+            <div className="absolute -right-3 -top-3 h-full w-full rounded-sm bg-xinix-blue/20" aria-hidden />
             <div className="relative border border-line bg-white p-8 shadow-[8px_16px_40px_rgba(18,58,92,0.1)]">
               <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-stone">
                 Xinix
               </p>
-              <p className="mt-8 font-mono text-7xl font-bold leading-none text-xinix-teal">1</p>
+              <p className="mt-8 font-mono text-7xl font-bold leading-none text-xinix-blue">1</p>
               <p className="mt-3 text-xl font-bold text-deep-navy">{t.stamp}</p>
               <p className="mt-3 text-sm leading-relaxed text-stone">{t.stampNote}</p>
-              <div className="mt-8 h-1.5 w-16 bg-xinix-teal" />
+              <div className="mt-8 h-1.5 w-16 bg-xinix-blue" />
             </div>
           </div>
         </Reveal>

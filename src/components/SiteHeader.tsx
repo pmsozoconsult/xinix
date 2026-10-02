@@ -110,10 +110,10 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
                     active
                       ? isDarkNav
                         ? "bg-white/20 text-white"
-                        : "bg-deep-teal text-white shadow-sm"
+                        : "bg-xinix-blue text-white shadow-sm"
                       : isDarkNav
                         ? "text-white/90 hover:bg-white/10 hover:text-white"
-                        : "text-stone hover:bg-white hover:text-deep-navy",
+                        : "text-stone hover:bg-sky-wash hover:text-deep-navy",
                   )}
                 >
                   {content.nav[item.key]}
@@ -129,8 +129,8 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
               className={cn(
                 "group hidden items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out sm:inline-flex",
                 isDarkNav
-                  ? "bg-white text-deep-teal shadow-md shadow-black/15 hover:bg-paper hover:shadow-lg"
-                  : "bg-deep-teal text-white shadow-md shadow-deep-teal/25 hover:bg-xinix-teal hover:shadow-lg",
+                  ? "bg-white text-xinix-blue-deep shadow-md shadow-black/15 hover:bg-paper hover:shadow-lg"
+                  : "bg-xinix-blue text-white shadow-md shadow-xinix-blue/25 hover:bg-xinix-blue-deep hover:shadow-lg",
               )}
             >
               <span className="max-w-[9rem] truncate sm:max-w-none">
@@ -139,7 +139,7 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
               <span
                 className={cn(
                   "flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-all duration-500 ease-in-out group-hover:translate-x-0.5",
-                  isDarkNav ? "bg-deep-teal/10 text-deep-teal" : "bg-white/15 text-white",
+                  isDarkNav ? "bg-xinix-blue/10 text-xinix-blue-deep" : "bg-white/15 text-white",
                 )}
               >
                 <QuoteIcon className="h-3.5 w-3.5" />

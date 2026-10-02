@@ -1,17 +1,21 @@
 @import "tailwindcss";
 
 :root {
+  /* Brand: light blue leads. Navy is contrast, not the wallpaper. */
   --deep-navy: #123a5c;
-  --xinix-blue: #287cbc;
+  --xinix-blue: #2b86c7;
+  --xinix-blue-deep: #1769a8;
+  --sky-wash: #eef6fb;
+  --sky-band: #d7ebf6;
   --xinix-teal: #137c87;
   --teal-text: #0e6e7b;
   --deep-teal: #0c4a54;
   --drop-cyan: #18b6c7;
-  --ink: #1b2a30;
-  --paper: #f6f9fa;
-  --mist: #eaf0f2;
-  --stone: #5b6b70;
-  --line: #dce3e6;
+  --ink: #14324a;
+  --paper: #f4f8fb;
+  --mist: #e6eef4;
+  --stone: #4d5d66;
+  --line: #d3e0e9;
   --leaf-green: #3e8e5a;
   --solar-amber: #d9952f;
   --white: #ffffff;
@@ -20,6 +24,9 @@
 @theme inline {
   --color-deep-navy: var(--deep-navy);
   --color-xinix-blue: var(--xinix-blue);
+  --color-xinix-blue-deep: var(--xinix-blue-deep);
+  --color-sky-wash: var(--sky-wash);
+  --color-sky-band: var(--sky-band);
   --color-xinix-teal: var(--xinix-teal);
   --color-teal-text: var(--teal-text);
   --color-deep-teal: var(--deep-teal);
@@ -40,7 +47,7 @@ html {
 }
 
 body {
-  background: var(--deep-navy);
+  background: var(--sky-wash);
   color: var(--ink);
   font-family: var(--font-maven), var(--font-inter), system-ui, sans-serif;
   line-height: 1.6;
@@ -59,7 +66,7 @@ html[lang="am"] body {
 }
 
 ::selection {
-  background: color-mix(in srgb, var(--xinix-blue) 25%, transparent);
+  background: color-mix(in srgb, var(--xinix-blue) 28%, transparent);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -96,7 +103,7 @@ html[lang="am"] body {
 
 @supports (backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px)) {
   .glass-dark {
-    background: rgba(18, 58, 92, 0.96);
+    background: rgba(18, 58, 92, 0.94);
     backdrop-filter: blur(12px) saturate(140%);
     -webkit-backdrop-filter: blur(12px) saturate(140%);
   }

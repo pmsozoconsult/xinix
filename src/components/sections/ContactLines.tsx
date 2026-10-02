@@ -54,30 +54,30 @@ export function ContactLines({ locale, content }: ContactLinesProps) {
   ];
 
   return (
-    <section data-header-tone="dark" className="bg-deep-navy">
+    <section data-header-tone="light" className="bg-sky-wash">
       <div className="mx-auto max-w-7xl px-4 pt-12 sm:px-6 lg:px-8">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-drop-cyan">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
           {t.eyebrow}
         </p>
       </div>
       <ul className="mt-8">
         {rows.map((row) => (
-          <li key={row.label} className="border-t border-white/10 last:border-b">
+          <li key={row.label} className="border-t border-line last:border-b">
             <Reveal>
               <a
                 href={row.href}
                 {...(row.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-                className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-8 transition hover:bg-white/5 sm:flex-row sm:items-end sm:justify-between sm:px-6 sm:py-10 lg:px-8"
+                className="mx-auto flex max-w-7xl flex-col gap-2 px-4 py-8 transition hover:bg-white sm:flex-row sm:items-end sm:justify-between sm:px-6 sm:py-10 lg:px-8"
               >
-                <span className="font-mono text-xs uppercase tracking-[0.2em] text-white/45">
+                <span className="font-mono text-xs uppercase tracking-[0.2em] text-stone">
                   {row.label}
                 </span>
                 <span className="text-right">
-                  <span className="block text-2xl font-bold tracking-tight text-white sm:text-4xl">
+                  <span className="block text-2xl font-bold tracking-tight text-deep-navy sm:text-4xl">
                     {row.value}
                   </span>
                   {row.hint ? (
-                    <span className="mt-1 block text-sm text-drop-cyan">{row.hint}</span>
+                    <span className="mt-1 block text-sm text-xinix-blue">{row.hint}</span>
                   ) : null}
                 </span>
               </a>

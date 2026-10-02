@@ -82,9 +82,9 @@ export function ProductHero({
   ];
 
   return (
-    <section data-header-tone="dark" className={cn("relative overflow-hidden bg-deep-navy", headerClearance)}>
+    <section data-header-tone="light" className={cn("relative overflow-hidden bg-sky-wash", headerClearance)}>
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(24,182,199,0.12),_transparent_55%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(43,134,199,0.16),_transparent_55%)]"
         aria-hidden
       />
 
@@ -95,6 +95,7 @@ export function ProductHero({
               locale={locale}
               backHref={`/products/${categorySlug}`}
               backLabel={label}
+              tone="light"
             />
 
             <span
@@ -108,10 +109,10 @@ export function ProductHero({
               {label}
             </span>
 
-            <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl">
+            <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-deep-navy sm:text-5xl">
               {product.name}
             </h1>
-            <p className="mt-4 max-w-xl text-lg leading-relaxed text-white/80">
+            <p className="mt-4 max-w-xl text-lg leading-relaxed text-stone">
               {details.tagline}
             </p>
 
@@ -122,7 +123,7 @@ export function ProductHero({
                   return (
                     <li
                       key={spec.key}
-                      className="flex items-start gap-3 rounded-2xl border border-white/10 bg-gradient-to-br from-white/[0.09] to-white/[0.02] p-4 backdrop-blur-sm"
+                      className="flex items-start gap-3 rounded-2xl border border-line bg-white p-4 shadow-sm"
                     >
                       <span
                         className={cn(
@@ -135,10 +136,10 @@ export function ProductHero({
                         <Icon className="h-5 w-5" />
                       </span>
                       <span className="min-w-0">
-                        <span className="block text-[10px] font-semibold uppercase tracking-[0.14em] text-white/50">
+                        <span className="block text-[10px] font-semibold uppercase tracking-[0.14em] text-stone">
                           {spec.title}
                         </span>
-                        <span className="mt-1 block text-sm font-semibold leading-snug text-white">
+                        <span className="mt-1 block text-sm font-semibold leading-snug text-deep-navy">
                           {spec.value}
                         </span>
                       </span>
@@ -149,10 +150,10 @@ export function ProductHero({
             )}
 
             <div className="mt-8 w-full max-w-xl">
-              <div className="flex flex-col gap-2 rounded-2xl border border-white/12 bg-white/[0.06] p-1.5 shadow-2xl shadow-black/25 backdrop-blur-md sm:flex-row sm:rounded-full">
+              <div className="flex flex-col gap-2 rounded-2xl border border-line bg-white p-1.5 shadow-sm sm:flex-row sm:rounded-full">
                 <Link
                   href={localePath(locale, "/contact")}
-                  className="group flex min-h-11 flex-1 items-center justify-between gap-3 rounded-xl bg-gradient-to-r from-xinix-teal to-deep-teal px-5 py-3.5 text-sm font-semibold text-white transition hover:shadow-lg sm:justify-center sm:rounded-full"
+                  className="group flex min-h-11 flex-1 items-center justify-between gap-3 rounded-xl bg-gradient-to-r from-xinix-blue to-xinix-blue-deep px-5 py-3.5 text-sm font-semibold text-white transition hover:shadow-lg sm:justify-center sm:rounded-full"
                 >
                   <span>{content.ui.requestQuote}</span>
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20 transition-transform group-hover:translate-x-0.5">
@@ -169,9 +170,9 @@ export function ProductHero({
                 </Link>
                 <Link
                   href="#datasheet"
-                  className="group flex min-h-11 flex-1 items-center justify-between gap-3 rounded-xl px-5 py-3.5 text-sm font-semibold text-white/90 transition hover:bg-white/10 sm:justify-center sm:rounded-full"
+                  className="group flex min-h-11 flex-1 items-center justify-between gap-3 rounded-xl px-5 py-3.5 text-sm font-semibold text-xinix-blue-deep transition hover:bg-sky-wash sm:justify-center sm:rounded-full"
                 >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-white/25 bg-white/5 text-white/80">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-xinix-blue/25 bg-sky-wash text-xinix-blue-deep">
                     <DownloadIcon className="h-3.5 w-3.5" />
                   </span>
                   <span>{content.ui.downloadDatasheet}</span>
@@ -181,14 +182,14 @@ export function ProductHero({
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="relative aspect-square overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/40">
+            <div className="relative aspect-square overflow-hidden rounded-3xl border border-line shadow-xl shadow-xinix-blue/10">
               <ProductPackVisual
                 slug={product.slug}
                 name={product.name}
                 packSize={details.packSize}
                 categorySlug={categorySlug}
                 size="lg"
-                variant="dark"
+                variant="color"
                 priority
                 className="h-full w-full"
               />

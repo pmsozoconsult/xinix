@@ -36,7 +36,7 @@ export function QualityLibrary({ locale, groups }: QualityLibraryProps) {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
           <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl">
@@ -60,7 +60,7 @@ export function QualityLibrary({ locale, groups }: QualityLibraryProps) {
                           locale,
                           `/products/${product.categorySlug}/${product.slug}#datasheet`,
                         )}
-                        className="flex items-baseline justify-between gap-4 py-3.5 text-sm transition hover:text-xinix-teal"
+                        className="flex items-baseline justify-between gap-4 py-3.5 text-sm transition hover:text-xinix-blue-deep"
                       >
                         <span className="font-semibold text-xinix-blue">{product.name}</span>
                         <span className="shrink-0 font-mono text-[11px] text-stone">

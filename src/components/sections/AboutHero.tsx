@@ -38,7 +38,7 @@ export function AboutHero({ locale, content }: AboutHeroProps) {
       <div className="grid lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)]">
         <div className="flex flex-col justify-end px-4 pb-16 pt-6 sm:px-6 lg:px-8 lg:pb-20 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pt-10">
           <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
               {t.eyebrow}
             </p>
             <p className="mt-6 max-w-xl text-2xl font-bold leading-tight tracking-tight text-xinix-blue sm:text-3xl lg:text-4xl">

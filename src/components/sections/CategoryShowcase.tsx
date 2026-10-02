@@ -41,17 +41,17 @@ export function CategoryShowcase({
   } as const;
 
   return (
-    <section data-header-tone="dark" className="bg-deep-navy pt-8">
+    <section data-header-tone="light" className="bg-white pt-8">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-drop-cyan">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {heading[locale]}
           </p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl lg:text-5xl">
             {title}
           </h2>
           {body ? (
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-stone sm:text-lg">
               {body}
             </p>
           ) : null}
@@ -66,7 +66,7 @@ export function CategoryShowcase({
         return (
           <div
             key={panel.slug}
-            className="relative border-t border-white/10"
+            className="relative border-t border-line"
           >
             <div
               className={cn(
@@ -86,16 +86,16 @@ export function CategoryShowcase({
                   effect="parallax-up"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-deep-navy/20 to-transparent lg:bg-gradient-to-r lg:from-deep-navy/60 lg:to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/55 via-xinix-blue/15 to-transparent lg:bg-gradient-to-r lg:from-white/80 lg:via-white/20 lg:to-transparent" />
                 <div
-                  className="pointer-events-none absolute bottom-0 left-0 h-40 w-56 bg-gradient-to-tr from-deep-navy/75 via-deep-navy/35 to-transparent lg:h-48 lg:w-72"
+                  className="pointer-events-none absolute bottom-0 left-0 h-40 w-56 bg-gradient-to-tr from-deep-navy/40 via-xinix-blue/20 to-transparent lg:h-48 lg:w-72"
                   aria-hidden
                 />
                 <div className="absolute bottom-6 left-6 lg:bottom-10 lg:left-10">
                   <span
                     className={cn(
                       "relative block text-7xl font-bold leading-none tracking-tighter sm:text-8xl",
-                      theme?.accent ?? "text-drop-cyan",
+                      theme?.accent ?? "text-xinix-blue",
                     )}
                     aria-hidden
                   >
@@ -114,24 +114,24 @@ export function CategoryShowcase({
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-80px" }}
                 transition={{ duration: 0.7, delay: 0.15 }}
-                className="flex flex-col justify-center px-4 py-12 sm:px-6 lg:px-14 lg:py-16"
+                className="flex flex-col justify-center bg-white px-4 py-12 sm:px-6 lg:px-14 lg:py-16"
               >
                 <span
                   className={cn(
                     "text-sm font-semibold uppercase tracking-[0.15em]",
-                    theme?.accent ?? "text-drop-cyan",
+                    theme?.accent ?? "text-xinix-blue",
                   )}
                 >
                   {panel.title}
                 </span>
-                <h3 className="mt-3 text-2xl font-bold text-white sm:text-3xl">
+                <h3 className="mt-3 text-2xl font-bold text-deep-navy sm:text-3xl">
                   {panel.title}
                 </h3>
-                <p className="mt-4 max-w-lg text-base leading-relaxed text-white/70">
+                <p className="mt-4 max-w-lg text-base leading-relaxed text-stone">
                   {panel.description}
                 </p>
                 {panel.products ? (
-                  <p className="mt-5 text-sm font-semibold text-white/90">{panel.products}</p>
+                  <p className="mt-5 text-sm font-semibold text-xinix-blue-deep">{panel.products}</p>
                 ) : null}
               </motion.div>
             </div>
@@ -139,10 +139,10 @@ export function CategoryShowcase({
         );
       })}
 
-      <div className="border-t border-white/10 py-12 text-center">
+      <div className="border-t border-line bg-sky-wash py-12 text-center">
         <Link
           href={localePath(locale, "/products")}
-          className="text-sm font-semibold uppercase tracking-widest text-drop-cyan hover:text-white"
+          className="text-sm font-semibold uppercase tracking-widest text-xinix-blue-deep hover:text-deep-navy"
         >
           {exploreCta} →
         </Link>

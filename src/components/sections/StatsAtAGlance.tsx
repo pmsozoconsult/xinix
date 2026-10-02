@@ -21,11 +21,11 @@ export function StatsAtAGlance({ eyebrow, headline, stats }: StatsAtAGlanceProps
           backgroundSize: "32px 32px",
         }}
       />
-      <div className="pointer-events-none absolute -right-24 top-0 h-72 w-72 rounded-full bg-xinix-teal/5 blur-3xl" />
+      <div className="pointer-events-none absolute -right-24 top-0 h-72 w-72 rounded-full bg-xinix-blue/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {eyebrow}
           </p>
           {headline ? (

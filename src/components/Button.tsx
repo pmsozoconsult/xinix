@@ -23,19 +23,19 @@ const base =
 const variants: Record<ButtonVariant, Record<ButtonTone, string>> = {
   primary: {
     default:
-      "bg-gradient-to-b from-xinix-teal to-deep-teal text-white shadow-md shadow-deep-teal/30 ring-1 ring-white/10 hover:-translate-y-0.5 hover:from-[#1596a3] hover:to-deep-navy hover:shadow-lg hover:shadow-xinix-teal/25 focus-visible:ring-xinix-teal",
+      "bg-gradient-to-b from-xinix-blue to-xinix-blue-deep text-white shadow-md shadow-xinix-blue/30 ring-1 ring-white/10 hover:-translate-y-0.5 hover:from-xinix-blue-deep hover:to-deep-navy hover:shadow-lg hover:shadow-xinix-blue/25 focus-visible:ring-xinix-blue",
     onDark:
-      "bg-gradient-to-b from-white to-paper text-deep-teal shadow-md shadow-black/20 ring-1 ring-white/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-white/10 focus-visible:ring-white",
+      "bg-gradient-to-b from-white to-paper text-xinix-blue-deep shadow-md shadow-black/20 ring-1 ring-white/40 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-white/10 focus-visible:ring-white",
   },
   secondary: {
     default:
-      "border border-deep-teal/40 bg-white/60 text-deep-teal shadow-sm ring-1 ring-deep-teal/10 hover:-translate-y-0.5 hover:border-deep-teal hover:bg-mist/90 hover:shadow-md focus-visible:ring-deep-teal",
+      "border border-xinix-blue/40 bg-white/60 text-xinix-blue-deep shadow-sm ring-1 ring-xinix-blue/10 hover:-translate-y-0.5 hover:border-xinix-blue hover:bg-sky-wash hover:shadow-md focus-visible:ring-xinix-blue",
     onDark:
       "border border-white/30 bg-white/10 text-white shadow-sm ring-1 ring-white/10 hover:-translate-y-0.5 hover:border-white/50 hover:bg-white/15 hover:shadow-md focus-visible:ring-white/50",
   },
   tertiary: {
     default:
-      "bg-transparent px-4 text-teal-text ring-1 ring-transparent hover:bg-mist/80 hover:text-deep-teal focus-visible:ring-teal-text",
+      "bg-transparent px-4 text-xinix-blue-deep ring-1 ring-transparent hover:bg-sky-wash hover:text-deep-navy focus-visible:ring-xinix-blue",
     onDark:
       "bg-transparent px-4 text-white/85 ring-1 ring-transparent hover:bg-white/10 hover:text-white focus-visible:ring-white/40",
   },

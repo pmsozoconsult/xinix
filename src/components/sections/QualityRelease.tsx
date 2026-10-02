@@ -71,7 +71,7 @@ export function QualityRelease({ locale }: QualityReleaseProps) {
     >
       <div className="absolute inset-0">
         <ScrollImage src={visuals.manufacturing} effect="parallax-up" sizes="100vw" />
-        <div className="absolute inset-0 bg-deep-navy/82" />
+        <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/85 via-xinix-blue/35 to-xinix-blue/10" />
       </div>
 
       <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">

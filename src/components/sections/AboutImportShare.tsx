@@ -39,7 +39,7 @@ export function AboutImportShare({ locale }: AboutImportShareProps) {
     >
       <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-6 lg:px-8">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
           <p className="mt-6 font-mono text-[7rem] font-bold leading-[0.8] tracking-tight text-xinix-blue sm:text-[9rem] lg:text-[10rem]">

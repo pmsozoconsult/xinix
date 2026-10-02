@@ -61,11 +61,11 @@ export function WhyXinixSection({ locale, title }: WhyXinixSectionProps) {
           backgroundSize: "32px 32px",
         }}
       />
-      <div className="pointer-events-none absolute -left-20 top-1/3 h-64 w-64 rounded-full bg-drop-cyan/5 blur-3xl" />
+      <div className="pointer-events-none absolute -left-20 top-1/3 h-64 w-64 rounded-full bg-xinix-blue/10 blur-3xl" />
 
       <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <Reveal className="max-w-3xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl lg:text-5xl">
@@ -95,7 +95,7 @@ export function WhyXinixSection({ locale, title }: WhyXinixSectionProps) {
               </div>
 
               <div className="flex items-center justify-center border-b border-line bg-mist/50 px-6 py-4 lg:border-b-0 lg:px-8">
-                <span className="rounded-full border border-line bg-white px-4 py-1.5 font-mono text-xs font-bold uppercase tracking-widest text-teal-text">
+                <span className="rounded-full border border-line bg-white px-4 py-1.5 font-mono text-xs font-bold uppercase tracking-widest text-xinix-blue">
                   vs
                 </span>
               </div>

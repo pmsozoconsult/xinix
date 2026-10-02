@@ -72,7 +72,7 @@ export function AboutStand({ locale }: AboutStandProps) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
               {t.missionEyebrow}
             </p>
             <p className="mt-4 text-xl font-medium leading-relaxed text-deep-navy sm:text-2xl">
@@ -80,7 +80,7 @@ export function AboutStand({ locale }: AboutStandProps) {
             </p>
           </Reveal>
           <Reveal delay={0.08}>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
               {t.visionEyebrow}
             </p>
             <p className="mt-4 text-xl font-medium leading-relaxed text-deep-navy sm:text-2xl">
@@ -90,7 +90,7 @@ export function AboutStand({ locale }: AboutStandProps) {
         </div>
 
         <Reveal>
-          <p className="mt-16 text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+          <p className="mt-16 text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.standEyebrow}
           </p>
         </Reveal>

@@ -13,9 +13,9 @@ interface ParallaxImageProps {
 }
 
 const overlays = {
-  dark: "from-deep-navy/85 via-deep-navy/55 to-deep-navy/80",
-  teal: "from-deep-teal/90 via-xinix-teal/50 to-deep-navy/85",
-  navy: "from-deep-navy/92 via-deep-navy/70 to-deep-navy/90",
+  dark: "from-deep-navy/80 via-xinix-blue/35 to-xinix-blue/20",
+  teal: "from-xinix-blue-deep/90 via-xinix-blue/50 to-sky-band/30",
+  navy: "from-deep-navy/85 via-xinix-blue/40 to-xinix-blue/20",
 };
 
 export function ParallaxImage({

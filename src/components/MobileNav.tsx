@@ -86,7 +86,7 @@ export function MobileNav({ locale, content, pathname, dark = false }: MobileNav
                         className={cn(
                           "block rounded-lg px-3 py-3 text-base font-medium transition-colors",
                           active
-                            ? "bg-deep-teal/10 text-deep-teal"
+                            ? "bg-xinix-blue/10 text-xinix-blue-deep"
                             : "text-deep-navy hover:bg-mist",
                         )}
                       >
@@ -102,7 +102,7 @@ export function MobileNav({ locale, content, pathname, dark = false }: MobileNav
               <Link
                 href={localePath(locale, "/contact")}
                 onClick={() => setOpen(false)}
-                className="block rounded-full bg-deep-teal px-4 py-3 text-center text-sm font-semibold text-white shadow-md"
+                className="block rounded-full bg-xinix-blue px-4 py-3 text-center text-sm font-semibold text-white shadow-md"
               >
                 {content.nav.requestQuote}
               </Link>

@@ -30,14 +30,15 @@ export function CategoryHero({ locale, content, categorySlug }: CategoryHeroProp
     | "industrial";
 
   return (
-    <section data-header-tone="dark" className={cn("relative overflow-hidden bg-deep-navy", headerClearance)}>
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(24,182,199,0.12),_transparent_55%)]" />
+    <section data-header-tone="light" className={cn("relative overflow-hidden bg-sky-wash", headerClearance)}>
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,_rgba(43,134,199,0.18),_transparent_55%)]" />
       <div className={heroContentInset}>
         <Reveal>
           <ProductBackNav
             locale={locale}
             backHref="/products"
             backLabel={content.nav.products}
+            tone="light"
             crumbs={[
               { label: content.nav.products, href: "/products" },
               { label },
@@ -70,20 +71,20 @@ export function CategoryHero({ locale, content, categorySlug }: CategoryHeroProp
               </span>
             </div>
 
-            <h1 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">
+            <h1 className="mt-5 text-3xl font-bold leading-tight tracking-tight text-deep-navy sm:text-4xl lg:text-5xl">
               {category.headline}
             </h1>
-            <p className="mt-5 max-w-xl text-base leading-relaxed text-white/80 sm:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-stone sm:text-lg">
               {category.body}
             </p>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <Button href={localePath(locale, "/contact")} tone="onDark">
+              <Button href={localePath(locale, "/contact")}>
                 {content.ui.requestQuote}
               </Button>
               <Link
                 href="#lineup"
-                className="inline-flex items-center gap-2 rounded-xl border border-white/25 bg-white/5 px-5 py-3 text-[15px] font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex items-center gap-2 rounded-xl border border-xinix-blue/30 bg-white px-5 py-3 text-[15px] font-semibold text-xinix-blue-deep transition hover:bg-sky-band"
               >
                 {content.ui.viewRange}
               </Link>
@@ -91,14 +92,14 @@ export function CategoryHero({ locale, content, categorySlug }: CategoryHeroProp
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/10 shadow-2xl shadow-black/40">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-line shadow-xl shadow-xinix-blue/10">
               <ScrollImage
                 src={categoryImages[categorySlug]}
                 effect="parallax-up"
                 priority
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/50 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/40 via-xinix-blue/10 to-transparent" />
             </div>
           </Reveal>
         </div>

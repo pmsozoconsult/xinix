@@ -5,7 +5,7 @@ interface HeroVisualProps {
 export function HeroVisual({ badges }: HeroVisualProps) {
   return (
     <div
-      className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-deep-teal via-xinix-teal to-drop-cyan shadow-xl ring-1 ring-white/20 lg:aspect-[5/4]"
+      className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl bg-gradient-to-br from-xinix-blue-deep via-xinix-blue to-sky-band shadow-xl ring-1 ring-white/20 lg:aspect-[5/4]"
       aria-hidden
     >
       <div className="absolute inset-0 opacity-25">

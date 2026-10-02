@@ -23,7 +23,7 @@ export function AboutStory({ locale, content }: AboutStoryProps) {
     >
       <div className="mx-auto max-w-2xl px-4 sm:px-6">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {locale === "en" ? "The company" : "ኩባንያው"}
           </p>
           <p className="mt-3 text-2xl font-bold tracking-tight text-xinix-blue sm:text-3xl">
@@ -34,7 +34,7 @@ export function AboutStory({ locale, content }: AboutStoryProps) {
           <div className="mt-8 space-y-6 text-lg leading-relaxed text-deep-navy">
             <p>
               <span
-                className="float-left mr-3 mt-1 font-mono text-6xl font-bold leading-none text-xinix-teal"
+                className="float-left mr-3 mt-1 font-mono text-6xl font-bold leading-none text-xinix-blue"
                 aria-hidden
               >
                 {drop}

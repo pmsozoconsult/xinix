@@ -36,13 +36,13 @@ export function CategoryGrid({ locale, items, cta }: CategoryGridProps) {
   const h = heading[locale];
 
   return (
-    <section id="categories" data-header-tone="dark" className="scroll-mt-24 bg-deep-navy py-20 sm:py-28">
+    <section id="categories" data-header-tone="light" className="scroll-mt-24 bg-sky-wash py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-drop-cyan">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {h.eyebrow}
           </p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl">
             {h.title}
           </h2>
         </Reveal>
@@ -63,7 +63,7 @@ export function CategoryGrid({ locale, items, cta }: CategoryGridProps) {
               <motion.div key={item.slug} variants={staggerItem}>
                 <Link
                   href={href}
-                  className="group relative flex h-full min-h-[19rem] flex-col justify-end overflow-hidden rounded-3xl border border-white/10 p-7 transition duration-300 hover:border-white/25"
+                  className="group relative flex h-full min-h-[19rem] flex-col justify-end overflow-hidden rounded-3xl border border-line p-7 transition duration-300 hover:border-xinix-blue/40"
                 >
                   <div className="absolute inset-0">
                     <ScrollImage
@@ -72,7 +72,7 @@ export function CategoryGrid({ locale, items, cta }: CategoryGridProps) {
                       intensity={0.6}
                       sizes="(max-width: 640px) 100vw, 50vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/70 to-deep-navy/20 transition-opacity duration-300 group-hover:from-deep-navy" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/85 via-xinix-blue/35 to-xinix-blue/10 transition-opacity duration-300 group-hover:from-deep-navy" />
                   </div>
 
                   <div className="relative">

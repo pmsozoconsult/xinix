@@ -12,9 +12,9 @@ export function Footer({ locale, content }: FooterProps) {
   const { contact, nav } = content;
 
   return (
-    <footer data-header-tone="dark" className="relative mt-auto overflow-hidden bg-deep-teal text-white">
-      <div className="h-px bg-gradient-to-r from-transparent via-drop-cyan/60 to-transparent" />
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_0%_100%,rgba(19,124,135,0.35),transparent_55%)]" />
+    <footer data-header-tone="dark" className="relative mt-auto overflow-hidden bg-deep-navy text-white">
+      <div className="h-px bg-gradient-to-r from-transparent via-xinix-blue to-transparent" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_0%_100%,rgba(43,134,199,0.28),transparent_55%)]" />
 
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 lg:grid-cols-12 lg:gap-8 lg:px-8 lg:py-16">
         <div className="lg:col-span-4">
@@ -22,7 +22,7 @@ export function Footer({ locale, content }: FooterProps) {
           <p className="mt-5 text-sm leading-relaxed text-white/75">{content.meta.companyName}</p>
           <Link
             href={localePath(locale, "/contact")}
-            className="mt-8 inline-flex rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-deep-teal transition hover:bg-paper"
+            className="mt-8 inline-flex rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-xinix-blue-deep transition hover:bg-sky-wash"
           >
             {nav.requestQuote}
           </Link>
@@ -38,7 +38,7 @@ export function Footer({ locale, content }: FooterProps) {
                 <li key={slug}>
                   <Link
                     href={localePath(locale, `/products/${slug}`)}
-                    className="transition hover:text-drop-cyan"
+                    className="transition hover:text-sky-band"
                   >
                     {label}
                   </Link>
@@ -53,22 +53,22 @@ export function Footer({ locale, content }: FooterProps) {
             </p>
             <ul className="mt-5 space-y-3 text-sm text-white/85">
               <li>
-                <Link href={localePath(locale, "/sustainability")} className="transition hover:text-drop-cyan">
+                <Link href={localePath(locale, "/sustainability")} className="transition hover:text-sky-band">
                   {nav.sustainability}
                 </Link>
               </li>
               <li>
-                <Link href={localePath(locale, "/quality")} className="transition hover:text-drop-cyan">
+                <Link href={localePath(locale, "/quality")} className="transition hover:text-sky-band">
                   {nav.quality}
                 </Link>
               </li>
               <li>
-                <Link href={localePath(locale, "/distributors")} className="transition hover:text-drop-cyan">
+                <Link href={localePath(locale, "/distributors")} className="transition hover:text-sky-band">
                   {nav.distributors}
                 </Link>
               </li>
               <li>
-                <Link href={localePath(locale, "/about")} className="transition hover:text-drop-cyan">
+                <Link href={localePath(locale, "/about")} className="transition hover:text-sky-band">
                   {nav.about}
                 </Link>
               </li>
@@ -81,12 +81,12 @@ export function Footer({ locale, content }: FooterProps) {
             </p>
             <ul className="mt-5 space-y-3 text-sm text-white/85">
               <li>
-                <a href={`mailto:${contact.email}`} className="transition hover:text-drop-cyan">
+                <a href={`mailto:${contact.email}`} className="transition hover:text-sky-band">
                   {contact.email}
                 </a>
               </li>
               <li>
-                <a href={contact.phoneHref} className="transition hover:text-drop-cyan">
+                <a href={contact.phoneHref} className="transition hover:text-sky-band">
                   {contact.phone}
                 </a>
               </li>
@@ -99,7 +99,7 @@ export function Footer({ locale, content }: FooterProps) {
       <div className="relative border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-4 py-6 text-xs text-white/55 sm:flex-row sm:px-6 lg:px-8">
           <p>© {new Date().getFullYear()} Xinix Chemicals Manufacturing PLC</p>
-          <p className="font-medium text-drop-cyan/90">
+          <p className="font-medium text-sky-band">
             {locale === "en" ? "Made in Ethiopia" : "በኢትዮጵያ የተሠራ"}
           </p>
         </div>

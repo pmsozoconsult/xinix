@@ -76,7 +76,7 @@ export default async function LocaleLayout({
         <Footer locale={locale} content={content} />
         <a
           href={content.contact.phoneHref}
-          className="fixed bottom-4 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-deep-teal text-white shadow-lg ring-4 ring-white/50 transition hover:bg-deep-navy sm:hidden"
+          className="fixed bottom-4 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-xinix-blue text-white shadow-lg ring-4 ring-white/50 transition hover:bg-xinix-blue-deep sm:hidden"
           aria-label={content.contact.phone}
         >
           <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden>

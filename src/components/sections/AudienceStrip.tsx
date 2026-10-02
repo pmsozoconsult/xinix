@@ -87,7 +87,7 @@ export function AudienceStrip({ locale }: AudienceStripProps) {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid gap-10 lg:grid-cols-5 lg:items-center">
           <Reveal className="lg:col-span-2">
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
               {h.eyebrow}
             </p>
             <h2 className="mt-3 text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl">
@@ -105,7 +105,7 @@ export function AudienceStrip({ locale }: AudienceStripProps) {
                 variants={staggerItem}
                 className="flex items-start gap-3 rounded-2xl border border-line bg-white px-4 py-4 shadow-sm"
               >
-                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-xinix-teal/10 text-teal-text">
+                <span className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-xinix-blue/10 text-xinix-blue">
                   <CheckMark />
                 </span>
                 <div>

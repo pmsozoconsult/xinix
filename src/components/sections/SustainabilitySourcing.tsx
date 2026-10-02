@@ -32,7 +32,7 @@ export function SustainabilitySourcing({ locale }: SustainabilitySourcingProps) 
     <section data-header-tone="light" className="bg-mist py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
           <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl">
@@ -42,7 +42,7 @@ export function SustainabilitySourcing({ locale }: SustainabilitySourcingProps) 
 
         <div className="mt-12">
           <div className="flex h-16 overflow-hidden rounded-sm sm:h-24">
-            <div className="flex w-[95%] items-center bg-xinix-teal px-4 sm:px-6">
+            <div className="flex w-[95%] items-center bg-xinix-blue px-4 sm:px-6">
               <span className="font-mono text-2xl font-bold text-white sm:text-4xl">95%</span>
             </div>
             <div className="w-[5%] bg-deep-navy/15" />

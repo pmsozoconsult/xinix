@@ -32,13 +32,13 @@ export function SiblingCategories({ locale, items, cta }: SiblingCategoriesProps
   const h = heading[locale];
 
   return (
-    <section data-header-tone="dark" className="bg-deep-navy py-20 sm:py-24">
+    <section data-header-tone="light" className="bg-sky-wash py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-drop-cyan">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {h.eyebrow}
           </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl">
             {h.title}
           </h2>
         </Reveal>
@@ -58,7 +58,7 @@ export function SiblingCategories({ locale, items, cta }: SiblingCategoriesProps
               <motion.div key={item.slug} variants={staggerItem}>
                 <Link
                   href={localePath(locale, `/products/${item.slug}`)}
-                  className="group flex h-full flex-col rounded-3xl border border-white/10 bg-white/[0.03] p-6 transition duration-300 hover:border-white/25 hover:bg-white/[0.06]"
+                  className="group flex h-full flex-col rounded-3xl border border-line bg-white p-6 shadow-sm transition duration-300 hover:border-xinix-blue/40 hover:shadow-md"
                 >
                   <div
                     className={cn(
@@ -70,10 +70,10 @@ export function SiblingCategories({ locale, items, cta }: SiblingCategoriesProps
                   >
                     <CategoryIcon name={iconName} className="h-6 w-6" />
                   </div>
-                  <h3 className="mt-5 text-lg font-bold text-white">
+                  <h3 className="mt-5 text-lg font-bold text-deep-navy">
                     {item.title}
                   </h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-white/65">
+                  <p className="mt-2 flex-1 text-sm leading-relaxed text-stone">
                     {item.description}
                   </p>
                   <span

@@ -45,7 +45,7 @@ export function CategoryCard({
         <p className="mt-3 flex-1 text-sm leading-relaxed text-stone">{description}</p>
         <Link
           href={localePath(locale, `/products/${slug}`)}
-          className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-teal-text transition group-hover:gap-2 group-hover:text-deep-teal"
+          className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-xinix-blue transition group-hover:gap-2 group-hover:text-xinix-blue-deep"
         >
           {cta}
           <span aria-hidden>→</span>

@@ -72,8 +72,8 @@ export function CinematicHero({ locale, content }: CinematicHeroProps) {
           />
         </motion.div>
       </div>
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-deep-navy/60 via-deep-navy/35 to-deep-navy/75" />
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_top_right,_rgba(24,182,199,0.2),_transparent_50%)]" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-b from-xinix-blue/25 via-deep-navy/25 to-deep-navy/70" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_top_right,_rgba(43,134,199,0.35),_transparent_50%)]" />
 
       <motion.div
         className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-4 pb-24 pt-24 will-change-[opacity,transform] sm:px-6 sm:pb-28 sm:pt-32 lg:px-8 lg:pb-32 lg:pt-32"
@@ -85,7 +85,7 @@ export function CinematicHero({ locale, content }: CinematicHeroProps) {
           transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
           className="flex flex-col"
         >
-          <p className="mb-3 max-w-fit rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-drop-cyan backdrop-blur">
+          <p className="mb-3 max-w-fit rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-sky-band backdrop-blur">
             {content.nav.home}
           </p>
           <h1 className="max-w-4xl text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
@@ -96,7 +96,7 @@ export function CinematicHero({ locale, content }: CinematicHeroProps) {
             <div className="flex flex-col gap-2 rounded-2xl border border-white/12 bg-white/[0.06] p-1.5 shadow-2xl shadow-black/25 backdrop-blur-md sm:flex-row sm:rounded-full">
               <Link
                 href={localePath(locale, "/contact")}
-                className="group flex min-h-11 flex-1 items-center justify-between gap-3 rounded-xl bg-gradient-to-r from-xinix-teal to-deep-teal px-5 py-3.5 text-sm font-semibold text-white transition hover:shadow-lg sm:justify-center sm:rounded-full"
+                className="group flex min-h-11 flex-1 items-center justify-between gap-3 rounded-xl bg-gradient-to-r from-xinix-blue to-xinix-blue-deep px-5 py-3.5 text-sm font-semibold text-white transition hover:shadow-lg sm:justify-center sm:rounded-full"
               >
                 <span>{ui.requestQuote}</span>
                 <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/20 transition-transform group-hover:translate-x-0.5">
@@ -141,7 +141,7 @@ export function CinematicHero({ locale, content }: CinematicHeroProps) {
                       "flex h-9 w-9 shrink-0 items-center justify-center rounded-lg ring-1 sm:h-11 sm:w-11 sm:rounded-xl",
                       accent === "solar-amber"
                         ? "bg-solar-amber/15 text-solar-amber ring-solar-amber/25"
-                        : "bg-drop-cyan/15 text-drop-cyan ring-drop-cyan/25",
+                        : "bg-xinix-blue/25 text-sky-band ring-xinix-blue/35",
                     )}
                   >
                     <Icon className="h-4 w-4 sm:h-5 sm:w-5" />
@@ -150,7 +150,7 @@ export function CinematicHero({ locale, content }: CinematicHeroProps) {
                     <p
                       className={cn(
                         "text-[9px] font-semibold uppercase tracking-[0.15em] sm:text-[10px] sm:tracking-[0.2em]",
-                        accent === "solar-amber" ? "text-solar-amber/90" : "text-drop-cyan/90",
+                        accent === "solar-amber" ? "text-solar-amber/90" : "text-sky-band",
                       )}
                     >
                       {eyebrow}

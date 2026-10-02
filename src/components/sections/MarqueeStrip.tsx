@@ -11,7 +11,7 @@ export function MarqueeStrip({ items }: MarqueeProps) {
   const doubled = [...items, ...items];
 
   return (
-    <div className="overflow-hidden border-y border-white/10 bg-deep-teal py-4">
+    <div className="overflow-hidden border-y border-white/10 bg-xinix-blue-deep py-4">
       <motion.div
         className="flex w-max gap-12"
         animate={reduce ? undefined : { x: ["0%", "-50%"] }}

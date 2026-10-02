@@ -57,7 +57,7 @@ export function AboutChallenges({ locale }: AboutChallengesProps) {
     <section data-header-tone="light" className="bg-paper py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
         </Reveal>

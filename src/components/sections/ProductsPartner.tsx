@@ -25,20 +25,20 @@ export function ProductsPartner({ locale, content }: ProductsPartnerProps) {
   const t = copy[locale];
 
   return (
-    <section data-header-tone="dark" className="bg-deep-navy py-20 sm:py-24">
+    <section data-header-tone="light" className="bg-sky-wash py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-drop-cyan">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
-          <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-3 max-w-3xl text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl">
             {t.title}
           </h2>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/75 sm:text-lg">
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-stone sm:text-lg">
             {t.body}
           </p>
           <div className="mt-8">
-            <Button href={localePath(locale, "/distributors")} tone="onDark">
+            <Button href={localePath(locale, "/distributors")}>
               {content.ui.becomeDistributor}
             </Button>
           </div>

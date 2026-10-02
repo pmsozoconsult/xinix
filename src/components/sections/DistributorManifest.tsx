@@ -76,29 +76,29 @@ export function DistributorManifest({ locale }: DistributorManifestProps) {
   const t = copy[locale];
 
   return (
-    <section data-header-tone="dark" className="bg-deep-navy py-20 sm:py-28">
+    <section data-header-tone="light" className="bg-sky-wash py-20 sm:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-solar-amber">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl">
             {t.title}
           </h2>
         </Reveal>
 
-        <ol className="mt-14 divide-y divide-dashed divide-white/20 border-y border-dashed border-white/20">
+        <ol className="mt-14 divide-y divide-dashed divide-line border-y border-dashed border-line">
           {t.items.map((item) => (
             <li
               key={item.code}
               className="grid gap-3 py-8 sm:grid-cols-[11rem_1fr] sm:items-baseline sm:gap-10"
             >
-              <p className="font-mono text-sm font-bold tracking-[0.18em] text-solar-amber">
+              <p className="font-mono text-sm font-bold tracking-[0.18em] text-xinix-blue">
                 {item.code}
               </p>
               <div>
-                <h3 className="text-xl font-bold text-white sm:text-2xl">{item.title}</h3>
-                <p className="mt-2 max-w-xl text-base leading-relaxed text-white/70">
+                <h3 className="text-xl font-bold text-deep-navy sm:text-2xl">{item.title}</h3>
+                <p className="mt-2 max-w-xl text-base leading-relaxed text-stone">
                   {item.body}
                 </p>
               </div>

@@ -50,11 +50,11 @@ export function QualityHero({ locale, content }: QualityHeroProps) {
       <div className="absolute inset-0 z-0">
         <ScrollImage src={visuals.hygiene} effect="zoom-out" sizes="100vw" />
       </div>
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-deep-navy via-deep-navy/80 to-deep-navy/55" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-deep-navy/90 via-xinix-blue/45 to-xinix-blue/20" />
 
       <div className={cn("relative z-10", heroContentInset)}>
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-drop-cyan">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-band">
             {t.eyebrow}
           </p>
           <h1 className="mt-4 max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">

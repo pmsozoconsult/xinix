@@ -71,12 +71,12 @@ export const categoryColor: Record<
   }
 > = {
   "water-and-household": {
-    text: "text-drop-cyan",
-    bg: "bg-drop-cyan",
-    softBg: "bg-drop-cyan/10",
-    ring: "ring-drop-cyan/30",
-    border: "border-drop-cyan/40",
-    gradient: "from-drop-cyan/30 via-drop-cyan/8 to-transparent",
+    text: "text-xinix-blue",
+    bg: "bg-xinix-blue",
+    softBg: "bg-xinix-blue/10",
+    ring: "ring-xinix-blue/30",
+    border: "border-xinix-blue/40",
+    gradient: "from-xinix-blue/30 via-xinix-blue/8 to-transparent",
   },
   "hygiene-and-institutional": {
     text: "text-xinix-teal",

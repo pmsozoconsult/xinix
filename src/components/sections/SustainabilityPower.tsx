@@ -62,7 +62,7 @@ export function SustainabilityPower({ locale }: SustainabilityPowerProps) {
       <div className="grid lg:grid-cols-2">
         <div className="relative min-h-[22rem] lg:min-h-[38rem]">
           <ScrollImage src={visuals.sustainability} effect="zoom-in" sizes="50vw" />
-          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-deep-navy via-transparent to-solar-amber/20 lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-deep-navy/70" />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-deep-navy/70 via-transparent to-xinix-blue/15 lg:bg-gradient-to-r lg:from-transparent lg:via-transparent lg:to-deep-navy/60" />
           <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-solar-amber/25 blur-3xl" />
         </div>
 

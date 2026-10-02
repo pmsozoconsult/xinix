@@ -57,7 +57,7 @@ export function SustainabilityHero({ locale, content }: SustainabilityHeroProps)
     >
       <div className="absolute inset-0 z-0">
         <ScrollImage src={visuals.manufacturing} effect="zoom-out" sizes="100vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-deep-navy via-deep-navy/55 to-deep-navy/25" />
+        <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/90 via-xinix-blue/40 to-xinix-blue/15" />
       </div>
 
       <div className="relative z-10 flex flex-1 flex-col justify-end">

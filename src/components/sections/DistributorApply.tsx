@@ -41,7 +41,7 @@ export function DistributorApply({ locale, content }: DistributorApplyProps) {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="overflow-hidden bg-paper shadow-[12px_20px_50px_rgba(18,58,92,0.12)] ring-1 ring-deep-navy/10">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-dashed border-line bg-deep-navy px-6 py-4 text-white sm:px-10">
+          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-dashed border-line bg-xinix-blue-deep px-6 py-4 text-white sm:px-10">
             <p className="font-mono text-xs font-bold uppercase tracking-[0.28em]">
               {t.bill}
             </p>

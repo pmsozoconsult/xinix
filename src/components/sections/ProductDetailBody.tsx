@@ -73,7 +73,7 @@ export function ProductDetailBody({
       <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-3 lg:gap-14 lg:px-8">
         <div className="lg:col-span-2">
           <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
               {labels.overview}
             </p>
             <p className="mt-4 text-2xl font-semibold leading-snug text-xinix-blue sm:text-3xl">
@@ -85,7 +85,7 @@ export function ProductDetailBody({
           </Reveal>
 
           <Reveal delay={0.05}>
-            <h2 className="mt-12 text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+            <h2 className="mt-12 text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
               {labels.glance}
             </h2>
             <div className="mt-5 grid gap-4 sm:grid-cols-2">
@@ -125,7 +125,7 @@ export function ProductDetailBody({
         <div className="lg:col-span-1">
           <Reveal delay={0.1}>
             <div className="lg:sticky lg:top-28">
-              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
                 {labels.spec}
               </h2>
               <dl className="mt-4 divide-y divide-line overflow-hidden rounded-2xl border border-line bg-white shadow-sm">

@@ -15,9 +15,9 @@ interface EnquiryFormProps {
 
 const fieldClass = {
   default:
-    "mt-1.5 w-full rounded-md border border-line bg-mist px-3 py-2.5 text-ink outline-none transition focus:border-teal-text focus:ring-2 focus:ring-teal-text/20",
+    "mt-1.5 w-full rounded-md border border-line bg-mist px-3 py-2.5 text-ink outline-none transition focus:border-xinix-blue focus:ring-2 focus:ring-xinix-blue/20",
   product:
-    "mt-1.5 w-full rounded-xl border border-line bg-white px-4 py-3 text-ink shadow-sm outline-none transition focus:border-xinix-teal focus:ring-2 focus:ring-xinix-teal/15",
+    "mt-1.5 w-full rounded-xl border border-line bg-white px-4 py-3 text-ink shadow-sm outline-none transition focus:border-xinix-blue focus:ring-2 focus:ring-xinix-blue/15",
 } as const;
 
 const distributorCopy = {

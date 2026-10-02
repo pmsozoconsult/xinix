@@ -48,7 +48,7 @@ export function ProductIndex({ locale, products, filters, cta }: ProductIndexPro
     <section id="range" className="scroll-mt-24 bg-white py-20 sm:py-24" data-header-tone="light">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {h.eyebrow}
           </p>
           <h2 className="mt-3 text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl">
@@ -67,8 +67,8 @@ export function ProductIndex({ locale, products, filters, cta }: ProductIndexPro
                 className={cn(
                   "rounded-full border px-4 py-2 text-sm font-semibold transition",
                   isActive
-                    ? "border-deep-teal bg-deep-teal text-white shadow-sm"
-                    : "border-line bg-white text-stone hover:border-deep-teal/40 hover:text-deep-navy",
+                    ? "border-xinix-blue bg-xinix-blue text-white shadow-sm"
+                    : "border-line bg-white text-stone hover:border-xinix-blue/40 hover:text-deep-navy",
                 )}
               >
                 {tab.label}
@@ -123,7 +123,7 @@ export function ProductIndex({ locale, products, filters, cta }: ProductIndexPro
                         locale,
                         `/products/${product.categorySlug}/${product.slug}`,
                       )}
-                      className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-teal-text transition group-hover:gap-2 group-hover:text-deep-teal"
+                      className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-xinix-blue transition group-hover:gap-2 group-hover:text-xinix-blue-deep"
                     >
                       {cta}
                       <span aria-hidden>→</span>

@@ -49,7 +49,7 @@ export function AboutFootprint({ locale, content }: AboutFootprintProps) {
     <section data-header-tone="light" className="bg-white py-20 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
           <h2 className="mt-3 max-w-xl text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl">
@@ -64,7 +64,7 @@ export function AboutFootprint({ locale, content }: AboutFootprintProps) {
               const body = "key" in point ? contact[point.key] : point.text;
               return (
                 <li key={point.label} className="relative">
-                  <span className="mb-4 hidden h-2.5 w-2.5 rounded-full bg-xinix-teal sm:block" />
+                  <span className="mb-4 hidden h-2.5 w-2.5 rounded-full bg-xinix-blue sm:block" />
                   <p className="font-mono text-xs font-bold uppercase tracking-[0.18em] text-stone">
                     {String(index + 1).padStart(2, "0")} · {point.label}
                   </p>

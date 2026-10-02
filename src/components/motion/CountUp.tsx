@@ -70,16 +70,16 @@ interface StatGridProps {
 
 const cardStyles = {
   dark: {
-    card: "border-white/10 bg-deep-teal/70",
-    glow: "bg-drop-cyan/10 group-hover:bg-drop-cyan/20",
-    icon: "bg-white/10 text-drop-cyan",
+    card: "border-white/10 bg-xinix-blue-deep/70",
+    glow: "bg-sky-band/15 group-hover:bg-sky-band/25",
+    icon: "bg-white/10 text-sky-band",
     value: "text-white",
     label: "text-white/80",
   },
   light: {
     card: "border-line bg-white shadow-lg shadow-deep-navy/5 ring-1 ring-line",
-    glow: "bg-xinix-teal/10 group-hover:bg-xinix-teal/15",
-    icon: "bg-mist text-xinix-teal",
+    glow: "bg-xinix-blue/10 group-hover:bg-xinix-blue/15",
+    icon: "bg-mist text-xinix-blue",
     value: "text-xinix-blue",
     label: "text-stone",
   },

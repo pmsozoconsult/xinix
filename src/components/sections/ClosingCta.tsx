@@ -39,11 +39,11 @@ function ContactChannel({
   external?: boolean;
 }) {
   const className =
-    "group flex min-h-[3.25rem] items-start gap-4 rounded-2xl border border-line bg-white p-5 transition-colors hover:border-drop-cyan/40 hover:shadow-sm";
+    "group flex min-h-[3.25rem] items-start gap-4 rounded-2xl border border-line bg-white p-5 transition-colors hover:border-xinix-blue/40 hover:shadow-sm";
 
   const inner = (
     <>
-      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-mist text-teal-text transition-colors group-hover:bg-drop-cyan/15 group-hover:text-xinix-teal">
+      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-mist text-xinix-blue transition-colors group-hover:bg-xinix-blue/15 group-hover:text-xinix-blue-deep">
         {label === "Email" || label === "ኢሜይል" ? (
           <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden>
             <path
@@ -66,7 +66,7 @@ function ContactChannel({
       </span>
       <div className="min-w-0">
         <p className="text-xs font-semibold uppercase tracking-wider text-stone">{label}</p>
-        <p className="mt-1 text-sm font-medium text-deep-navy group-hover:text-teal-text">
+        <p className="mt-1 text-sm font-medium text-deep-navy group-hover:text-xinix-blue">
           {value}
         </p>
       </div>
@@ -97,7 +97,7 @@ export function ClosingCta({ locale, content }: ClosingCtaProps) {
       <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
         <div className="flex flex-col justify-center border-b border-line px-4 py-16 sm:px-6 lg:border-b-0 lg:border-r lg:py-24 lg:pl-8 lg:pr-14">
           <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
               {t.eyebrow}
             </p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl lg:text-5xl">

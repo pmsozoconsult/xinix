@@ -30,7 +30,7 @@ export function Breadcrumbs({ locale, items, className }: BreadcrumbsProps) {
               {item.href && !isLast ? (
                 <Link
                   href={localePath(locale, item.href)}
-                  className="hover:text-teal-text"
+                  className="hover:text-xinix-blue"
                 >
                   {item.label}
                 </Link>

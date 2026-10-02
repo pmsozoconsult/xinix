@@ -14,7 +14,7 @@ export function TrustBar({ items }: TrustBarProps) {
             key={item}
             className="flex items-center gap-3 rounded-lg bg-paper px-4 py-3"
           >
-            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-xinix-teal/10 text-xinix-teal">
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-xinix-blue/10 text-xinix-blue">
               <TrustIcon index={index} />
             </span>
             <span className="text-sm font-medium leading-snug text-deep-navy">

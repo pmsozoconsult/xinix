@@ -69,14 +69,14 @@ export function SustainabilityCycle({ locale }: SustainabilityCycleProps) {
           intensity={0.8}
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-deep-navy/80" />
-        <div className="absolute inset-0 bg-gradient-to-r from-deep-navy via-deep-navy/85 to-deep-navy/45" />
+        <div className="absolute inset-0 bg-deep-navy/70" />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep-navy/80 via-xinix-blue/25 to-xinix-blue/10" />
       </div>
 
       <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:items-center lg:gap-16 lg:px-8">
         <div>
           <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-drop-cyan">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-band">
               {t.eyebrow}
             </p>
             <h2 className="mt-3 max-w-lg text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
@@ -97,11 +97,11 @@ export function SustainabilityCycle({ locale }: SustainabilityCycleProps) {
             >
               {index < t.steps.length - 1 && (
                 <div
-                  className="absolute bottom-0 left-[2.15rem] top-16 w-px bg-drop-cyan/35"
+                  className="absolute bottom-0 left-[2.15rem] top-16 w-px bg-sky-band/35"
                   aria-hidden
                 />
               )}
-              <span className="relative z-10 font-mono text-sm font-bold text-drop-cyan">
+              <span className="relative z-10 font-mono text-sm font-bold text-sky-band">
                 {step.n}
               </span>
               <div>

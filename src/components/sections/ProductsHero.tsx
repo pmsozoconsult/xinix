@@ -52,12 +52,12 @@ export function ProductsHero({ locale, content }: ProductsHeroProps) {
       <div className="absolute inset-0 z-0">
         <ScrollImage src={visuals.manufacturing} effect="zoom-out" sizes="100vw" />
       </div>
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-deep-navy via-deep-navy/70 to-deep-navy/60" />
-      <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_top_right,_rgba(24,182,199,0.18),_transparent_55%)]" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-deep-navy/90 via-xinix-blue/40 to-xinix-blue/15" />
+      <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_top_right,_rgba(43,134,199,0.28),_transparent_55%)]" />
 
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 pb-16 pt-16 sm:px-6 lg:px-8 lg:pb-20">
         <Reveal>
-          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-drop-cyan">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-band">
             {t.eyebrow}
           </p>
           <h1 className="mt-4 max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">

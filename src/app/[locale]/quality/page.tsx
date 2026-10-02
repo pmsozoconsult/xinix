@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { ClosingCta } from "@/components/sections/ClosingCta";
 import { QualityHero } from "@/components/sections/QualityHero";
 import { QualityLibrary } from "@/components/sections/QualityLibrary";
-import { QualityPapers } from "@/components/sections/QualityPapers";
 import { QualityRegister } from "@/components/sections/QualityRegister";
 import { QualityRelease } from "@/components/sections/QualityRelease";
 import { getContent } from "@/lib/content";
@@ -38,7 +37,6 @@ export default async function QualityPage({
     <>
       <QualityHero locale={locale} content={content} />
       <QualityRegister locale={locale} />
-      <QualityPapers locale={locale} />
       <QualityRelease locale={locale} />
       <QualityLibrary
         locale={locale}

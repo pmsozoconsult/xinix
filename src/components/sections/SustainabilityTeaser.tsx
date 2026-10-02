@@ -1,11 +1,10 @@
 "use client";
 
 import { motion } from "framer-motion";
-import type { Locale, SiteContent } from "@/types/content";
+import type { Locale } from "@/types/content";
 import { Button } from "@/components/Button";
 import {
   IconBiodegradable,
-  IconEthiopia,
   IconSolar,
   IconZeroDischarge,
 } from "@/components/Icons";
@@ -18,20 +17,62 @@ import { cn } from "@/lib/utils";
 const pillarMeta = [
   { Icon: IconSolar, accent: "text-solar-amber", ring: "ring-solar-amber/30", bar: "bg-solar-amber" },
   { Icon: IconZeroDischarge, accent: "text-drop-cyan", ring: "ring-drop-cyan/30", bar: "bg-drop-cyan" },
-  { Icon: IconEthiopia, accent: "text-xinix-teal", ring: "ring-xinix-teal/30", bar: "bg-xinix-teal" },
   { Icon: IconBiodegradable, accent: "text-leaf-green", ring: "ring-leaf-green/30", bar: "bg-leaf-green" },
 ] as const;
 
+const teaser = {
+  en: {
+    eyebrow: "Sustainability",
+    title: "Made the way it should be",
+    body: "How a product is made matters as much as what it does. Our plant is designed to protect the water, soil and air it depends on.",
+    cta: "See how the plant works",
+    plantEyebrow: "Our plant",
+    plantTitle: "Three principles on every batch",
+    pillars: [
+      {
+        title: "Powered by the sun",
+        body: "Built to run on its own solar and battery system, with no connection to the national grid. Power cuts never stop production.",
+      },
+      {
+        title: "No process wastewater",
+        body: "Process water is purified, reused in the plant or becomes part of the finished product. Nothing is released to drains, rivers or land.",
+      },
+      {
+        title: "Formulas that break down",
+        body: "Our products break down after use and leave no lasting residue in water, soil or food when used as directed.",
+      },
+    ],
+  },
+  am: {
+    eyebrow: "ዘላቂነት",
+    title: "እንደሚገባው የተሠራ",
+    body: "አንድ ምርት እንዴት እንደሚሠራ ምን እንደሚያደርግ ያህል አስፈላጊ ነው። ፋብሪካችን የሚደገፍበትን ውሃ፣ አፈርና አየር ለመጠበቅ የተዘጋጀ ነው።",
+    cta: "ፋብሪካው እንዴት እንደሚሠራ ይመልከቱ",
+    plantEyebrow: "ፋብሪካችን",
+    plantTitle: "በእያንዳንዱ ባች ሦስት መርሆዎች",
+    pillars: [
+      {
+        title: "በፀሐይ ኃይል የሚሰራ",
+        body: "ከብሔራዊ መስመር ግንኙነት ሳይኖር በራሱ የፀሐይና ባትሪ ሥርዓት እንዲሠራ የተሠራ። የኃይል መቆራረጥ ምርትን አያቆምም።",
+      },
+      {
+        title: "የሂደት ፈሳሽ ቆሻሻ የለም",
+        body: "የሂደት ውሃ ይጣራል፣ በፋብሪካው ይደገማል ወይም የተጠናቀቀው ምርት አካል ይሆናል። ወደ ፍሳሽ፣ ወንዝ ወይም መሬት ምንም አይወጣም።",
+      },
+      {
+        title: "የሚበሰብሱ ቀመሮች",
+        body: "ምርቶቻችን ከአጠቃቀም በኋላ ይበሰብሳሉ፤ እንደተመራ ሲውሉ በውሃ፣ በአፈር ወይም በምግብ ላይ የሚቀር ቅሪት አይተዉም።",
+      },
+    ],
+  },
+} as const;
+
 interface SustainabilityTeaserProps {
   locale: Locale;
-  content: SiteContent;
 }
 
-export function SustainabilityTeaser({ locale, content }: SustainabilityTeaserProps) {
-  const { sustainability, home, ui, nav } = content;
-  const paragraphs = sustainability.body.split("\n\n");
-  const manufacturingTitle =
-    locale === "en" ? "How we manufacture" : "እንዴት እንሠራለን";
+export function SustainabilityTeaser({ locale }: SustainabilityTeaserProps) {
+  const t = teaser[locale];
 
   return (
     <section data-header-tone="dark" className="bg-deep-navy">
@@ -39,21 +80,14 @@ export function SustainabilityTeaser({ locale, content }: SustainabilityTeaserPr
         <div className="relative z-10 flex flex-col justify-center px-4 py-16 sm:px-6 lg:w-1/2 lg:py-24 lg:pl-[max(1.5rem,calc((100vw-80rem)/2+1.5rem))] lg:pr-12">
           <Reveal>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-leaf-green">
-              {nav.sustainability}
+              {t.eyebrow}
             </p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-              {sustainability.headline}
+              {t.title}
             </h2>
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-white/75 sm:text-lg">
-              {paragraphs.map((paragraph) => (
-                <p key={paragraph.slice(0, 32)}>{paragraph}</p>
-              ))}
-            </div>
+            <p className="mt-6 text-base leading-relaxed text-white/75 sm:text-lg">{t.body}</p>
             <div className="mt-10 flex flex-wrap gap-4">
-              <Button href={localePath(locale, "/sustainability")}>{ui.readStory}</Button>
-              <Button href={localePath(locale, "/contact")} variant="secondary" tone="onDark">
-                {ui.contactUs}
-              </Button>
+              <Button href={localePath(locale, "/sustainability")}>{t.cta}</Button>
             </div>
           </Reveal>
         </div>
@@ -86,27 +120,22 @@ export function SustainabilityTeaser({ locale, content }: SustainabilityTeaserPr
             <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
               <div>
                 <p className="text-xs font-semibold uppercase tracking-[0.2em] text-drop-cyan">
-                  {locale === "en" ? "Our plant" : "አብነተ ስራችን"}
+                  {t.plantEyebrow}
                 </p>
                 <h3 className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-3xl">
-                  {manufacturingTitle}
+                  {t.plantTitle}
                 </h3>
               </div>
-              <p className="max-w-sm text-sm leading-relaxed text-white/55">
-                {locale === "en"
-                  ? "Four principles that guide every batch we make."
-                  : "እያንዳንዱን ባች የሚመሩ አራት መርሆዎች።"}
-              </p>
             </div>
           </Reveal>
 
           <div className="overflow-hidden rounded-3xl border border-white/15 bg-deep-teal/50 shadow-xl shadow-black/20 backdrop-blur-sm">
-            <Stagger className="grid divide-y divide-white/10 lg:grid-cols-4 lg:divide-x lg:divide-y-0">
-              {home.pillars.map((pillar, index) => {
+            <Stagger className="grid divide-y divide-white/10 lg:grid-cols-3 lg:divide-x lg:divide-y-0">
+              {t.pillars.map((pillar, index) => {
                 const { Icon, accent, ring, bar } = pillarMeta[index % pillarMeta.length];
                 return (
                   <motion.div
-                    key={pillar}
+                    key={pillar.title}
                     variants={staggerItem}
                     className="group relative p-6 transition-colors duration-300 hover:bg-white/[0.04] sm:p-8"
                   >
@@ -130,7 +159,8 @@ export function SustainabilityTeaser({ locale, content }: SustainabilityTeaserPr
                         <span className="font-mono text-xs font-bold text-white/30">
                           {String(index + 1).padStart(2, "0")}
                         </span>
-                        <p className="mt-1 text-sm leading-relaxed text-white/90">{pillar}</p>
+                        <p className="mt-1 text-sm font-semibold text-white">{pillar.title}</p>
+                        <p className="mt-2 text-sm leading-relaxed text-white/75">{pillar.body}</p>
                       </div>
                     </div>
                   </motion.div>

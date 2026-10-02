@@ -58,6 +58,7 @@ export interface SiteContent {
     body: string;
     pillars: string[];
     rangeTitle: string;
+    rangeBody: string;
     rangeItems: { title: string; description: string }[];
     exportHeadline: string;
     exportBody: string;

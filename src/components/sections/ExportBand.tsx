@@ -17,16 +17,8 @@ interface ExportBandProps {
 }
 
 const stats = {
-  en: [
-    { value: "12", label: "Export-ready SKUs" },
-    { value: "5+", label: "Active markets" },
-    { value: "100%", label: "Biodegradable range" },
-  ],
-  am: [
-    { value: "12", label: "ለወጪ ንግድ የቀረቡ ምርቶች" },
-    { value: "5+", label: "ንቁ ገበያዎች" },
-    { value: "100%", label: "በተፈጥሮ የሚበሰብሱ ምርቶች" },
-  ],
+  en: [] as { value: string; label: string }[],
+  am: [] as { value: string; label: string }[],
 } as const;
 
 export function ExportBand({
@@ -50,7 +42,7 @@ export function ExportBand({
 
           <Reveal>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-drop-cyan">
-              {locale === "en" ? "Export & distribution" : "ወጪ ንግድ እና ስርጭት"}
+              {locale === "en" ? "For distributors" : "ለአከፋፋዮች"}
             </p>
             <h2 className="mt-3 max-w-xl text-3xl font-bold tracking-tight text-white sm:text-4xl">
               {headline}
@@ -59,6 +51,7 @@ export function ExportBand({
               {body}
             </p>
 
+            {statItems.length > 0 ? (
             <div className="mt-6 grid grid-cols-3 gap-3 border-y border-white/10 py-5 sm:gap-4">
               {statItems.map((stat) => (
                 <div key={stat.label}>
@@ -67,10 +60,11 @@ export function ExportBand({
                 </div>
               ))}
             </div>
+            ) : null}
 
             <div className="mt-5">
               <p className="text-xs font-semibold uppercase tracking-[0.2em] text-drop-cyan">
-                {locale === "en" ? "Supply routes" : "የአቅርቦት መስመሮች"}
+                {locale === "en" ? "Where we partner" : "የምንተባበርባቸው ቦታዎች"}
               </p>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {markets.map((market) => (

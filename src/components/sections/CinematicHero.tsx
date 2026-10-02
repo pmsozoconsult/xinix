@@ -5,7 +5,7 @@ import Link from "next/link";
 import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import type { Locale, SiteContent } from "@/types/content";
-import { IconEthiopia, IconSolar } from "@/components/Icons";
+import { IconBiodegradable, IconEthiopia, IconSolar, IconZeroDischarge } from "@/components/Icons";
 import { HeroTrustMarquee } from "@/components/sections/HeroTrustMarquee";
 import { localePath } from "@/lib/i18n";
 import { visuals } from "@/lib/visuals";
@@ -18,12 +18,16 @@ interface CinematicHeroProps {
 
 const badgeMeta = {
   en: [
-    { Icon: IconSolar, eyebrow: "Energy", accent: "solar-amber" as const },
     { Icon: IconEthiopia, eyebrow: "Origin", accent: "drop-cyan" as const },
+    { Icon: IconSolar, eyebrow: "Energy", accent: "solar-amber" as const },
+    { Icon: IconZeroDischarge, eyebrow: "Water", accent: "drop-cyan" as const },
+    { Icon: IconBiodegradable, eyebrow: "After use", accent: "solar-amber" as const },
   ],
   am: [
-    { Icon: IconSolar, eyebrow: "ኃይል", accent: "solar-amber" as const },
     { Icon: IconEthiopia, eyebrow: "ታዕማዝ", accent: "drop-cyan" as const },
+    { Icon: IconSolar, eyebrow: "ኃይል", accent: "solar-amber" as const },
+    { Icon: IconZeroDischarge, eyebrow: "ውሃ", accent: "drop-cyan" as const },
+    { Icon: IconBiodegradable, eyebrow: "ከአጠቃቀም በኋላ", accent: "solar-amber" as const },
   ],
 };
 
@@ -82,7 +86,7 @@ export function CinematicHero({ locale, content }: CinematicHeroProps) {
           className="flex flex-col"
         >
           <p className="mb-3 max-w-fit rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-drop-cyan backdrop-blur">
-            {content.meta.tagline}
+            {content.nav.home}
           </p>
           <h1 className="max-w-4xl text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
             {home.headline}
@@ -123,7 +127,7 @@ export function CinematicHero({ locale, content }: CinematicHeroProps) {
             {home.body}
           </p>
 
-          <div className="mt-6 grid grid-cols-2 gap-2 sm:mt-8 sm:max-w-lg sm:gap-3">
+          <div className="mt-6 grid grid-cols-2 gap-2 sm:mt-8 sm:max-w-2xl sm:gap-3">
             {home.heroBadges.map((badge, index) => {
               const meta = badges[index % badges.length];
               const { Icon, eyebrow, accent } = meta;

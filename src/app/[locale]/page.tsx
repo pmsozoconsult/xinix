@@ -3,22 +3,19 @@ import { CinematicHero } from "@/components/sections/CinematicHero";
 import { CategoryShowcase } from "@/components/sections/CategoryShowcase";
 import { ClosingCta } from "@/components/sections/ClosingCta";
 import { ExportBand } from "@/components/sections/ExportBand";
+import { HomeFaq } from "@/components/sections/HomeFaq";
+import { HomeMatters } from "@/components/sections/HomeMatters";
+import { HomeQuality } from "@/components/sections/HomeQuality";
 import { StatsAtAGlance } from "@/components/sections/StatsAtAGlance";
 import { SustainabilityTeaser } from "@/components/sections/SustainabilityTeaser";
 import { WhyXinixSection } from "@/components/sections/WhyXinixSection";
 import { getContent } from "@/lib/content";
 import { isValidLocale, type Locale } from "@/lib/i18n";
-
-const categoryOrder = [
-  "water-and-household",
-  "hygiene-and-institutional",
-  "food-and-agriculture",
-  "industrial-and-biofilm",
-] as const;
+import { productRangeCopy, productRangeGroups } from "@/lib/productRange";
 
 const exportMarkets = {
-  en: ["Ethiopia", "Uganda", "Rwanda", "East Africa", "Continental export"],
-  am: ["ኢትዮጵያ", "ዩጋንዳ", "ሩዋንዳ", "ምስራቅ አፍሪካ", "የአህጉር ወጪ ንግድ"],
+  en: ["Ethiopia", "East Africa"],
+  am: ["ኢትዮጵያ", "ምስራቅ አፍሪካ"],
 } as const;
 
 export async function generateMetadata({
@@ -30,9 +27,12 @@ export async function generateMetadata({
   if (!isValidLocale(localeParam)) return {};
   const { home } = getContent(localeParam);
   return {
-    title: home.seo.title,
+    title: { absolute: home.seo.title },
     description: home.seo.description,
     keywords: home.seo.keywords,
+    alternates: {
+      canonical: `https://xinix.et/${localeParam}`,
+    },
   };
 }
 
@@ -46,11 +46,14 @@ export default async function HomePage({
   const locale = localeParam as Locale;
   const content = getContent(locale);
   const { home, ui } = content;
+  const rangeCopy = productRangeCopy[locale];
 
-  const categoryPanels = categoryOrder.map((slug, index) => ({
-    slug,
-    title: home.rangeItems[index].title,
-    description: home.rangeItems[index].description,
+  const categoryPanels = productRangeGroups.map((group) => ({
+    slug: group.slug,
+    themeSlug: group.themeSlug,
+    title: rangeCopy[group.slug].title,
+    description: rangeCopy[group.slug].homeBody,
+    products: rangeCopy[group.slug].skus,
   }));
 
   return (
@@ -59,34 +62,26 @@ export default async function HomePage({
 
       <StatsAtAGlance
         eyebrow={locale === "en" ? "At a glance" : "በአጭሩ"}
-        headline={
-          locale === "en"
-            ? "Manufacturing that speaks in numbers"
-            : "በቁጥር የሚናገር ማምረቻ"
-        }
+        headline=""
         stats={home.stats}
       />
 
       <CategoryShowcase
         locale={locale}
         title={home.rangeTitle}
+        body={home.rangeBody}
         panels={categoryPanels}
         cta={ui.viewRange}
         exploreCta={ui.exploreProducts}
       />
 
-      <SustainabilityTeaser locale={locale} content={content} />
+      <HomeMatters locale={locale} cta={ui.readStory} />
 
-      <WhyXinixSection
-        locale={locale}
-        title={home.whyTitle}
-        subtitle={
-          locale === "en"
-            ? "Built for buyers who need reliability, not imports."
-            : "ለአስተማማኝ አቅርቦት የሚፈልጉ ገዢዎች የተሠራ።"
-        }
-        whyItems={home.whyItems}
-      />
+      <WhyXinixSection locale={locale} title={home.whyTitle} />
+
+      <SustainabilityTeaser locale={locale} />
+
+      <HomeQuality locale={locale} />
 
       <ExportBand
         locale={locale}
@@ -95,6 +90,8 @@ export default async function HomePage({
         cta={ui.becomeDistributor}
         markets={[...exportMarkets[locale]]}
       />
+
+      <HomeFaq locale={locale} />
 
       <ClosingCta locale={locale} content={content} />
     </>

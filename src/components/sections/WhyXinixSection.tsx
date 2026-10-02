@@ -1,86 +1,53 @@
 "use client";
 
-import { motion } from "framer-motion";
 import type { Locale } from "@/types/content";
-import {
-  IconBiodegradable,
-  IconEthiopia,
-  IconSolar,
-} from "@/components/Icons";
-import { Reveal, staggerItem, Stagger } from "@/components/motion/Reveal";
-import { cn } from "@/lib/utils";
+import { Reveal } from "@/components/motion/Reveal";
 
 interface WhyXinixSectionProps {
   locale: Locale;
   title: string;
-  subtitle: string;
-  whyItems: string[];
-}
-
-function TrendIcon({ className }: { className?: string }) {
-  return (
-    <svg className={className} viewBox="0 0 24 24" fill="none" aria-hidden>
-      <path
-        d="M4 17l5-5 4 4 7-9"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M15 7h5v5"
-        stroke="currentColor"
-        strokeWidth="1.75"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
 }
 
 const copy = {
   en: {
-    eyebrow: "The case for local supply",
-    imports: "Imported chemicals",
+    eyebrow: "Why Xinix",
+    lead: "Importing hygiene and water treatment products means waiting on foreign exchange, customs and shipping. A local manufacturer changes that.",
+    imports: "Imported products",
     importsPoints: [
-      "Foreign exchange exposure",
-      "Customs delays and price swings",
-      "Distant supply chains",
+      "Exposed to foreign exchange shortages",
+      "Delayed by customs and shipping",
+      "Prices that move with the exchange rate",
+      "Support from a supplier far away",
     ],
     xinix: "Xinix, made in Ethiopia",
     xinixPoints: [
-      "Stable local pricing",
-      "Plant supply you can reach",
-      "Solar powered, zero discharge",
+      "Shorter lead times from a local plant",
+      "More predictable pricing",
+      "Formulas made for Ethiopian conditions",
+      "Help with product choice, dosing and staff training",
     ],
-    benefitsLabel: "Why buyers choose Xinix",
   },
   am: {
-    eyebrow: "ለአገር ውስጥ አቅርቦት ምክንያት",
-    imports: "የማስመጣት ኬሚካሎች",
+    eyebrow: "ለምን ዚኒክስ",
+    lead: "የንጽህናና የውሃ ሕክምና ምርቶችን ማስመጣት በውጭ ምንዛሬ፣ ጉምሩክና መጓጓዣ መጠበቅ ማለት ነው። የአገር ውስጥ አምራች ያንን ይቀይራል።",
+    imports: "የሚመጡ ምርቶች",
     importsPoints: [
-      "የውጭ ምንዛሬ ተጋላጭነት",
-      "የጉምሩክ መዘግየት እና የዋጋ ዝውውር",
-      "ሩቅ የአቅርቦት ሰንሰለት",
+      "ለውጭ ምንዛሬ እጥረት የተጋለጡ",
+      "በጉምሩክና በመጓጓዣ የሚዘገዩ",
+      "ከምንዛሬ ጋር የሚንቀሳቀስ ዋጋ",
+      "ከሩቅ አቅራቢ የሚመጣ ድጋፍ",
     ],
     xinix: "ዚኒክስ፣ በኢትዮጵያ የተሠራ",
     xinixPoints: [
-      "አስተማማኝ የአገር ውስጥ ዋጋ",
-      "ሊደርሱበት የሚችሉት አቅርቦት",
-      "በፀሐይ ኃይል፣ ውሃ አይወጣም",
+      "ከአገር ውስጥ ፋብሪካ አጭር የመላኪያ ጊዜ",
+      "ይበልጥ ሊገመት የሚችል ዋጋ",
+      "ለኢትዮጵያ ሁኔታ የተሠሩ ቀመሮች",
+      "በምርት ምርጫ፣ መጠንና የሠራተኛ ስልጠና እርዳታ",
     ],
-    benefitsLabel: "ገዢዎች ዚኒክስን ለምን ይመርጣሉ",
   },
 } as const;
 
-const benefitMeta = [
-  { Icon: TrendIcon, icon: "text-xinix-teal", bg: "bg-xinix-teal/10", bar: "bg-xinix-teal" },
-  { Icon: IconEthiopia, icon: "text-xinix-teal", bg: "bg-xinix-teal/10", bar: "bg-xinix-teal" },
-  { Icon: IconSolar, icon: "text-solar-amber", bg: "bg-solar-amber/10", bar: "bg-solar-amber" },
-  { Icon: IconBiodegradable, icon: "text-leaf-green", bg: "bg-leaf-green/10", bar: "bg-leaf-green" },
-] as const;
-
-export function WhyXinixSection({ locale, title, subtitle, whyItems }: WhyXinixSectionProps) {
+export function WhyXinixSection({ locale, title }: WhyXinixSectionProps) {
   const t = copy[locale];
 
   return (
@@ -104,7 +71,7 @@ export function WhyXinixSection({ locale, title, subtitle, whyItems }: WhyXinixS
           <h2 className="mt-4 text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl lg:text-5xl">
             {title}
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-stone">{subtitle}</p>
+          <p className="mt-5 text-lg leading-relaxed text-stone">{t.lead}</p>
         </Reveal>
 
         <Reveal delay={0.1} className="mt-14">
@@ -154,46 +121,6 @@ export function WhyXinixSection({ locale, title, subtitle, whyItems }: WhyXinixS
             </div>
           </div>
         </Reveal>
-
-        <div className="mt-10">
-          <Reveal>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
-              {t.benefitsLabel}
-            </p>
-          </Reveal>
-
-          <div className="mt-4 overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
-            <Stagger className="grid divide-y divide-line sm:grid-cols-2 sm:divide-x sm:divide-y-0 lg:grid-cols-4">
-              {whyItems.map((benefit, index) => {
-                const { Icon, icon, bg, bar } = benefitMeta[index % benefitMeta.length];
-                return (
-                  <motion.div
-                    key={benefit}
-                    variants={staggerItem}
-                    className="group relative flex items-start gap-3 p-4 sm:p-5"
-                  >
-                    <div
-                      className={cn(
-                        "absolute bottom-0 left-0 top-0 w-0.5 opacity-0 transition-opacity group-hover:opacity-100",
-                        bar,
-                      )}
-                    />
-                    <div
-                      className={cn(
-                        "flex h-8 w-8 shrink-0 items-center justify-center rounded-lg",
-                        bg,
-                        icon,
-                      )}
-                    >
-                      <Icon className="h-4 w-4" />
-                    </div>
-                    <p className="text-sm font-medium leading-snug text-deep-navy">{benefit}</p>
-                  </motion.div>
-                );
-              })}
-            </Stagger>
-          </div>
-        </div>
       </div>
     </section>
   );

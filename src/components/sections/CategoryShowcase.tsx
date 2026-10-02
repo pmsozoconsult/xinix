@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import type { Locale } from "@/types/content";
-import { Button } from "@/components/Button";
 import { Reveal } from "@/components/motion/Reveal";
 import { ScrollImage } from "@/components/motion/ScrollImage";
 import { localePath } from "@/lib/i18n";
@@ -15,11 +14,15 @@ interface CategoryPanel {
   slug: string;
   title: string;
   description: string;
+  products?: string;
+  themeSlug?: CategorySlug;
+  href?: string;
 }
 
 interface CategoryShowcaseProps {
   locale: Locale;
   title: string;
+  body?: string;
   panels: CategoryPanel[];
   cta: string;
   exploreCta: string;
@@ -28,24 +31,37 @@ interface CategoryShowcaseProps {
 export function CategoryShowcase({
   locale,
   title,
+  body,
   panels,
-  cta,
   exploreCta,
 }: CategoryShowcaseProps) {
+  const heading = {
+    en: "Our range",
+    am: "ስብስባችን",
+  } as const;
+
   return (
     <section data-header-tone="dark" className="bg-deep-navy pt-8">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
         <Reveal>
-          <h2 className="max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-drop-cyan">
+            {heading[locale]}
+          </p>
+          <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
             {title}
           </h2>
+          {body ? (
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/70 sm:text-lg">
+              {body}
+            </p>
+          ) : null}
         </Reveal>
       </div>
 
       {panels.map((panel, index) => {
         const reversed = index % 2 === 1;
-        const theme = categoryTheme[panel.slug as CategorySlug];
-        const image = categoryImages[panel.slug];
+        const theme = categoryTheme[(panel.themeSlug ?? panel.slug) as CategorySlug];
+        const image = categoryImages[panel.themeSlug ?? panel.slug];
 
         return (
           <div
@@ -114,11 +130,9 @@ export function CategoryShowcase({
                 <p className="mt-4 max-w-lg text-base leading-relaxed text-white/70">
                   {panel.description}
                 </p>
-                <div className="mt-8 flex flex-wrap gap-4">
-                  <Button href={localePath(locale, `/products/${panel.slug}`)}>
-                    {cta}
-                  </Button>
-                </div>
+                {panel.products ? (
+                  <p className="mt-5 text-sm font-semibold text-white/90">{panel.products}</p>
+                ) : null}
               </motion.div>
             </div>
           </div>

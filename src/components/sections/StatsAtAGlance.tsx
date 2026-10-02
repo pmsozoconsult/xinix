@@ -28,9 +28,11 @@ export function StatsAtAGlance({ eyebrow, headline, stats }: StatsAtAGlanceProps
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-teal-text">
             {eyebrow}
           </p>
-          <h2 className="mt-3 max-w-xl text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl lg:text-5xl">
-            {headline}
-          </h2>
+          {headline ? (
+            <h2 className="mt-3 max-w-xl text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl lg:text-5xl">
+              {headline}
+            </h2>
+          ) : null}
         </Reveal>
         <div className="mt-12">
           <AnimatedStatGrid stats={stats} variant="light" />

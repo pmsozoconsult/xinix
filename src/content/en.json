@@ -15,8 +15,8 @@
   },
   "home": {
     "seo": {
-      "title": "Disinfectant & Cleaning Chemicals Manufacturer | Xinix Ethiopia",
-      "description": "Biodegradable water, hygiene, post-harvest and industrial cleaning chemicals, made in Ethiopia on solar power. We supply across Africa.",
+      "title": "Xinix Ethiopia | Water Treatment, Food Hygiene and Cleaning Products",
+      "description": "Safer drinking water, food wash, hand and surface hygiene and industrial cleaners, made in Ethiopia on solar power. Request a quote from Xinix today.",
       "keywords": [
         "disinfectant manufacturer Ethiopia",
         "cleaning chemicals manufacturer",
@@ -25,66 +25,68 @@
         "cleaning chemicals Addis Ababa"
       ]
     },
-    "headline": "Disinfection and cleaning chemicals, made in Ethiopia",
-    "body": "Xinix makes biodegradable disinfection and cleaning chemicals at its own solar powered plant in Ethiopia. We supply hospitals, schools, farms, packhouses, factories and water authorities across the country, and we ship to partners across East Africa and the wider continent.",
+    "headline": "Clean water, safer food and everyday hygiene, made in Ethiopia",
+    "body": "Xinix makes water treatment, food hygiene and cleaning products for homes, healthcare, farms, food businesses, aviation and industry. Every product does one clear job, breaks down after use and comes from our own solar powered plant.",
     "pillars": [
-      "Solar powered",
-      "Works on a zero liquid discharge basis, with no wastewater leaving the plant",
-      "Locally sourced raw materials",
-      "Registered and made to recognised quality and safety standards"
+      "Powered by the sun",
+      "No process wastewater",
+      "Formulas that break down"
     ],
-    "rangeTitle": "Twelve products cover four needs:",
+    "rangeTitle": "One manufacturer, five areas of everyday life",
     "rangeItems": [
       {
-        "title": "Water and Household",
-        "description": "Keeps drinking water safe and dependable."
+        "title": "Water systems and aviation",
+        "description": "AquaDis Tank for tanks, reservoirs, distribution lines and aircraft water storage."
       },
       {
-        "title": "Hygiene and Institutional",
-        "description": "Protects hands, surfaces and clinical spaces."
+        "title": "Healthcare and institutions",
+        "description": "MedDis and SurfDis for patient rooms, laboratories, classrooms, hotels and offices."
       },
       {
-        "title": "Food and Agriculture",
-        "description": "Protects produce from spoilage after harvest."
+        "title": "Food and agriculture",
+        "description": "PostHarvest+, FungDis, VegDis and VetDis for produce, coffee wash water, stores and animal housing."
       },
       {
-        "title": "Industrial and Biofilm",
-        "description": "Keeps industrial pipes, tanks and machinery thoroughly clean."
+        "title": "Food, beverage and industry",
+        "description": "BiofilmDis and industrial cleaners for pipes, CIP systems and production lines."
       }
     ],
-    "exportHeadline": "From our plant to your market",
-    "exportBody": "We supply distributors across East Africa and the rest of the continent. Export partners beyond Ethiopia are already on board.",
-    "whyTitle": "Why Xinix",
+    "exportHeadline": "Grow with a local manufacturer",
+    "exportBody": "We are appointing wholesalers and distributors across Ethiopia, with export partnerships signed in East Africa, ahead of commercial production in December 2026. Our partners receive product training, marketing materials and reliable supply.",
+    "whyTitle": "Local supply you can rely on",
     "whyItems": [
-      "Price stability without foreign exchange exposure",
-      "Local supply from an Ethiopian plant",
-      "Solar powered production with zero liquid discharge",
-      "Biodegradable formulas made to recognised standards"
+      "Shorter lead times from a local plant",
+      "More predictable pricing",
+      "Formulas made for Ethiopian conditions",
+      "Help with product choice, dosing and staff training"
     ],
     "ctaHeadline": "Tell us what you need",
-    "ctaBody": "Send the product and the quantity and we will come back with a price, usually within one working day.",
+    "ctaBody": "Send the products, the quantities and your delivery location. Our team will reply with pricing, lead times and guidance for your application, usually within one working day.",
     "stats": [
       {
-        "value": "12",
-        "label": "Products across four families"
+        "value": "14",
+        "label": "Products in the range"
       },
       {
-        "value": "100%",
-        "label": "Solar powered production"
+        "value": "5",
+        "label": "Areas we serve"
       },
       {
-        "value": "0",
-        "label": "Wastewater leaving the plant"
+        "value": "3",
+        "label": "Quality checks on every batch"
       },
       {
-        "value": "95%",
-        "label": "Locally sourced raw materials"
+        "value": "1",
+        "label": "Approved formula per product"
       }
     ],
     "heroBadges": [
+      "Made in Ethiopia",
       "Solar powered",
-      "Made in Ethiopia"
-    ]
+      "Zero process wastewater",
+      "Biodegradable formulas"
+    ],
+    "rangeBody": "From the jerrycan at home to the cooling tower in a brewery, each Xinix product is formulated for one setting and one job, so choosing the right one is simple."
   },
   "categories": {
     "water-and-household": {
@@ -448,11 +450,11 @@
   "ui": {
     "requestQuote": "Request a quote",
     "browseRange": "Browse the range",
-    "exploreProducts": "Explore all twelve products",
+    "exploreProducts": "Explore all 14 products",
     "viewRange": "View range",
     "downloadDatasheet": "Download datasheet",
     "becomeDistributor": "Become a distributor",
-    "readStory": "Read the story",
+    "readStory": "Read our story",
     "contactUs": "Contact us",
     "sendEnquiry": "Send enquiry",
     "formIntro": "Tell us the product and quantity, and we will send a price. Most enquiries are answered within one working day.",
@@ -470,9 +472,9 @@
     "notFoundAction": "Browse the range or head back to the home page."
   },
   "trustBar": [
-    "Solar powered",
     "Made in Ethiopia",
-    "Zero liquid discharge",
+    "Solar powered",
+    "Zero process wastewater",
     "Biodegradable formulas"
   ],
   "categoryLabels": {

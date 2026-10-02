@@ -58,7 +58,7 @@ export function QualityLibrary({ locale, groups }: QualityLibraryProps) {
                       <Link
                         href={localePath(
                           locale,
-                          `/products/${product.categorySlug}/${product.slug}#datasheet`,
+                          `/products/${product.categorySlug}/${product.slug}`,
                         )}
                         className="flex items-baseline justify-between gap-4 py-3.5 text-sm transition hover:text-xinix-blue-deep"
                       >

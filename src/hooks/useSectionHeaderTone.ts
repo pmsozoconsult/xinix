@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 export type HeaderTone = "dark" | "light";
 
 /**
- * Reads the section under the header. The bar stays light: white over
- * photos, pale brand blue over paper. Type and controls stay dark on both.
+ * Reads the section under the header. `dark` is photo/navy; `light` is
+ * paper/white. The header chrome uses the opposite.
  */
 export function useSectionHeaderTone(pathname: string): HeaderTone {
   const [tone, setTone] = useState<HeaderTone>("dark");

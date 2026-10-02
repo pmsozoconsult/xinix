@@ -59,9 +59,7 @@ export function LanguageSwitcher({ locale, pathname, dark = false }: LanguageSwi
               className={cn(
                 "rounded-full px-2.5 py-1 text-xs font-semibold tracking-wide transition-all duration-500 ease-in-out",
                 active
-                  ? dark
-                    ? "bg-white text-deep-navy shadow-sm"
-                    : "bg-xinix-blue text-white shadow-sm"
+                  ? "bg-xinix-blue text-white shadow-sm"
                   : dark
                     ? "text-white/65 hover:text-white"
                     : "text-stone hover:text-deep-navy",

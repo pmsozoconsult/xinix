@@ -86,13 +86,14 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
             className="flex min-w-0 shrink-0 items-center gap-2"
             aria-label={content.meta.companyName}
           >
-            <Logo size="md" variant="default" priority />
+            <Logo size="md" variant={isDarkNav ? "light" : "default"} priority />
           </Link>
 
           <nav
             className={cn(
-              "hidden items-center gap-0.5 rounded-2xl p-1 text-deep-navy transition-colors duration-500 ease-in-out lg:flex",
-              scrolled && (isDarkNav ? "bg-white/55" : "bg-white/70"),
+              "hidden items-center gap-0.5 rounded-2xl p-1 transition-colors duration-500 ease-in-out lg:flex",
+              isDarkNav ? "text-white" : "text-deep-navy",
+              scrolled && (isDarkNav ? "bg-black/20" : "bg-white/70"),
             )}
             aria-label="Main"
           >
@@ -108,7 +109,9 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
                     "relative rounded-xl px-3 py-2 text-sm font-medium transition-all duration-500 ease-in-out",
                     active
                       ? "bg-xinix-blue text-white shadow-sm"
-                      : "text-stone hover:bg-white/70 hover:text-deep-navy",
+                      : isDarkNav
+                        ? "text-white/90 hover:bg-xinix-blue/20 hover:text-white"
+                        : "text-stone hover:bg-sky-wash hover:text-deep-navy",
                   )}
                 >
                   {content.nav[item.key]}
@@ -118,7 +121,7 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
           </nav>
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-2.5">
-            <LanguageSwitcher locale={locale} pathname={pathname} />
+            <LanguageSwitcher locale={locale} pathname={pathname} dark={isDarkNav} />
             <Link
               href={localePath(locale, "/contact")}
               className="group hidden items-center gap-2 rounded-full bg-xinix-blue px-4 py-2 text-sm font-semibold text-white shadow-md shadow-xinix-blue/25 transition-all duration-500 ease-in-out hover:bg-xinix-blue-deep hover:shadow-lg sm:inline-flex"
@@ -134,6 +137,7 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
               locale={locale}
               content={content}
               pathname={pathname}
+              dark={isDarkNav}
             />
           </div>
         </div>

@@ -86,14 +86,13 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
             className="flex min-w-0 shrink-0 items-center gap-2"
             aria-label={content.meta.companyName}
           >
-            <Logo size="md" variant={isDarkNav ? "light" : "default"} priority />
+            <Logo size="md" variant="default" priority />
           </Link>
 
           <nav
             className={cn(
-              "hidden items-center gap-0.5 rounded-2xl p-1 transition-colors duration-500 ease-in-out lg:flex",
-              isDarkNav ? "text-white" : "text-deep-navy",
-              scrolled && (isDarkNav ? "bg-black/20" : "bg-white/70"),
+              "hidden items-center gap-0.5 rounded-2xl p-1 text-deep-navy transition-colors duration-500 ease-in-out lg:flex",
+              scrolled && (isDarkNav ? "bg-white/55" : "bg-white/70"),
             )}
             aria-label="Main"
           >
@@ -108,12 +107,8 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
                   className={cn(
                     "relative rounded-xl px-3 py-2 text-sm font-medium transition-all duration-500 ease-in-out",
                     active
-                      ? isDarkNav
-                        ? "bg-white/20 text-white"
-                        : "bg-xinix-blue text-white shadow-sm"
-                      : isDarkNav
-                        ? "text-white/90 hover:bg-white/10 hover:text-white"
-                        : "text-stone hover:bg-sky-wash hover:text-deep-navy",
+                      ? "bg-xinix-blue text-white shadow-sm"
+                      : "text-stone hover:bg-white/70 hover:text-deep-navy",
                   )}
                 >
                   {content.nav[item.key]}
@@ -123,25 +118,15 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
           </nav>
 
           <div className="flex shrink-0 items-center gap-2 sm:gap-2.5">
-            <LanguageSwitcher locale={locale} pathname={pathname} dark={isDarkNav} />
+            <LanguageSwitcher locale={locale} pathname={pathname} />
             <Link
               href={localePath(locale, "/contact")}
-              className={cn(
-                "group hidden items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out sm:inline-flex",
-                isDarkNav
-                  ? "bg-white text-xinix-blue-deep shadow-md shadow-black/15 hover:bg-paper hover:shadow-lg"
-                  : "bg-xinix-blue text-white shadow-md shadow-xinix-blue/25 hover:bg-xinix-blue-deep hover:shadow-lg",
-              )}
+              className="group hidden items-center gap-2 rounded-full bg-xinix-blue px-4 py-2 text-sm font-semibold text-white shadow-md shadow-xinix-blue/25 transition-all duration-500 ease-in-out hover:bg-xinix-blue-deep hover:shadow-lg sm:inline-flex"
             >
               <span className="max-w-[9rem] truncate sm:max-w-none">
                 {content.nav.requestQuote}
               </span>
-              <span
-                className={cn(
-                  "flex h-6 w-6 shrink-0 items-center justify-center rounded-full transition-all duration-500 ease-in-out group-hover:translate-x-0.5",
-                  isDarkNav ? "bg-xinix-blue/10 text-xinix-blue-deep" : "bg-white/15 text-white",
-                )}
-              >
+              <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-white/15 text-white transition-all duration-500 ease-in-out group-hover:translate-x-0.5">
                 <QuoteIcon className="h-3.5 w-3.5" />
               </span>
             </Link>
@@ -149,7 +134,6 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
               locale={locale}
               content={content}
               pathname={pathname}
-              dark={isDarkNav}
             />
           </div>
         </div>

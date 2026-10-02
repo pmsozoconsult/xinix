@@ -93,7 +93,7 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
             className={cn(
               "hidden items-center gap-0.5 rounded-2xl p-1 transition-colors duration-500 ease-in-out lg:flex",
               isDarkNav ? "text-white" : "text-deep-navy",
-              scrolled && (isDarkNav ? "bg-black/20" : "bg-white/70"),
+              scrolled && (isDarkNav ? "bg-white/15" : "bg-white/70"),
             )}
             aria-label="Main"
           >
@@ -108,9 +108,11 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
                   className={cn(
                     "relative rounded-xl px-3 py-2 text-sm font-medium transition-all duration-500 ease-in-out",
                     active
-                      ? "bg-xinix-blue text-white shadow-sm"
+                      ? isDarkNav
+                        ? "bg-white text-deep-navy shadow-sm"
+                        : "bg-xinix-blue text-white shadow-sm"
                       : isDarkNav
-                        ? "text-white/90 hover:bg-xinix-blue/20 hover:text-white"
+                        ? "text-white/90 hover:bg-white/15 hover:text-white"
                         : "text-stone hover:bg-sky-wash hover:text-deep-navy",
                   )}
                 >
@@ -124,7 +126,12 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
             <LanguageSwitcher locale={locale} pathname={pathname} dark={isDarkNav} />
             <Link
               href={localePath(locale, "/contact")}
-              className="group hidden items-center gap-2 rounded-full bg-xinix-blue px-4 py-2 text-sm font-semibold text-white shadow-md shadow-xinix-blue/25 transition-all duration-500 ease-in-out hover:bg-xinix-blue-deep hover:shadow-lg sm:inline-flex"
+              className={cn(
+                "group hidden items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition-all duration-500 ease-in-out sm:inline-flex",
+                isDarkNav
+                  ? "bg-deep-navy text-white shadow-md shadow-black/20 hover:bg-ink hover:shadow-lg"
+                  : "bg-xinix-blue text-white shadow-md shadow-xinix-blue/25 hover:bg-xinix-blue-deep hover:shadow-lg",
+              )}
             >
               <span className="max-w-[9rem] truncate sm:max-w-none">
                 {content.nav.requestQuote}

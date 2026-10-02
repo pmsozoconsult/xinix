@@ -34,7 +34,7 @@ export function MobileNav({ locale, content, pathname, dark = false }: MobileNav
         className={cn(
           "rounded-full border px-3.5 py-2 text-sm font-medium transition-colors duration-500 ease-in-out",
           dark
-            ? "border-white/25 bg-black/20 text-white hover:bg-white/10"
+            ? "border-white/30 bg-white/10 text-white hover:bg-white/15"
             : "border-line bg-mist/80 text-deep-navy hover:bg-white",
         )}
         aria-expanded={open}

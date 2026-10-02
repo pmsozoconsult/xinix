@@ -33,7 +33,7 @@ export function LanguageSwitcher({ locale, pathname, dark = false }: LanguageSwi
       className={cn(
         "flex items-center gap-2 rounded-full border p-1 transition-colors duration-500 ease-in-out",
         dark
-          ? "border-white/20 bg-deep-navy/60"
+          ? "border-white/30 bg-white/10"
           : "border-line bg-mist/80",
       )}
       role="group"
@@ -59,9 +59,11 @@ export function LanguageSwitcher({ locale, pathname, dark = false }: LanguageSwi
               className={cn(
                 "rounded-full px-2.5 py-1 text-xs font-semibold tracking-wide transition-all duration-500 ease-in-out",
                 active
-                  ? "bg-xinix-blue text-white shadow-sm"
+                  ? dark
+                    ? "bg-white text-deep-navy shadow-sm"
+                    : "bg-xinix-blue text-white shadow-sm"
                   : dark
-                    ? "text-white/65 hover:text-white"
+                    ? "text-white/80 hover:text-white"
                     : "text-stone hover:text-deep-navy",
               )}
             >

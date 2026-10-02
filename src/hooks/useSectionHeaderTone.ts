@@ -5,8 +5,8 @@ import { useEffect, useState } from "react";
 export type HeaderTone = "dark" | "light";
 
 /**
- * Reads the section under the header. `dark` is photo/navy; `light` is
- * paper/white. The header chrome uses the opposite.
+ * Reads the section under the header. `dark` is photo; `light` is paper.
+ * Header chrome is the opposite: brand light-blue bar vs white bar.
  */
 export function useSectionHeaderTone(pathname: string): HeaderTone {
   const [tone, setTone] = useState<HeaderTone>("dark");

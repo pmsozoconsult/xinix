@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 interface LogoProps {
   className?: string;
   variant?: "default" | "light";
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "panel";
   priority?: boolean;
 }
 
@@ -12,6 +12,7 @@ const sizes = {
   sm: "h-9 w-auto max-w-[6.5rem]",
   md: "h-11 w-auto max-w-[7.75rem] sm:h-14 sm:max-w-[9.5rem] lg:h-16 lg:max-w-none",
   lg: "h-24 w-auto max-w-[11rem] sm:h-36 sm:max-w-none",
+  panel: "h-[4.75rem] w-auto max-w-[13rem]",
 } as const;
 
 export function Logo({

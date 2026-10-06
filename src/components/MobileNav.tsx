@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import type { Locale, SiteContent } from "@/types/content";
 import { localePath } from "@/lib/i18n";
 import { isNavActive, navItems } from "@/lib/navigation";
@@ -16,8 +17,11 @@ interface MobileNavProps {
   dark?: boolean;
 }
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
 export function MobileNav({ locale, content, pathname, dark = false }: MobileNavProps) {
   const [open, setOpen] = useState(false);
+  const reduce = useReducedMotion();
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
@@ -25,6 +29,10 @@ export function MobileNav({ locale, content, pathname, dark = false }: MobileNav
       document.body.style.overflow = "";
     };
   }, [open]);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
 
   return (
     <div className="lg:hidden">
@@ -52,73 +60,91 @@ export function MobileNav({ locale, content, pathname, dark = false }: MobileNav
         </svg>
       </button>
 
-      {open && (
-        <div className="fixed inset-0 z-[60]">
-          <button
-            type="button"
-            className="absolute inset-0 bg-deep-navy/50 backdrop-blur-sm"
-            aria-label="Close menu"
-            onClick={() => setOpen(false)}
-          />
-          <div
-            id="mobile-nav-panel"
-            className="absolute right-0 top-0 flex h-[100dvh] w-[min(100%,20rem)] flex-col bg-paper pt-[env(safe-area-inset-top)] shadow-2xl"
+      <AnimatePresence>
+        {open ? (
+          <motion.div
+            key="mobile-nav"
+            className="fixed inset-0 z-[60]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: reduce ? 0.15 : 0.25 }}
           >
-            <div className="flex items-center justify-between border-b border-line px-4 py-4">
-              <Logo size="sm" />
-              <button
-                type="button"
-                onClick={() => setOpen(false)}
-                className="rounded-md p-2 text-stone hover:bg-mist"
-                aria-label="Close"
-              >
-                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden>
-                  <path
-                    d="M6 6l12 12M18 6L6 18"
-                    stroke="currentColor"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                  />
-                </svg>
-              </button>
-            </div>
-            <nav className="flex-1 overflow-y-auto p-4">
-              <ul className="space-y-1">
-                {navItems.map((item) => {
-                  const active = isNavActive(pathname, locale, item.href);
-                  return (
-                    <li key={item.key}>
-                      <Link
-                        href={localePath(locale, item.href)}
-                        onClick={() => setOpen(false)}
-                        aria-current={active ? "page" : undefined}
-                        className={cn(
-                          "block rounded-lg px-3 py-3 text-base font-medium transition-colors",
-                          active
-                            ? "bg-xinix-blue/10 text-xinix-blue-deep"
-                            : "text-deep-navy hover:bg-mist",
-                        )}
+            <button
+              type="button"
+              className="absolute inset-0 bg-deep-navy/50 backdrop-blur-sm"
+              aria-label={locale === "en" ? "Close menu" : "ምናሌ ዝጋ"}
+              onClick={() => setOpen(false)}
+            />
+            <motion.div
+              id="mobile-nav-panel"
+              className="absolute right-0 top-0 flex h-[100dvh] w-[min(100%,22rem)] flex-col bg-paper pt-[env(safe-area-inset-top)] shadow-2xl"
+              initial={reduce ? false : { x: "100%" }}
+              animate={{ x: 0 }}
+              exit={reduce ? undefined : { x: "100%" }}
+              transition={{ duration: reduce ? 0 : 0.38, ease }}
+            >
+              <div className="flex items-start justify-between gap-4 border-b border-line px-5 py-5">
+                <Logo size="panel" />
+                <button
+                  type="button"
+                  onClick={() => setOpen(false)}
+                  className="mt-1 rounded-full p-2 text-stone hover:bg-mist"
+                  aria-label={locale === "en" ? "Close" : "ዝጋ"}
+                >
+                  <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden>
+                    <path
+                      d="M6 6l12 12M18 6L6 18"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </button>
+              </div>
+              <nav className="flex-1 overflow-y-auto px-4 py-4">
+                <ul className="space-y-1">
+                  {navItems.map((item, index) => {
+                    const active = isNavActive(pathname, locale, item.href);
+                    return (
+                      <motion.li
+                        key={item.key}
+                        initial={reduce ? false : { opacity: 0, x: 16 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: reduce ? 0 : 0.08 + index * 0.04, duration: 0.35, ease }}
                       >
-                        {content.nav[item.key]}
-                      </Link>
-                    </li>
-                  );
-                })}
-              </ul>
-            </nav>
-            <div className="border-t border-line p-4 space-y-4">
-              <LanguageSwitcher locale={locale} pathname={pathname} />
-              <Link
-                href={localePath(locale, "/contact")}
-                onClick={() => setOpen(false)}
-                className="block rounded-full bg-xinix-blue px-4 py-3 text-center text-sm font-semibold text-white shadow-md"
-              >
-                {content.nav.requestQuote}
-              </Link>
-            </div>
-          </div>
-        </div>
-      )}
+                        <Link
+                          href={localePath(locale, item.href)}
+                          onClick={() => setOpen(false)}
+                          aria-current={active ? "page" : undefined}
+                          className={cn(
+                            "block rounded-xl px-3 py-3 text-base font-medium transition-colors",
+                            active
+                              ? "bg-xinix-blue/10 text-xinix-blue-deep"
+                              : "text-deep-navy hover:bg-mist",
+                          )}
+                        >
+                          {content.nav[item.key]}
+                        </Link>
+                      </motion.li>
+                    );
+                  })}
+                </ul>
+              </nav>
+              <div className="space-y-4 border-t border-line p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+                <LanguageSwitcher locale={locale} pathname={pathname} layout="panel" />
+                <Link
+                  href={localePath(locale, "/contact")}
+                  onClick={() => setOpen(false)}
+                  className="block rounded-full bg-xinix-blue px-4 py-3.5 text-center text-sm font-semibold text-white shadow-md"
+                >
+                  {content.nav.requestQuote}
+                </Link>
+              </div>
+            </motion.div>
+          </motion.div>
+        ) : null}
+      </AnimatePresence>
     </div>
   );
 }

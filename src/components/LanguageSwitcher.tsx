@@ -7,6 +7,7 @@ interface LanguageSwitcherProps {
   locale: Locale;
   pathname: string;
   dark?: boolean;
+  layout?: "compact" | "panel";
 }
 
 function GlobeIcon({ className }: { className?: string }) {
@@ -22,11 +23,55 @@ function GlobeIcon({ className }: { className?: string }) {
   );
 }
 
-export function LanguageSwitcher({ locale, pathname, dark = false }: LanguageSwitcherProps) {
-  const options: { code: Locale; label: string }[] = [
-    { code: "en", label: "EN" },
-    { code: "am", label: "አማ" },
+export function LanguageSwitcher({
+  locale,
+  pathname,
+  dark = false,
+  layout = "compact",
+}: LanguageSwitcherProps) {
+  const options: { code: Locale; short: string; label: { en: string; am: string } }[] = [
+    { code: "en", short: "EN", label: { en: "English", am: "English" } },
+    { code: "am", short: "አማ", label: { en: "Amharic", am: "አማርኛ" } },
   ];
+
+  if (layout === "panel") {
+    return (
+      <div role="group" aria-label="Language">
+        <p className="text-xs font-semibold uppercase tracking-[0.16em] text-stone">
+          {locale === "en" ? "Language" : "ቋንቋ"}
+        </p>
+        <div className="mt-3 grid grid-cols-2 gap-2">
+          {options.map((option) => {
+            const active = locale === option.code;
+            return (
+              <Link
+                key={option.code}
+                href={switchLocalePath(pathname, option.code)}
+                hrefLang={option.code}
+                aria-current={active ? "true" : undefined}
+                className={cn(
+                  "flex flex-col items-start rounded-2xl border px-4 py-3 transition",
+                  active
+                    ? "border-xinix-blue bg-xinix-blue text-white shadow-sm"
+                    : "border-line bg-white text-deep-navy hover:border-xinix-blue/40",
+                )}
+              >
+                <span className="text-sm font-bold">{option.label[locale]}</span>
+                <span
+                  className={cn(
+                    "mt-1 font-mono text-[11px] uppercase tracking-wider",
+                    active ? "text-white/75" : "text-stone",
+                  )}
+                >
+                  {option.short}
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -67,7 +112,7 @@ export function LanguageSwitcher({ locale, pathname, dark = false }: LanguageSwi
                     : "text-stone hover:text-deep-navy",
               )}
             >
-              {option.label}
+              {option.short}
             </Link>
           );
         })}

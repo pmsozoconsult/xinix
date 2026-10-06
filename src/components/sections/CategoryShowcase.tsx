@@ -71,15 +71,43 @@ export function CategoryShowcase({
             <div
               className={cn(
                 "mx-auto grid max-w-7xl lg:grid-cols-2 lg:min-h-[32rem]",
-                reversed && "lg:[&>*:first-child]:order-2",
               )}
             >
               <motion.div
-                initial={{ opacity: 0, x: reversed ? 40 : -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+                className="flex flex-col justify-center bg-white px-4 pb-6 pt-10 sm:px-6 sm:pt-12 lg:px-14 lg:py-16"
+              >
+                <span
+                  className={cn(
+                    "text-sm font-semibold uppercase tracking-[0.15em]",
+                    theme?.accent ?? "text-xinix-blue",
+                  )}
+                >
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-3 text-2xl font-bold text-deep-navy sm:text-3xl">
+                  {panel.title}
+                </h3>
+                <p className="mt-4 max-w-lg text-base leading-relaxed text-stone">
+                  {panel.description}
+                </p>
+                {panel.products ? (
+                  <p className="mt-5 text-sm font-semibold text-xinix-blue-deep">{panel.products}</p>
+                ) : null}
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="relative min-h-[18rem] overflow-hidden lg:min-h-full"
+                transition={{ duration: 0.8, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className={cn(
+                  "relative mx-4 mb-8 min-h-[16rem] overflow-hidden rounded-2xl sm:min-h-[20rem] lg:mx-0 lg:mb-0 lg:min-h-full lg:rounded-none",
+                  !reversed && "lg:order-first",
+                )}
               >
                 <ScrollImage
                   src={image}
@@ -107,32 +135,6 @@ export function CategoryShowcase({
                     </span>
                   </span>
                 </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, y: 32 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-80px" }}
-                transition={{ duration: 0.7, delay: 0.15 }}
-                className="flex flex-col justify-center bg-white px-4 py-12 sm:px-6 lg:px-14 lg:py-16"
-              >
-                <span
-                  className={cn(
-                    "text-sm font-semibold uppercase tracking-[0.15em]",
-                    theme?.accent ?? "text-xinix-blue",
-                  )}
-                >
-                  {panel.title}
-                </span>
-                <h3 className="mt-3 text-2xl font-bold text-deep-navy sm:text-3xl">
-                  {panel.title}
-                </h3>
-                <p className="mt-4 max-w-lg text-base leading-relaxed text-stone">
-                  {panel.description}
-                </p>
-                {panel.products ? (
-                  <p className="mt-5 text-sm font-semibold text-xinix-blue-deep">{panel.products}</p>
-                ) : null}
               </motion.div>
             </div>
           </div>

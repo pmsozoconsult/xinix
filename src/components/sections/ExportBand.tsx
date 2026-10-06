@@ -94,7 +94,7 @@ export function ExportBand({
             scrollTargetRef={sectionRef}
             sizes="(max-width: 1024px) 100vw, 40vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-xinix-blue/50 via-transparent to-transparent lg:bg-gradient-to-l lg:from-sky-wash lg:via-sky-wash/40 lg:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-xinix-blue/50 via-transparent to-transparent lg:bg-gradient-to-l lg:from-sky-wash/45 lg:via-sky-wash/12 lg:via-[30%] lg:to-transparent" />
         </div>
       </div>
     </section>

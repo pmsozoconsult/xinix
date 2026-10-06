@@ -56,7 +56,7 @@ export function SustainabilityAfterUse({ locale }: SustainabilityAfterUseProps) 
           >
             <div className={`absolute inset-0 ${washes[index]}`}>
               <ScrollImage src={visuals.water} effect="parallax-up" sizes="33vw" />
-              <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-white/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-sky-wash/70 via-sky-wash/25 to-transparent" />
             </div>
             <div className="relative flex h-full min-h-[18rem] flex-col justify-end p-6 sm:p-8">
               <p className="font-mono text-xs text-stone">

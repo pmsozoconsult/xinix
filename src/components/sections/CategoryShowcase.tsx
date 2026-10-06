@@ -86,7 +86,7 @@ export function CategoryShowcase({
                   effect="parallax-up"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/55 via-xinix-blue/15 to-transparent lg:bg-gradient-to-r lg:from-white/80 lg:via-white/20 lg:to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/55 via-xinix-blue/15 to-transparent lg:bg-gradient-to-r lg:from-white/35 lg:via-white/10 lg:via-[28%] lg:to-transparent" />
                 <div
                   className="pointer-events-none absolute bottom-0 left-0 h-40 w-56 bg-gradient-to-tr from-deep-navy/40 via-xinix-blue/20 to-transparent lg:h-48 lg:w-72"
                   aria-hidden

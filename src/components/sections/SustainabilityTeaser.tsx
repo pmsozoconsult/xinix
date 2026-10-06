@@ -98,7 +98,7 @@ export function SustainabilityTeaser({ locale }: SustainabilityTeaserProps) {
             effect="parallax-up"
             sizes="(max-width: 1024px) 100vw, 50vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-sky-wash via-sky-wash/30 to-transparent lg:bg-gradient-to-r lg:from-sky-wash lg:via-sky-wash/50 lg:to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-sky-wash/55 via-sky-wash/15 to-transparent lg:bg-gradient-to-r lg:from-sky-wash/50 lg:via-sky-wash/15 lg:via-[28%] lg:to-transparent" />
         </div>
       </div>
 

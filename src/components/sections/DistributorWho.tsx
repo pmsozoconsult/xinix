@@ -44,34 +44,28 @@ export function DistributorWho({ locale }: DistributorWhoProps) {
 
   return (
     <section data-header-tone="light" className="bg-white py-20 sm:py-28">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start lg:px-8">
         <Reveal>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl">
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl">
             {t.title}
           </h2>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-stone sm:text-lg">
-            {t.intro}
-          </p>
+          <p className="mt-5 text-base leading-relaxed text-stone sm:text-lg">{t.intro}</p>
+          <p className="mt-6 text-base leading-relaxed text-deep-navy">{t.close}</p>
         </Reveal>
-        <ol className="mt-10">
-          {t.items.map((item, index) => (
+        <ul className="space-y-3">
+          {t.items.map((item) => (
             <li
               key={item}
-              className="flex items-center gap-4 border-t border-line py-5 last:border-b"
+              className="flex gap-3 rounded-2xl border border-line bg-sky-wash px-5 py-4 text-base font-medium text-deep-navy"
             >
-              <span className="font-mono text-sm text-stone/50">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <span className="text-lg font-bold tracking-tight text-xinix-blue sm:text-xl">
-                {item}
-              </span>
+              <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-xinix-blue" />
+              {item}
             </li>
           ))}
-        </ol>
-        <p className="mt-8 max-w-2xl text-base leading-relaxed text-stone">{t.close}</p>
+        </ul>
       </div>
     </section>
   );

@@ -71,20 +71,20 @@ export function PhoneField({
   return (
     <div ref={root} className="block text-sm font-medium text-deep-navy">
       {label}
-      <div className="mt-1.5 flex gap-2">
+      <div className="mt-1.5 flex h-12 items-stretch gap-2">
         <button
           type="button"
           aria-haspopup="listbox"
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
           className={cn(
-            "flex min-w-[7.5rem] items-center justify-between gap-2 rounded-xl border border-line bg-white px-3 py-3 text-sm shadow-sm",
+            "flex h-full min-w-[7.5rem] shrink-0 items-center justify-between gap-2 rounded-xl border border-line bg-white px-3 py-0 text-sm leading-none shadow-sm",
             error && "border-red-400",
           )}
         >
           <span className="flex items-center gap-2">
             <CountryFlag country={country} />
-            <span className="font-mono text-xs">+{callingCode(country)}</span>
+            <span className="font-mono text-xs leading-none">+{callingCode(country)}</span>
           </span>
           <span aria-hidden className="text-stone">
             ▾
@@ -96,7 +96,11 @@ export function PhoneField({
           autoComplete="tel-national"
           value={national}
           onChange={(event) => onNationalChange(event.target.value.replace(/[^\d\s-]/g, ""))}
-          className={cn(inputClass, "mt-0", error && "border-red-400")}
+          className={cn(
+            inputClass,
+            "mt-0 h-full min-h-0 flex-1 py-0 leading-none",
+            error && "border-red-400",
+          )}
           aria-invalid={Boolean(error)}
         />
       </div>

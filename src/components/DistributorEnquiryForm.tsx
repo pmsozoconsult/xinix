@@ -13,7 +13,7 @@ import { focusField, guardPayload, postEnquiry } from "@/lib/enquiryClient";
 import { isValidNationalNumber, toE164, type CountryCode } from "@/lib/phone";
 import { cn } from "@/lib/utils";
 
-interface ContactEnquiryFormProps {
+interface DistributorEnquiryFormProps {
   locale: Locale;
   ui: SiteContent["ui"];
   inputClass: string;
@@ -22,87 +22,132 @@ interface ContactEnquiryFormProps {
 const copy = {
   en: {
     name: "Full name",
-    company: "Company or organisation",
+    company: "Company name",
     email: "Email",
     phone: "Phone or WhatsApp",
-    region: "Delivery location: city or region",
-    enquiryType: "Enquiry type",
-    types: ["Quote", "Distributor enquiry", "Technical question", "Other"],
-    products: "Products you need",
+    region: "City or region you cover",
+    businessType: "Type of business",
+    businessOptions: [
+      "Wholesaler",
+      "Distributor",
+      "Importer",
+      "Retail chain",
+      "Institutional supplier",
+      "Other",
+    ],
+    sectors: "Sectors you serve",
+    sectorOptions: [
+      "Retail",
+      "Healthcare",
+      "Hospitality",
+      "Agriculture",
+      "Food and beverage",
+      "Industry",
+      "Water",
+      "Aviation",
+    ],
+    products: "Products you are interested in",
     selected: "Selected",
     noneSelected: "Choose at least one product.",
-    quantities: "Quantities",
-    message: "Message",
-    messageHint: "At least 20 characters.",
+    capacity: "Storage and delivery capacity",
+    capacityHint: "At least 20 characters.",
+    notes: "Anything else we should know",
     privacy:
-      "We use your details to respond to your enquiry and do not sell them or share them for unrelated marketing.",
-    submit: "Send enquiry",
+      "We use your details to assess and respond to your distributor application. We do not sell your details or share them for unrelated marketing.",
+    submit: "Send application",
     progress: "Form progress",
     errors: {
       name: "Enter your full name.",
+      company: "Enter your company name.",
       email: "Enter a valid email address.",
       phone: "Enter a valid phone number for the selected country.",
-      region: "Enter a city or region.",
-      type: "Choose an enquiry type.",
+      region: "Enter the city or region you cover.",
+      type: "Choose a business type.",
+      sectors: "Select at least one sector.",
       products: "Select at least one product.",
-      quantities: "Enter a quantity as a number.",
-      message: "Write a message of at least 20 characters.",
+      capacity: "Describe capacity in at least 20 characters.",
     },
     steps: {
       name: "Name",
+      company: "Company",
       email: "Email",
       phone: "Phone",
-      region: "Location",
-      type: "Type",
+      region: "Territory",
+      type: "Business",
+      sectors: "Sectors",
       products: "Products",
-      quantities: "Quantity",
-      message: "Message",
+      capacity: "Capacity",
     },
   },
   am: {
     name: "ሙሉ ስም",
-    company: "ኩባንያ ወይም ድርጅት",
+    company: "የኩባንያ ስም",
     email: "ኢሜይል",
     phone: "ስልክ ወይም ዋትስአፕ",
-    region: "የመላኪያ ቦታ፦ ከተማ ወይም ክልል",
-    enquiryType: "የጥያቄ ዓይነት",
-    types: ["ዋጋ", "የአከፋፋይ ጥያቄ", "ቴክኒካዊ ጥያቄ", "ሌላ"],
+    region: "የሚሸፍኑት ከተማ ወይም ክልል",
+    businessType: "የንግድ ዓይነት",
+    businessOptions: [
+      "ጅምላ ነጋዴ",
+      "አከፋፋይ",
+      "አስመጪ",
+      "የችርቻሮ ሰንሰለት",
+      "የተቋም አቅራቢ",
+      "ሌላ",
+    ],
+    sectors: "የሚያገለግሏቸው ዘርፎች",
+    sectorOptions: [
+      "ችርቻሮ",
+      "ጤና",
+      "እንግዳ መቀበል",
+      "ግብርና",
+      "ምግብና መጠጥ",
+      "ኢንዱስትሪ",
+      "ውሃ",
+      "አቪዬሽን",
+    ],
     products: "የሚፈልጓቸው ምርቶች",
     selected: "የተመረጡ",
     noneSelected: "ቢያንስ አንድ ምርት ይምረጡ።",
-    quantities: "መጠኖች",
-    message: "መልዕክት",
-    messageHint: "ቢያንስ 20 ፊደላት።",
+    capacity: "የማከማቻና የመላኪያ አቅም",
+    capacityHint: "ቢያንስ 20 ፊደላት።",
+    notes: "ሌላ ማወቅ ያለብን",
     privacy:
-      "ዝርዝርዎን የምንጠቀመው ጥያቄዎን ለመመለስ ነው። ለሌላ ግብይት አንሸጥም፣ አናጋራም።",
-    submit: "ጥያቄውን ይላኩ",
+      "ዝርዝርዎን የምንጠቀመው የአከፋፋይ ማመልከቻዎን ለመገምገምና ለመመለስ ነው። ለሌላ ግብይት አንሸጥም፣ አናጋራም።",
+    submit: "ማመልከቻውን ይላኩ",
     progress: "የቅጽ ሂደት",
     errors: {
       name: "ሙሉ ስምዎን ያስገቡ።",
+      company: "የኩባንያ ስም ያስገቡ።",
       email: "ትክክለኛ ኢሜይል ያስገቡ።",
       phone: "ለተመረጠው ሀገር ትክክለኛ ስልክ ቁጥር ያስገቡ።",
-      region: "ከተማ ወይም ክልል ያስገቡ።",
-      type: "የጥያቄ ዓይነት ይምረጡ።",
+      region: "የሚሸፍኑትን ከተማ ወይም ክልል ያስገቡ።",
+      type: "የንግድ ዓይነት ይምረጡ።",
+      sectors: "ቢያንስ አንድ ዘርፍ ይምረጡ።",
       products: "ቢያንስ አንድ ምርት ይምረጡ።",
-      quantities: "መጠኑን በቁጥር ያስገቡ።",
-      message: "ቢያንስ 20 ፊደል ያለ መልዕክት ይጻፉ።",
+      capacity: "አቅምዎን በቢያንስ 20 ፊደል ይግለጹ።",
     },
     steps: {
       name: "ስም",
+      company: "ኩባንያ",
       email: "ኢሜይል",
       phone: "ስልክ",
-      region: "ቦታ",
-      type: "ዓይነት",
+      region: "ግዛት",
+      type: "ንግድ",
+      sectors: "ዘርፎች",
       products: "ምርቶች",
-      quantities: "መጠን",
-      message: "መልዕክት",
+      capacity: "አቅም",
     },
   },
 } as const;
 
-type FieldErrors = Partial<Record<"name" | "email" | "phone" | "region" | "type" | "products" | "quantities" | "message", string>>;
+type FieldErrors = Partial<
+  Record<
+    "name" | "company" | "email" | "phone" | "region" | "type" | "sectors" | "products" | "capacity",
+    string
+  >
+>;
 
-export function ContactEnquiryForm({ locale, ui, inputClass }: ContactEnquiryFormProps) {
+export function DistributorEnquiryForm({ locale, ui, inputClass }: DistributorEnquiryFormProps) {
   const t = copy[locale];
   const products = useMemo(() => contactProductOptions(locale), [locale]);
   const ticket = useEnquiryTicket();
@@ -114,45 +159,46 @@ export function ContactEnquiryForm({ locale, ui, inputClass }: ContactEnquiryFor
   const [country, setCountry] = useState<CountryCode>("ET");
   const [national, setNational] = useState("");
   const [region, setRegion] = useState("");
-  const [enquiryType, setEnquiryType] = useState("");
+  const [businessType, setBusinessType] = useState("");
+  const [sectors, setSectors] = useState<string[]>([]);
   const [selected, setSelected] = useState<string[]>([]);
-  const [quantities, setQuantities] = useState("");
-  const [message, setMessage] = useState("");
+  const [capacity, setCapacity] = useState("");
+  const [notes, setNotes] = useState("");
   const [errors, setErrors] = useState<FieldErrors>({});
 
-  const qtyNumber = Number(quantities);
-  const qtyOk = Number.isInteger(qtyNumber) && qtyNumber > 0;
   const phoneOk = isValidNationalNumber(country, national);
   const emailOk = isLikelyEmail(email);
-  const messageOk = message.trim().length >= 20;
+  const capacityOk = capacity.trim().length >= 20;
 
   const steps = [
-    { id: "field-name", label: t.steps.name, done: name.trim().length > 1 },
-    { id: "field-email", label: t.steps.email, done: emailOk },
-    { id: "field-phone", label: t.steps.phone, done: phoneOk },
-    { id: "field-region", label: t.steps.region, done: region.trim().length > 1 },
-    { id: "field-type", label: t.steps.type, done: enquiryType.length > 0 },
-    { id: "field-products", label: t.steps.products, done: selected.length > 0 },
-    { id: "field-quantities", label: t.steps.quantities, done: qtyOk },
-    { id: "field-message", label: t.steps.message, done: messageOk },
+    { id: "dist-name", label: t.steps.name, done: name.trim().length > 1 },
+    { id: "dist-company", label: t.steps.company, done: organisation.trim().length > 1 },
+    { id: "dist-email", label: t.steps.email, done: emailOk },
+    { id: "dist-phone", label: t.steps.phone, done: phoneOk },
+    { id: "dist-region", label: t.steps.region, done: region.trim().length > 1 },
+    { id: "dist-type", label: t.steps.type, done: businessType.length > 0 },
+    { id: "dist-sectors", label: t.steps.sectors, done: sectors.length > 0 },
+    { id: "dist-products", label: t.steps.products, done: selected.length > 0 },
+    { id: "dist-capacity", label: t.steps.capacity, done: capacityOk },
   ];
 
   function validate(): FieldErrors {
     const next: FieldErrors = {};
     if (name.trim().length < 2) next.name = t.errors.name;
+    if (organisation.trim().length < 2) next.company = t.errors.company;
     if (!emailOk) next.email = t.errors.email;
     if (!phoneOk) next.phone = t.errors.phone;
     if (region.trim().length < 2) next.region = t.errors.region;
-    if (!enquiryType) next.type = t.errors.type;
+    if (!businessType) next.type = t.errors.type;
+    if (sectors.length === 0) next.sectors = t.errors.sectors;
     if (selected.length === 0) next.products = t.errors.products;
-    if (!qtyOk) next.quantities = t.errors.quantities;
-    if (!messageOk) next.message = t.errors.message;
+    if (!capacityOk) next.capacity = t.errors.capacity;
     return next;
   }
 
-  function toggleProduct(slug: string) {
-    setSelected((current) =>
-      current.includes(slug) ? current.filter((item) => item !== slug) : [...current, slug],
+  function toggleSector(option: string) {
+    setSectors((current) =>
+      current.includes(option) ? current.filter((item) => item !== option) : [...current, option],
     );
   }
 
@@ -161,18 +207,18 @@ export function ContactEnquiryForm({ locale, ui, inputClass }: ContactEnquiryFor
     const nextErrors = validate();
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length > 0) {
-      const first = Object.keys(nextErrors)[0];
       const map: Record<string, string> = {
-        name: "field-name",
-        email: "field-email",
-        phone: "field-phone",
-        region: "field-region",
-        type: "field-type",
-        products: "field-products",
-        quantities: "field-quantities",
-        message: "field-message",
+        name: "dist-name",
+        company: "dist-company",
+        email: "dist-email",
+        phone: "dist-phone",
+        region: "dist-region",
+        type: "dist-type",
+        sectors: "dist-sectors",
+        products: "dist-products",
+        capacity: "dist-capacity",
       };
-      focusField(map[first] ?? "field-name");
+      focusField(map[Object.keys(nextErrors)[0]] ?? "dist-name");
       return;
     }
 
@@ -183,11 +229,10 @@ export function ContactEnquiryForm({ locale, ui, inputClass }: ContactEnquiryFor
     }
 
     setStatus("loading");
-
     try {
       await postEnquiry({
         locale,
-        formType: "contact",
+        formType: "distributor",
         name: name.trim(),
         organisation: organisation.trim(),
         email: email.trim(),
@@ -195,11 +240,12 @@ export function ContactEnquiryForm({ locale, ui, inputClass }: ContactEnquiryFor
         phone,
         country,
         region: region.trim(),
-        enquiryType,
+        businessType,
+        sectors,
         products: selected,
-        quantities: qtyNumber,
-        message: message.trim(),
-        need: message.trim(),
+        capacity: capacity.trim(),
+        notes: notes.trim(),
+        need: capacity.trim(),
         ...guardPayload(event.currentTarget),
       });
       setStatus("success");
@@ -225,8 +271,7 @@ export function ContactEnquiryForm({ locale, ui, inputClass }: ContactEnquiryFor
         <label className="block text-sm font-medium text-deep-navy">
           {t.name}
           <input
-            id="field-name"
-            name="name"
+            id="dist-name"
             value={name}
             onChange={(event) => setName(event.target.value)}
             className={cn(inputClass, errors.name && "border-red-400")}
@@ -237,28 +282,27 @@ export function ContactEnquiryForm({ locale, ui, inputClass }: ContactEnquiryFor
         <label className="block text-sm font-medium text-deep-navy">
           {t.company}
           <input
-            name="organisation"
+            id="dist-company"
             value={organisation}
             onChange={(event) => setOrganisation(event.target.value)}
-            className={inputClass}
+            className={cn(inputClass, errors.company && "border-red-400")}
             autoComplete="organization"
           />
+          {errors.company ? <p className="mt-1.5 text-xs text-red-700">{errors.company}</p> : null}
         </label>
         <label className="block text-sm font-medium text-deep-navy">
           {t.email}
           <input
-            id="field-email"
+            id="dist-email"
             type="email"
-            name="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             className={cn(inputClass, errors.email && "border-red-400")}
             autoComplete="email"
-            inputMode="email"
           />
           {errors.email ? <p className="mt-1.5 text-xs text-red-700">{errors.email}</p> : null}
         </label>
-        <div id="field-phone">
+        <div id="dist-phone">
           <PhoneField
             locale={locale}
             country={country}
@@ -275,8 +319,7 @@ export function ContactEnquiryForm({ locale, ui, inputClass }: ContactEnquiryFor
       <label className="block text-sm font-medium text-deep-navy">
         {t.region}
         <input
-          id="field-region"
-          name="region"
+          id="dist-region"
           value={region}
           onChange={(event) => setRegion(event.target.value)}
           className={cn(inputClass, errors.region && "border-red-400")}
@@ -285,16 +328,15 @@ export function ContactEnquiryForm({ locale, ui, inputClass }: ContactEnquiryFor
       </label>
 
       <label className="block text-sm font-medium text-deep-navy">
-        {t.enquiryType}
+        {t.businessType}
         <select
-          id="field-type"
-          name="enquiryType"
-          value={enquiryType}
-          onChange={(event) => setEnquiryType(event.target.value)}
+          id="dist-type"
+          value={businessType}
+          onChange={(event) => setBusinessType(event.target.value)}
           className={cn(inputClass, errors.type && "border-red-400")}
         >
           <option value="">—</option>
-          {t.types.map((option) => (
+          {t.businessOptions.map((option) => (
             <option key={option} value={option}>
               {option}
             </option>
@@ -303,50 +345,67 @@ export function ContactEnquiryForm({ locale, ui, inputClass }: ContactEnquiryFor
         {errors.type ? <p className="mt-1.5 text-xs text-red-700">{errors.type}</p> : null}
       </label>
 
+      <fieldset id="dist-sectors">
+        <legend className="text-sm font-medium text-deep-navy">{t.sectors}</legend>
+        <div className="mt-3 grid gap-2 sm:grid-cols-2">
+          {t.sectorOptions.map((option) => {
+            const checked = sectors.includes(option);
+            return (
+              <label
+                key={option}
+                className={cn(
+                  "flex cursor-pointer items-center gap-2 rounded-xl border px-3 py-2.5 text-sm",
+                  checked ? "border-xinix-blue bg-sky-wash" : "border-line bg-white",
+                )}
+              >
+                <input
+                  type="checkbox"
+                  checked={checked}
+                  onChange={() => toggleSector(option)}
+                  className="rounded border-line"
+                />
+                {option}
+              </label>
+            );
+          })}
+        </div>
+        {errors.sectors ? <p className="mt-1.5 text-xs text-red-700">{errors.sectors}</p> : null}
+      </fieldset>
+
       <ProductSelectGrid
-        id="field-products"
+        id="dist-products"
         legend={t.products}
         products={products}
         selected={selected}
-        onToggle={toggleProduct}
+        onToggle={(slug) =>
+          setSelected((current) =>
+            current.includes(slug) ? current.filter((item) => item !== slug) : [...current, slug],
+          )
+        }
         selectedLabel={t.selected}
         noneLabel={t.noneSelected}
         error={errors.products}
       />
 
       <label className="block text-sm font-medium text-deep-navy">
-        {t.quantities}
-        <input
-          id="field-quantities"
-          type="number"
-          name="quantities"
-          min={1}
-          step={1}
-          inputMode="numeric"
-          value={quantities}
-          onChange={(event) => setQuantities(event.target.value)}
-          className={cn(inputClass, errors.quantities && "border-red-400")}
+        {t.capacity}
+        <textarea
+          id="dist-capacity"
+          rows={4}
+          value={capacity}
+          onChange={(event) => setCapacity(event.target.value)}
+          className={cn(inputClass, errors.capacity && "border-red-400")}
         />
-        {errors.quantities ? (
-          <p className="mt-1.5 text-xs text-red-700">{errors.quantities}</p>
-        ) : null}
+        <p className="mt-1.5 flex justify-between text-xs text-stone">
+          <span>{t.capacityHint}</span>
+          <span className={capacityOk ? "text-xinix-blue" : undefined}>{capacity.trim().length}/20</span>
+        </p>
+        {errors.capacity ? <p className="text-xs text-red-700">{errors.capacity}</p> : null}
       </label>
 
       <label className="block text-sm font-medium text-deep-navy">
-        {t.message}
-        <textarea
-          id="field-message"
-          name="message"
-          rows={4}
-          value={message}
-          onChange={(event) => setMessage(event.target.value)}
-          className={cn(inputClass, errors.message && "border-red-400")}
-        />
-        <p className="mt-1.5 flex justify-between text-xs text-stone">
-          <span>{t.messageHint}</span>
-          <span className={messageOk ? "text-xinix-blue" : undefined}>{message.trim().length}/20</span>
-        </p>
-        {errors.message ? <p className="text-xs text-red-700">{errors.message}</p> : null}
+        {t.notes}
+        <textarea rows={3} value={notes} onChange={(event) => setNotes(event.target.value)} className={inputClass} />
       </label>
 
       {status === "error" && (
@@ -354,7 +413,6 @@ export function ContactEnquiryForm({ locale, ui, inputClass }: ContactEnquiryFor
           {ui.errorMessage}
         </p>
       )}
-
       <p className="text-xs text-stone">{t.privacy}</p>
       <Button type="submit" disabled={status === "loading" || !ticket} className="w-full sm:w-auto">
         {status === "loading" ? "…" : t.submit}

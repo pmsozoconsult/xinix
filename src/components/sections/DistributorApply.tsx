@@ -11,22 +11,12 @@ interface DistributorApplyProps {
 
 const copy = {
   en: {
-    bill: "Application",
-    ref: "Distributor",
-    fromLabel: "From",
-    toLabel: "To",
-    from: "Your market",
-    to: "Xinix partnership team",
     intro: "Tell us about your business",
+    body: "Share your territory, the customers you serve and the products you want to carry. We reply within one working day.",
   },
   am: {
-    bill: "ማመልከቻ",
-    ref: "አከፋፋይ",
-    fromLabel: "ከ",
-    toLabel: "ወደ",
-    from: "የእርስዎ ገበያ",
-    to: "የዚኒክስ የአጋርነት ቡድን",
     intro: "ስለ ንግድዎ ይንገሩን",
+    body: "ግዛትዎን፣ የሚያገለግሏቸውን ደንበኞች እና መሸከም የሚፈልጓቸውን ምርቶች ይንገሩን። በአንድ የሥራ ቀን ውስጥ እንመልሳለን።",
   },
 } as const;
 
@@ -34,58 +24,31 @@ export function DistributorApply({ locale, content }: DistributorApplyProps) {
   const t = copy[locale];
 
   return (
-    <section
-      id="apply"
-      data-header-tone="light"
-      className="scroll-mt-24 bg-mist py-20 sm:py-28"
-    >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="overflow-hidden bg-paper shadow-[12px_20px_50px_rgba(18,58,92,0.12)] ring-1 ring-deep-navy/10">
-          <div className="flex flex-wrap items-center justify-between gap-4 border-b border-dashed border-line bg-xinix-blue-deep px-6 py-4 text-white sm:px-10">
-            <p className="font-mono text-xs font-bold uppercase tracking-[0.28em]">
-              {t.bill}
-            </p>
-            <p className="font-mono text-xs tracking-wider text-white/60">{t.ref}</p>
-          </div>
+    <section id="apply" data-header-tone="light" className="scroll-mt-24 bg-white py-20 sm:py-28">
+      <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-16 lg:px-8">
+        <Reveal>
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
+            {locale === "en" ? "Application" : "ማመልከቻ"}
+          </p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl">
+            {t.intro}
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-stone sm:text-lg">{t.body}</p>
+          <p className="mt-8 text-sm leading-relaxed text-deep-navy">
+            {content.contact.email}
+            <br />
+            {content.contact.phone}
+          </p>
+        </Reveal>
 
-          <div className="grid lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
-            <div className="border-b border-dashed border-line px-6 py-10 sm:px-10 lg:border-b-0 lg:border-r">
-              <Reveal>
-                <h2 className="text-3xl font-bold tracking-tight text-xinix-blue">
-                  {t.intro}
-                </h2>
-                <dl className="mt-8 space-y-5 font-mono text-sm">
-                  <div>
-                    <dt className="text-[11px] uppercase tracking-[0.18em] text-stone">
-                      {t.fromLabel}
-                    </dt>
-                    <dd className="mt-1 text-base text-deep-navy">{t.from}</dd>
-                  </div>
-                  <div>
-                    <dt className="text-[11px] uppercase tracking-[0.18em] text-stone">
-                      {t.toLabel}
-                    </dt>
-                    <dd className="mt-1 text-base text-deep-navy">{t.to}</dd>
-                  </div>
-                </dl>
-                <p className="mt-8 text-sm leading-relaxed text-stone">
-                  {content.contact.email}
-                  <br />
-                  {content.contact.phone}
-                </p>
-              </Reveal>
-            </div>
-
-            <div className="px-6 py-10 sm:px-10">
-              <EnquiryForm
-                locale={locale}
-                ui={content.ui}
-                formType="distributor"
-                hideIntro
-                variant="product"
-              />
-            </div>
-          </div>
+        <div className="border border-line bg-paper p-6 sm:p-10">
+          <EnquiryForm
+            locale={locale}
+            ui={content.ui}
+            formType="distributor"
+            hideIntro
+            variant="product"
+          />
         </div>
       </div>
     </section>

@@ -16,14 +16,22 @@ interface DistributorHeroProps {
 
 const copy = {
   en: {
-    stencil: "For distributors",
-    dek: "Partner with an Ethiopian manufacturer of water treatment, food hygiene and cleaning products. We are building a network of wholesalers and distributors across Ethiopia and East Africa ahead of commercial production in December 2026.",
+    eyebrow: "For distributors",
     cta: "Apply to become a distributor",
+    facts: [
+      { value: "ET", label: "Appointing partners nationwide" },
+      { value: "EA", label: "Export partnerships in East Africa" },
+      { value: "2026", label: "Commercial production in December" },
+    ],
   },
   am: {
-    stencil: "ለአከፋፋዮች",
-    dek: "የውሃ ሕክምና፣ የምግብ ንጽህናና ማጽጃ ምርቶች ከኢትዮጵያ አምራች ጋር ይተባበሩ። ከታኅሣሥ 2019 ዓ.ም. የንግድ ምርት በፊት በኢትዮጵያና በምስራቅ አፍሪካ የጅምላ ነጋዴዎችና አከፋፋዮች መረብ እየገነባን ነን።",
+    eyebrow: "ለአከፋፋዮች",
     cta: "አከፋፋይ ለመሆን ያመልክቱ",
+    facts: [
+      { value: "ኢት", label: "በሀገር አቀፍ ደረጃ አጋሮችን እየሾምን" },
+      { value: "ምአ", label: "በምስራቅ አፍሪካ የወጪ ንግድ አጋርነት" },
+      { value: "2019", label: "ታኅሣሥ የንግድ ምርት" },
+    ],
   },
 } as const;
 
@@ -33,22 +41,24 @@ export function DistributorHero({ locale, content }: DistributorHeroProps) {
   return (
     <section
       data-header-tone="dark"
-      className={cn("relative overflow-hidden bg-deep-navy", headerClearance)}
+      className={cn("relative flex min-h-[32rem] flex-col overflow-hidden bg-deep-navy sm:min-h-[38rem]", headerClearance)}
     >
       <div className="absolute inset-0 z-0">
         <ScrollImage src={visuals.export} effect="drift-left" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/90 via-xinix-blue/40 to-xinix-blue/15" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 pb-16 pt-6 sm:px-6 lg:px-8 lg:pb-24 lg:pt-10">
+      <div className="relative z-10 mx-auto flex w-full max-w-7xl flex-1 flex-col justify-end px-4 pb-10 pt-6 sm:px-6 lg:px-8">
         <Reveal>
-          <p className="inline-block border border-dashed border-solar-amber/80 px-3 py-1 font-mono text-[11px] font-bold uppercase tracking-[0.28em] text-solar-amber">
-            {t.stencil}
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-band">
+            {t.eyebrow}
           </p>
-          <h1 className="mt-6 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
             {content.distributors.headline}
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">{t.dek}</p>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-white/80">
+            {content.distributors.body}
+          </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href="#apply" tone="onDark">
               {t.cta}
@@ -58,6 +68,20 @@ export function DistributorHero({ locale, content }: DistributorHeroProps) {
             </Button>
           </div>
         </Reveal>
+      </div>
+
+      <div className="relative z-10 border-t border-white/15 bg-deep-navy/80 backdrop-blur-sm">
+        <ul className="mx-auto grid max-w-7xl sm:grid-cols-3">
+          {t.facts.map((fact) => (
+            <li
+              key={fact.value}
+              className="border-t border-white/10 px-4 py-5 sm:border-t-0 sm:border-l sm:px-6 sm:first:border-l-0"
+            >
+              <p className="font-mono text-sm font-bold text-sky-band">{fact.value}</p>
+              <p className="mt-1 text-sm text-white/75">{fact.label}</p>
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

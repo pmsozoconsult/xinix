@@ -64,6 +64,7 @@ const copy = {
 
 export function DistributorWhy({ locale }: DistributorWhyProps) {
   const t = copy[locale];
+  const [featured, ...rest] = t.items;
 
   return (
     <section data-header-tone="light" className="bg-white py-20 sm:py-28">
@@ -72,30 +73,29 @@ export function DistributorWhy({ locale }: DistributorWhyProps) {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
-          <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-xinix-blue sm:text-4xl">
+          <h2 className="mt-3 max-w-2xl text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl">
             {t.title}
           </h2>
         </Reveal>
-        <ol className="mt-10">
-          {t.items.map((item, index) => (
-            <li
-              key={item.title}
-              className="flex gap-4 border-t border-line py-5 last:border-b sm:gap-6"
-            >
-              <span className="mt-1 shrink-0 font-mono text-sm text-stone/50">
-                {String(index + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <p className="text-xl font-bold tracking-tight text-xinix-blue sm:text-2xl">
-                  {item.title}
+
+        <div className="mt-12 grid gap-4 lg:grid-cols-2">
+          <article className="rounded-[1.75rem] bg-xinix-blue p-8 text-white sm:p-10">
+            <p className="font-mono text-xs uppercase tracking-[0.2em] text-white/70">01</p>
+            <h3 className="mt-4 text-2xl font-bold tracking-tight sm:text-3xl">{featured.title}</h3>
+            <p className="mt-4 max-w-lg text-base leading-relaxed text-white/85">{featured.body}</p>
+          </article>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {rest.map((item, index) => (
+              <article key={item.title} className="rounded-[1.5rem] border border-line bg-sky-wash p-6">
+                <p className="font-mono text-xs uppercase tracking-[0.2em] text-xinix-blue">
+                  {String(index + 2).padStart(2, "0")}
                 </p>
-                <p className="mt-2 max-w-2xl text-base leading-relaxed text-stone">
-                  {item.body}
-                </p>
-              </div>
-            </li>
-          ))}
-        </ol>
+                <h3 className="mt-3 text-lg font-bold text-deep-navy">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-stone">{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
     </section>
   );

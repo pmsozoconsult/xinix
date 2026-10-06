@@ -12,62 +12,22 @@ const copy = {
     eyebrow: "What we provide",
     title: "Support from the first order",
     items: [
-      {
-        code: "01",
-        title: "Product training",
-        body: "Product training for your sales team.",
-      },
-      {
-        code: "02",
-        title: "Marketing",
-        body: "Marketing materials and product photography.",
-      },
-      {
-        code: "03",
-        title: "Technical guidance",
-        body: "Technical guidance on dosing and application.",
-      },
-      {
-        code: "04",
-        title: "Supply planning",
-        body: "Supply planning based on agreed forecasts and orders.",
-      },
-      {
-        code: "05",
-        title: "Registration support",
-        body: "Technical support for product registration in export markets.",
-      },
+      { title: "Product training", body: "Product training for your sales team." },
+      { title: "Marketing", body: "Marketing materials and product photography." },
+      { title: "Technical guidance", body: "Technical guidance on dosing and application." },
+      { title: "Supply planning", body: "Supply planning based on agreed forecasts and orders." },
+      { title: "Registration support", body: "Technical support for product registration in export markets." },
     ],
   },
   am: {
     eyebrow: "የምንሰጠው",
     title: "ከመጀመሪያው ትዕዛዝ ጀምሮ ድጋፍ",
     items: [
-      {
-        code: "01",
-        title: "የምርት ስልጠና",
-        body: "ለሽያጭ ቡድንዎ የምርት ስልጠና።",
-      },
-      {
-        code: "02",
-        title: "ግብይት",
-        body: "የግብይት ቁሳቁስ እና የምርት ፎቶግራፍ።",
-      },
-      {
-        code: "03",
-        title: "ቴክኒካዊ መመሪያ",
-        body: "ስለ መጠንና አጠቃቀም ቴክኒካዊ መመሪያ።",
-      },
-      {
-        code: "04",
-        title: "የአቅርቦት ዕቅድ",
-        body: "በተስማማ ትንበያና ትዕዛዝ ላይ የተመሠረተ የአቅርቦት ዕቅድ።",
-      },
-      {
-        code: "05",
-        title: "የምዝገባ ድጋፍ",
-        body: "በወጪ ንግድ ገበያዎች ለምርት ምዝገባ ቴክኒካዊ ድጋፍ።",
-      },
+      { title: "የምርት ስልጠና", body: "ለሽያጭ ቡድንዎ የምርት ስልጠና።" },
+      { title: "ግብይት", body: "የግብይት ቁሳቁስ እና የምርት ፎቶግራፍ።" },
+      { title: "ቴክኒካዊ መመሪያ", body: "ስለ መጠንና አጠቃቀም ቴክኒካዊ መመሪያ።" },
+      { title: "የአቅርቦት ዕቅድ", body: "በተስማማ ትንበያና ትዕዛዝ ላይ የተመሠረተ የአቅርቦት ዕቅድ።" },
+      { title: "የምዝገባ ድጋፍ", body: "በወጪ ንግድ ገበያዎች ለምርት ምዝገባ ቴክኒካዊ ድጋፍ።" },
     ],
   },
 } as const;
@@ -87,24 +47,16 @@ export function DistributorManifest({ locale }: DistributorManifestProps) {
           </h2>
         </Reveal>
 
-        <ol className="mt-14 divide-y divide-dashed divide-line border-y border-dashed border-line">
-          {t.items.map((item) => (
-            <li
-              key={item.code}
-              className="grid gap-3 py-8 sm:grid-cols-[11rem_1fr] sm:items-baseline sm:gap-10"
-            >
-              <p className="font-mono text-sm font-bold tracking-[0.18em] text-xinix-blue">
-                {item.code}
-              </p>
-              <div>
-                <h3 className="text-xl font-bold text-deep-navy sm:text-2xl">{item.title}</h3>
-                <p className="mt-2 max-w-xl text-base leading-relaxed text-stone">
-                  {item.body}
-                </p>
-              </div>
-            </li>
+        <div className="mt-12 grid gap-px overflow-hidden rounded-[1.75rem] bg-line sm:grid-cols-2 lg:grid-cols-5">
+          {t.items.map((item, index) => (
+            <article key={item.title} className="bg-white p-6 sm:p-7">
+              <span className="block h-1 w-8 rounded-full bg-xinix-blue" />
+              <p className="mt-5 font-mono text-xs text-stone">{String(index + 1).padStart(2, "0")}</p>
+              <h3 className="mt-2 text-lg font-bold text-deep-navy">{item.title}</h3>
+              <p className="mt-2 text-sm leading-relaxed text-stone">{item.body}</p>
+            </article>
           ))}
-        </ol>
+        </div>
       </div>
     </section>
   );

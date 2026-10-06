@@ -10,6 +10,7 @@ interface DistributorFaqProps {
 const copy = {
   en: {
     eyebrow: "Frequently asked questions",
+    title: "Before you apply",
     items: [
       {
         q: "When can distributors place orders?",
@@ -39,6 +40,7 @@ const copy = {
   },
   am: {
     eyebrow: "ተደጋጋሚ ጥያቄዎች",
+    title: "ከማመልከትዎ በፊት",
     items: [
       {
         q: "አከፋፋዮች መቼ ማዘዝ ይችላሉ?",
@@ -78,15 +80,18 @@ export function DistributorFaq({ locale }: DistributorFaqProps) {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
+          <h2 className="mt-3 text-3xl font-bold tracking-tight text-deep-navy sm:text-4xl">
+            {t.title}
+          </h2>
         </Reveal>
-        <ol className="mt-10">
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {t.items.map((item) => (
-            <li key={item.q} className="border-t border-line py-6 last:border-b">
-              <p className="text-lg font-bold text-xinix-blue">{item.q}</p>
-              <p className="mt-2 max-w-3xl text-base leading-relaxed text-stone">{item.a}</p>
-            </li>
+            <article key={item.q} className="rounded-2xl border border-line bg-white p-6">
+              <p className="text-lg font-bold text-deep-navy">{item.q}</p>
+              <p className="mt-3 text-base leading-relaxed text-stone">{item.a}</p>
+            </article>
           ))}
-        </ol>
+        </div>
       </div>
     </section>
   );

@@ -107,7 +107,43 @@ export async function POST(request: NextRequest) {
       if (message.length < 20 || message.length > 5000) {
         return NextResponse.json({ error: "Invalid message" }, { status: 400 });
       }
-    } else {
+    } else if (formType === "distributor") {
+      const phone = String(body.phone ?? "");
+      const region = String(body.region ?? "").trim();
+      const organisation = String(body.organisation ?? "").trim();
+      const businessType = String(body.businessType ?? "");
+      const sectors = Array.isArray(body.sectors) ? body.sectors.map(String) : [];
+      const products = Array.isArray(body.products) ? body.products.map(String) : [];
+      const capacity = String(body.capacity ?? "").trim();
+
+      if (organisation.length < 2) {
+        return NextResponse.json({ error: "Invalid company" }, { status: 400 });
+      }
+      if (!isLikelyEmail(email)) {
+        return NextResponse.json({ error: "Invalid email" }, { status: 400 });
+      }
+      if (!isValidPhoneNumber(phone)) {
+        return NextResponse.json({ error: "Invalid phone" }, { status: 400 });
+      }
+      if (region.length < 2) {
+        return NextResponse.json({ error: "Invalid region" }, { status: 400 });
+      }
+      if (!businessType) {
+        return NextResponse.json({ error: "Invalid type" }, { status: 400 });
+      }
+      if (sectors.length === 0) {
+        return NextResponse.json({ error: "Invalid sectors" }, { status: 400 });
+      }
+      if (
+        products.length === 0 ||
+        products.some((slug) => !CONTACT_PRODUCT_SLUGS.includes(slug))
+      ) {
+        return NextResponse.json({ error: "Invalid products" }, { status: 400 });
+      }
+      if (capacity.length < 20 || capacity.length > 5000) {
+        return NextResponse.json({ error: "Invalid capacity" }, { status: 400 });
+      }
+    } else if (formType !== "contact") {
       const contact = String(body.contact ?? email).trim();
       const country = String(body.country ?? body.region ?? "").trim();
       if (!contact || !country) {

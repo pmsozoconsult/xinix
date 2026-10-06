@@ -57,7 +57,7 @@ export function QualityHero({ locale, content }: QualityHeroProps) {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-band">
             {t.eyebrow}
           </p>
-          <h1 className="mt-4 max-w-4xl text-4xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 max-w-4xl text-3xl font-bold leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-6xl">
             {content.quality.headline}
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/80">
@@ -71,7 +71,7 @@ export function QualityHero({ locale, content }: QualityHeroProps) {
               {t.documents}
             </Button>
           </div>
-          <dl className="mt-12 grid max-w-xl grid-cols-3 gap-6 border-t border-white/15 pt-8">
+          <dl className="mt-12 grid max-w-xl grid-cols-1 gap-5 border-t border-white/15 pt-8 sm:grid-cols-3 sm:gap-6">
             {t.stats.map((stat) => (
               <div key={stat.label}>
                 <dt className="font-mono text-2xl font-bold text-white sm:text-3xl">

@@ -43,7 +43,7 @@ export function SiblingCategories({ locale, items, cta }: SiblingCategoriesProps
           </h2>
         </Reveal>
 
-        <Stagger className="mt-10 grid gap-5 sm:grid-cols-3">
+        <Stagger className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => {
             const slug = item.slug as CategorySlug;
             const theme = categoryTheme[slug];

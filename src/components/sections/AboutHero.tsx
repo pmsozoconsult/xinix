@@ -44,7 +44,7 @@ export function AboutHero({ locale, content }: AboutHeroProps) {
             <p className="mt-6 max-w-xl text-2xl font-bold leading-tight tracking-tight text-xinix-blue sm:text-3xl lg:text-4xl">
               {content.meta.companyName}
             </p>
-            <h1 className="mt-8 max-w-xl text-4xl font-bold leading-[1.08] tracking-tight text-deep-navy sm:text-5xl">
+            <h1 className="mt-8 max-w-xl text-3xl font-bold leading-[1.12] tracking-tight text-deep-navy sm:text-5xl">
               {content.about.headline}
             </h1>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-stone">{t.dek}</p>
@@ -57,7 +57,7 @@ export function AboutHero({ locale, content }: AboutHeroProps) {
           </Reveal>
         </div>
 
-        <div className="relative min-h-[22rem] bg-deep-navy lg:min-h-[36rem]">
+        <div className="relative min-h-[16rem] bg-deep-navy sm:min-h-[22rem] lg:min-h-[36rem]">
           <ScrollImage src={visuals.about} effect="drift-right" sizes="50vw" />
           <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-deep-navy/50 to-transparent lg:bg-gradient-to-l" />
         </div>

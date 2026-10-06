@@ -64,7 +64,7 @@ export function ContactDesk({ locale, content }: ContactDeskProps) {
           <p className="mt-2 text-base leading-relaxed text-stone">{t.fitBody}</p>
         </Reveal>
 
-        <div className="border border-line bg-paper p-6 sm:p-10">
+        <div className="border border-line bg-paper p-4 sm:p-8 lg:p-10">
           <EnquiryForm
             locale={locale}
             ui={content.ui}

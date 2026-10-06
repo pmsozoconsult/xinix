@@ -44,7 +44,7 @@ export function ContactHero({ locale, content }: ContactHeroProps) {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
-          <h1 className="mt-4 max-w-xl text-4xl font-bold leading-[1.08] tracking-tight text-deep-navy sm:text-5xl lg:text-6xl">
+          <h1 className="mt-4 max-w-xl text-3xl font-bold leading-[1.12] tracking-tight text-deep-navy sm:text-5xl lg:text-6xl">
             {page.headline}
           </h1>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-stone">{page.body}</p>

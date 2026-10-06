@@ -60,10 +60,10 @@ export function QualityLibrary({ locale, groups }: QualityLibraryProps) {
                           locale,
                           `/products/${product.categorySlug}/${product.slug}`,
                         )}
-                        className="flex items-baseline justify-between gap-4 py-3.5 text-sm transition hover:text-xinix-blue-deep"
+                        className="flex min-w-0 items-baseline justify-between gap-3 py-3.5 text-sm transition hover:text-xinix-blue-deep"
                       >
                         <span className="font-semibold text-xinix-blue">{product.name}</span>
-                        <span className="shrink-0 font-mono text-[11px] text-stone">
+                        <span className="hidden shrink-0 font-mono text-[11px] text-stone sm:inline">
                           {t.cta}
                         </span>
                       </Link>

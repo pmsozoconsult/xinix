@@ -55,7 +55,7 @@ export function StatsAtAGlance({ eyebrow, headline, stats }: StatsAtAGlanceProps
                 >
                   <span
                     className={cn(
-                      "pointer-events-none absolute -right-2 -top-6 font-mono text-[7.5rem] font-bold leading-none",
+                      "pointer-events-none absolute -right-2 -top-6 hidden font-mono text-[7.5rem] font-bold leading-none sm:block",
                       featured ? "text-white/10" : "text-xinix-blue/[0.07]",
                     )}
                     aria-hidden
@@ -73,7 +73,7 @@ export function StatsAtAGlance({ eyebrow, headline, stats }: StatsAtAGlanceProps
                   <CountUp
                     value={stat.value}
                     className={cn(
-                      "relative mt-5 block font-mono text-6xl font-bold leading-none tracking-tight sm:text-7xl",
+                      "relative mt-5 block font-mono text-5xl font-bold leading-none tracking-tight sm:text-6xl lg:text-7xl",
                       featured ? "text-white" : "text-deep-navy",
                     )}
                   />

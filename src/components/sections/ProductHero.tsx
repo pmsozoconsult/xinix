@@ -100,7 +100,7 @@ export function ProductHero({
 
             <span
               className={cn(
-                "mt-24 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] ring-1",
+                "mt-6 inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] ring-1",
                 color?.softBg,
                 color?.text,
                 color?.ring,
@@ -109,7 +109,7 @@ export function ProductHero({
               {label}
             </span>
 
-            <h1 className="mt-4 text-4xl font-bold leading-tight tracking-tight text-deep-navy sm:text-5xl">
+          <h1 className="mt-4 text-3xl font-bold leading-tight tracking-tight text-deep-navy sm:text-5xl">
               {product.name}
             </h1>
             <p className="mt-4 max-w-xl text-lg leading-relaxed text-stone">
@@ -182,7 +182,7 @@ export function ProductHero({
           </Reveal>
 
           <Reveal delay={0.1}>
-            <div className="relative aspect-square overflow-hidden rounded-3xl border border-line shadow-xl shadow-xinix-blue/10">
+            <div className="relative mx-auto aspect-square w-full max-w-md overflow-hidden rounded-3xl border border-line shadow-xl shadow-xinix-blue/10 lg:max-w-none">
               <ProductPackVisual
                 slug={product.slug}
                 name={product.name}

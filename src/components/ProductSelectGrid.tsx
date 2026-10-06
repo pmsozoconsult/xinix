@@ -28,7 +28,7 @@ export function ProductSelectGrid({
   return (
     <fieldset id={id}>
       <legend className="text-sm font-medium text-deep-navy">{legend}</legend>
-      <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-3">
+      <div className="mt-3 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => {
           const checked = selected.includes(product.slug);
           return (

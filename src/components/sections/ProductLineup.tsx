@@ -54,7 +54,7 @@ export function ProductLineup({
             <motion.article
               key={product.slug}
               variants={staggerItem}
-              className="group grid gap-6 overflow-hidden rounded-3xl border border-line bg-white p-5 shadow-sm transition duration-300 hover:shadow-lg sm:grid-cols-[13rem_1fr] sm:items-center sm:p-6"
+              className="group grid gap-6 overflow-hidden rounded-3xl border border-line bg-white p-4 shadow-sm transition duration-300 hover:shadow-lg sm:p-6 md:grid-cols-[13rem_1fr] md:items-center"
             >
               <div className="relative h-48 overflow-hidden rounded-2xl sm:h-56">
                 <ProductPackVisual
@@ -74,7 +74,7 @@ export function ProductLineup({
                   {product.details.tagline}
                 </p>
 
-                <dl className="mt-5 grid gap-3 sm:grid-cols-3">
+                <dl className="mt-5 grid gap-3 md:grid-cols-3">
                   {(
                     [
                       [labels.usedBy, product.details.usedBy],

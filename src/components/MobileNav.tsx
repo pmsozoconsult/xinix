@@ -32,15 +32,24 @@ export function MobileNav({ locale, content, pathname, dark = false }: MobileNav
         type="button"
         onClick={() => setOpen(true)}
         className={cn(
-          "rounded-full border px-3.5 py-2 text-sm font-medium transition-colors duration-500 ease-in-out",
+          "inline-flex h-10 w-10 items-center justify-center rounded-full border transition-colors duration-500 ease-in-out",
           dark
             ? "border-white/30 bg-white/10 text-white hover:bg-white/15"
             : "border-line bg-mist/80 text-deep-navy hover:bg-white",
         )}
         aria-expanded={open}
         aria-controls="mobile-nav-panel"
+        aria-label={locale === "en" ? "Open menu" : "ምናሌ ክፈት"}
       >
-        Menu
+        <span className="sr-only">{locale === "en" ? "Menu" : "ምናሌ"}</span>
+        <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden>
+          <path
+            d="M4 7h16M4 12h16M4 17h16"
+            stroke="currentColor"
+            strokeWidth="1.75"
+            strokeLinecap="round"
+          />
+        </svg>
       </button>
 
       {open && (
@@ -53,7 +62,7 @@ export function MobileNav({ locale, content, pathname, dark = false }: MobileNav
           />
           <div
             id="mobile-nav-panel"
-            className="absolute right-0 top-0 flex h-full w-[min(100%,20rem)] flex-col bg-paper shadow-2xl"
+            className="absolute right-0 top-0 flex h-[100dvh] w-[min(100%,20rem)] flex-col bg-paper pt-[env(safe-area-inset-top)] shadow-2xl"
           >
             <div className="flex items-center justify-between border-b border-line px-4 py-4">
               <Logo size="sm" />

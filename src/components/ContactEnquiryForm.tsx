@@ -221,7 +221,7 @@ export function ContactEnquiryForm({ locale, ui, inputClass }: ContactEnquiryFor
       <EnquiryGuardFields ticket={ticket} />
       <FormProgress steps={steps} onStepClick={focusField} label={t.progress} />
 
-      <div className="grid gap-4 sm:grid-cols-2">
+      <div className="grid gap-4 lg:grid-cols-2">
         <label className="block text-sm font-medium text-deep-navy">
           {t.name}
           <input

@@ -76,7 +76,7 @@ export function CinematicHero({ locale, content }: CinematicHeroProps) {
       <div className="pointer-events-none absolute inset-0 z-[1] bg-[radial-gradient(ellipse_at_top_right,_rgba(43,134,199,0.35),_transparent_50%)]" />
 
       <motion.div
-        className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-4 pb-24 pt-24 will-change-[opacity,transform] sm:px-6 sm:pb-28 sm:pt-32 lg:px-8 lg:pb-32 lg:pt-32"
+        className="relative z-10 mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-4 pb-28 pt-20 will-change-[opacity,transform] sm:px-6 sm:pb-28 sm:pt-32 lg:px-8 lg:pb-32 lg:pt-32"
         style={reduce ? { opacity: contentOpacity } : { opacity: contentOpacity, y: contentY }}
       >
         <motion.div
@@ -88,7 +88,7 @@ export function CinematicHero({ locale, content }: CinematicHeroProps) {
           <p className="mb-3 max-w-fit rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-sky-band backdrop-blur">
             {content.nav.home}
           </p>
-          <h1 className="max-w-4xl text-3xl font-bold leading-[1.1] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
+          <h1 className="max-w-4xl text-[1.75rem] font-bold leading-[1.15] tracking-tight text-white sm:text-5xl lg:text-6xl xl:text-7xl">
             {home.headline}
           </h1>
 
@@ -149,7 +149,7 @@ export function CinematicHero({ locale, content }: CinematicHeroProps) {
                   <div className="min-w-0">
                     <p
                       className={cn(
-                        "text-[9px] font-semibold uppercase tracking-[0.15em] sm:text-[10px] sm:tracking-[0.2em]",
+                        "text-[9px] font-semibold uppercase tracking-[0.12em] sm:text-[10px] sm:tracking-[0.2em]",
                         accent === "solar-amber" ? "text-solar-amber/90" : "text-sky-band",
                       )}
                     >

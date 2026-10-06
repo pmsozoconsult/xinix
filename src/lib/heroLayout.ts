@@ -1,5 +1,6 @@
 /** Clearance under the fixed site header. */
-export const headerClearance = "pt-24";
+export const headerClearance =
+  "pt-[max(5.5rem,calc(env(safe-area-inset-top)+4.5rem))] sm:pt-24";
 
 /**
  * Padding from that clearance down to the first hero content

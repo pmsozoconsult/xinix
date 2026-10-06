@@ -46,7 +46,7 @@ export function ContactPlaces({ locale, content }: ContactPlacesProps) {
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-sky-band">
             {t.hoursLabel}
           </p>
-          <p className="mt-3 text-2xl font-bold text-white">{t.hours}</p>
+          <p className="mt-3 text-lg font-bold leading-snug text-white sm:text-2xl">{t.hours}</p>
         </div>
       </div>
     </section>

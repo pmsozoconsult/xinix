@@ -45,8 +45,8 @@ function AislePacks({
         "grid gap-3",
         group.productSlugs.length === 1 && "max-w-xs",
         group.productSlugs.length === 2 && "grid-cols-2",
-        group.productSlugs.length === 3 && "grid-cols-3",
-        group.productSlugs.length >= 4 && "grid-cols-2 sm:grid-cols-4",
+        group.productSlugs.length === 3 && "grid-cols-2 sm:grid-cols-3",
+        group.productSlugs.length >= 4 && "grid-cols-2 md:grid-cols-4",
       )}
     >
       {group.productSlugs.map((slug) => {
@@ -157,7 +157,7 @@ export function DistributorRange({ locale, content }: DistributorRangeProps) {
         </div>
 
         <div className="mt-12 overflow-hidden rounded-[1.75rem] border border-line bg-white">
-          <article className="grid gap-8 border-b border-line p-6 sm:p-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-end">
+          <article className="grid gap-8 border-b border-line p-4 sm:p-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-end">
             <AisleMeta
               kicker={locale === "en" ? "Aisle A" : "መደርደሪያ A"}
               title={range.home.title}
@@ -169,7 +169,7 @@ export function DistributorRange({ locale, content }: DistributorRangeProps) {
           </article>
 
           <div className="grid lg:grid-cols-2">
-            <article className="border-b border-line p-6 sm:p-8 lg:border-r">
+            <article className="border-b border-line p-4 sm:p-8 lg:border-r">
               <AisleMeta
                 kicker={locale === "en" ? "Aisle B" : "መደርደሪያ B"}
                 title={range.healthcare.title}
@@ -181,7 +181,7 @@ export function DistributorRange({ locale, content }: DistributorRangeProps) {
                 <AislePacks locale={locale} content={content} group={healthcare} />
               </div>
             </article>
-            <article className="border-b border-line bg-sky-wash p-6 sm:p-8">
+            <article className="border-b border-line bg-sky-wash p-4 sm:p-8">
               <AisleMeta
                 kicker={locale === "en" ? "Aisle C" : "መደርደሪያ C"}
                 title={range.water.title}
@@ -195,7 +195,7 @@ export function DistributorRange({ locale, content }: DistributorRangeProps) {
             </article>
           </div>
 
-          <article className="grid gap-8 border-b border-line p-6 sm:p-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-end">
+          <article className="grid gap-8 border-b border-line p-4 sm:p-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-end">
             <AisleMeta
               kicker={locale === "en" ? "Aisle D" : "መደርደሪያ D"}
               title={range.food.title}
@@ -206,7 +206,7 @@ export function DistributorRange({ locale, content }: DistributorRangeProps) {
             <AislePacks locale={locale} content={content} group={food} />
           </article>
 
-          <article className="grid gap-8 bg-deep-navy p-6 sm:p-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-end">
+          <article className="grid gap-8 bg-deep-navy p-4 sm:p-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-end">
             <AisleMeta
               kicker={locale === "en" ? "Aisle E" : "መደርደሪያ E"}
               title={range.industry.title}

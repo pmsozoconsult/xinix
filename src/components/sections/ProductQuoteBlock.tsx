@@ -155,7 +155,7 @@ export function ProductQuoteBlock({
                 </div>
               </div>
 
-              <div className="border-t border-line bg-mist/50 p-8 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
+              <div className="border-t border-line bg-mist/50 p-4 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
                 <h3 className="text-lg font-bold text-xinix-blue">{labels.formTitle}</h3>
                 <p className="mt-1 text-sm text-stone">{labels.formHint}</p>
                 <div className="mt-6">

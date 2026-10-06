@@ -42,7 +42,7 @@ export function AboutImportShare({ locale }: AboutImportShareProps) {
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}
           </p>
-          <p className="mt-6 font-mono text-[7rem] font-bold leading-[0.8] tracking-tight text-xinix-blue sm:text-[9rem] lg:text-[10rem]">
+          <p className="mt-6 font-mono text-[clamp(3.5rem,22vw,10rem)] font-bold leading-[0.8] tracking-tight text-xinix-blue">
             {t.fraction}
           </p>
           <p className="mt-6 max-w-sm text-lg font-medium text-deep-navy">{t.caption}</p>

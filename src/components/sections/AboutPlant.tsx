@@ -88,13 +88,13 @@ export function AboutPlant({ locale }: AboutPlantProps) {
   const items = areas[locale];
 
   return (
-    <section data-header-tone="dark" className="relative min-h-[28rem] overflow-hidden bg-deep-navy sm:min-h-[36rem]">
+    <section data-header-tone="dark" className="relative min-h-[22rem] overflow-hidden bg-deep-navy sm:min-h-[36rem]">
       <div className="absolute inset-0">
         <ScrollImage src={visuals.manufacturing} effect="parallax-up" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/90 via-xinix-blue/30 to-xinix-blue/10" />
       </div>
 
-      <div className="relative flex min-h-[28rem] flex-col justify-end sm:min-h-[36rem]">
+      <div className="relative flex min-h-[22rem] flex-col justify-end sm:min-h-[36rem]">
         <div className="mx-auto w-full max-w-7xl px-4 pb-10 pt-24 sm:px-6 lg:px-8">
           <Reveal>
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-sky-band">

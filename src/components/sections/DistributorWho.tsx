@@ -158,7 +158,7 @@ export function DistributorWho({ locale }: DistributorWhoProps) {
           </article>
         </div>
 
-        <div className="mt-12 grid gap-8 border-t border-deep-navy/15 pt-8 sm:grid-cols-3">
+        <div className="mt-12 grid gap-8 border-t border-deep-navy/15 pt-8 md:grid-cols-3">
           <p className="font-mono text-[11px] font-bold uppercase tracking-[0.22em] text-xinix-blue sm:col-span-3">
             {t.screen}
           </p>

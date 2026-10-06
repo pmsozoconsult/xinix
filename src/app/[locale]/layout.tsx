@@ -69,14 +69,14 @@ export default async function LocaleLayout({
       lang={locale}
       className={`${mavenPro.variable} ${inter.variable} ${notoEthiopic.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">
+      <body className="flex min-h-full flex-col">
         <JsonLd locale={locale} />
         <HeaderShell locale={locale} content={content} />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pb-24 sm:pb-0">{children}</main>
         <Footer locale={locale} content={content} />
         <a
           href={content.contact.phoneHref}
-          className="fixed bottom-4 right-4 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-xinix-blue text-white shadow-lg ring-4 ring-white/50 transition hover:bg-xinix-blue-deep sm:hidden"
+          className="fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-[max(1rem,env(safe-area-inset-right))] z-40 flex h-14 w-14 items-center justify-center rounded-full bg-xinix-blue text-white shadow-lg ring-4 ring-white/50 transition hover:bg-xinix-blue-deep sm:hidden"
           aria-label={content.contact.phone}
         >
           <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden>

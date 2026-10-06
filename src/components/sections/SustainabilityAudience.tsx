@@ -86,7 +86,7 @@ export function SustainabilityAudience({ locale }: SustainabilityAudienceProps) 
         <div className="mt-12 divide-y divide-line border-y border-line">
           {rows.map((row) => (
             <Reveal key={row.title}>
-              <div className="grid gap-4 py-8 sm:grid-cols-[11rem_1fr_auto] sm:items-center sm:gap-8 lg:py-10">
+              <div className="grid gap-4 py-8 md:grid-cols-[11rem_1fr_auto] md:items-center md:gap-8 lg:py-10">
                 <h3 className="text-lg font-bold text-xinix-blue">{row.title}</h3>
                 <p className="max-w-xl text-base leading-relaxed text-stone">{row.body}</p>
                 <Link

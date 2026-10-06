@@ -66,7 +66,7 @@ export function SustainabilityHero({ locale, content }: SustainabilityHeroProps)
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-leaf-green">
               {t.eyebrow}
             </p>
-            <h1 className="mt-4 max-w-3xl text-4xl font-bold leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-6xl">
+            <h1 className="mt-4 max-w-3xl text-3xl font-bold leading-[1.12] tracking-tight text-white sm:text-5xl lg:text-6xl">
               {content.sustainability.headline}
             </h1>
             <p className="mt-5 max-w-xl text-lg leading-relaxed text-white/80">{t.dek}</p>

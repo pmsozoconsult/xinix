@@ -64,7 +64,7 @@ export function AboutChallenges({ locale }: AboutChallengesProps) {
         <div className="mt-10 grid gap-12 lg:grid-cols-3 lg:gap-10">
           {t.items.map((item) => (
             <Reveal key={item.title}>
-              <p className="font-mono text-6xl font-bold leading-none tracking-tight text-xinix-blue sm:text-7xl">
+              <p className="font-mono text-5xl font-bold leading-none tracking-tight text-xinix-blue sm:text-7xl">
                 {item.stat}
               </p>
               <h3 className="mt-5 text-xl font-bold text-deep-navy">{item.title}</h3>

@@ -9,9 +9,9 @@ interface LogoProps {
 }
 
 const sizes = {
-  sm: "h-11 w-auto",
-  md: "h-14 w-auto sm:h-16",
-  lg: "h-32 w-auto sm:h-36",
+  sm: "h-9 w-auto max-w-[6.5rem]",
+  md: "h-11 w-auto max-w-[7.75rem] sm:h-14 sm:max-w-[9.5rem] lg:h-16 lg:max-w-none",
+  lg: "h-24 w-auto max-w-[11rem] sm:h-36 sm:max-w-none",
 } as const;
 
 export function Logo({
@@ -31,7 +31,7 @@ export function Logo({
         width={874}
         height={946}
         priority={priority}
-        className={cn("max-w-none", sizes[size])}
+        className={cn("object-contain", sizes[size])}
       />
     </span>
   );

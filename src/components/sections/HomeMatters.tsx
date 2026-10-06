@@ -73,7 +73,7 @@ export function HomeMatters({ locale, cta }: HomeMattersProps) {
         <div className="mt-12 grid gap-12 lg:grid-cols-3 lg:gap-10">
           {t.items.map((item) => (
             <Reveal key={item.stat}>
-              <p className="font-mono text-6xl font-bold leading-none tracking-tight text-xinix-blue sm:text-7xl">
+              <p className="font-mono text-5xl font-bold leading-none tracking-tight text-xinix-blue sm:text-7xl">
                 {item.stat}
               </p>
               <p className="mt-5 text-base leading-relaxed text-stone">{item.body}</p>

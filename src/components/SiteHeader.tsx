@@ -48,7 +48,7 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
     <header
       data-site-header
       className={cn(
-        "fixed top-0 z-50 w-full transition-all duration-500 ease-in-out",
+        "fixed top-0 z-50 w-full pt-[env(safe-area-inset-top)] transition-all duration-500 ease-in-out",
         scrolled ? "px-3 pt-3 sm:px-5 lg:px-6" : "px-0 pt-0",
       )}
     >
@@ -77,7 +77,7 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
 
         <div
           className={cn(
-            "relative z-10 flex items-center justify-between gap-3 px-4 py-3 transition-[padding] duration-500 ease-in-out sm:gap-4 sm:px-6 lg:px-8",
+            "relative z-10 flex min-w-0 items-center justify-between gap-2 px-3 py-2.5 transition-[padding] duration-500 ease-in-out sm:gap-4 sm:px-6 sm:py-3 lg:px-8",
             scrolled && "py-2.5",
           )}
         >

@@ -87,11 +87,11 @@ export function QualityRelease({ locale }: QualityReleaseProps) {
           </p>
         </Reveal>
 
-        <ol className="mt-14 grid gap-6 sm:grid-cols-3 sm:gap-0">
+        <ol className="mt-14 grid gap-6 md:grid-cols-3 md:gap-0">
           {t.gates.map((gate, index) => (
             <li
               key={gate.n}
-              className="relative border-t border-white/20 pt-6 sm:border-t-0 sm:border-l sm:border-white/20 sm:pl-8 sm:pt-0 sm:first:border-l-0 sm:first:pl-0"
+              className="relative border-t border-white/20 pt-6 md:border-t-0 md:border-l md:border-white/20 md:pl-8 md:pt-0 md:first:border-l-0 md:first:pl-0"
             >
               <p className="font-mono text-sm text-white/40">{gate.n}</p>
               <p className="mt-3 text-2xl font-bold text-white">{gate.label}</p>
@@ -99,7 +99,7 @@ export function QualityRelease({ locale }: QualityReleaseProps) {
                 {gate.detail}
               </p>
               {index < t.gates.length - 1 && (
-                <span className="absolute right-0 top-8 hidden font-mono text-white/25 sm:block">
+                <span className="absolute right-0 top-8 hidden font-mono text-white/25 md:block">
                   →
                 </span>
               )}

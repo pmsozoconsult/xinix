@@ -60,7 +60,7 @@ export function HomeMatters({ locale, cta }: HomeMattersProps) {
   const t = copy[locale];
 
   return (
-    <section data-header-tone="light" className="bg-white py-20 sm:py-28">
+    <section data-header-tone="light" className="bg-white pb-10 pt-14 sm:pb-14 sm:pt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <Reveal>
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">

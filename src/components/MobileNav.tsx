@@ -24,9 +24,35 @@ export function MobileNav({ locale, content, pathname, dark = false }: MobileNav
   const reduce = useReducedMotion();
 
   useEffect(() => {
-    document.body.style.overflow = open ? "hidden" : "";
+    if (!open) return;
+
+    const scrollY = window.scrollY;
+    const html = document.documentElement;
+    const body = document.body;
+
+    html.classList.add("nav-open");
+    body.style.position = "fixed";
+    body.style.top = `-${scrollY}px`;
+    body.style.left = "0";
+    body.style.right = "0";
+    body.style.width = "100%";
+
+    const blockScroll = (event: Event) => {
+      event.preventDefault();
+    };
+    document.addEventListener("touchmove", blockScroll, { passive: false });
+    document.addEventListener("wheel", blockScroll, { passive: false });
+
     return () => {
-      document.body.style.overflow = "";
+      html.classList.remove("nav-open");
+      body.style.position = "";
+      body.style.top = "";
+      body.style.left = "";
+      body.style.right = "";
+      body.style.width = "";
+      document.removeEventListener("touchmove", blockScroll);
+      document.removeEventListener("wheel", blockScroll);
+      window.scrollTo(0, scrollY);
     };
   }, [open]);
 
@@ -64,7 +90,7 @@ export function MobileNav({ locale, content, pathname, dark = false }: MobileNav
         {open ? (
           <motion.div
             key="mobile-nav"
-            className="fixed inset-0 z-[60]"
+            className="fixed inset-0 z-[60] h-[100dvh] overflow-hidden overscroll-none"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -78,13 +104,13 @@ export function MobileNav({ locale, content, pathname, dark = false }: MobileNav
             />
             <motion.div
               id="mobile-nav-panel"
-              className="absolute right-0 top-0 flex h-[100dvh] w-[min(100%,22rem)] flex-col bg-paper pt-[env(safe-area-inset-top)] shadow-2xl"
+              className="absolute right-0 top-0 flex h-[100dvh] max-h-[100dvh] w-[min(100%,22rem)] flex-col overflow-hidden overscroll-none bg-paper pt-[env(safe-area-inset-top)] shadow-2xl"
               initial={reduce ? false : { x: "100%" }}
               animate={{ x: 0 }}
               exit={reduce ? undefined : { x: "100%" }}
               transition={{ duration: reduce ? 0 : 0.38, ease }}
             >
-              <div className="flex items-start justify-between gap-4 border-b border-line px-5 py-5">
+              <div className="flex shrink-0 items-start justify-between gap-4 border-b border-line px-5 py-4">
                 <Logo size="panel" />
                 <button
                   type="button"
@@ -102,8 +128,8 @@ export function MobileNav({ locale, content, pathname, dark = false }: MobileNav
                   </svg>
                 </button>
               </div>
-              <nav className="flex-1 overflow-y-auto px-4 py-4">
-                <ul className="space-y-1">
+              <nav className="min-h-0 flex-1 overflow-hidden px-4 py-2">
+                <ul className="flex h-full flex-col justify-center gap-0.5">
                   {navItems.map((item, index) => {
                     const active = isNavActive(pathname, locale, item.href);
                     return (
@@ -118,7 +144,7 @@ export function MobileNav({ locale, content, pathname, dark = false }: MobileNav
                           onClick={() => setOpen(false)}
                           aria-current={active ? "page" : undefined}
                           className={cn(
-                            "block rounded-xl px-3 py-3 text-base font-medium transition-colors",
+                            "block rounded-xl px-3 py-2.5 text-[15px] font-medium transition-colors",
                             active
                               ? "bg-xinix-blue/10 text-xinix-blue-deep"
                               : "text-deep-navy hover:bg-mist",
@@ -131,12 +157,12 @@ export function MobileNav({ locale, content, pathname, dark = false }: MobileNav
                   })}
                 </ul>
               </nav>
-              <div className="space-y-4 border-t border-line p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))]">
+              <div className="shrink-0 space-y-3 border-t border-line p-4 pb-[max(1rem,env(safe-area-inset-bottom))]">
                 <LanguageSwitcher locale={locale} pathname={pathname} layout="panel" />
                 <Link
                   href={localePath(locale, "/contact")}
                   onClick={() => setOpen(false)}
-                  className="block rounded-full bg-xinix-blue px-4 py-3.5 text-center text-sm font-semibold text-white shadow-md"
+                  className="block rounded-full bg-xinix-blue px-4 py-3 text-center text-sm font-semibold text-white shadow-md"
                 >
                   {content.nav.requestQuote}
                 </Link>

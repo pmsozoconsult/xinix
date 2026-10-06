@@ -55,6 +55,13 @@ body {
   overflow-x: clip;
 }
 
+html.nav-open,
+html.nav-open body {
+  overflow: hidden;
+  overscroll-behavior: none;
+  touch-action: none;
+}
+
 main {
   background: var(--white);
   overflow-x: clip;

@@ -79,13 +79,13 @@ export function ProductsHero({ locale, content }: ProductsHeroProps) {
             </Link>
           </div>
 
-          <dl className="mt-12 grid max-w-lg grid-cols-1 gap-5 border-t border-white/15 pt-8 sm:grid-cols-3 sm:gap-6">
+          <dl className="mt-8 grid max-w-xl grid-cols-3 gap-3 border-t border-white/15 pt-6 sm:mt-10 sm:gap-6 sm:pt-8">
             {t.stats.map((stat) => (
-              <div key={stat.label}>
-                <dt className="font-mono text-2xl font-bold text-white sm:text-3xl">
+              <div key={stat.label} className="min-w-0">
+                <dt className="font-mono text-3xl font-bold leading-none text-white sm:text-4xl">
                   {stat.value}
                 </dt>
-                <dd className="mt-1 text-xs leading-snug text-white/60">
+                <dd className="mt-1.5 text-[11px] leading-snug text-white/65 sm:text-xs">
                   {stat.label}
                 </dd>
               </div>

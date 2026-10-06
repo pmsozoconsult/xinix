@@ -72,7 +72,7 @@ export default async function LocaleLayout({
       <body className="flex min-h-full flex-col">
         <JsonLd locale={locale} />
         <HeaderShell locale={locale} content={content} />
-        <main className="flex-1 pb-24 sm:pb-0">{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer locale={locale} content={content} />
         <a
           href={content.contact.phoneHref}

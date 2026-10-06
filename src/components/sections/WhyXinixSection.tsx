@@ -51,7 +51,7 @@ export function WhyXinixSection({ locale, title }: WhyXinixSectionProps) {
   const t = copy[locale];
 
   return (
-    <section data-header-tone="light" className="relative overflow-hidden bg-paper">
+    <section data-header-tone="light" className="relative overflow-hidden border-t border-line bg-paper">
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white via-paper to-mist/50" />
       <div
         className="pointer-events-none absolute inset-0 opacity-30"
@@ -63,7 +63,7 @@ export function WhyXinixSection({ locale, title }: WhyXinixSectionProps) {
       />
       <div className="pointer-events-none absolute -left-20 top-1/3 h-64 w-64 rounded-full bg-xinix-blue/10 blur-3xl" />
 
-      <div className="relative mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8 lg:py-28">
+      <div className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
         <Reveal className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-[0.2em] text-xinix-blue">
             {t.eyebrow}

@@ -56,7 +56,7 @@ export function ProductIndex({ locale, products, filters, cta }: ProductIndexPro
           </h2>
         </Reveal>
 
-        <div className="mt-8 flex flex-wrap gap-2">
+        <div className="-mx-4 mt-6 flex gap-1.5 overflow-x-auto px-4 pb-1 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:mt-8 sm:flex-wrap sm:overflow-visible sm:px-0">
           {tabs.map((tab) => {
             const isActive = tab.slug === active;
             return (
@@ -65,7 +65,7 @@ export function ProductIndex({ locale, products, filters, cta }: ProductIndexPro
                 type="button"
                 onClick={() => setActive(tab.slug)}
                 className={cn(
-                  "rounded-full border px-4 py-2 text-sm font-semibold transition",
+                  "shrink-0 rounded-full border px-2.5 py-1 text-xs font-semibold transition sm:px-3.5 sm:py-1.5 sm:text-sm",
                   isActive
                     ? "border-xinix-blue bg-xinix-blue text-white shadow-sm"
                     : "border-line bg-white text-stone hover:border-xinix-blue/40 hover:text-deep-navy",

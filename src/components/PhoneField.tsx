@@ -5,11 +5,24 @@ import type { Locale } from "@/types/content";
 import {
   callingCode,
   countryName,
-  flagEmoji,
   listedCountries,
   type CountryCode,
 } from "@/lib/phone";
 import { cn } from "@/lib/utils";
+
+function CountryFlag({ country }: { country: CountryCode }) {
+  const code = country.toLowerCase();
+  return (
+    <img
+      src={`https://flagcdn.com/w40/${code}.png`}
+      srcSet={`https://flagcdn.com/w80/${code}.png 2x`}
+      width={20}
+      height={15}
+      alt=""
+      className="h-[15px] w-5 shrink-0 rounded-[2px] object-cover ring-1 ring-black/10"
+    />
+  );
+}
 
 interface PhoneFieldProps {
   locale: Locale;
@@ -70,9 +83,7 @@ export function PhoneField({
           )}
         >
           <span className="flex items-center gap-2">
-            <span aria-hidden className="text-base leading-none">
-              {flagEmoji(country)}
-            </span>
+            <CountryFlag country={country} />
             <span className="font-mono text-xs">+{callingCode(country)}</span>
           </span>
           <span aria-hidden className="text-stone">
@@ -114,7 +125,7 @@ export function PhoneField({
                       setQuery("");
                     }}
                   >
-                    <span aria-hidden>{flagEmoji(code)}</span>
+                    <CountryFlag country={code} />
                     <span className="flex-1">{countryName(code, locale)}</span>
                     <span className="font-mono text-xs text-stone">+{callingCode(code)}</span>
                   </button>

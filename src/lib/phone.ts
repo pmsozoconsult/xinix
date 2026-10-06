@@ -34,12 +34,6 @@ const PRIORITY: CountryCode[] = [
   "TR",
 ];
 
-export function flagEmoji(country: CountryCode): string {
-  return country
-    .toUpperCase()
-    .replace(/./g, (char) => String.fromCodePoint(127397 + char.charCodeAt(0)));
-}
-
 export function countryName(country: CountryCode, locale: string): string {
   try {
     return new Intl.DisplayNames([locale === "am" ? "am" : "en"], { type: "region" }).of(country) ?? country;

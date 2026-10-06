@@ -351,8 +351,8 @@ export function ContactEnquiryForm({ locale, ui, inputClass }: ContactEnquiryFor
           })}
         </div>
         {selectedNames.length > 0 ? (
-          <div className="mt-3 flex flex-wrap gap-2">
-            <span className="text-xs font-semibold uppercase tracking-wider text-stone">
+          <div className="mt-3 flex flex-wrap items-center gap-2">
+            <span className="inline-flex h-7 items-center text-xs font-semibold uppercase tracking-wider text-stone">
               {t.selected}
             </span>
             {selectedNames.map((product) => (
@@ -360,7 +360,7 @@ export function ContactEnquiryForm({ locale, ui, inputClass }: ContactEnquiryFor
                 key={product.slug}
                 type="button"
                 onClick={() => toggleProduct(product.slug)}
-                className="rounded-full bg-xinix-blue/10 px-3 py-1 text-xs font-semibold text-xinix-blue-deep"
+                className="inline-flex h-7 items-center rounded-full bg-xinix-blue/10 px-3 text-xs font-semibold text-xinix-blue-deep"
               >
                 {product.name} ×
               </button>

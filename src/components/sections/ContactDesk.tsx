@@ -65,11 +65,6 @@ export function ContactDesk({ locale, content }: ContactDeskProps) {
         </Reveal>
 
         <div className="border border-line bg-paper p-6 sm:p-10">
-          <div className="mb-6 flex gap-1" aria-hidden>
-            {Array.from({ length: 12 }).map((_, i) => (
-              <span key={i} className="h-2 flex-1 bg-white ring-1 ring-line" />
-            ))}
-          </div>
           <EnquiryForm
             locale={locale}
             ui={content.ui}

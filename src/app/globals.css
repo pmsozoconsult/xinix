@@ -119,3 +119,12 @@ html[lang="am"] body {
     -webkit-backdrop-filter: blur(12px) saturate(140%);
   }
 }
+
+.enquiry-hp {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}

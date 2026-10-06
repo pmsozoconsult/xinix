@@ -2,15 +2,6 @@
 
 import { motion, useInView, useReducedMotion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import {
-  IconBiodegradable,
-  IconEthiopia,
-  IconSolar,
-  IconZeroDischarge,
-} from "@/components/Icons";
-import { cn } from "@/lib/utils";
-
-const statIcons = [IconSolar, IconZeroDischarge, IconEthiopia, IconBiodegradable] as const;
 
 interface CountUpProps {
   value: string;
@@ -60,75 +51,5 @@ export function CountUp({ value, className }: CountUpProps) {
     >
       {display}
     </motion.span>
-  );
-}
-
-interface StatGridProps {
-  stats: { value: string; label: string }[];
-  variant?: "light" | "dark";
-}
-
-const cardStyles = {
-  dark: {
-    card: "border-white/10 bg-xinix-blue-deep/70",
-    glow: "bg-sky-band/15 group-hover:bg-sky-band/25",
-    icon: "bg-white/10 text-sky-band",
-    value: "text-white",
-    label: "text-white/80",
-  },
-  light: {
-    card: "border-line bg-white shadow-lg shadow-deep-navy/5 ring-1 ring-line",
-    glow: "bg-xinix-blue/10 group-hover:bg-xinix-blue/15",
-    icon: "bg-mist text-xinix-blue",
-    value: "text-xinix-blue",
-    label: "text-stone",
-  },
-} as const;
-
-export function AnimatedStatGrid({ stats, variant = "dark" }: StatGridProps) {
-  const styles = cardStyles[variant];
-
-  return (
-    <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:grid-cols-4 lg:gap-8">
-      {stats.map((stat, i) => {
-        const Icon = statIcons[i % statIcons.length];
-        return (
-          <motion.div
-            key={stat.label}
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: i * 0.1, duration: 0.6 }}
-            className={cn(
-              "group relative overflow-hidden rounded-2xl border p-5 sm:p-6",
-              styles.card,
-            )}
-          >
-            <div
-              className={cn(
-                "absolute -right-4 -top-4 h-24 w-24 rounded-full blur-2xl transition-opacity",
-                styles.glow,
-              )}
-            />
-            <div
-              className={cn(
-                "mb-4 flex h-9 w-9 items-center justify-center rounded-lg",
-                styles.icon,
-              )}
-            >
-              <Icon className="h-5 w-5" />
-            </div>
-            <CountUp
-              value={stat.value}
-              className={cn(
-                "block text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl",
-                styles.value,
-              )}
-            />
-            <p className={cn("mt-3 text-sm leading-snug", styles.label)}>{stat.label}</p>
-          </motion.div>
-        );
-      })}
-    </div>
   );
 }

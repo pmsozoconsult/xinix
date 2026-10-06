@@ -71,14 +71,14 @@ export function PhoneField({
   return (
     <div ref={root} className="block text-sm font-medium text-deep-navy">
       {label}
-      <div className="mt-1.5 flex h-12 items-stretch gap-2">
+      <div className="mt-1.5 flex items-start gap-2">
         <button
           type="button"
           aria-haspopup="listbox"
           aria-expanded={open}
           onClick={() => setOpen((value) => !value)}
           className={cn(
-            "flex h-full min-w-[7.5rem] shrink-0 items-center justify-between gap-2 rounded-xl border border-line bg-white px-3 py-0 text-sm leading-none shadow-sm",
+            "box-border flex h-12 min-w-[7.5rem] shrink-0 items-center justify-between gap-2 rounded-xl border border-line bg-white px-3 py-0 text-sm leading-none shadow-sm",
             error && "border-red-400",
           )}
         >
@@ -97,8 +97,8 @@ export function PhoneField({
           value={national}
           onChange={(event) => onNationalChange(event.target.value.replace(/[^\d\s-]/g, ""))}
           className={cn(
-            inputClass,
-            "mt-0 h-full min-h-0 flex-1 py-0 leading-none",
+            inputClass.replace(/\b(m[trblxy]?|p[trblxy]?|h)-\S+/g, ""),
+            "box-border m-0 h-12 flex-1 py-0 leading-none",
             error && "border-red-400",
           )}
           aria-invalid={Boolean(error)}

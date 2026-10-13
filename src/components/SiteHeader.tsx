@@ -92,8 +92,9 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
           <nav
             className={cn(
               "hidden items-center gap-0.5 rounded-2xl p-1 transition-colors duration-500 ease-in-out lg:flex",
-              isDarkNav ? "text-white" : "text-deep-navy",
-              scrolled && (isDarkNav ? "bg-white/15" : "bg-white/70"),
+              isDarkNav
+                ? "bg-white/15 text-white"
+                : "bg-sky-wash text-deep-navy",
             )}
             aria-label="Main"
           >

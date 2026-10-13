@@ -34,7 +34,7 @@ const copy = {
       },
       {
         q: "Can I sell to both retail and institutional customers?",
-        a: "Yes. The range includes retail sizes for shops and pharmacies, plus larger formats for institutions, farms and industry.",
+        a: "Yes. The range includes retail sizes for shops and supermarkets, plus larger formats for institutions, farms and industry.",
       },
     ],
   },
@@ -64,7 +64,7 @@ const copy = {
       },
       {
         q: "ለችርቻሮም ለተቋማትም መሸጥ እችላለሁ?",
-        a: "አዎ። ስብስቡ ለሱቆችና ፋርማሲዎች የችርቻሮ መጠኖች፣ ለተቋማት፣ እርሻዎችና ኢንዱስትሪ ትላልቅ ቅርጾችን ያካትታል።",
+        a: "አዎ። ስብስቡ ለሱቆችና ሱፐርማርኬቶች የችርቻሮ መጠኖች፣ ለተቋማት፣ እርሻዎችና ኢንዱስትሪ ትላልቅ ቅርጾችን ያካትታል።",
       },
     ],
   },

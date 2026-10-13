@@ -19,7 +19,7 @@ const copy = {
       {
         door: "Trade",
         role: "Wholesalers and distributors",
-        serves: ["Shops", "Supermarkets", "Pharmacies"],
+        serves: ["Shops", "Supermarkets"],
       },
       {
         door: "Institutions",
@@ -59,7 +59,7 @@ const copy = {
       {
         door: "ንግድ",
         role: "ጅምላ ነጋዴዎችና አከፋፋዮች",
-        serves: ["ሱቆች", "ሱፐርማርኬቶች", "ፋርማሲዎች"],
+        serves: ["ሱቆች", "ሱፐርማርኬቶች"],
       },
       {
         door: "ተቋማት",

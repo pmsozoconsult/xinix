@@ -3,11 +3,7 @@
 import { motion } from "framer-motion";
 import type { Locale } from "@/types/content";
 import { Button } from "@/components/Button";
-import {
-  IconBiodegradable,
-  IconSolar,
-  IconZeroDischarge,
-} from "@/components/Icons";
+import { IconBiodegradable, IconZeroDischarge } from "@/components/Icons";
 import { Reveal, staggerItem, Stagger } from "@/components/motion/Reveal";
 import { ScrollImage } from "@/components/motion/ScrollImage";
 import { localePath } from "@/lib/i18n";
@@ -15,7 +11,6 @@ import { visuals } from "@/lib/visuals";
 import { cn } from "@/lib/utils";
 
 const pillarMeta = [
-  { Icon: IconSolar, accent: "text-solar-amber", ring: "ring-solar-amber/30", bar: "bg-solar-amber" },
   { Icon: IconZeroDischarge, accent: "text-drop-cyan", ring: "ring-drop-cyan/30", bar: "bg-drop-cyan" },
   { Icon: IconBiodegradable, accent: "text-leaf-green", ring: "ring-leaf-green/30", bar: "bg-leaf-green" },
 ] as const;
@@ -27,12 +22,8 @@ const teaser = {
     body: "How a product is made matters as much as what it does. Our plant is designed to protect the water, soil and air it depends on.",
     cta: "See how the plant works",
     plantEyebrow: "Our plant",
-    plantTitle: "Three principles on every batch",
+    plantTitle: "Two principles on every batch",
     pillars: [
-      {
-        title: "Powered by the sun",
-        body: "Built to run on its own solar and battery system, with no connection to the national grid. Power cuts never stop production.",
-      },
       {
         title: "No process wastewater",
         body: "Process water is purified, reused in the plant or becomes part of the finished product. Nothing is released to drains, rivers or land.",
@@ -49,12 +40,8 @@ const teaser = {
     body: "አንድ ምርት እንዴት እንደሚሠራ ምን እንደሚያደርግ ያህል አስፈላጊ ነው። ፋብሪካችን የሚደገፍበትን ውሃ፣ አፈርና አየር ለመጠበቅ የተዘጋጀ ነው።",
     cta: "ፋብሪካው እንዴት እንደሚሠራ ይመልከቱ",
     plantEyebrow: "ፋብሪካችን",
-    plantTitle: "በእያንዳንዱ ባች ሦስት መርሆዎች",
+    plantTitle: "በእያንዳንዱ ባች ሁለት መርሆዎች",
     pillars: [
-      {
-        title: "በፀሐይ ኃይል የሚሰራ",
-        body: "ከብሔራዊ መስመር ግንኙነት ሳይኖር በራሱ የፀሐይና ባትሪ ሥርዓት እንዲሠራ የተሠራ። የኃይል መቆራረጥ ምርትን አያቆምም።",
-      },
       {
         title: "የሂደት ፈሳሽ ቆሻሻ የለም",
         body: "የሂደት ውሃ ይጣራል፣ በፋብሪካው ይደገማል ወይም የተጠናቀቀው ምርት አካል ይሆናል። ወደ ፍሳሽ፣ ወንዝ ወይም መሬት ምንም አይወጣም።",
@@ -130,7 +117,7 @@ export function SustainabilityTeaser({ locale }: SustainabilityTeaserProps) {
           </Reveal>
 
           <div className="overflow-hidden rounded-3xl border border-white/15 bg-xinix-blue/20 shadow-xl shadow-black/20 backdrop-blur-sm">
-            <Stagger className="grid divide-y divide-white/10 lg:grid-cols-3 lg:divide-x lg:divide-y-0">
+            <Stagger className="grid divide-y divide-white/10 lg:grid-cols-2 lg:divide-x lg:divide-y-0">
               {t.pillars.map((pillar, index) => {
                 const { Icon, accent, ring, bar } = pillarMeta[index % pillarMeta.length];
                 return (

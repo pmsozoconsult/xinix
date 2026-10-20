@@ -6,7 +6,7 @@ import type { Locale } from "@/types/content";
 import { Reveal } from "@/components/motion/Reveal";
 import { ScrollImage } from "@/components/motion/ScrollImage";
 import { localePath } from "@/lib/i18n";
-import { categoryImages } from "@/lib/visuals";
+import { rangeImage } from "@/lib/visuals";
 import { categoryTheme, type CategorySlug } from "@/lib/categories";
 import { cn } from "@/lib/utils";
 
@@ -61,7 +61,7 @@ export function CategoryShowcase({
       {panels.map((panel, index) => {
         const reversed = index % 2 === 1;
         const theme = categoryTheme[(panel.themeSlug ?? panel.slug) as CategorySlug];
-        const image = categoryImages[panel.themeSlug ?? panel.slug];
+        const image = rangeImage(panel.slug, panel.themeSlug);
 
         return (
           <div

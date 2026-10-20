@@ -6,7 +6,9 @@ export const visuals = {
     "https://images.unsplash.com/photo-1548839140-29a749e1cf4d?auto=format&fit=crop&w=1800&q=80",
   hygiene: "/category-hygiene-institutional.webp",
   agriculture: "/category-food-agriculture.webp",
-  industrial: "/category-industrial-biofilm.webp",
+  industrial: "/range-food-beverage-industry.webp",
+  home: "/range-for-your-home.webp",
+  waterSystems: "/range-water-systems-aviation.webp",
   sustainability:
     "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=2000&q=80",
   export: "/export-distribution-africa.webp",
@@ -15,8 +17,15 @@ export const visuals = {
 } as const;
 
 export const categoryImages: Record<string, string> = {
-  "water-and-household": visuals.water,
+  home: visuals.home,
+  "water-and-household": visuals.waterSystems,
+  water: visuals.waterSystems,
   "hygiene-and-institutional": visuals.hygiene,
   "food-and-agriculture": visuals.agriculture,
   "industrial-and-biofilm": visuals.industrial,
+  industry: visuals.industrial,
 };
+
+export function rangeImage(slug: string, themeSlug?: string) {
+  return categoryImages[slug] ?? categoryImages[themeSlug ?? ""] ?? visuals.hygiene;
+}

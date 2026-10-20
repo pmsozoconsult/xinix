@@ -7,7 +7,7 @@ import { CategoryIcon } from "@/components/Icons";
 import { Reveal, Stagger, staggerItem } from "@/components/motion/Reveal";
 import { ScrollImage } from "@/components/motion/ScrollImage";
 import { localePath } from "@/lib/i18n";
-import { categoryImages } from "@/lib/visuals";
+import { rangeImage } from "@/lib/visuals";
 import { categoryTheme, type CategorySlug } from "@/lib/categories";
 import { categoryColor, productCountLabel } from "@/lib/productMeta";
 import { cn } from "@/lib/utils";
@@ -67,7 +67,7 @@ export function CategoryGrid({ locale, items, cta }: CategoryGridProps) {
                 >
                   <div className="absolute inset-0">
                     <ScrollImage
-                      src={categoryImages[slug]}
+                      src={rangeImage(item.slug, item.themeSlug)}
                       effect="zoom-in"
                       intensity={0.6}
                       sizes="(max-width: 640px) 100vw, 50vw"

@@ -1,8 +1,10 @@
 /** Cut-out pack shots in /public/products/cutouts. Missing SKUs keep the illustrated pack. */
 export const productImages: Partial<Record<string, string>> = {
-  "drink-plus": "/products/cutouts/drink.png",
+  "drink-plus": "/products/shots/drink-plus.webp",
   "aquadis-tank": "/products/shots/aquadis-tank.webp",
-  handdis: "/products/cutouts/handdis.png",
+  handdis: "/products/shots/handdis.webp",
+  purestep: "/products/shots/purestep.webp",
+  vetdis: "/products/shots/vetdis.webp",
   surfdis: "/products/shots/surfdis.webp",
   meddis: "/products/shots/meddis.webp",
   vegdis: "/products/shots/vegdis.webp",

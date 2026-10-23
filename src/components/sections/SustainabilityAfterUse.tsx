@@ -30,7 +30,11 @@ const copy = {
   },
 } as const;
 
-const washes = ["opacity-100", "opacity-55", "opacity-25"] as const;
+const stageImages = [
+  visuals.industrial,
+  visuals.agriculture,
+  visuals.home,
+] as const;
 
 export function SustainabilityAfterUse({ locale }: SustainabilityAfterUseProps) {
   const t = copy[locale];
@@ -54,9 +58,9 @@ export function SustainabilityAfterUse({ locale }: SustainabilityAfterUseProps) 
             key={stage.label}
             className="relative min-h-[18rem] overflow-hidden border-t border-line lg:border-l lg:border-t-0 lg:first:border-l-0"
           >
-            <div className={`absolute inset-0 ${washes[index]}`}>
-              <ScrollImage src={visuals.water} effect="parallax-up" sizes="33vw" />
-              <div className="absolute inset-0 bg-gradient-to-t from-sky-wash/70 via-sky-wash/25 to-transparent" />
+            <div className="absolute inset-0">
+              <ScrollImage src={stageImages[index]} effect="parallax-up" sizes="33vw" />
+              <div className="absolute inset-0 bg-gradient-to-t from-sky-wash/80 via-sky-wash/20 to-transparent" />
             </div>
             <div className="relative flex h-full min-h-[18rem] flex-col justify-end p-6 sm:p-8">
               <p className="font-mono text-xs text-stone">

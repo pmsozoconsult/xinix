@@ -12,8 +12,7 @@ export const visuals = {
   sustainability:
     "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=2000&q=80",
   export: "/export-distribution-africa.webp",
-  about:
-    "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1800&q=80",
+  about: "/about-local-solutions.webp",
   plantRuns: "/sustainability-plant-runs.webp",
   plantPower: "/sustainability-solar-power.webp",
   zeroDischarge: "/sustainability-zero-discharge.webp",

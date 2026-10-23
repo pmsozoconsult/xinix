@@ -48,16 +48,26 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
     <header
       data-site-header
       className={cn(
-        "fixed top-0 z-50 w-full pt-[env(safe-area-inset-top)] transition-all duration-500 ease-in-out",
-        scrolled ? "px-3 pt-3 sm:px-5 lg:px-6" : "px-0 pt-0",
+        "fixed top-0 z-50 w-full transition-all duration-500 ease-in-out",
+        scrolled
+          ? "px-3 pt-[max(0.75rem,env(safe-area-inset-top))] sm:px-5 lg:px-6"
+          : "px-0 pt-[env(safe-area-inset-top)]",
       )}
     >
       <div
         className={cn(
-          "relative mx-auto max-w-7xl overflow-hidden transition-all duration-500 ease-in-out",
-          scrolled ? "rounded-3xl" : "rounded-b-3xl",
+          "relative mx-auto max-w-7xl transition-all duration-500 ease-in-out",
+          scrolled
+            ? "rounded-3xl shadow-[0_16px_40px_-18px_rgba(18,58,92,0.45)]"
+            : "rounded-b-3xl",
         )}
       >
+        <div
+          className={cn(
+            "overflow-hidden",
+            scrolled ? "rounded-3xl" : "rounded-b-3xl",
+          )}
+        >
         <div
           className={cn(
             "pointer-events-none absolute inset-0 glass-blur-layer glass-light transition-opacity duration-500 ease-in-out",
@@ -148,6 +158,7 @@ export function SiteHeader({ locale, content }: SiteHeaderProps) {
               dark={isDarkNav}
             />
           </div>
+        </div>
         </div>
       </div>
     </header>

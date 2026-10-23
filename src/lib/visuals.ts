@@ -13,6 +13,7 @@ export const visuals = {
     "https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=2000&q=80",
   export: "/export-distribution-africa.jpg",
   about: "/about-local-solutions.webp",
+  qualityCheck: "/quality-how-we-check.jpg",
   plantRuns: "/sustainability-plant-runs.webp",
   plantPower: "/sustainability-solar-power.webp",
   zeroDischarge: "/sustainability-zero-discharge.webp",

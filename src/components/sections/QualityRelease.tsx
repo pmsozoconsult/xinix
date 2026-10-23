@@ -70,7 +70,7 @@ export function QualityRelease({ locale }: QualityReleaseProps) {
       className="relative overflow-hidden bg-deep-navy"
     >
       <div className="absolute inset-0">
-        <ScrollImage src={visuals.manufacturing} effect="parallax-up" sizes="100vw" />
+        <ScrollImage src={visuals.qualityCheck} effect="parallax-up" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/85 via-xinix-blue/35 to-xinix-blue/10" />
       </div>
 

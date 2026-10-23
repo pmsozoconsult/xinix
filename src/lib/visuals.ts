@@ -14,6 +14,7 @@ export const visuals = {
   export: "/export-distribution-africa.jpg",
   about: "/about-local-solutions.webp",
   qualityCheck: "/quality-how-we-check.jpg",
+  officeHours: "/contact-office-hours.jpg",
   plantRuns: "/sustainability-plant-runs.webp",
   plantPower: "/sustainability-solar-power.webp",
   zeroDischarge: "/sustainability-zero-discharge.webp",

@@ -40,8 +40,13 @@ export function ContactPlaces({ locale, content }: ContactPlacesProps) {
         </Reveal>
       </div>
       <div className="relative min-h-[16rem] overflow-hidden bg-deep-navy lg:min-h-[22rem]">
-        <ScrollImage src={visuals.officeHours} effect="parallax-up" sizes="50vw" />
-        <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-xinix-blue/25 to-transparent" />
+        <ScrollImage
+          src={visuals.officeHours}
+          effect="zoom-in"
+          sizes="50vw"
+          imageClassName="object-[center_78%]"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/55 via-transparent to-transparent" />
         <div className="absolute inset-x-0 bottom-0 p-6 sm:p-10">
           <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-sky-band">
             {t.hoursLabel}

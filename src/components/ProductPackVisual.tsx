@@ -83,6 +83,16 @@ export function ProductPackVisual({
       )}
 
       {src ? (
+        src.includes("/shots/") ? (
+          <Image
+            src={src}
+            alt={name}
+            fill
+            className="object-cover"
+            sizes={isLg ? "(max-width: 1024px) 100vw, 50vw" : "(max-width: 640px) 100vw, 400px"}
+            priority={priority}
+          />
+        ) : (
         <div
           className={cn(
             variant === "dark"
@@ -110,6 +120,7 @@ export function ProductPackVisual({
             priority={priority}
           />
         </div>
+        )
       ) : (
         <IllustratedPack
           name={name}

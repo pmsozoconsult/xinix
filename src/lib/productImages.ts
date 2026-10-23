@@ -9,6 +9,9 @@ export const productImages: Partial<Record<string, string>> = {
   "postharvest-plus": "/products/cutouts/postharvest.png",
   fungdis: "/products/cutouts/fungdis.png",
   biofilmdis: "/products/cutouts/biofilmdis.png",
+  "systemflush-plus": "/products/shots/systemflush-plus.webp",
+  acidx: "/products/shots/acidx.webp",
+  "degrease-plus": "/products/shots/degrease-plus.webp",
 };
 
 export function getProductImage(slug: string): string | undefined {

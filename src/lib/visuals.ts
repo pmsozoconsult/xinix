@@ -14,6 +14,12 @@ export const visuals = {
   export: "/export-distribution-africa.webp",
   about:
     "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1800&q=80",
+  plantRuns: "/sustainability-plant-runs.webp",
+  plantPower: "/sustainability-solar-power.webp",
+  zeroDischarge: "/sustainability-zero-discharge.webp",
+  afterUseInUse: "/sustainability-in-use.webp",
+  afterUseBreaksDown: "/sustainability-breaks-down.webp",
+  afterUseHarmless: "/sustainability-harmless.webp",
 } as const;
 
 export const categoryImages: Record<string, string> = {

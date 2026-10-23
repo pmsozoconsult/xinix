@@ -31,9 +31,9 @@ const copy = {
 } as const;
 
 const stageImages = [
-  visuals.industrial,
-  visuals.agriculture,
-  visuals.home,
+  visuals.afterUseInUse,
+  visuals.afterUseBreaksDown,
+  visuals.afterUseHarmless,
 ] as const;
 
 export function SustainabilityAfterUse({ locale }: SustainabilityAfterUseProps) {

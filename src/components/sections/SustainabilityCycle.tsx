@@ -64,7 +64,7 @@ export function SustainabilityCycle({ locale }: SustainabilityCycleProps) {
     <section data-header-tone="dark" className="relative overflow-hidden bg-deep-navy">
       <div className="absolute inset-0">
         <ScrollImage
-          src={visuals.waterSystems}
+          src={visuals.zeroDischarge}
           effect="parallax-up"
           intensity={0.8}
           sizes="100vw"

@@ -56,7 +56,7 @@ export function SustainabilityHero({ locale, content }: SustainabilityHeroProps)
       className={cn("relative flex min-h-[36rem] flex-col overflow-hidden bg-deep-navy sm:min-h-[42rem]", headerClearance)}
     >
       <div className="absolute inset-0 z-0">
-        <ScrollImage src={visuals.sustainability} effect="zoom-out" sizes="100vw" />
+        <ScrollImage src={visuals.plantRuns} effect="zoom-out" sizes="100vw" />
         <div className="absolute inset-0 bg-gradient-to-t from-deep-navy/80 via-deep-navy/40 to-black/25" />
       </div>
 

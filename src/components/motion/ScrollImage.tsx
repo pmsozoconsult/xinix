@@ -99,13 +99,22 @@ export function ScrollImage({
     stillX,
   ]);
 
+  const bleed =
+    effect === "parallax-up" ||
+    effect === "parallax-down" ||
+    effect === "drift-left" ||
+    effect === "drift-right";
+
   return (
     <div
       ref={containerRef}
       className={cn("absolute inset-0 overflow-hidden", className)}
     >
       <motion.div
-        className="absolute inset-0 origin-center will-change-transform"
+        className={cn(
+          "origin-center will-change-transform",
+          bleed ? "absolute -inset-[22%]" : "absolute inset-0",
+        )}
         style={reduce ? undefined : motionStyle}
       >
         <Image

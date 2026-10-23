@@ -88,6 +88,8 @@ export function ProductPackVisual({
             src={src}
             alt={name}
             fill
+            quality={95}
+            unoptimized
             className="object-cover"
             sizes={isLg ? "(max-width: 1024px) 100vw, 50vw" : "(max-width: 640px) 100vw, 400px"}
             priority={priority}
@@ -108,6 +110,8 @@ export function ProductPackVisual({
             src={src}
             alt={name}
             fill
+            quality={95}
+            unoptimized
             className={cn(
               "object-contain drop-shadow-2xl",
               variant === "dark"

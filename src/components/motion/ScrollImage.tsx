@@ -113,6 +113,8 @@ export function ScrollImage({
           alt={alt}
           fill
           priority={priority}
+          quality={95}
+          unoptimized={src.startsWith("/")}
           className={cn("object-cover", imageClassName)}
           sizes={sizes}
         />

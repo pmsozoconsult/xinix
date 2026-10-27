@@ -20,7 +20,7 @@ const copy = {
       },
       {
         label: "Markets",
-        text: "Supplying Ethiopia from December 2026, with export partners in East Africa",
+        text: "Supplying Ethiopia from February 2027, with export partners in East Africa",
       },
     ],
   },
@@ -35,7 +35,7 @@ const copy = {
       },
       {
         label: "ገበያዎች",
-        text: "ከታህሳስ 2019 ዓ.ም. ጀምሮ ኢትዮጵያን በማቅረብ፣ በምስራቅ አፍሪካ የወጪ ንግድ አጋሮች",
+        text: "ከየካቲት 2019 ዓ.ም. ጀምሮ ኢትዮጵያን በማቅረብ፣ በምስራቅ አፍሪካ የወጪ ንግድ አጋሮች",
       },
     ],
   },

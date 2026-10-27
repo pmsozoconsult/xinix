@@ -78,16 +78,18 @@ export function WhyXinixSection({ locale, title }: WhyXinixSectionProps) {
           <div className="overflow-hidden rounded-2xl border border-line bg-white shadow-sm">
             <div className="grid lg:grid-cols-[1fr_auto_1fr]">
               <div className="border-b border-line p-6 sm:p-8 lg:border-b-0 lg:border-r">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone">
-                  {t.imports}
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-leaf-green">
+                  {t.xinix}
                 </p>
                 <ul className="mt-5 space-y-3">
-                  {t.importsPoints.map((point) => (
+                  {t.xinixPoints.map((point) => (
                     <li
                       key={point}
-                      className="flex items-start gap-3 text-sm text-stone/70 line-through decoration-stone/30 sm:text-base"
+                      className="flex items-start gap-3 text-sm font-medium text-deep-navy sm:text-base"
                     >
-                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-stone/40" />
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-leaf-green/15 text-xs text-leaf-green">
+                        ✓
+                      </span>
                       {point}
                     </li>
                   ))}
@@ -101,18 +103,16 @@ export function WhyXinixSection({ locale, title }: WhyXinixSectionProps) {
               </div>
 
               <div className="p-6 sm:p-8 lg:border-l lg:border-line">
-                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-leaf-green">
-                  {t.xinix}
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-stone">
+                  {t.imports}
                 </p>
                 <ul className="mt-5 space-y-3">
-                  {t.xinixPoints.map((point) => (
+                  {t.importsPoints.map((point) => (
                     <li
                       key={point}
-                      className="flex items-start gap-3 text-sm font-medium text-deep-navy sm:text-base"
+                      className="flex items-start gap-3 text-sm text-stone/70 line-through decoration-stone/30 sm:text-base"
                     >
-                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-leaf-green/15 text-xs text-leaf-green">
-                        ✓
-                      </span>
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-stone/40" />
                       {point}
                     </li>
                   ))}
